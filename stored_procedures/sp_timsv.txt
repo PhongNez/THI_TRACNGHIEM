@@ -1,0 +1,31 @@
+USE [TN_CSDLPT]
+GO
+
+/****** Object:  StoredProcedure [dbo].[sp_timsv]    Script Date: 3/4/2024 1:30:38 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE procedure [dbo].[sp_timsv] @x char(10)
+as
+declare @ho nvarchar(55),@ten nvarchar(15),@malop nchar(20), @tenlop nvarchar(55),@makh nchar(10)
+if exists(select MASV from SINHVIEN where MASV=@x)
+begin
+select @malop=MALOP,@ho=HO,@ten=TEN from SINHVIEN where MASV=@x
+select @tenlop=TENLOP,@makh=MAKH from LOP where MALOP=@malop
+select TENLOP=@tenlop,TENKH,HO=@ho,TEN=@ten from KHOA where MAKH=@makh
+end
+else
+if exists(select MASV from LINK0.TN_CSDLPT.DBO.SINHVIEN where MASV=@x)
+begin
+select @malop=MALOP,@ho=HO,@ten=TEN from LINK0.TN_CSDLPT.DBO.SINHVIEN where MASV=@x
+select @tenlop=TENLOP,@makh=MAKH from LINK0.TN_CSDLPT.DBO.LOP where MALOP=@malop
+select TENLOP=@tenlop,TENKH,HO=@ho,TEN=@ten from LINK0.TN_CSDLPT.DBO.KHOA where MAKH=@makh
+end
+else
+RAISERROR(N'Mã sinh viên không có trong DB',16,1)
+GO
+
+

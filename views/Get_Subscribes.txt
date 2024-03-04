@@ -1,0 +1,18 @@
+USE [TN_CSDLPT]
+GO
+
+/****** Object:  View [dbo].[Get_Subscribes]    Script Date: 3/4/2024 1:31:48 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE VIEW [dbo].[Get_Subscribes]
+AS
+SELECT TENCN=PUBS.description, TENSERVER=subscriber_server
+ FROM sysmergepublications  PUBS, sysmergesubscriptions SUBS
+ WHERE PUBS.pubid = SUBS.pubid AND  publisher <> subscriber_server
+GO
+
+
