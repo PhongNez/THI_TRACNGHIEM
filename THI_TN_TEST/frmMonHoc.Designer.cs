@@ -41,6 +41,7 @@ namespace THI_TN_TEST
             this.btnXoa = new DevExpress.XtraBars.BarButtonItem();
             this.btnUndo = new DevExpress.XtraBars.BarButtonItem();
             this.btnReload = new DevExpress.XtraBars.BarButtonItem();
+            this.btnThoat = new DevExpress.XtraBars.BarButtonItem();
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
@@ -65,7 +66,6 @@ namespace THI_TN_TEST
             this.bdsGVDK = new System.Windows.Forms.BindingSource(this.components);
             this.bdsBODE = new System.Windows.Forms.BindingSource(this.components);
             this.bdsBANGDIEM = new System.Windows.Forms.BindingSource(this.components);
-            this.btnThoat = new DevExpress.XtraBars.BarButtonItem();
             mAMHLabel = new System.Windows.Forms.Label();
             tENMHLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
@@ -86,7 +86,7 @@ namespace THI_TN_TEST
             mAMHLabel.AutoSize = true;
             mAMHLabel.Location = new System.Drawing.Point(13, 42);
             mAMHLabel.Name = "mAMHLabel";
-            mAMHLabel.Size = new System.Drawing.Size(50, 17);
+            mAMHLabel.Size = new System.Drawing.Size(41, 13);
             mAMHLabel.TabIndex = 0;
             mAMHLabel.Text = "MAMH:";
             // 
@@ -95,7 +95,7 @@ namespace THI_TN_TEST
             tENMHLabel.AutoSize = true;
             tENMHLabel.Location = new System.Drawing.Point(245, 42);
             tENMHLabel.Name = "tENMHLabel";
-            tENMHLabel.Size = new System.Drawing.Size(57, 17);
+            tENMHLabel.Size = new System.Drawing.Size(45, 13);
             tENMHLabel.TabIndex = 2;
             tENMHLabel.Text = "TENMH:";
             // 
@@ -189,6 +189,15 @@ namespace THI_TN_TEST
             this.btnReload.Name = "btnReload";
             this.btnReload.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnReload_ItemClick);
             // 
+            // btnThoat
+            // 
+            this.btnThoat.Caption = "Thoát";
+            this.btnThoat.Id = 6;
+            this.btnThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.Image")));
+            this.btnThoat.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.LargeImage")));
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThoat_ItemClick);
+            // 
             // bar2
             // 
             this.bar2.BarName = "Main menu";
@@ -217,7 +226,7 @@ namespace THI_TN_TEST
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1000, 51);
+            this.barDockControlTop.Size = new System.Drawing.Size(1000, 45);
             // 
             // barDockControlBottom
             // 
@@ -231,17 +240,17 @@ namespace THI_TN_TEST
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 51);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 45);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 491);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 497);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1000, 51);
+            this.barDockControlRight.Location = new System.Drawing.Point(1000, 45);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 491);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 497);
             // 
             // DS_MH
             // 
@@ -282,7 +291,7 @@ namespace THI_TN_TEST
             // 
             this.gcMonHoc.DataSource = this.bdsMH;
             this.gcMonHoc.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gcMonHoc.Location = new System.Drawing.Point(0, 51);
+            this.gcMonHoc.Location = new System.Drawing.Point(0, 45);
             this.gcMonHoc.MainView = this.gridView1;
             this.gcMonHoc.MenuManager = this.barManager1;
             this.gcMonHoc.Name = "gcMonHoc";
@@ -321,9 +330,9 @@ namespace THI_TN_TEST
             // 
             this.panelControl1.Controls.Add(this.groupBox1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl1.Location = new System.Drawing.Point(0, 271);
+            this.panelControl1.Location = new System.Drawing.Point(0, 265);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1000, 271);
+            this.panelControl1.Size = new System.Drawing.Size(1000, 277);
             this.panelControl1.TabIndex = 6;
             // 
             // groupBox1
@@ -336,7 +345,7 @@ namespace THI_TN_TEST
             this.groupBox1.Enabled = false;
             this.groupBox1.Location = new System.Drawing.Point(2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(996, 267);
+            this.groupBox1.Size = new System.Drawing.Size(996, 273);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
@@ -346,7 +355,7 @@ namespace THI_TN_TEST
             this.txtTENMH.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsMH, "TENMH", true));
             this.txtTENMH.Location = new System.Drawing.Point(308, 39);
             this.txtTENMH.Name = "txtTENMH";
-            this.txtTENMH.Size = new System.Drawing.Size(100, 23);
+            this.txtTENMH.Size = new System.Drawing.Size(100, 21);
             this.txtTENMH.TabIndex = 3;
             // 
             // txtMAMH
@@ -354,7 +363,7 @@ namespace THI_TN_TEST
             this.txtMAMH.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsMH, "MAMH", true));
             this.txtMAMH.Location = new System.Drawing.Point(69, 39);
             this.txtMAMH.Name = "txtMAMH";
-            this.txtMAMH.Size = new System.Drawing.Size(100, 23);
+            this.txtMAMH.Size = new System.Drawing.Size(100, 21);
             this.txtMAMH.TabIndex = 1;
             // 
             // bdsGVDK
@@ -372,18 +381,9 @@ namespace THI_TN_TEST
             this.bdsBANGDIEM.DataMember = "FK_BANGDIEM_MONHOC";
             this.bdsBANGDIEM.DataSource = this.bdsMH;
             // 
-            // btnThoat
-            // 
-            this.btnThoat.Caption = "Thoát";
-            this.btnThoat.Id = 6;
-            this.btnThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.Image")));
-            this.btnThoat.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.LargeImage")));
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThoat_ItemClick);
-            // 
             // frmMONHOC
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 562);
             this.Controls.Add(this.panelControl1);

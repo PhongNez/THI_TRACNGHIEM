@@ -65,5 +65,12 @@ namespace THI_TN_TEST
             f.MdiParent = this;
             f.Show();
         }
+
+        private void barButtonItem1_ItemClick_2(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmKhoa f = new frmKhoa();
+            f.MdiParent = this;
+            f.Show();
+        }
     }
 }
