@@ -141,6 +141,8 @@ namespace THI_TN_TEST
             try
             {
                 bdsMH.EndEdit();
+                this.MONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
+                this.MONHOCTableAdapter.Update(this.DS_MH.MONHOC);
                 bdsMH.ResetCurrentItem();
             }
             catch (Exception ex)
