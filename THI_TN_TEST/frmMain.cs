@@ -31,20 +31,7 @@ namespace THI_TN_TEST
                 return null;
         }
 
-        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            Form frm = this.CheckExists(typeof(frmDangNhap));
-            if (frm != null)
-            {
-                frm.Activate();
-            }
-            else
-            {
-                frmDangNhap f = new frmDangNhap();
-                f.MdiParent = this;
-                f.Show();
-            }
-        }
+       
 
         public void HienThiMenu()
         {
@@ -59,11 +46,34 @@ namespace THI_TN_TEST
             f.Show();
         }
 
-        private void barButtonItem1_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void btnMonHoc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmMONHOC f = new frmMONHOC();
-            f.MdiParent = this;
-            f.Show();
+            Form frm = this.CheckExists(typeof(frmMONHOC));
+            if (frm != null)
+            {
+                frm.Activate();
+            }
+            else
+            {
+                frmMONHOC f = new frmMONHOC();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void btnDangNhap_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(frmDangNhap));
+            if (frm != null)
+            {
+                frm.Activate();
+            }
+            else
+            {
+                frmDangNhap f = new frmDangNhap();
+                f.MdiParent = this;
+                f.Show();
+            }
         }
     }
 }
