@@ -87,7 +87,9 @@ namespace THI_TN_TEST
             mAMHLabel.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             mAMHLabel.Location = new System.Drawing.Point(13, 42);
             mAMHLabel.Name = "mAMHLabel";
+
             mAMHLabel.Size = new System.Drawing.Size(115, 21);
+
             mAMHLabel.TabIndex = 0;
             mAMHLabel.Text = "Mã Môn Học:";
             // 
@@ -97,7 +99,9 @@ namespace THI_TN_TEST
             tENMHLabel.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             tENMHLabel.Location = new System.Drawing.Point(376, 42);
             tENMHLabel.Name = "tENMHLabel";
+
             tENMHLabel.Size = new System.Drawing.Size(120, 21);
+
             tENMHLabel.TabIndex = 2;
             tENMHLabel.Text = "Tên Môn Học:";
             // 
@@ -229,7 +233,7 @@ namespace THI_TN_TEST
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1000, 51);
+            this.barDockControlTop.Size = new System.Drawing.Size(1000, 45);
             // 
             // barDockControlBottom
             // 
@@ -243,17 +247,17 @@ namespace THI_TN_TEST
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 51);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 45);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 491);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 497);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1000, 51);
+            this.barDockControlRight.Location = new System.Drawing.Point(1000, 45);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 491);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 497);
             // 
             // DS_MH
             // 
@@ -294,7 +298,7 @@ namespace THI_TN_TEST
             // 
             this.gcMonHoc.DataSource = this.bdsMH;
             this.gcMonHoc.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gcMonHoc.Location = new System.Drawing.Point(0, 51);
+            this.gcMonHoc.Location = new System.Drawing.Point(0, 45);
             this.gcMonHoc.MainView = this.gridView1;
             this.gcMonHoc.MenuManager = this.barManager1;
             this.gcMonHoc.Name = "gcMonHoc";
@@ -335,9 +339,9 @@ namespace THI_TN_TEST
             // 
             this.panelControl1.Controls.Add(this.groupBox1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl1.Location = new System.Drawing.Point(0, 271);
+            this.panelControl1.Location = new System.Drawing.Point(0, 265);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1000, 271);
+            this.panelControl1.Size = new System.Drawing.Size(1000, 277);
             this.panelControl1.TabIndex = 6;
             // 
             // groupBox1
@@ -350,7 +354,7 @@ namespace THI_TN_TEST
             this.groupBox1.Enabled = false;
             this.groupBox1.Location = new System.Drawing.Point(2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(996, 267);
+            this.groupBox1.Size = new System.Drawing.Size(996, 273);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
@@ -361,7 +365,9 @@ namespace THI_TN_TEST
             this.txtTENMH.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTENMH.Location = new System.Drawing.Point(502, 39);
             this.txtTENMH.Name = "txtTENMH";
+
             this.txtTENMH.Size = new System.Drawing.Size(237, 28);
+
             this.txtTENMH.TabIndex = 3;
             // 
             // txtMAMH
@@ -370,7 +376,9 @@ namespace THI_TN_TEST
             this.txtMAMH.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMAMH.Location = new System.Drawing.Point(134, 39);
             this.txtMAMH.Name = "txtMAMH";
+
             this.txtMAMH.Size = new System.Drawing.Size(136, 28);
+
             this.txtMAMH.TabIndex = 1;
             // 
             // bdsGVDK
@@ -390,7 +398,7 @@ namespace THI_TN_TEST
             // 
             // frmMONHOC
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 562);
             this.Controls.Add(this.panelControl1);
