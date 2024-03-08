@@ -46,7 +46,7 @@ namespace THI_TN_TEST
                 Program.conn.Open();
                 return 1;
             }
-            catch(Exception e)
+            catch(Exception ex)
             {
                 Console.WriteLine("heloo: " + Program.connstr);
                 MessageBox.Show("Lỗi kết nối cơ sở dữ liệu. \nBạn xem lại user name và password. \n" , "", MessageBoxButtons.OK);

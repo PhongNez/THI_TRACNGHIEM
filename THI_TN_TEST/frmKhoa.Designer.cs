@@ -31,6 +31,8 @@ namespace THI_TN_TEST
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmKhoa));
+            System.Windows.Forms.Label mAKHLabel;
+            System.Windows.Forms.Label tENKHLabel;
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
@@ -42,26 +44,41 @@ namespace THI_TN_TEST
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
-            this.bar3 = new DevExpress.XtraBars.Bar();
             this.bar4 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.tN_CSDLPTDataSet = new THI_TN_TEST.TN_CSDLPTDataSet();
             this.kHOABindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.kHOATableAdapter = new THI_TN_TEST.TN_CSDLPTDataSetTableAdapters.KHOATableAdapter();
-            this.tableAdapterManager = new THI_TN_TEST.TN_CSDLPTDataSetTableAdapters.TableAdapterManager();
+            this.tN_CSDLPTDataSet = new THI_TN_TEST.TN_CSDLPTDataSet();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMAKH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTENKH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMACS = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.kHOATableAdapter = new THI_TN_TEST.TN_CSDLPTDataSetTableAdapters.KHOATableAdapter();
+            this.tableAdapterManager = new THI_TN_TEST.TN_CSDLPTDataSetTableAdapters.TableAdapterManager();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.mAKHTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.tENKHTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.fKLOPKHOABindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lOPTableAdapter = new THI_TN_TEST.TN_CSDLPTDataSetTableAdapters.LOPTableAdapter();
+            this.mALOPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tENLOPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mAKHDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            mAKHLabel = new System.Windows.Forms.Label();
+            tENKHLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tN_CSDLPTDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kHOABindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tN_CSDLPTDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.mAKHTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tENKHTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKLOPKHOABindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // bar1
@@ -76,7 +93,6 @@ namespace THI_TN_TEST
             // 
             this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
             this.bar2,
-            this.bar3,
             this.bar4});
             this.barManager1.DockControls.Add(this.barDockControlTop);
             this.barManager1.DockControls.Add(this.barDockControlBottom);
@@ -92,7 +108,6 @@ namespace THI_TN_TEST
             this.barButtonItem6,
             this.barButtonItem7,
             this.barButtonItem8});
-            this.barManager1.MainMenu = this.bar3;
             this.barManager1.MaxItemId = 8;
             this.barManager1.StatusBar = this.bar4;
             // 
@@ -175,16 +190,6 @@ namespace THI_TN_TEST
             this.barButtonItem8.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.ImageOptions.LargeImage")));
             this.barButtonItem8.Name = "barButtonItem8";
             // 
-            // bar3
-            // 
-            this.bar3.BarName = "Main menu";
-            this.bar3.DockCol = 0;
-            this.bar3.DockRow = 0;
-            this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
-            this.bar3.OptionsBar.MultiLine = true;
-            this.bar3.OptionsBar.UseWholeRow = true;
-            this.bar3.Text = "Main menu";
-            // 
             // bar4
             // 
             this.bar4.BarName = "Status bar";
@@ -203,13 +208,13 @@ namespace THI_TN_TEST
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(933, 45);
+            this.barDockControlTop.Size = new System.Drawing.Size(933, 24);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 429);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 459);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Size = new System.Drawing.Size(933, 20);
             // 
@@ -217,22 +222,22 @@ namespace THI_TN_TEST
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 45);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 384);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 435);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(933, 45);
+            this.barDockControlRight.Location = new System.Drawing.Point(933, 24);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 384);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 435);
             // 
             // gridControl1
             // 
             this.gridControl1.DataSource = this.kHOABindingSource;
-            this.gridControl1.Location = new System.Drawing.Point(0, 64);
+            this.gridControl1.Location = new System.Drawing.Point(0, 51);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
@@ -240,6 +245,16 @@ namespace THI_TN_TEST
             this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            // 
+            // kHOABindingSource
+            // 
+            this.kHOABindingSource.DataMember = "KHOA";
+            this.kHOABindingSource.DataSource = this.tN_CSDLPTDataSet;
+            // 
+            // tN_CSDLPTDataSet
+            // 
+            this.tN_CSDLPTDataSet.DataSetName = "TN_CSDLPTDataSet";
+            this.tN_CSDLPTDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gridView1
             // 
@@ -249,27 +264,6 @@ namespace THI_TN_TEST
             this.colMACS});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
-            // 
-            // tN_CSDLPTDataSet
-            // 
-            this.tN_CSDLPTDataSet.DataSetName = "TN_CSDLPTDataSet";
-            this.tN_CSDLPTDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // kHOABindingSource
-            // 
-            this.kHOABindingSource.DataMember = "KHOA";
-            this.kHOABindingSource.DataSource = this.tN_CSDLPTDataSet;
-            // 
-            // kHOATableAdapter
-            // 
-            this.kHOATableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.KHOATableAdapter = this.kHOATableAdapter;
-            this.tableAdapterManager.LOPTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = THI_TN_TEST.TN_CSDLPTDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // colMAKH
             // 
@@ -292,11 +286,118 @@ namespace THI_TN_TEST
             this.colMACS.Visible = true;
             this.colMACS.VisibleIndex = 2;
             // 
+            // kHOATableAdapter
+            // 
+            this.kHOATableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.KHOATableAdapter = this.kHOATableAdapter;
+            this.tableAdapterManager.LOPTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = THI_TN_TEST.TN_CSDLPTDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.groupBox1.AutoSize = true;
+            this.groupBox1.Controls.Add(tENKHLabel);
+            this.groupBox1.Controls.Add(this.tENKHTextEdit);
+            this.groupBox1.Controls.Add(mAKHLabel);
+            this.groupBox1.Controls.Add(this.mAKHTextEdit);
+            this.groupBox1.Location = new System.Drawing.Point(0, 248);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(489, 248);
+            this.groupBox1.TabIndex = 9;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
+            // 
+            // mAKHLabel
+            // 
+            mAKHLabel.AutoSize = true;
+            mAKHLabel.Location = new System.Drawing.Point(12, 26);
+            mAKHLabel.Name = "mAKHLabel";
+            mAKHLabel.Size = new System.Drawing.Size(54, 13);
+            mAKHLabel.TabIndex = 0;
+            mAKHLabel.Text = "Mã  khoa:";
+            mAKHLabel.Click += new System.EventHandler(this.mAKHLabel_Click);
+            // 
+            // mAKHTextEdit
+            // 
+            this.mAKHTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.kHOABindingSource, "MAKH", true));
+            this.mAKHTextEdit.Location = new System.Drawing.Point(73, 23);
+            this.mAKHTextEdit.MenuManager = this.barManager1;
+            this.mAKHTextEdit.Name = "mAKHTextEdit";
+            this.mAKHTextEdit.Size = new System.Drawing.Size(118, 20);
+            this.mAKHTextEdit.TabIndex = 1;
+            // 
+            // tENKHLabel
+            // 
+            tENKHLabel.AutoSize = true;
+            tENKHLabel.Location = new System.Drawing.Point(12, 62);
+            tENKHLabel.Name = "tENKHLabel";
+            tENKHLabel.Size = new System.Drawing.Size(55, 13);
+            tENKHLabel.TabIndex = 2;
+            tENKHLabel.Text = "Tên khoa:";
+            tENKHLabel.Click += new System.EventHandler(this.tENKHLabel_Click);
+            // 
+            // tENKHTextEdit
+            // 
+            this.tENKHTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.kHOABindingSource, "TENKH", true));
+            this.tENKHTextEdit.Location = new System.Drawing.Point(73, 59);
+            this.tENKHTextEdit.MenuManager = this.barManager1;
+            this.tENKHTextEdit.Name = "tENKHTextEdit";
+            this.tENKHTextEdit.Size = new System.Drawing.Size(142, 20);
+            this.tENKHTextEdit.TabIndex = 3;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.mALOPDataGridViewTextBoxColumn,
+            this.tENLOPDataGridViewTextBoxColumn,
+            this.mAKHDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.fKLOPKHOABindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(495, 248);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(438, 248);
+            this.dataGridView1.TabIndex = 10;
+            // 
+            // fKLOPKHOABindingSource
+            // 
+            this.fKLOPKHOABindingSource.DataMember = "FK_LOP_KHOA";
+            this.fKLOPKHOABindingSource.DataSource = this.kHOABindingSource;
+            // 
+            // lOPTableAdapter
+            // 
+            this.lOPTableAdapter.ClearBeforeFill = true;
+            // 
+            // mALOPDataGridViewTextBoxColumn
+            // 
+            this.mALOPDataGridViewTextBoxColumn.DataPropertyName = "MALOP";
+            this.mALOPDataGridViewTextBoxColumn.HeaderText = "MALOP";
+            this.mALOPDataGridViewTextBoxColumn.Name = "mALOPDataGridViewTextBoxColumn";
+            // 
+            // tENLOPDataGridViewTextBoxColumn
+            // 
+            this.tENLOPDataGridViewTextBoxColumn.DataPropertyName = "TENLOP";
+            this.tENLOPDataGridViewTextBoxColumn.HeaderText = "TENLOP";
+            this.tENLOPDataGridViewTextBoxColumn.Name = "tENLOPDataGridViewTextBoxColumn";
+            // 
+            // mAKHDataGridViewTextBoxColumn
+            // 
+            this.mAKHDataGridViewTextBoxColumn.DataPropertyName = "MAKH";
+            this.mAKHDataGridViewTextBoxColumn.HeaderText = "MAKH";
+            this.mAKHDataGridViewTextBoxColumn.Name = "mAKHDataGridViewTextBoxColumn";
+            // 
             // frmKhoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(933, 449);
+            this.ClientSize = new System.Drawing.Size(933, 479);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -307,9 +408,15 @@ namespace THI_TN_TEST
             this.Load += new System.EventHandler(this.frmKhoa_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tN_CSDLPTDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kHOABindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tN_CSDLPTDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.mAKHTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tENKHTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKLOPKHOABindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -321,7 +428,6 @@ namespace THI_TN_TEST
         private DevExpress.XtraBars.BarManager barManager1;
         private DevExpress.XtraBars.Bar bar2;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
-        private DevExpress.XtraBars.Bar bar3;
         private DevExpress.XtraBars.Bar bar4;
         private DevExpress.XtraBars.BarDockControl barDockControlTop;
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
@@ -343,5 +449,14 @@ namespace THI_TN_TEST
         private DevExpress.XtraGrid.Columns.GridColumn colMAKH;
         private DevExpress.XtraGrid.Columns.GridColumn colTENKH;
         private DevExpress.XtraGrid.Columns.GridColumn colMACS;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private DevExpress.XtraEditors.TextEdit tENKHTextEdit;
+        private DevExpress.XtraEditors.TextEdit mAKHTextEdit;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource fKLOPKHOABindingSource;
+        private TN_CSDLPTDataSetTableAdapters.LOPTableAdapter lOPTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mALOPDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tENLOPDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mAKHDataGridViewTextBoxColumn;
     }
 }
