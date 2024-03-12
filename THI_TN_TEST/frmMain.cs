@@ -33,10 +33,10 @@ namespace THI_TN_TEST
 
        
 
-        public void HienThiMenu()
+        public void HienThiMenu(bool check)
         {
 
-            ribbonPage2.Visible = true;
+            ribbonPage2.Visible = check;
         }
 
         private void frmMain_Load(object sender, EventArgs e)

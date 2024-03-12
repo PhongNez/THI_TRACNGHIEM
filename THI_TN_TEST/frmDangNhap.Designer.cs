@@ -31,10 +31,10 @@ namespace THI_TN_TEST
         {
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.radiobtnSV = new System.Windows.Forms.RadioButton();
+            this.radiobtnGV = new System.Windows.Forms.RadioButton();
+            this.btnThoat = new System.Windows.Forms.Button();
+            this.btnDangNhap = new System.Windows.Forms.Button();
             this.txtMatKhau = new System.Windows.Forms.TextBox();
             this.txtTaiKhoan = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -49,8 +49,8 @@ namespace THI_TN_TEST
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.groupBox1);
-            this.panelControl1.Controls.Add(this.button2);
-            this.panelControl1.Controls.Add(this.button1);
+            this.panelControl1.Controls.Add(this.btnThoat);
+            this.panelControl1.Controls.Add(this.btnDangNhap);
             this.panelControl1.Controls.Add(this.txtMatKhau);
             this.panelControl1.Controls.Add(this.txtTaiKhoan);
             this.panelControl1.Controls.Add(this.label3);
@@ -65,8 +65,8 @@ namespace THI_TN_TEST
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Controls.Add(this.radiobtnSV);
+            this.groupBox1.Controls.Add(this.radiobtnGV);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(41, 105);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
@@ -77,56 +77,55 @@ namespace THI_TN_TEST
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chọn chức vụ:";
             // 
-            // radioButton2
+            // radiobtnSV
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(256, 28);
-            this.radioButton2.Margin = new System.Windows.Forms.Padding(4);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(122, 25);
-            this.radioButton2.TabIndex = 9;
-            this.radioButton2.Text = "SINH VIÊN";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            this.radiobtnSV.AutoSize = true;
+            this.radiobtnSV.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radiobtnSV.Location = new System.Drawing.Point(256, 28);
+            this.radiobtnSV.Margin = new System.Windows.Forms.Padding(4);
+            this.radiobtnSV.Name = "radiobtnSV";
+            this.radiobtnSV.Size = new System.Drawing.Size(122, 25);
+            this.radiobtnSV.TabIndex = 9;
+            this.radiobtnSV.Text = "SINH VIÊN";
+            this.radiobtnSV.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // radiobtnGV
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
-            this.radioButton1.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(8, 28);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(4);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(139, 25);
-            this.radioButton1.TabIndex = 8;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "GIẢNG VIÊN";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.radiobtnGV.AutoSize = true;
+            this.radiobtnGV.Checked = true;
+            this.radiobtnGV.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radiobtnGV.Location = new System.Drawing.Point(8, 28);
+            this.radiobtnGV.Margin = new System.Windows.Forms.Padding(4);
+            this.radiobtnGV.Name = "radiobtnGV";
+            this.radiobtnGV.Size = new System.Drawing.Size(139, 25);
+            this.radiobtnGV.TabIndex = 8;
+            this.radiobtnGV.TabStop = true;
+            this.radiobtnGV.Text = "GIẢNG VIÊN";
+            this.radiobtnGV.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnThoat
             // 
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(495, 334);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(206, 36);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Thoát";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnThoat.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThoat.Location = new System.Drawing.Point(495, 334);
+            this.btnThoat.Margin = new System.Windows.Forms.Padding(4);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(206, 36);
+            this.btnThoat.TabIndex = 7;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
-            // button1
+            // btnDangNhap
             // 
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(212, 334);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(191, 36);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Đăng nhập";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnDangNhap.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDangNhap.Location = new System.Drawing.Point(212, 334);
+            this.btnDangNhap.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDangNhap.Name = "btnDangNhap";
+            this.btnDangNhap.Size = new System.Drawing.Size(191, 36);
+            this.btnDangNhap.TabIndex = 6;
+            this.btnDangNhap.Text = "Đăng nhập";
+            this.btnDangNhap.UseVisualStyleBackColor = true;
+            this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
             // 
             // txtMatKhau
             // 
@@ -221,11 +220,11 @@ namespace THI_TN_TEST
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbChiNhanh;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnDangNhap;
         private System.Windows.Forms.TextBox txtMatKhau;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radiobtnSV;
+        private System.Windows.Forms.RadioButton radiobtnGV;
     }
 }

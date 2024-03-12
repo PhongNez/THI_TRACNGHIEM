@@ -28,6 +28,8 @@ namespace THI_TN_TEST
             // TODO: This line of code loads data into the 'tN_CSDLPTDataSet.LOP' table. You can move, or remove it, as needed.
             this.lOPTableAdapter.Connection.ConnectionString = Program.connstr;
             this.lOPTableAdapter.Fill(this.tN_CSDLPTDataSet.LOP);
+
+
         }
 
         private void mAKHLabel_Click(object sender, EventArgs e)
