@@ -20,12 +20,16 @@ namespace THI_TN_TEST
 
         private void frmKhoa_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'tN_CSDLPTDataSet.LOP' table. You can move, or remove it, as needed.
-            this.lOPTableAdapter.Fill(this.tN_CSDLPTDataSet.LOP);
+            
             // TODO: This line of code loads data into the 'tN_CSDLPTDataSet.KHOA' table. You can move, or remove it, as needed.
             tN_CSDLPTDataSet.EnforceConstraints = false;
             this.kHOATableAdapter.Connection.ConnectionString = Program.connstr;
             this.kHOATableAdapter.Fill(this.tN_CSDLPTDataSet.KHOA);
+            // TODO: This line of code loads data into the 'tN_CSDLPTDataSet.LOP' table. You can move, or remove it, as needed.
+            this.lOPTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.lOPTableAdapter.Fill(this.tN_CSDLPTDataSet.LOP);
+
+
         }
 
         private void mAKHLabel_Click(object sender, EventArgs e)
@@ -34,6 +38,17 @@ namespace THI_TN_TEST
         }
 
         private void tENKHLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void thêmToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fKLOPKHOABindingSource.AddNew();
+            ((DataRowView)fKLOPKHOABindingSource[fKLOPKHOABindingSource.Position])["MaKH"] = mAKHTextEdit.Text;
+        }
+
+        private void mAKHTextEdit_EditValueChanged(object sender, EventArgs e)
         {
 
         }

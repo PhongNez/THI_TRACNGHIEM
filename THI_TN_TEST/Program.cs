@@ -26,12 +26,14 @@ namespace THI_TN_TEST
         public static String mHoten;
         public static String mGroup;
         public static frmMain frmChinh;
-
+       
         public static String connstr_publisher = @"Data Source=DESKTOP-82REPVE\MAIN;Initial Catalog=TN_CSDLPT;Integrated Security=True";
 
         public static BindingSource bds_dspm = new BindingSource();
 
-        public static int KetNoi()
+        public static int mCoso = 0;
+
+       public static int KetNoi()
         {
             if(Program.conn != null && Program.conn.State == ConnectionState.Open)
             {
@@ -46,10 +48,33 @@ namespace THI_TN_TEST
                 Program.conn.Open();
                 return 1;
             }
-            catch(Exception e)
+            catch(Exception ex)
             {
                 Console.WriteLine("heloo: " + Program.connstr);
                 MessageBox.Show("Lỗi kết nối cơ sở dữ liệu. \nBạn xem lại user name và password. \n" , "", MessageBoxButtons.OK);
+                return 0;
+            }
+        }
+
+        public static int KetNoiSinhVien()
+        {
+            if (Program.conn != null && Program.conn.State == ConnectionState.Open)
+            {
+                Program.conn.Close();
+            }
+            try
+            {
+                Program.connstr = "Data Source=" + Program.servername + ";Initial Catalog=" +
+                    Program.database + ";User ID=" +
+                   "sinhvienketnoi" + ";password=" + "123456";
+                Program.conn.ConnectionString = Program.connstr;
+                Program.conn.Open();
+                return 1;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("heloo: " + Program.connstr);
+                MessageBox.Show("Lỗi kết nối cơ sở dữ liệu. \nBạn xem lại user name và password. \n", "", MessageBoxButtons.OK);
                 return 0;
             }
         }

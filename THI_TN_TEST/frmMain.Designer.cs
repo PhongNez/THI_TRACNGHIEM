@@ -42,8 +42,10 @@ namespace THI_TN_TEST
             this.MANV = new System.Windows.Forms.ToolStripStatusLabel();
             this.HOTEN = new System.Windows.Forms.ToolStripStatusLabel();
             this.NHOM = new System.Windows.Forms.ToolStripStatusLabel();
+
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -72,14 +74,20 @@ namespace THI_TN_TEST
             this.btnDangNhap.Caption = "Đăng nhập";
             this.btnDangNhap.Id = 1;
             this.btnDangNhap.Name = "btnDangNhap";
-            this.btnDangNhap.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
+            this.btnDangNhap.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDangNhap_ItemClick);
             // 
             // btnMonHoc
             // 
             this.btnMonHoc.Caption = "Môn học";
             this.btnMonHoc.Id = 2;
             this.btnMonHoc.Name = "btnMonHoc";
-            this.btnMonHoc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick_1);
+            this.btnMonHoc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnMonHoc_ItemClick);
+            // 
+            // btnMonHoc
+            // 
+            this.btnMonHoc.Caption = "Môn học";
+            this.btnMonHoc.Id = 2;
+            this.btnMonHoc.Name = "btnMonHoc";
             // 
             // ribbonPage1
             // 
@@ -97,6 +105,7 @@ namespace THI_TN_TEST
             // ribbonPage2
             // 
             this.ribbonPage2.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+
             this.ribbonPageGroup2,
             this.ribbonPageGroup3});
             this.ribbonPage2.Name = "ribbonPage2";
@@ -145,6 +154,7 @@ namespace THI_TN_TEST
             this.NHOM.Size = new System.Drawing.Size(45, 17);
             this.NHOM.Text = "NHOM";
             // 
+
             // ribbonPageGroup3
             // 
             this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem1);
@@ -158,6 +168,7 @@ namespace THI_TN_TEST
             this.barButtonItem1.Name = "barButtonItem1";
             this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick_2);
             // 
+
             // frmMain
             // 
             this.Appearance.Options.UseFont = true;

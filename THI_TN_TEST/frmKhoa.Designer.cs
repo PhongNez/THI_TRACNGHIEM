@@ -30,9 +30,9 @@ namespace THI_TN_TEST
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmKhoa));
             System.Windows.Forms.Label mAKHLabel;
             System.Windows.Forms.Label tENKHLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmKhoa));
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
@@ -59,14 +59,19 @@ namespace THI_TN_TEST
             this.kHOATableAdapter = new THI_TN_TEST.TN_CSDLPTDataSetTableAdapters.KHOATableAdapter();
             this.tableAdapterManager = new THI_TN_TEST.TN_CSDLPTDataSetTableAdapters.TableAdapterManager();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.mAKHTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.tENKHTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.mAKHTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.fKLOPKHOABindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.lOPTableAdapter = new THI_TN_TEST.TN_CSDLPTDataSetTableAdapters.LOPTableAdapter();
             this.mALOPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tENLOPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mAKHDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.thêmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sửaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.xóaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fKLOPKHOABindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lOPTableAdapter = new THI_TN_TEST.TN_CSDLPTDataSetTableAdapters.LOPTableAdapter();
+            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             mAKHLabel = new System.Windows.Forms.Label();
             tENKHLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
@@ -75,11 +80,34 @@ namespace THI_TN_TEST
             ((System.ComponentModel.ISupportInitialize)(this.tN_CSDLPTDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.mAKHTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tENKHTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mAKHTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fKLOPKHOABindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            this.groupControl1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // mAKHLabel
+            // 
+            mAKHLabel.AutoSize = true;
+            mAKHLabel.Location = new System.Drawing.Point(12, 26);
+            mAKHLabel.Name = "mAKHLabel";
+            mAKHLabel.Size = new System.Drawing.Size(54, 13);
+            mAKHLabel.TabIndex = 0;
+            mAKHLabel.Text = "Mã  khoa:";
+            mAKHLabel.Click += new System.EventHandler(this.mAKHLabel_Click);
+            // 
+            // tENKHLabel
+            // 
+            tENKHLabel.AutoSize = true;
+            tENKHLabel.Location = new System.Drawing.Point(12, 62);
+            tENKHLabel.Name = "tENKHLabel";
+            tENKHLabel.Size = new System.Drawing.Size(55, 13);
+            tENKHLabel.TabIndex = 2;
+            tENKHLabel.Text = "Tên khoa:";
+            tENKHLabel.Click += new System.EventHandler(this.tENKHLabel_Click);
             // 
             // bar1
             // 
@@ -115,7 +143,7 @@ namespace THI_TN_TEST
             // 
             this.bar2.BarName = "Tools";
             this.bar2.DockCol = 0;
-            this.bar2.DockRow = 1;
+            this.bar2.DockRow = 0;
             this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem1, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
@@ -237,11 +265,12 @@ namespace THI_TN_TEST
             // gridControl1
             // 
             this.gridControl1.DataSource = this.kHOABindingSource;
-            this.gridControl1.Location = new System.Drawing.Point(0, 51);
+            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl1.Location = new System.Drawing.Point(0, 24);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(933, 200);
+            this.gridControl1.Size = new System.Drawing.Size(933, 435);
             this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -299,47 +328,18 @@ namespace THI_TN_TEST
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.groupBox1.AutoSize = true;
             this.groupBox1.Controls.Add(tENKHLabel);
             this.groupBox1.Controls.Add(this.tENKHTextEdit);
             this.groupBox1.Controls.Add(mAKHLabel);
             this.groupBox1.Controls.Add(this.mAKHTextEdit);
-            this.groupBox1.Location = new System.Drawing.Point(0, 248);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.groupBox1.Location = new System.Drawing.Point(2, 23);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(489, 248);
+            this.groupBox1.Size = new System.Drawing.Size(221, 184);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
-            // 
-            // mAKHLabel
-            // 
-            mAKHLabel.AutoSize = true;
-            mAKHLabel.Location = new System.Drawing.Point(12, 26);
-            mAKHLabel.Name = "mAKHLabel";
-            mAKHLabel.Size = new System.Drawing.Size(54, 13);
-            mAKHLabel.TabIndex = 0;
-            mAKHLabel.Text = "Mã  khoa:";
-            mAKHLabel.Click += new System.EventHandler(this.mAKHLabel_Click);
-            // 
-            // mAKHTextEdit
-            // 
-            this.mAKHTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.kHOABindingSource, "MAKH", true));
-            this.mAKHTextEdit.Location = new System.Drawing.Point(73, 23);
-            this.mAKHTextEdit.MenuManager = this.barManager1;
-            this.mAKHTextEdit.Name = "mAKHTextEdit";
-            this.mAKHTextEdit.Size = new System.Drawing.Size(118, 20);
-            this.mAKHTextEdit.TabIndex = 1;
-            // 
-            // tENKHLabel
-            // 
-            tENKHLabel.AutoSize = true;
-            tENKHLabel.Location = new System.Drawing.Point(12, 62);
-            tENKHLabel.Name = "tENKHLabel";
-            tENKHLabel.Size = new System.Drawing.Size(55, 13);
-            tENKHLabel.TabIndex = 2;
-            tENKHLabel.Text = "Tên khoa:";
-            tENKHLabel.Click += new System.EventHandler(this.tENKHLabel_Click);
             // 
             // tENKHTextEdit
             // 
@@ -350,6 +350,16 @@ namespace THI_TN_TEST
             this.tENKHTextEdit.Size = new System.Drawing.Size(142, 20);
             this.tENKHTextEdit.TabIndex = 3;
             // 
+            // mAKHTextEdit
+            // 
+            this.mAKHTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.kHOABindingSource, "MAKH", true));
+            this.mAKHTextEdit.Location = new System.Drawing.Point(73, 23);
+            this.mAKHTextEdit.MenuManager = this.barManager1;
+            this.mAKHTextEdit.Name = "mAKHTextEdit";
+            this.mAKHTextEdit.Size = new System.Drawing.Size(118, 20);
+            this.mAKHTextEdit.TabIndex = 1;
+            this.mAKHTextEdit.EditValueChanged += new System.EventHandler(this.mAKHTextEdit_EditValueChanged);
+            // 
             // dataGridView1
             // 
             this.dataGridView1.AutoGenerateColumns = false;
@@ -358,20 +368,13 @@ namespace THI_TN_TEST
             this.mALOPDataGridViewTextBoxColumn,
             this.tENLOPDataGridViewTextBoxColumn,
             this.mAKHDataGridViewTextBoxColumn});
+            this.dataGridView1.ContextMenuStrip = this.contextMenuStrip1;
             this.dataGridView1.DataSource = this.fKLOPKHOABindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(495, 248);
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(223, 23);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(438, 248);
+            this.dataGridView1.Size = new System.Drawing.Size(708, 184);
             this.dataGridView1.TabIndex = 10;
-            // 
-            // fKLOPKHOABindingSource
-            // 
-            this.fKLOPKHOABindingSource.DataMember = "FK_LOP_KHOA";
-            this.fKLOPKHOABindingSource.DataSource = this.kHOABindingSource;
-            // 
-            // lOPTableAdapter
-            // 
-            this.lOPTableAdapter.ClearBeforeFill = true;
             // 
             // mALOPDataGridViewTextBoxColumn
             // 
@@ -391,13 +394,61 @@ namespace THI_TN_TEST
             this.mAKHDataGridViewTextBoxColumn.HeaderText = "MAKH";
             this.mAKHDataGridViewTextBoxColumn.Name = "mAKHDataGridViewTextBoxColumn";
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.thêmToolStripMenuItem,
+            this.sửaToolStripMenuItem,
+            this.xóaToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(105, 70);
+            // 
+            // thêmToolStripMenuItem
+            // 
+            this.thêmToolStripMenuItem.Name = "thêmToolStripMenuItem";
+            this.thêmToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.thêmToolStripMenuItem.Text = "Thêm";
+            this.thêmToolStripMenuItem.Click += new System.EventHandler(this.thêmToolStripMenuItem_Click);
+            // 
+            // sửaToolStripMenuItem
+            // 
+            this.sửaToolStripMenuItem.Name = "sửaToolStripMenuItem";
+            this.sửaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sửaToolStripMenuItem.Text = "Sửa";
+            // 
+            // xóaToolStripMenuItem
+            // 
+            this.xóaToolStripMenuItem.Name = "xóaToolStripMenuItem";
+            this.xóaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.xóaToolStripMenuItem.Text = "Xóa";
+            // 
+            // fKLOPKHOABindingSource
+            // 
+            this.fKLOPKHOABindingSource.DataMember = "FK_LOP_KHOA";
+            this.fKLOPKHOABindingSource.DataSource = this.kHOABindingSource;
+            // 
+            // lOPTableAdapter
+            // 
+            this.lOPTableAdapter.ClearBeforeFill = true;
+            // 
+            // groupControl1
+            // 
+            this.groupControl1.Controls.Add(this.dataGridView1);
+            this.groupControl1.Controls.Add(this.groupBox1);
+            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupControl1.Location = new System.Drawing.Point(0, 250);
+            this.groupControl1.Name = "groupControl1";
+            this.groupControl1.Size = new System.Drawing.Size(933, 209);
+            this.groupControl1.TabIndex = 16;
+            this.groupControl1.Text = "groupControl1";
+            // 
             // frmKhoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(933, 479);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -413,10 +464,14 @@ namespace THI_TN_TEST
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.mAKHTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tENKHTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mAKHTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.fKLOPKHOABindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            this.groupControl1.ResumeLayout(false);
+            this.groupControl1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -458,5 +513,10 @@ namespace THI_TN_TEST
         private System.Windows.Forms.DataGridViewTextBoxColumn mALOPDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tENLOPDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn mAKHDataGridViewTextBoxColumn;
+        private DevExpress.XtraEditors.GroupControl groupControl1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem thêmToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sửaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem xóaToolStripMenuItem;
     }
 }

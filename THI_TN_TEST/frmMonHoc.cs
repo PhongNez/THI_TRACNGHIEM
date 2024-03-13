@@ -121,7 +121,7 @@ namespace THI_TN_TEST
 
         private void btnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Program.frmChinh.Close();
+            this.Close();
         }
 
         private void btnGhi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -138,6 +138,13 @@ namespace THI_TN_TEST
                 txtTENMH.Focus();
                 return;
             }
+
+            if (txtMAMH.Text.Length > 5)
+            {
+                MessageBox.Show("Mã môn học bạn nhập vượt quá kí tự cho phép", "Cảnh báo");
+                txtMAMH.Focus();
+                return;
+            }
             try
             {
                 bdsMH.EndEdit();
@@ -151,9 +158,17 @@ namespace THI_TN_TEST
                 return;
             }
             gcMonHoc.Enabled = true;
+            groupBox1.Enabled = false;
             btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnReload.Enabled = btnThoat.Enabled = true;
             btnUndo.Enabled = btnGhi.Enabled = false;
 
+        }
+
+        private void btnSua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            groupBox1.Enabled = true;
+            btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled =btnReload.Enabled=btnThoat.Enabled= false;
+            btnGhi.Enabled = btnUndo.Enabled = true;
         }
     }
 }

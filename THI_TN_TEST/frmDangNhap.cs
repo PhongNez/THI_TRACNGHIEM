@@ -14,7 +14,7 @@ namespace THI_TN_TEST
     public partial class frmDangNhap : Form
     {
         private SqlConnection conn_publisher = new SqlConnection();
-        private string chucvu;
+    
         private void LayDSPM(String cmd)
         {
             DataTable dt = new DataTable();
@@ -77,28 +77,41 @@ namespace THI_TN_TEST
             cmbChiNhanh.SelectedIndex = 1; cmbChiNhanh.SelectedIndex = 0;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnDangNhap_Click(object sender, EventArgs e)
         {
             //MessageBox.Show("Tên server: " + cmbChiNhanh.SelectedValue+ "Tên tài khoản: "+ txtTaiKhoan.Text + " Mật khẩu: " + txtMatKhau.Text);
 
-            if (txtTaiKhoan.Text.Trim() =="" && txtMatKhau.Text.Trim()=="")
+            if (txtTaiKhoan.Text.Trim() == "" || txtMatKhau.Text.Trim() == "")
             {
-                MessageBox.Show("Bạn chưa nhập tài khoản hoặc mật khẩu","",MessageBoxButtons.OK);
+                MessageBox.Show("Bạn chưa nhập tài khoản hoặc mật khẩu", "", MessageBoxButtons.OK);
                 return;
             }
             // thiếu
             Program.mlogin = txtTaiKhoan.Text;
             Program.password = txtMatKhau.Text;
-            if (Program.KetNoi() == 0)
-            { return; }
+
             //MessageBox.Show("Kết nối thành công ", "", MessageBoxButtons.OK);
-            string strLenh= "EXEC SP_Lay_Thong_Tin_GV_Tu_Login '" + Program.mlogin + "'";
-            if (chucvu == "giangvien") { 
-            strLenh = "EXEC SP_Lay_Thong_Tin_GV_Tu_Login '" + Program.mlogin + "'";
-            }
-            else if (chucvu == "sinhvien")
+            string strLenh = "";
+            if (radiobtnGV.Checked == true)
             {
-                strLenh = "EXEC SP_Lay_Thong_Tin_SV_Tu_Login '" + Program.mlogin + "'";
+
+                if (Program.KetNoi() == 0)
+                { return; }
+                Program.mCoso = cmbChiNhanh.SelectedIndex;//Lấy index hiện đang được chọn để hỗ trợ rẽ cơ sở
+                strLenh = "EXEC SP_Lay_Thong_Tin_GV_Tu_Login '" + Program.mlogin + "'";
+            }
+            else if (radiobtnSV.Checked == true)
+            {
+                if (Program.KetNoiSinhVien() == 0)
+                {
+                    return;
+                }
+                strLenh = "EXEC SP_LOGIN_SV '" + Program.mlogin + "'," + "'" + Program.password + "'";
             }
             Program.myReader = Program.ExecSqlDataReader(strLenh);
             if (Program.myReader == null)
@@ -110,11 +123,11 @@ namespace THI_TN_TEST
             Program.username = Program.myReader.GetString(0);//username
             if (Convert.IsDBNull(Program.username))
             {
-                MessageBox.Show("Login bạn nhập không có quyền truy cập database./nBạn xem lại username,password","",MessageBoxButtons.OK);
+                MessageBox.Show("Login bạn nhập không có quyền truy cập database./nBạn xem lại username,password", "", MessageBoxButtons.OK);
                 return;
             }
 
-            
+
             if (Program.myReader.IsDBNull(1))
             {
                 MessageBox.Show("Tài khoản của bạn không hợp lệ.\nBạn xem lại lựa chọn", "", MessageBoxButtons.OK);
@@ -124,22 +137,19 @@ namespace THI_TN_TEST
             Program.mGroup = Program.myReader.GetString(2);
             Program.myReader.Close();
             Program.conn.Close();
-            Program.frmChinh.MANV.Text = "Mã NV = "+Program.username;
-            Program.frmChinh.HOTEN.Text = "Họ tên = " +  Program.mHoten;
+            Program.frmChinh.MANV.Text = "Mã NV = " + Program.username;
+            Program.frmChinh.HOTEN.Text = "Họ tên = " + Program.mHoten;
             Program.frmChinh.NHOM.Text = "Nhóm = " + Program.mGroup;
             //Program.frmChinh.ribbonPage2
-            Program.frmChinh.HienThiMenu();
-        
-        }
+            if (Program.mGroup == "SINHVIEN")
+            {
+                Program.frmChinh.HienThiMenu(false);
+            }
+            else
+            {
+                Program.frmChinh.HienThiMenu(true);
+            }
 
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-            chucvu = "giangvien";
-        }
-
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
-        {
-            chucvu = "sinhvien";
         }
     }
 }

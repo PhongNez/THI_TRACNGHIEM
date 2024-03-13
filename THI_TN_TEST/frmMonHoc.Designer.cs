@@ -84,20 +84,26 @@ namespace THI_TN_TEST
             // mAMHLabel
             // 
             mAMHLabel.AutoSize = true;
+            mAMHLabel.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             mAMHLabel.Location = new System.Drawing.Point(13, 42);
             mAMHLabel.Name = "mAMHLabel";
-            mAMHLabel.Size = new System.Drawing.Size(41, 13);
+
+            mAMHLabel.Size = new System.Drawing.Size(115, 21);
+
             mAMHLabel.TabIndex = 0;
-            mAMHLabel.Text = "MAMH:";
+            mAMHLabel.Text = "Mã Môn Học:";
             // 
             // tENMHLabel
             // 
             tENMHLabel.AutoSize = true;
-            tENMHLabel.Location = new System.Drawing.Point(245, 42);
+            tENMHLabel.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tENMHLabel.Location = new System.Drawing.Point(376, 42);
             tENMHLabel.Name = "tENMHLabel";
-            tENMHLabel.Size = new System.Drawing.Size(45, 13);
+
+            tENMHLabel.Size = new System.Drawing.Size(120, 21);
+
             tENMHLabel.TabIndex = 2;
-            tENMHLabel.Text = "TENMH:";
+            tENMHLabel.Text = "Tên Môn Học:";
             // 
             // barManager1
             // 
@@ -152,6 +158,7 @@ namespace THI_TN_TEST
             this.btnSua.Caption = "Hiệu chỉnh";
             this.btnSua.Id = 1;
             this.btnSua.Name = "btnSua";
+            this.btnSua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSua_ItemClick);
             // 
             // btnGhi
             // 
@@ -310,6 +317,7 @@ namespace THI_TN_TEST
             // 
             // colMAMH
             // 
+            this.colMAMH.Caption = "Mã Môn Học";
             this.colMAMH.FieldName = "MAMH";
             this.colMAMH.MinWidth = 25;
             this.colMAMH.Name = "colMAMH";
@@ -319,6 +327,7 @@ namespace THI_TN_TEST
             // 
             // colTENMH
             // 
+            this.colTENMH.Caption = "Tên Môn Học";
             this.colTENMH.FieldName = "TENMH";
             this.colTENMH.MinWidth = 25;
             this.colTENMH.Name = "colTENMH";
@@ -353,17 +362,23 @@ namespace THI_TN_TEST
             // txtTENMH
             // 
             this.txtTENMH.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsMH, "TENMH", true));
-            this.txtTENMH.Location = new System.Drawing.Point(308, 39);
+            this.txtTENMH.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTENMH.Location = new System.Drawing.Point(502, 39);
             this.txtTENMH.Name = "txtTENMH";
-            this.txtTENMH.Size = new System.Drawing.Size(100, 21);
+
+            this.txtTENMH.Size = new System.Drawing.Size(237, 28);
+
             this.txtTENMH.TabIndex = 3;
             // 
             // txtMAMH
             // 
             this.txtMAMH.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsMH, "MAMH", true));
-            this.txtMAMH.Location = new System.Drawing.Point(69, 39);
+            this.txtMAMH.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMAMH.Location = new System.Drawing.Point(134, 39);
             this.txtMAMH.Name = "txtMAMH";
-            this.txtMAMH.Size = new System.Drawing.Size(100, 21);
+
+            this.txtMAMH.Size = new System.Drawing.Size(136, 28);
+
             this.txtMAMH.TabIndex = 1;
             // 
             // bdsGVDK

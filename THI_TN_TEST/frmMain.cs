@@ -31,7 +31,37 @@ namespace THI_TN_TEST
                 return null;
         }
 
-        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+       
+
+        public void HienThiMenu(bool check)
+        {
+
+            ribbonPage2.Visible = check;
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            frmDangNhap f = new frmDangNhap();
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void btnMonHoc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(frmMONHOC));
+            if (frm != null)
+            {
+                frm.Activate();
+            }
+            else
+            {
+                frmMONHOC f = new frmMONHOC();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void btnDangNhap_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Form frm = this.CheckExists(typeof(frmDangNhap));
             if (frm != null)
@@ -44,26 +74,6 @@ namespace THI_TN_TEST
                 f.MdiParent = this;
                 f.Show();
             }
-        }
-
-        public void HienThiMenu()
-        {
-
-            ribbonPage2.Visible = true;
-        }
-
-        private void frmMain_Load(object sender, EventArgs e)
-        {
-            frmDangNhap f = new frmDangNhap();
-            f.MdiParent = this;
-            f.Show();
-        }
-
-        private void barButtonItem1_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            frmMONHOC f = new frmMONHOC();
-            f.MdiParent = this;
-            f.Show();
         }
 
         private void barButtonItem1_ItemClick_2(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

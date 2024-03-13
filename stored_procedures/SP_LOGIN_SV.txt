@@ -1,0 +1,22 @@
+USE [TN_CSDLPT]
+GO
+
+/****** Object:  StoredProcedure [dbo].[SP_LOGIN_SV]    Script Date: 3/12/2024 2:39:44 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+create proc [dbo].[SP_LOGIN_SV] @masv char(10),@password nvarchar(35)
+as
+declare @NHOM char(10)
+if exists(select masv from SINHVIEN where MASV=@masv and password=@password)
+begin
+select MASV,HO + ' ' + TEN as HOTEN,NHOM='SINHVIEN' from SINHVIEN where MASV=@masv
+end
+else
+raiserror(N'Mật khẩu không đúng hoặc mã sinh viên không tồn tại',16,1)
+GO
+
+
