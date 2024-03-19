@@ -13,6 +13,7 @@ namespace THI_TN_TEST
 {
     public partial class frmKhoa : DevExpress.XtraEditors.XtraForm
     {
+        private int vitri = 0;
         public frmKhoa()
         {
             InitializeComponent();
@@ -40,6 +41,78 @@ namespace THI_TN_TEST
         private void tENKHLabel_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void thêmToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fKLOPKHOABindingSource.AddNew();
+            ((DataRowView)fKLOPKHOABindingSource[fKLOPKHOABindingSource.Position])["MaKH"] = txtMaKhoa.Text;
+        }
+
+        private void mAKHTextEdit_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            txtMaKhoa.Focus();
+            btnHieuChinh.Enabled = false;
+            vitri = Khoabds.Position;
+            Khoabds.AddNew();
+        }
+
+        private void btnGhi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (txtMaKhoa.Text.Trim() == "")
+            {
+                MessageBox.Show("Chưa nhập mã khoa.", "Thông báo");
+                txtMaKhoa.Focus();
+                return;
+            }
+            if (txtTenKhoa.Text.Trim() == "")
+            {
+                MessageBox.Show("Chưa nhập tên khoa.", "Thông báo");
+                txtTenKhoa.Focus();
+                return;
+            }
+            try
+            {
+                ((DataRowView)Khoabds[Khoabds.Position])["MaCS"] = ((DataRowView)Khoabds[Khoabds.Position-1])["MaCS"].ToString();
+                Khoabds.EndEdit();
+                this.kHOATableAdapter.Connection.ConnectionString = Program.connstr;
+                this.kHOATableAdapter.Update(this.tN_CSDLPTDataSet.KHOA);
+                Khoabds.ResetCurrentItem();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi ghi khoa. \n" + ex.Message, "", MessageBoxButtons.OK);
+                return;
+            }
+           
+        }
+
+        private void UpdateLop_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                fKLOPKHOABindingSource.EndEdit();
+                this.lOPTableAdapter.Connection.ConnectionString = Program.connstr;
+                this.lOPTableAdapter.Update(this.tN_CSDLPTDataSet.LOP);
+                Khoabds.ResetCurrentItem();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi ghi lớp. \n" + ex.Message, "", MessageBoxButtons.OK);
+                return;
+            }
+
+        }
+
+        private void DeleteLop_Click(object sender, EventArgs e)
+        {
+            fKLOPKHOABindingSource.RemoveCurrent();
+            this.lOPTableAdapter.Update(this.tN_CSDLPTDataSet.LOP);
         }
     }
 }
