@@ -94,7 +94,7 @@ namespace THI_TN_TEST
             // thiếu
             Program.mlogin = txtTaiKhoan.Text;
             Program.password = txtMatKhau.Text;
-
+           
             //MessageBox.Show("Kết nối thành công ", "", MessageBoxButtons.OK);
             string strLenh = "";
             if (radiobtnGV.Checked == true)
@@ -103,6 +103,9 @@ namespace THI_TN_TEST
                 if (Program.KetNoi() == 0)
                 { return; }
                 Program.mCoso = cmbChiNhanh.SelectedIndex;//Lấy index hiện đang được chọn để hỗ trợ rẽ cơ sở
+                
+                Program.mloginDN = Program.mlogin;
+                Program.passwordDN = Program.password;
                 strLenh = "EXEC SP_Lay_Thong_Tin_GV_Tu_Login '" + Program.mlogin + "'";
             }
             else if (radiobtnSV.Checked == true)

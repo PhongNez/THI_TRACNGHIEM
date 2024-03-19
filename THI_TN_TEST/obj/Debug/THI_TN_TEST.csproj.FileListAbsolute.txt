@@ -188,3 +188,4 @@ D:\Projects\THI_TRACNGHIEM\THI_TN_TEST\obj\Debug\THI_TN_TEST.exe
 D:\Projects\THI_TRACNGHIEM\THI_TN_TEST\obj\Debug\THI_TN_TEST.pdb
 D:\Projects\THI_TRACNGHIEM\THI_TN_TEST\obj\Debug\THI_TN_TEST.frmKhoa.resources
 E:\Basic-C-Sharp\THI_TN_TEST\THI_TN_TEST\obj\Debug\THI_TN_TEST.frmKhoa.resources
+E:\Basic-C-Sharp\THI_TN_TEST\THI_TN_TEST\obj\Debug\THI_TN_TEST.frmNhapSinhVien.resources

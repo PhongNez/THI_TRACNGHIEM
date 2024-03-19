@@ -32,7 +32,10 @@ namespace THI_TN_TEST
         public static BindingSource bds_dspm = new BindingSource();
 
         public static int mCoso = 0;
-
+        public static String remotelogin = "HTKN";
+        public static String remotepassword = "123456";
+        public static String mloginDN = "";
+        public static String passwordDN = "";
        public static int KetNoi()
         {
             if(Program.conn != null && Program.conn.State == ConnectionState.Open)

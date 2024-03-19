@@ -82,5 +82,20 @@ namespace THI_TN_TEST
             f.MdiParent = this;
             f.Show();
         }
+
+        private void btnSinhVien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(frmNhapSinhVien));
+            if (frm != null)
+            {
+                frm.Activate();
+            }
+            else
+            {
+                frmNhapSinhVien f = new frmNhapSinhVien();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
     }
 }

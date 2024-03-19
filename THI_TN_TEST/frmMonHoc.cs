@@ -57,7 +57,7 @@ namespace THI_TN_TEST
         private void btnUndo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             bdsMH.CancelEdit();
-            if (btnThem.Enabled == true)
+            if (btnThem.Enabled == false)
             {
                 bdsMH.Position = vitri;
             }
@@ -107,8 +107,8 @@ namespace THI_TN_TEST
                     mamh = Convert.ToString(((DataRowView)bdsMH[bdsMH.Position])["MAMH"]);
                     MessageBox.Show("Bạn đã xóa thành công " + mamh, "", MessageBoxButtons.OK);
                     bdsMH.RemoveCurrent();
-                    //this.MONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
-                    //this.MONHOCTableAdapter.Update(this.DS_MH.MONHOC);
+                    this.MONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
+                    this.MONHOCTableAdapter.Update(this.DS_MH.MONHOC);
                 }
                 catch (Exception ex)
                 {
