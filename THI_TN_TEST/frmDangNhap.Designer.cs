@@ -135,6 +135,7 @@ namespace THI_TN_TEST
             this.txtMatKhau.Name = "txtMatKhau";
             this.txtMatKhau.Size = new System.Drawing.Size(582, 28);
             this.txtMatKhau.TabIndex = 5;
+            this.txtMatKhau.Text = "123456";
             // 
             // txtTaiKhoan
             // 
@@ -144,6 +145,7 @@ namespace THI_TN_TEST
             this.txtTaiKhoan.Name = "txtTaiKhoan";
             this.txtTaiKhoan.Size = new System.Drawing.Size(582, 28);
             this.txtTaiKhoan.TabIndex = 4;
+            this.txtTaiKhoan.Text = "kdt";
             // 
             // label3
             // 

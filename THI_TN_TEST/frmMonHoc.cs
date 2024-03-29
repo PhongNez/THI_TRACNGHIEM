@@ -13,6 +13,7 @@ namespace THI_TN_TEST
     public partial class frmMONHOC : Form
     {
         int vitri = 0;
+        int checkThemSua = 0;// 0 là thêm, 1 là sửa
         public frmMONHOC()
         {
             InitializeComponent();
@@ -45,6 +46,8 @@ namespace THI_TN_TEST
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            checkThemSua = 0;
+            txtMAMH.Enabled = true;
             vitri = bdsMH.Position;
             groupBox1.Enabled = true;
             bdsMH.AddNew();
@@ -56,6 +59,7 @@ namespace THI_TN_TEST
 
         private void btnUndo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            this.MONHOCTableAdapter.Fill(this.DS_MH.MONHOC);//Mục đích xóa các ô thừa
             bdsMH.CancelEdit();
             if (btnThem.Enabled == false)
             {
@@ -112,7 +116,6 @@ namespace THI_TN_TEST
                 }
                 catch (Exception ex)
                 {
-                    this.MONHOCTableAdapter.Fill(this.DS_MH.MONHOC);
                     bdsMH.Position = bdsMH.Find("mamh", mamh);
                     return;
                 }
@@ -139,14 +142,37 @@ namespace THI_TN_TEST
                 return;
             }
 
-            if (txtMAMH.Text.Length > 5)
-            {
-                MessageBox.Show("Mã môn học bạn nhập vượt quá kí tự cho phép", "Cảnh báo");
-                txtMAMH.Focus();
-                return;
-            }
+            txtMAMH.Text = txtMAMH.Text.Trim();
+            txtTENMH.Text = txtTENMH.Text.Trim();
+           
             try
             {
+                if (checkThemSua == 0) {
+                    //Kiểm tra mã môn có trùng trên các site
+                    string strLenh = "EXEC sp_KiemTraMaMonHoc '" + txtMAMH.Text + "'";
+                    Program.myReader = Program.ExecSqlDataReader(strLenh);
+                    Program.myReader.Read();
+                    int result = Program.myReader.GetInt32(0);
+                    Program.myReader.Close();
+                    if (result == 1)
+                    {
+                        MessageBox.Show("Mã MÔN HỌC đã tồn tại trong hệ thống", "Thông báo", MessageBoxButtons.OK);
+                        return;
+                    }
+              
+ }
+                //Kiểm tra tên trùng
+                string strTenMonHoc = "EXEC sp_KiemTraTenMonHoc N'" + txtTENMH.Text + "'";
+                Program.myReader = Program.ExecSqlDataReader(strTenMonHoc);
+                Program.myReader.Read();
+                int resultTen = Program.myReader.GetInt32(0);
+                Program.myReader.Close();
+                if (resultTen == 1)
+                {
+                    MessageBox.Show("Tên MÔN HỌC đã tồn tại trong hệ thống", "Thông báo", MessageBoxButtons.OK);
+                    return;
+                }
+
                 bdsMH.EndEdit();
                 this.MONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
                 this.MONHOCTableAdapter.Update(this.DS_MH.MONHOC);
@@ -155,6 +181,7 @@ namespace THI_TN_TEST
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi ghi môn học. \n" + ex.Message, "", MessageBoxButtons.OK);
+                this.MONHOCTableAdapter.Fill(this.DS_MH.MONHOC);
                 return;
             }
             gcMonHoc.Enabled = true;
@@ -166,6 +193,9 @@ namespace THI_TN_TEST
 
         private void btnSua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            checkThemSua = 1;
+            txtMAMH.Enabled = false;// Không cho sửa mã môn học
+            gcMonHoc.Enabled = false;
             groupBox1.Enabled = true;
             btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled =btnReload.Enabled=btnThoat.Enabled= false;
             btnGhi.Enabled = btnUndo.Enabled = true;
