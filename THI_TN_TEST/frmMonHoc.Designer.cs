@@ -373,6 +373,7 @@ namespace THI_TN_TEST
             this.txtMAMH.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsMH, "MAMH", true));
             this.txtMAMH.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMAMH.Location = new System.Drawing.Point(134, 39);
+            this.txtMAMH.MaxLength = 5;
             this.txtMAMH.Name = "txtMAMH";
             this.txtMAMH.Size = new System.Drawing.Size(136, 28);
             this.txtMAMH.TabIndex = 1;

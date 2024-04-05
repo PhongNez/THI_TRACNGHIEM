@@ -23,6 +23,8 @@ namespace THI_TN_TEST
             da.Fill(dt);
             conn_publisher.Close();
             Program.bds_dspm.DataSource = dt;
+            Program.bds_dspm.Sort="TENCN";
+            Program.bds_dspm.RemoveAt(2);
             cmbChiNhanh.DataSource = Program.bds_dspm;
             cmbChiNhanh.DisplayMember = "TENCN";
             cmbChiNhanh.ValueMember = "TENSERVER";

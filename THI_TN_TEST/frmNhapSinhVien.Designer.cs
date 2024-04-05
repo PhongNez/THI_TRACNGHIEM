@@ -688,7 +688,7 @@ namespace THI_TN_TEST
             // dateNGAYSINH
             // 
             this.dateNGAYSINH.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsSV, "NGAYSINH", true));
-            this.dateNGAYSINH.EditValue = null;
+            this.dateNGAYSINH.EditValue = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.dateNGAYSINH.Location = new System.Drawing.Point(160, 153);
             this.dateNGAYSINH.MenuManager = this.barManager1;
             this.dateNGAYSINH.Name = "dateNGAYSINH";

@@ -13,6 +13,7 @@ namespace THI_TN_TEST
     public partial class frmNhapSinhVien : Form
     {
         int vitri = 0;
+        int checkThemSua = 0;//0 là đang thêm, 1 là đang sửa
         public frmNhapSinhVien()
         {
             InitializeComponent();
@@ -61,6 +62,7 @@ namespace THI_TN_TEST
 
         private void btnThemSV_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            
             vitri = bdsSV.Position;
             groupBox1.Enabled = true;
             bdsSV.AddNew();
@@ -70,6 +72,9 @@ namespace THI_TN_TEST
             btnThemSV.Enabled = btnSuaSV.Enabled = btnXoaSV.Enabled = btnReloadSV.Enabled = btnThoatSV.Enabled = false;
             btnUndoSV.Enabled = btnGhiSV.Enabled = true;
 
+            txtMASV.Enabled = true;
+            checkThemSua = 0;
+            dateNGAYSINH.DateTime = new DateTime(2000, 01, 01);
         }
 
         private void btnUndoSV_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -161,27 +166,48 @@ namespace THI_TN_TEST
                 txtPASSWORD.Focus();
                 return;
             }
-            if (dateNGAYSINH.EditValue ==null || dateNGAYSINH.EditValue.ToString()=="")
+
+
+            //if (dateNGAYSINH.EditValue ==null || dateNGAYSINH.EditValue.ToString()=="")
+            //{
+            //    MessageBox.Show("Ngày sinh của sinh viên chưa nhập", "Thông báo", MessageBoxButtons.OK);
+            //    dateNGAYSINH.Focus();
+            //    return;
+            //}
+
+            if (dateNGAYSINH.DateTime==DateTime.MinValue)
             {
                 MessageBox.Show("Ngày sinh của sinh viên chưa nhập", "Thông báo", MessageBoxButtons.OK);
                 dateNGAYSINH.Focus();
                 return;
             }
-            if (btnThemSV.Enabled == true)
+            int currentYear = DateTime.Now.Year;
+            int birthYear= dateNGAYSINH.DateTime.Year;
+            int age = currentYear - birthYear;
+            if (age <18)
             {
-                //Kiểm tra mã sv có trùng trên các site
-                string strLenh = "EXEC sp_timsv " + txtMASV.Text;
-                Program.myReader = Program.ExecSqlDataReader(strLenh);
-                if (Program.myReader != null && Program.myReader.HasRows)
-                {
-                    MessageBox.Show("Mã SV đã tồn tại trong hệ thống", "Thông báo", MessageBoxButtons.OK);
-                    Program.myReader.Close();
-                    return;
-                }
+                MessageBox.Show("Tuổi của bạn nhỏ hơn 18", "Thông báo", MessageBoxButtons.OK);
+                return;
             }
-           
+            txtMASV.Text = txtMASV.Text.Trim();
             try
             {
+                if (checkThemSua == 0)//đang thêm mới kiểm tra
+                {
+                    //Kiểm tra mã sinh viên có trùng trên các site
+                    string strLenh = "EXEC sp_KiemTraMaSinhVien '" + txtMASV.Text + "'";
+                    Program.myReader = Program.ExecSqlDataReader(strLenh);
+                    Program.myReader.Read();
+                    int result = Program.myReader.GetInt32(0);
+                    Program.myReader.Close();
+                    if (result == 1)
+                    {
+                        MessageBox.Show("Mã sinh viên của bạn đã tồn tại", "", MessageBoxButtons.OK);
+                        return;
+                    }
+
+                }
+
                 bdsSV.EndEdit();//Kết thúc chỉnh sửa và cập nhật dữ liệu
                 this.SINHVIENTableAdapter.Connection.ConnectionString = Program.connstr;
                 this.SINHVIENTableAdapter.Update(this.DS.SINHVIEN);
@@ -243,6 +269,9 @@ namespace THI_TN_TEST
             SINHVIENDataGridView.Enabled = false;
             btnSuaSV.Enabled = btnThemSV.Enabled = btnXoaSV.Enabled = btnThoatSV.Enabled = btnReloadSV.Enabled = false;
             btnUndoSV.Enabled = btnGhiSV.Enabled = true;
+
+            txtMASV.Enabled = false;
+            checkThemSua = 1;
         }
     }
 }
