@@ -41,7 +41,9 @@ namespace THI_TN_TEST
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            frmDangNhap f = new frmDangNhap();
+            //frmDangNhap f = new frmDangNhap();
+            //f.MdiParent = this;
+            frmThi f = new frmThi();
             f.MdiParent = this;
             f.Show();
         }
