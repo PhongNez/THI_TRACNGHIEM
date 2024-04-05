@@ -22,12 +22,13 @@ namespace THI_TN_TEST
         public static String mlogin = "";
         public static String password = "";
         public static SqlDataReader myReader;
+        public static String malop = "D18CQCN01";
         public static String username;
         public static String mHoten;
         public static String mGroup;
         public static frmMain frmChinh;
        
-        public static String connstr_publisher = @"Data Source=PHONGCENA\TRACNGHIEM;Initial Catalog=TN_CSDLPT;Integrated Security=True";
+        public static String connstr_publisher = @"Data Source=DESKTOP-82REPVE\MAIN;Initial Catalog=TN_CSDLPT;Integrated Security=True";
 
         public static BindingSource bds_dspm = new BindingSource();
 

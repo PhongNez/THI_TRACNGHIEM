@@ -24,7 +24,7 @@ namespace THI_TN_TEST
             conn_publisher.Close();
             Program.bds_dspm.DataSource = dt;
             Program.bds_dspm.Sort="TENCN";
-            Program.bds_dspm.RemoveAt(2);
+            //Program.bds_dspm.RemoveAt(2);
             cmbChiNhanh.DataSource = Program.bds_dspm;
             cmbChiNhanh.DisplayMember = "TENCN";
             cmbChiNhanh.ValueMember = "TENSERVER";
@@ -117,15 +117,23 @@ namespace THI_TN_TEST
                     return;
                 }
                 strLenh = "EXEC SP_LOGIN_SV '" + Program.mlogin + "'," + "'" + Program.password + "'";
+                
             }
             Program.myReader = Program.ExecSqlDataReader(strLenh);
             if (Program.myReader == null)
             {
                 return;
             }
+            else
+            {
+                Program.myReader.Read();
+                Program.malop = Program.myReader.GetString(3);
+                Program.username = Program.myReader.GetString(0);//username
+            }
+           
+           
+            //MessageBox.Show(Program.malop);
 
-            Program.myReader.Read();
-            Program.username = Program.myReader.GetString(0);//username
             if (Convert.IsDBNull(Program.username))
             {
                 MessageBox.Show("Login bạn nhập không có quyền truy cập database./nBạn xem lại username,password", "", MessageBoxButtons.OK);

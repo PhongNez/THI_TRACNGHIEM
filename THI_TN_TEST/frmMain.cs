@@ -14,6 +14,7 @@ namespace THI_TN_TEST
         public frmMain()
         {
             InitializeComponent();
+            ribbonPage3.Visible = false;
         }
 
         private Form CheckExists(Type ftype)
@@ -37,14 +38,15 @@ namespace THI_TN_TEST
         {
 
             ribbonPage2.Visible = check;
+            ribbonPage3.Visible = !check;
         }
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            //frmDangNhap f = new frmDangNhap();
-            //f.MdiParent = this;
-            frmThi f = new frmThi();
+            frmDangNhap f = new frmDangNhap();
             f.MdiParent = this;
+            //frmThi f = new frmThi();
+            //f.MdiParent = this;
             f.Show();
         }
 
@@ -63,6 +65,7 @@ namespace THI_TN_TEST
             }
         }
 
+       
         private void btnDangNhap_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Form frm = this.CheckExists(typeof(frmDangNhap));
@@ -95,6 +98,21 @@ namespace THI_TN_TEST
             else
             {
                 frmNhapSinhVien f = new frmNhapSinhVien();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(frmThi));
+            if (frm != null)
+            {
+                frm.Activate();
+            }
+            else
+            {
+                frmThi f = new frmThi();
                 f.MdiParent = this;
                 f.Show();
             }
