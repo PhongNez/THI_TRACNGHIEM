@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;//Sử dụng Regex =>Bắt kí tự nhập
+
 
 namespace THI_TN_TEST
 {
@@ -138,6 +140,13 @@ namespace THI_TN_TEST
             if (txtTENMH.Text.Trim() == "")
             {
                 MessageBox.Show("Tên môn học bạn chưa nhập.", "Thông báo");
+                txtTENMH.Focus();
+                return;
+            }
+
+            if (Regex.IsMatch(txtMAMH.Text.Trim(), @"^[a-zA-Z0-9]+$") == false)
+            {
+                MessageBox.Show("Mã môn học chỉ cho nhập chữ và số", "Thông báo");
                 txtTENMH.Focus();
                 return;
             }

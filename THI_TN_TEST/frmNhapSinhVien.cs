@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;//Sử dụng Regex =>Bắt kí tự nhập
 
 namespace THI_TN_TEST
 {
@@ -74,7 +75,7 @@ namespace THI_TN_TEST
 
             txtMASV.Enabled = true;
             checkThemSua = 0;
-            dateNGAYSINH.DateTime = new DateTime(2000, 01, 01);
+            dateNGAYSINH.DateTime = new DateTime(2000, 01, 01);// xét mặc định
         }
 
         private void btnUndoSV_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -166,8 +167,31 @@ namespace THI_TN_TEST
                 txtPASSWORD.Focus();
                 return;
             }
+            if (Regex.IsMatch(txtMASV.Text.Trim(), @"^[a-zA-Z0-9]+$") == false)
+            {
+                MessageBox.Show("Mã sinh viên chỉ cho nhập chữ và số", "Thông báo");
+                txtMASV.Focus();
+                return;
+            }
+            if (Regex.IsMatch(txtHO.Text, @"^[a-zA-Z ]+$") == false)
+            {
+                MessageBox.Show("Vui lòng nhập họ không dấu và chỉ nhập chữ", "Thông báo");
+                txtHO.Focus();
+                return;
+            }
+            if (Regex.IsMatch(txtTEN.Text.Trim(), @"^[a-zA-Z]+$") == false)
+            {
+                MessageBox.Show("Vui lòng nhập tên không dấu và chỉ nhập chữ", "Thông báo");
+                txtTEN.Focus();
+                return;
+            }
 
-
+            if (Regex.IsMatch(txtPASSWORD.Text, @"^[a-zA-Z0-9 ]+$") == false)
+            {
+                MessageBox.Show("Password chỉ cho nhập chữ và số", "Thông báo");
+                txtPASSWORD.Focus();
+                return;
+            }
             //if (dateNGAYSINH.EditValue ==null || dateNGAYSINH.EditValue.ToString()=="")
             //{
             //    MessageBox.Show("Ngày sinh của sinh viên chưa nhập", "Thông báo", MessageBoxButtons.OK);
@@ -190,6 +214,9 @@ namespace THI_TN_TEST
                 return;
             }
             txtMASV.Text = txtMASV.Text.Trim();
+            txtHO.Text = txtHO.Text.Trim();
+            txtTEN.Text = txtTEN.Text.Trim();
+            txtPASSWORD.Text = txtPASSWORD.Text.Trim();
             try
             {
                 if (checkThemSua == 0)//đang thêm mới kiểm tra

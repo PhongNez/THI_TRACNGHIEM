@@ -427,6 +427,7 @@ namespace THI_TN_TEST
             // 
             // cmbCoso
             // 
+            this.cmbCoso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCoso.Enabled = false;
             this.cmbCoso.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCoso.FormattingEnabled = true;
@@ -723,6 +724,7 @@ namespace THI_TN_TEST
             this.txtMASV.Location = new System.Drawing.Point(160, 52);
             this.txtMASV.MenuManager = this.barManager1;
             this.txtMASV.Name = "txtMASV";
+            this.txtMASV.Properties.MaxLength = 8;
             this.txtMASV.Size = new System.Drawing.Size(189, 22);
             this.txtMASV.TabIndex = 13;
             // 

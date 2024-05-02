@@ -127,7 +127,7 @@ namespace THI_TN_TEST
             else
             {
                 Program.myReader.Read();
-                Program.malop = Program.myReader.GetString(3);
+                //Program.malop = Program.myReader.GetString(3);
                 Program.username = Program.myReader.GetString(0);//username
             }
            

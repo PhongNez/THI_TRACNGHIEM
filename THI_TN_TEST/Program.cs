@@ -28,7 +28,7 @@ namespace THI_TN_TEST
         public static String mGroup;
         public static frmMain frmChinh;
        
-        public static String connstr_publisher = @"Data Source=DESKTOP-82REPVE\MAIN;Initial Catalog=TN_CSDLPT;Integrated Security=True";
+        public static String connstr_publisher = @"Data Source=PHONGCENA\TRACNGHIEM;Initial Catalog=TN_CSDLPT;Integrated Security=True";
 
         public static BindingSource bds_dspm = new BindingSource();
 
