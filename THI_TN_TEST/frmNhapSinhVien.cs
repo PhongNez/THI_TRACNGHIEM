@@ -75,7 +75,7 @@ namespace THI_TN_TEST
 
             txtMASV.Enabled = true;
             checkThemSua = 0;
-            dateNGAYSINH.DateTime = new DateTime(2000, 01, 01);// xét mặc định
+            dateNGAYSINH.DateTime = new DateTime(2000, 01, 01);// xét ngày mặc định
         }
 
         private void btnUndoSV_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -167,7 +167,7 @@ namespace THI_TN_TEST
                 txtPASSWORD.Focus();
                 return;
             }
-            if (Regex.IsMatch(txtMASV.Text.Trim(), @"^[a-zA-Z0-9]+$") == false)
+            if (Regex.IsMatch(txtMASV.Text.Trim(), @"^[a-zA-Z0-9]+$") == false)//.Trim() để pattern nó khỏi kiểm tra khoảng cách
             {
                 MessageBox.Show("Mã sinh viên chỉ cho nhập chữ và số", "Thông báo");
                 txtMASV.Focus();
@@ -179,7 +179,7 @@ namespace THI_TN_TEST
                 txtHO.Focus();
                 return;
             }
-            if (Regex.IsMatch(txtTEN.Text.Trim(), @"^[a-zA-Z]+$") == false)
+            if (Regex.IsMatch(txtTEN.Text.Trim(), @"^[a-zA-Z]+$") == false)//.Trim() để pattern nó khỏi kiểm tra khoảng cách
             {
                 MessageBox.Show("Vui lòng nhập tên không dấu và chỉ nhập chữ", "Thông báo");
                 txtTEN.Focus();
@@ -192,14 +192,8 @@ namespace THI_TN_TEST
                 txtPASSWORD.Focus();
                 return;
             }
-            //if (dateNGAYSINH.EditValue ==null || dateNGAYSINH.EditValue.ToString()=="")
-            //{
-            //    MessageBox.Show("Ngày sinh của sinh viên chưa nhập", "Thông báo", MessageBoxButtons.OK);
-            //    dateNGAYSINH.Focus();
-            //    return;
-            //}
-
-            if (dateNGAYSINH.DateTime==DateTime.MinValue)
+          
+            if(dateNGAYSINH.DateTime.Equals(DateTime.MinValue))
             {
                 MessageBox.Show("Ngày sinh của sinh viên chưa nhập", "Thông báo", MessageBoxButtons.OK);
                 dateNGAYSINH.Focus();
