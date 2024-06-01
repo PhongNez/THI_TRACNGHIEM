@@ -162,6 +162,10 @@ namespace THI_TN_TEST
             {
                 Program.frmChinh.HienThiMenu(true);
             }
+            if(Program.mGroup == "TRUONG")
+            {
+                Program.frmChinh.HienThiMenuTruong(true);
+            }
 
         }
     }

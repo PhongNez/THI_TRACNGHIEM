@@ -1,0 +1,19 @@
+USE [TN_CSDLPT]
+GO
+/****** Object:  StoredProcedure [dbo].[sp_remote_Lay_DSDK_Cua_2_Coso]    Script Date: 6/1/2024 9:54:31 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER proc [dbo].[sp_remote_Lay_DSDK_Cua_2_Coso] @tungay date,@denngay date
+as
+begin
+declare @tencs nvarchar(100)
+select @tencs=TENCS from COSO
+
+select TENCS=@tencs,l.TENLOP,m.TENMH,HOTEN=gv.HO+' ' +gv.TEN,gvdk.SOCAUTHI,gvdk.NGAYTHI,
+DATHI=dbo.check_dathi(gvdk.MALOP,gvdk.MAMH,gvdk.LAN),GHICHU=N'Lần thi: '+ STR(gvdk.LAN,2)
+from (select MAGV,MAMH,MALOP,NGAYTHI,LAN,SOCAUTHI from GIAOVIEN_DANGKY where NGAYTHI >= @tungay and NGAYTHI < DATEADD(day,1,@denngay)) gvdk,
+LOP l,MONHOC m, GIAOVIEN gv
+where gvdk.MALOP=l.MALOP and m.MAMH=gvdk.MAMH and gvdk.MAGV=gv.MAGV 
+end

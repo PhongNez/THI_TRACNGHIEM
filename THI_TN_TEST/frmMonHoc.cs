@@ -43,22 +43,15 @@ namespace THI_TN_TEST
 
             this.gIAOVIEN_DANGKYTableAdapter.Connection.ConnectionString = Program.connstr;
             this.gIAOVIEN_DANGKYTableAdapter.Fill(this.DS_MH.GIAOVIEN_DANGKY);
-            
+
+            if (Program.mGroup == "TRUONG")
+            {
+                //Cập nhật form môn học
+                btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnUndo.Enabled = btnGhi.Enabled = false;
+            }
         }
 
-        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            checkThemSua = 0;
-            txtMAMH.Enabled = true;
-            vitri = bdsMH.Position;
-            groupBox1.Enabled = true;
-            bdsMH.AddNew();
-
-            btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnReload.Enabled = btnThoat.Enabled = false;
-            btnGhi.Enabled = btnUndo.Enabled = true;
-            gcMonHoc.Enabled = false;
-        }
-
+    
         private void btnUndo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             this.MONHOCTableAdapter.Fill(this.DS_MH.MONHOC);//Mục đích xóa các ô thừa
@@ -208,6 +201,19 @@ namespace THI_TN_TEST
             groupBox1.Enabled = true;
             btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled =btnReload.Enabled=btnThoat.Enabled= false;
             btnGhi.Enabled = btnUndo.Enabled = true;
+        }
+
+        private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            checkThemSua = 0;
+            txtMAMH.Enabled = true;
+            vitri = bdsMH.Position;
+            groupBox1.Enabled = true;
+            bdsMH.AddNew();
+
+            btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnReload.Enabled = btnThoat.Enabled = false;
+            btnGhi.Enabled = btnUndo.Enabled = true;
+            gcMonHoc.Enabled = false;
         }
     }
 }

@@ -51,7 +51,9 @@ namespace THI_TN_TEST
             if (Program.mGroup == "TRUONG")
             {
                 cmbCoso.Enabled = true;
+                //Cập nhật from sinh viên
                 btnThemSV.Enabled = btnSuaSV.Enabled = btnXoaSV.Enabled = btnUndoSV.Enabled = btnGhiSV.Enabled = false;
+           
             }
 
         }
