@@ -54,8 +54,10 @@ namespace THI_TN_TEST
     
         private void btnUndo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            this.MONHOCTableAdapter.Fill(this.DS_MH.MONHOC);//Mục đích xóa các ô thừa
+            //this.MONHOCTableAdapter.Fill(this.DS_MH.MONHOC);//Mục đích xóa các ô thừa
+            
             bdsMH.CancelEdit();
+          
             if (btnThem.Enabled == false)
             {
                 bdsMH.Position = vitri;
@@ -103,7 +105,8 @@ namespace THI_TN_TEST
                 try
                 {
 
-                    mamh = Convert.ToString(((DataRowView)bdsMH[bdsMH.Position])["MAMH"]);
+                    //mamh = Convert.ToString(((DataRowView)bdsMH[bdsMH.Position])["MAMH"]);
+                    mamh = ((DataRowView)bdsMH[bdsMH.Position])["MAMH"].ToString();
                     MessageBox.Show("Bạn đã xóa thành công " + mamh, "", MessageBoxButtons.OK);
                     bdsMH.RemoveCurrent();
                     this.MONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
@@ -140,7 +143,7 @@ namespace THI_TN_TEST
             if (Regex.IsMatch(txtMAMH.Text.Trim(), @"^[a-zA-Z0-9]+$") == false)
             {
                 MessageBox.Show("Mã môn học chỉ cho nhập chữ và số", "Thông báo");
-                txtTENMH.Focus();
+                txtMAMH.Focus();
                 return;
             }
 
@@ -149,11 +152,12 @@ namespace THI_TN_TEST
            
             try
             {
-                if (checkThemSua == 0) {
+                if (checkThemSua == 0)
+                {
                     //Kiểm tra mã môn có trùng trên các site
                     string strLenh = "EXEC sp_KiemTraMaMonHoc '" + txtMAMH.Text + "'";
                     Program.myReader = Program.ExecSqlDataReader(strLenh);
-                    Program.myReader.Read();
+                    Program.myReader.Read();//Đọc dòng đầu
                     int result = Program.myReader.GetInt32(0);
                     Program.myReader.Close();
                     if (result == 1)
@@ -162,7 +166,7 @@ namespace THI_TN_TEST
                         return;
                     }
               
- }
+                }
                 //Kiểm tra tên trùng
                 string strTenMonHoc = "EXEC sp_KiemTraTenMonHoc N'" + txtTENMH.Text + "'";
                 Program.myReader = Program.ExecSqlDataReader(strTenMonHoc);
@@ -206,7 +210,7 @@ namespace THI_TN_TEST
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             checkThemSua = 0;
-            txtMAMH.Enabled = true;
+            txtMAMH.Enabled = true;//Cho thêm mã
             vitri = bdsMH.Position;
             groupBox1.Enabled = true;
             bdsMH.AddNew();

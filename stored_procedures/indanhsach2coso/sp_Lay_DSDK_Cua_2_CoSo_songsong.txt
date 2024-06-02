@@ -1,11 +1,11 @@
 USE [TN_CSDLPT]
 GO
-/****** Object:  StoredProcedure [dbo].[sp_Lay_DSDK_Cua_2_CoSo_songsong]    Script Date: 6/1/2024 9:52:53 PM ******/
+/****** Object:  StoredProcedure [dbo].[sp_Lay_DSDK_Cua_2_CoSo_songsong]    Script Date: 6/2/2024 11:13:46 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-create proc [dbo].[sp_Lay_DSDK_Cua_2_CoSo_songsong] @tungay date,@denngay date
+ALTER proc [dbo].[sp_Lay_DSDK_Cua_2_CoSo_songsong] @tungay date,@denngay date
 as
 begin
 	
@@ -80,5 +80,7 @@ begin
 	select * from ##RemoteTempTable
 	ORDER BY tencs,ngaythi
 
+	IF  EXISTS (SELECT job_id FROM msdb.dbo.sysjobs_view WHERE name = N'Job_1')
+		EXEC msdb.dbo.sp_delete_job @job_name=N'Job_1' 
 end
 

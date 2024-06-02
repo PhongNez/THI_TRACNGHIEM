@@ -121,7 +121,7 @@ namespace THI_TN_TEST
             {
                 try
                 {
-                    masv = Convert.ToString(((DataRowView)bdsSV[bdsSV.Position])["MASV"]);
+                    masv = ((DataRowView)bdsSV[bdsSV.Position])["MASV"].ToString();
                     //MessageBox.Show("Mã sinh viên thử: " + masv, "", MessageBoxButtons.OK);
                     MessageBox.Show("Bạn đã xóa thành công sinh viên", "", MessageBoxButtons.OK);
                     bdsSV.RemoveCurrent();
