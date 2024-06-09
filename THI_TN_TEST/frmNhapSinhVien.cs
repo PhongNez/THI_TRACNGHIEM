@@ -218,7 +218,9 @@ namespace THI_TN_TEST
                 if (checkThemSua == 0)//đang thêm mới kiểm tra
                 {
                     //Kiểm tra mã sinh viên có trùng trên các site
-                    string strLenh = "EXEC sp_KiemTraMaSinhVien '" + txtMASV.Text + "'";
+                    string strLenh = "declare @result int "
+                        + " EXEC @result = sp_KiemTraMaSinhVien '" + txtMASV.Text + "'"
+                        + " select @result";
                     Program.myReader = Program.ExecSqlDataReader(strLenh);
                     Program.myReader.Read();
                     int result = Program.myReader.GetInt32(0);

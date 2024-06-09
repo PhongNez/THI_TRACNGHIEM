@@ -9,9 +9,9 @@ create PROCEDURE [dbo].[sp_KiemTraMaSinhVien] @masv nchar(10)
 as
 begin
 if exists(select MASV from SINHVIEN where MASV=@masv)--kiểm tra mã sv có ở site hiện tại không
-select 1;
+return 1;
 else if exists(select MASV from LINK2.TN_CSDLPT.DBO.SINHVIEN where MASV=@masv)--kiểm tra mã sv có ở site tra cứu không
-select 1;
+return 1;
 else
-select 0;
+return 0;
 end

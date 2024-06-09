@@ -79,6 +79,8 @@ namespace THI_TN_TEST
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateEditTuNgay.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEditTuNgay.Properties.Mask.EditMask = "dd/MM/yyyy";
+            this.dateEditTuNgay.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.dateEditTuNgay.Size = new System.Drawing.Size(125, 22);
             this.dateEditTuNgay.TabIndex = 3;
             // 
@@ -91,6 +93,8 @@ namespace THI_TN_TEST
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateEditDenNgay.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEditDenNgay.Properties.Mask.EditMask = "dd/MM/yyyy";
+            this.dateEditDenNgay.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.dateEditDenNgay.Size = new System.Drawing.Size(125, 22);
             this.dateEditDenNgay.TabIndex = 4;
             // 

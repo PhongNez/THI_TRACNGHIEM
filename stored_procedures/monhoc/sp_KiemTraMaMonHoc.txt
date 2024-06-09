@@ -9,7 +9,7 @@ create proc [dbo].[sp_KiemTraMaMonHoc] @mamh char(10)
 as
 begin
 if exists(select MAMH from MONHOC where MAMH=@mamh)
-select 1;-- tồn tại trả về 1
+return 1;-- tồn tại trả về 1
 else
-select 0;--k tồn tại trả về 0
+return 0;--k tồn tại trả về 0
 end

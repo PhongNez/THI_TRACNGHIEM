@@ -155,7 +155,9 @@ namespace THI_TN_TEST
                 if (checkThemSua == 0)
                 {
                     //Kiểm tra mã môn có trùng trên các site
-                    string strLenh = "EXEC sp_KiemTraMaMonHoc '" + txtMAMH.Text + "'";
+                    string strLenh = "declare @result int "
+                        + "EXEC @result = sp_KiemTraMaMonHoc '" + txtMAMH.Text + "'"
+                        + " select @result";
                     Program.myReader = Program.ExecSqlDataReader(strLenh);
                     Program.myReader.Read();//Đọc dòng đầu
                     int result = Program.myReader.GetInt32(0);
@@ -168,7 +170,9 @@ namespace THI_TN_TEST
               
                 }
                 //Kiểm tra tên trùng
-                string strTenMonHoc = "EXEC sp_KiemTraTenMonHoc N'" + txtTENMH.Text + "'";
+                string strTenMonHoc = "declare @result int " 
+                    + "EXEC @result = sp_KiemTraTenMonHoc N'" + txtTENMH.Text + "'"
+                    + " select @result";
                 Program.myReader = Program.ExecSqlDataReader(strTenMonHoc);
                 Program.myReader.Read();
                 int resultTen = Program.myReader.GetInt32(0);

@@ -9,7 +9,7 @@ create proc [dbo].[sp_KiemTraTenMonHoc] @tenmh nvarchar(100)
 as
 begin
 if exists(select tenmh from MONHOC where TENMH=@tenmh)
-select 1;
+return 1;
 else
-select 0;
+return 0;
 end

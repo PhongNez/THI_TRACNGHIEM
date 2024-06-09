@@ -16,12 +16,12 @@ namespace THI_TN_TEST
         public Xrpt_In_DanhSachDK_2_Coso(DateTime tungay,DateTime denngay)
         {
             InitializeComponent();
-            //Console.WriteLine("Hello" + tungay.ToString() + denngay.ToString());
+            //Console.WriteLine("Hello 1:" + tungay.ToString() + denngay.ToString());
             this.sqlDataSource1.Connection.ConnectionString = Program.connstr;
             Console.WriteLine("Program connstr: " + Program.connstr);
             this.sqlDataSource1.Queries[0].Parameters[0].Value = tungay.ToString("yyyy-MM-dd");
             this.sqlDataSource1.Queries[0].Parameters[1].Value = denngay.ToString("yyyy-MM-dd");
-            //Console.WriteLine("Hello" + tungay.ToString("yyyy-MM-dd") + denngay.ToString("yyyy-MM-dd"));
+            //Console.WriteLine("Hello 2:" + tungay.ToString("yyyy-MM-dd") + denngay.ToString("yyyy-MM-dd"));
             this.sqlDataSource1.Fill();
         }
 
