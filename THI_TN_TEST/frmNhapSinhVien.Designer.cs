@@ -37,7 +37,7 @@ namespace THI_TN_TEST
             System.Windows.Forms.Label nGAYSINHLabel;
             System.Windows.Forms.Label pASSWORDLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNhapSinhVien));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnThem = new DevExpress.XtraBars.BarButtonItem();
             this.btnSua = new DevExpress.XtraBars.BarButtonItem();
             this.btnGhi = new DevExpress.XtraBars.BarButtonItem();
@@ -74,10 +74,6 @@ namespace THI_TN_TEST
             this.colTENLOP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMAKH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SINHVIENDataGridView = new System.Windows.Forms.DataGridView();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.thêmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ghiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.xóaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bdsSV = new System.Windows.Forms.BindingSource(this.components);
             this.SINHVIENTableAdapter = new THI_TN_TEST.DSTableAdapters.SINHVIENTableAdapter();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -111,7 +107,6 @@ namespace THI_TN_TEST
             ((System.ComponentModel.ISupportInitialize)(this.gcLOP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SINHVIENDataGridView)).BeginInit();
-            this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bdsSV)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtPASSWORD.Properties)).BeginInit();
@@ -495,6 +490,7 @@ namespace THI_TN_TEST
             this.colMALOP.FieldName = "MALOP";
             this.colMALOP.MinWidth = 25;
             this.colMALOP.Name = "colMALOP";
+            this.colMALOP.OptionsColumn.ReadOnly = true;
             this.colMALOP.Visible = true;
             this.colMALOP.VisibleIndex = 0;
             this.colMALOP.Width = 94;
@@ -505,6 +501,7 @@ namespace THI_TN_TEST
             this.colTENLOP.FieldName = "TENLOP";
             this.colTENLOP.MinWidth = 25;
             this.colTENLOP.Name = "colTENLOP";
+            this.colTENLOP.OptionsColumn.ReadOnly = true;
             this.colTENLOP.Visible = true;
             this.colTENLOP.VisibleIndex = 1;
             this.colTENLOP.Width = 94;
@@ -515,6 +512,7 @@ namespace THI_TN_TEST
             this.colMAKH.FieldName = "MAKH";
             this.colMAKH.MinWidth = 25;
             this.colMAKH.Name = "colMAKH";
+            this.colMAKH.OptionsColumn.ReadOnly = true;
             this.colMAKH.Visible = true;
             this.colMAKH.VisibleIndex = 2;
             this.colMAKH.Width = 94;
@@ -531,7 +529,6 @@ namespace THI_TN_TEST
             this.dIACHIDataGridViewTextBoxColumn,
             this.mALOPDataGridViewTextBoxColumn,
             this.pASSWORDDataGridViewTextBoxColumn});
-            this.SINHVIENDataGridView.ContextMenuStrip = this.contextMenuStrip1;
             this.SINHVIENDataGridView.DataSource = this.bdsSV;
             this.SINHVIENDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SINHVIENDataGridView.Location = new System.Drawing.Point(756, 348);
@@ -540,34 +537,6 @@ namespace THI_TN_TEST
             this.SINHVIENDataGridView.RowTemplate.Height = 24;
             this.SINHVIENDataGridView.Size = new System.Drawing.Size(849, 687);
             this.SINHVIENDataGridView.TabIndex = 16;
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.thêmToolStripMenuItem,
-            this.ghiToolStripMenuItem,
-            this.xóaToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(116, 76);
-            // 
-            // thêmToolStripMenuItem
-            // 
-            this.thêmToolStripMenuItem.Name = "thêmToolStripMenuItem";
-            this.thêmToolStripMenuItem.Size = new System.Drawing.Size(115, 24);
-            this.thêmToolStripMenuItem.Text = "Thêm";
-            // 
-            // ghiToolStripMenuItem
-            // 
-            this.ghiToolStripMenuItem.Name = "ghiToolStripMenuItem";
-            this.ghiToolStripMenuItem.Size = new System.Drawing.Size(115, 24);
-            this.ghiToolStripMenuItem.Text = "Ghi";
-            // 
-            // xóaToolStripMenuItem
-            // 
-            this.xóaToolStripMenuItem.Name = "xóaToolStripMenuItem";
-            this.xóaToolStripMenuItem.Size = new System.Drawing.Size(115, 24);
-            this.xóaToolStripMenuItem.Text = "Xóa";
             // 
             // bdsSV
             // 
@@ -690,6 +659,7 @@ namespace THI_TN_TEST
             this.mASVDataGridViewTextBoxColumn.HeaderText = "MASV";
             this.mASVDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.mASVDataGridViewTextBoxColumn.Name = "mASVDataGridViewTextBoxColumn";
+            this.mASVDataGridViewTextBoxColumn.ReadOnly = true;
             this.mASVDataGridViewTextBoxColumn.Width = 125;
             // 
             // hODataGridViewTextBoxColumn
@@ -698,6 +668,7 @@ namespace THI_TN_TEST
             this.hODataGridViewTextBoxColumn.HeaderText = "HO";
             this.hODataGridViewTextBoxColumn.MinimumWidth = 6;
             this.hODataGridViewTextBoxColumn.Name = "hODataGridViewTextBoxColumn";
+            this.hODataGridViewTextBoxColumn.ReadOnly = true;
             this.hODataGridViewTextBoxColumn.Width = 125;
             // 
             // tENDataGridViewTextBoxColumn
@@ -706,16 +677,18 @@ namespace THI_TN_TEST
             this.tENDataGridViewTextBoxColumn.HeaderText = "TEN";
             this.tENDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.tENDataGridViewTextBoxColumn.Name = "tENDataGridViewTextBoxColumn";
+            this.tENDataGridViewTextBoxColumn.ReadOnly = true;
             this.tENDataGridViewTextBoxColumn.Width = 125;
             // 
             // nGAYSINHDataGridViewTextBoxColumn
             // 
             this.nGAYSINHDataGridViewTextBoxColumn.DataPropertyName = "NGAYSINH";
-            dataGridViewCellStyle1.Format = "dd/MM/yyyy";
-            this.nGAYSINHDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Format = "dd/MM/yyyy";
+            this.nGAYSINHDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.nGAYSINHDataGridViewTextBoxColumn.HeaderText = "NGAYSINH";
             this.nGAYSINHDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.nGAYSINHDataGridViewTextBoxColumn.Name = "nGAYSINHDataGridViewTextBoxColumn";
+            this.nGAYSINHDataGridViewTextBoxColumn.ReadOnly = true;
             this.nGAYSINHDataGridViewTextBoxColumn.Width = 125;
             // 
             // dIACHIDataGridViewTextBoxColumn
@@ -724,6 +697,7 @@ namespace THI_TN_TEST
             this.dIACHIDataGridViewTextBoxColumn.HeaderText = "DIACHI";
             this.dIACHIDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.dIACHIDataGridViewTextBoxColumn.Name = "dIACHIDataGridViewTextBoxColumn";
+            this.dIACHIDataGridViewTextBoxColumn.ReadOnly = true;
             this.dIACHIDataGridViewTextBoxColumn.Width = 125;
             // 
             // mALOPDataGridViewTextBoxColumn
@@ -732,6 +706,7 @@ namespace THI_TN_TEST
             this.mALOPDataGridViewTextBoxColumn.HeaderText = "MALOP";
             this.mALOPDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.mALOPDataGridViewTextBoxColumn.Name = "mALOPDataGridViewTextBoxColumn";
+            this.mALOPDataGridViewTextBoxColumn.ReadOnly = true;
             this.mALOPDataGridViewTextBoxColumn.Width = 125;
             // 
             // pASSWORDDataGridViewTextBoxColumn
@@ -740,6 +715,7 @@ namespace THI_TN_TEST
             this.pASSWORDDataGridViewTextBoxColumn.HeaderText = "PASSWORD";
             this.pASSWORDDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.pASSWORDDataGridViewTextBoxColumn.Name = "pASSWORDDataGridViewTextBoxColumn";
+            this.pASSWORDDataGridViewTextBoxColumn.ReadOnly = true;
             this.pASSWORDDataGridViewTextBoxColumn.Width = 125;
             // 
             // frmNhapSinhVien
@@ -770,7 +746,6 @@ namespace THI_TN_TEST
             ((System.ComponentModel.ISupportInitialize)(this.gcLOP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SINHVIENDataGridView)).EndInit();
-            this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bdsSV)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -825,10 +800,6 @@ namespace THI_TN_TEST
         private DevExpress.XtraGrid.Columns.GridColumn colMALOP;
         private DevExpress.XtraGrid.Columns.GridColumn colTENLOP;
         private DevExpress.XtraGrid.Columns.GridColumn colMAKH;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem thêmToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ghiToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem xóaToolStripMenuItem;
         private System.Windows.Forms.BindingSource bdsSV;
         private DSTableAdapters.SINHVIENTableAdapter SINHVIENTableAdapter;
         private System.Windows.Forms.GroupBox groupBox1;

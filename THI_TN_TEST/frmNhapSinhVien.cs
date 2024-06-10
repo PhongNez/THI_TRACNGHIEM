@@ -110,7 +110,7 @@ namespace THI_TN_TEST
 
         private void btnXoaSV_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            string masv = "";
+            string masv = "";//Xóa thất bại thì tìm và trả lại vị trí
             if (bdsBANGDIEM.Count > 0)
             {
                 MessageBox.Show("Không thể xóa sinh viên vì đã có bảng điểm","",MessageBoxButtons.OK);
@@ -289,6 +289,7 @@ namespace THI_TN_TEST
 
         private void btnSuaSV_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            vitri = bdsSV.Position;
             groupBox1.Enabled = true;
             gcLOP.Enabled = false;
             SINHVIENDataGridView.Enabled = false;

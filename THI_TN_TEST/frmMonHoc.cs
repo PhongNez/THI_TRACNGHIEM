@@ -205,6 +205,7 @@ namespace THI_TN_TEST
         {
             checkThemSua = 1;
             txtMAMH.Enabled = false;// Không cho sửa mã môn học
+            vitri = bdsMH.Position;
             gcMonHoc.Enabled = false;
             groupBox1.Enabled = true;
             btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled =btnReload.Enabled=btnThoat.Enabled= false;
