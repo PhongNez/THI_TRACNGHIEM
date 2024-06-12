@@ -14,7 +14,8 @@ namespace THI_TN_TEST
         public frmMain()
         {
             InitializeComponent();
-            ribbonPage3.Visible = false;
+            ribbonPage2.Visible = false;
+            ribbonPage4.Visible = false;
         }
 
         private Form CheckExists(Type ftype)
@@ -38,7 +39,8 @@ namespace THI_TN_TEST
         {
 
             ribbonPage2.Visible = check;
-            ribbonPage3.Visible = !check;
+            ribbonPage4.Visible = check;
+            //ribbonPage3.Visible = !check;
         }
 
         private void frmMain_Load(object sender, EventArgs e)
@@ -46,7 +48,7 @@ namespace THI_TN_TEST
             frmDangNhap f = new frmDangNhap();
             f.MdiParent = this;
             //frmThi f = new frmThi();
-            //f.MdiParent = this;
+            f.MdiParent = this;
             f.Show();
         }
 
@@ -103,6 +105,37 @@ namespace THI_TN_TEST
             }
         }
 
+        private void btnGiangVien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(frmGiangVien));
+            if (frm != null)
+            {
+                frm.Activate();
+            }
+            else
+            {
+                frmGiangVien f = new frmGiangVien();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void btnBoDe_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(frmBoDe));
+            if (frm != null)
+            {
+                frm.Activate();
+            }
+            else
+            {
+                frmBoDe f = new frmBoDe();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Form frm = this.CheckExists(typeof(frmThi));
@@ -116,6 +149,39 @@ namespace THI_TN_TEST
                 f.MdiParent = this;
                 f.Show();
             }
+        }
+
+        private void btnXemDiem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(FrptBangDiemMonHoc));
+            if (frm != null)
+            {
+                frm.Activate();
+            }
+            else
+            {
+                FrptBangDiemMonHoc f = new FrptBangDiemMonHoc();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void btnDangXuat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            foreach (Form f in this.MdiChildren)
+            {
+                f.Close();
+            }
+            this.Close();
+
+        }
+
+        private void btnExit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            DialogResult m = MessageBox.Show
+                ("Bạn có chắc chắn muốn thoát chương trình ?", "Thông báo", MessageBoxButtons.OKCancel,MessageBoxIcon.Question);
+            if (m == DialogResult.OK)
+                Application.Exit();
         }
     }
 }

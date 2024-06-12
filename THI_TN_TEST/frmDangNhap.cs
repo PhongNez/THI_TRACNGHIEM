@@ -90,7 +90,7 @@ namespace THI_TN_TEST
 
             if (txtTaiKhoan.Text.Trim() == "" || txtMatKhau.Text.Trim() == "")
             {
-                MessageBox.Show("Bạn chưa nhập tài khoản hoặc mật khẩu", "", MessageBoxButtons.OK);
+                MessageBox.Show("Bạn chưa nhập tài khoản hoặc mật khẩu", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             // thiếu
@@ -103,7 +103,9 @@ namespace THI_TN_TEST
             {
 
                 if (Program.KetNoi() == 0)
-                { return; }
+                {
+                    return;
+                }
                 Program.mCoso = cmbChiNhanh.SelectedIndex;//Lấy index hiện đang được chọn để hỗ trợ rẽ cơ sở
                 
                 Program.mloginDN = Program.mlogin;
@@ -127,7 +129,7 @@ namespace THI_TN_TEST
             else
             {
                 Program.myReader.Read();
-                Program.malop = Program.myReader.GetString(3);
+                //Program.malop = Program.myReader.GetString(3);
                 Program.username = Program.myReader.GetString(0);//username
             }
            
@@ -136,7 +138,7 @@ namespace THI_TN_TEST
 
             if (Convert.IsDBNull(Program.username))
             {
-                MessageBox.Show("Login bạn nhập không có quyền truy cập database./nBạn xem lại username,password", "", MessageBoxButtons.OK);
+                MessageBox.Show("Login bạn nhập không có quyền truy cập database./nThông tin đăng nhập chưa chính xác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -150,6 +152,9 @@ namespace THI_TN_TEST
             Program.mGroup = Program.myReader.GetString(2);
             Program.myReader.Close();
             Program.conn.Close();
+
+            MessageBox.Show("Đã đăng nhập thành công với nhóm " + Program.mGroup, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
             Program.frmChinh.MANV.Text = "Mã NV = " + Program.username;
             Program.frmChinh.HOTEN.Text = "Họ tên = " + Program.mHoten;
             Program.frmChinh.NHOM.Text = "Nhóm = " + Program.mGroup;

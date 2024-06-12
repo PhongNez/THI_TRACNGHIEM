@@ -38,7 +38,7 @@ namespace THI_TN_TEST
             this.SINHVIENTableAdapter.Connection.ConnectionString = Program.connstr;
             this.SINHVIENTableAdapter.Fill(this.DS.SINHVIEN);
             // TODO: This line of code loads data into the 'DS.BANGDIEM' table. You can move, or remove it, as needed
-              this.BANGDIEMTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.BANGDIEMTableAdapter.Connection.ConnectionString = Program.connstr;
             this.BANGDIEMTableAdapter.Fill(this.DS.BANGDIEM);
 
             cmbCoso.DataSource = Program.bds_dspm;//Sao chép bds_dspm đã load ở form đăng nhập

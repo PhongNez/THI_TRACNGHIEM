@@ -200,5 +200,10 @@ namespace THI_TN_TEST
             btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled =btnReload.Enabled=btnThoat.Enabled= false;
             btnGhi.Enabled = btnUndo.Enabled = true;
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
