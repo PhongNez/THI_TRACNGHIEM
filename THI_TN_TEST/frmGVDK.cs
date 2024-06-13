@@ -125,7 +125,7 @@ namespace THI_TN_TEST
                 txtSOCAUTHI.Focus();
                 return;
             }
-            if (Regex.IsMatch(txtSOCAUTHI.Text.Trim(), @"^[0-9]+$") == false)//Khác các ký tự trong đoạn => false
+            if (Regex.IsMatch(txtSOCAUTHI.Text.Trim(), "^[0-9]+$") == false)//Khác các ký tự trong đoạn => false
             {
                 MessageBox.Show("Số câu thi chỉ được nhập số", "Thông báo", MessageBoxButtons.OK);
                 txtSOCAUTHI.Focus();
@@ -144,7 +144,7 @@ namespace THI_TN_TEST
                 txtTHOIGIAN.Focus();
                 return;
             }
-            if (Regex.IsMatch(txtTHOIGIAN.Text.Trim(),@"^[0-9]+$") == false)
+            if (Regex.IsMatch(txtTHOIGIAN.Text.Trim(),"^[0-9]+$") == false)
             {
                 MessageBox.Show("Thời gian thi chỉ được nhập số", "Thông báo", MessageBoxButtons.OK);
                 txtTHOIGIAN.Focus();

@@ -169,26 +169,26 @@ namespace THI_TN_TEST
                 txtPASSWORD.Focus();
                 return;
             }
-            if (Regex.IsMatch(txtMASV.Text.Trim(), @"^[a-zA-Z0-9]+$") == false)//.Trim() để pattern nó khỏi kiểm tra khoảng cách
+            if (Regex.IsMatch(txtMASV.Text.Trim(), "^[a-zA-Z0-9]+$") == false)//.Trim() để pattern nó khỏi kiểm tra khoảng cách
             {
                 MessageBox.Show("Mã sinh viên chỉ cho nhập chữ và số", "Thông báo");
                 txtMASV.Focus();
                 return;
             }
-            if (Regex.IsMatch(txtHO.Text, @"^[a-zA-Z ]+$") == false)
+            if (Regex.IsMatch(txtHO.Text, "^[a-zA-Z ]+$") == false)
             {
                 MessageBox.Show("Vui lòng nhập họ không dấu và chỉ nhập chữ", "Thông báo");
                 txtHO.Focus();
                 return;
             }
-            if (Regex.IsMatch(txtTEN.Text.Trim(), @"^[a-zA-Z]+$") == false)//.Trim() để pattern nó khỏi kiểm tra khoảng cách
+            if (Regex.IsMatch(txtTEN.Text.Trim(), "^[a-zA-Z]+$") == false)//.Trim() để pattern nó khỏi kiểm tra khoảng cách
             {
                 MessageBox.Show("Vui lòng nhập tên không dấu và chỉ nhập chữ", "Thông báo");
                 txtTEN.Focus();
                 return;
             }
 
-            if (Regex.IsMatch(txtPASSWORD.Text, @"^[a-zA-Z0-9 ]+$") == false)
+            if (Regex.IsMatch(txtPASSWORD.Text, "^[a-zA-Z0-9 ]+$") == false)
             {
                 MessageBox.Show("Password chỉ cho nhập chữ và số", "Thông báo");
                 txtPASSWORD.Focus();

@@ -140,7 +140,7 @@ namespace THI_TN_TEST
                 return;
             }
 
-            if (Regex.IsMatch(txtMAMH.Text.Trim(), @"^[a-zA-Z0-9]+$") == false)
+            if (Regex.IsMatch(txtMAMH.Text.Trim(), "^[a-zA-Z0-9]+$") == false)
             {
                 MessageBox.Show("Mã môn học chỉ cho nhập chữ và số", "Thông báo");
                 txtMAMH.Focus();
