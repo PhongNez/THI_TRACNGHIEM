@@ -1,0 +1,18 @@
+USE [TN_CSDLPT]
+GO
+/****** Object:  StoredProcedure [dbo].[sp_KiemTra_KhoaChinh_GVDK]    Script Date: 6/13/2024 4:20:07 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER proc [dbo].[sp_KiemTra_KhoaChinh_GVDK] @MAMH char(10),@MALOP nchar(20),@LAN INT
+as
+begin
+--Kiểm tra ràng buộc trước
+if EXISTS(select * from GIAOVIEN_DANGKY where MAMH=@MAMH AND MALOP=@MALOP AND LAN=@LAN)
+return 1
+else if @LAN=2 AND NOT EXISTS(select * from GIAOVIEN_DANGKY where MAMH=@MAMH AND MALOP=@MALOP AND LAN=1)
+return 1
+else
+return 0
+end

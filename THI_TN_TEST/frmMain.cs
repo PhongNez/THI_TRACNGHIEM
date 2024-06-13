@@ -138,5 +138,20 @@ namespace THI_TN_TEST
                 f.Show();
             }
         }
+
+        private void btnGVDK_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(frmGVDK));
+            if (frm != null)
+            {
+                frm.Activate();
+            }
+            else
+            {
+                frmGVDK f = new frmGVDK();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
     }
 }

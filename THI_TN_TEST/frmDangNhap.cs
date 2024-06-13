@@ -104,7 +104,7 @@ namespace THI_TN_TEST
 
                 if (Program.KetNoi() == 0)
                 { return; }
-                Program.mCoso = cmbChiNhanh.SelectedIndex;//Lấy index hiện đang được chọn để hỗ trợ rẽ cơ sở
+                Program.mCoso = cmbChiNhanh.SelectedIndex;//Lấy index của item  đang được chọn để hỗ trợ rẽ cơ sở
                 
                 Program.mloginDN = Program.mlogin;
                 Program.passwordDN = Program.password;
