@@ -151,7 +151,7 @@ namespace THI_TN_TEST
                 return;
             }
             int thoigian = int.Parse(txtTHOIGIAN.Text.Trim());
-            if (thoigian < 15 || thoigian > 60)
+            if (thoigian < 2 || thoigian > 60)
             {
                 MessageBox.Show("Thời gian thi không hợp lệ", "Thông báo", MessageBoxButtons.OK);
                 txtTHOIGIAN.Focus();
