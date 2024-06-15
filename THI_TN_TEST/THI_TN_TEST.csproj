@@ -56,6 +56,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CauHoi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CauHoi.Designer.cs">
+      <DependentUpon>CauHoi.cs</DependentUpon>
+    </Compile>
     <Compile Include="DS.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -109,6 +115,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TN_CSDLPTDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CauHoi.resx">
+      <DependentUpon>CauHoi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </EmbeddedResource>

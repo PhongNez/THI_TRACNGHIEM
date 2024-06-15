@@ -59,7 +59,7 @@ namespace THI_TN_TEST
                 return 0;
             }
         }
-
+       
         public static int KetNoiSinhVien()
         {
             if (Program.conn != null && Program.conn.State == ConnectionState.Open)
@@ -69,7 +69,7 @@ namespace THI_TN_TEST
             try
             {
                 Program.connstr = "Data Source=" + Program.servername + ";Initial Catalog=" +
-                    Program.database + ";User ID=" +
+                    Program.database + ";User ID= " +
                    "sinhvienketnoi" + ";password=" + "123456";
                 Program.conn.ConnectionString = Program.connstr;
                 Program.conn.Open();
@@ -77,7 +77,6 @@ namespace THI_TN_TEST
             }
             catch (Exception ex)
             {
-                Console.WriteLine("heloo: " + Program.connstr);
                 MessageBox.Show("Lỗi kết nối cơ sở dữ liệu. \nBạn xem lại user name và password. \n", "", MessageBoxButtons.OK);
                 return 0;
             }
@@ -105,6 +104,24 @@ namespace THI_TN_TEST
                 MessageBox.Show(ex.Message);
                 return null;
             }
+        }
+        public static DataTable ExecSqlDataTable(String cmd)
+        {
+            DataTable dt = new DataTable();
+            if (Program.conn.State == ConnectionState.Closed) Program.conn.Open();
+            SqlDataAdapter da = new SqlDataAdapter(cmd, Program.conn);
+            try
+            {
+                da.Fill(dt); Program.conn.Close();
+                return dt;
+            }
+            catch (SqlException ex)
+            {
+                Program.conn.Close();
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+
         }
 
         [STAThread]

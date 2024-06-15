@@ -95,3 +95,4 @@ D:\Projects\THI_TRACNGHIEM\THI_TN_TEST\obj\Debug\THI_TN_TEST.csproj.CoreCompileI
 D:\Projects\THI_TRACNGHIEM\THI_TN_TEST\obj\Debug\THI_TN_TEST.csproj.CopyComplete
 D:\Projects\THI_TRACNGHIEM\THI_TN_TEST\obj\Debug\THI_TN_TEST.exe
 D:\Projects\THI_TRACNGHIEM\THI_TN_TEST\obj\Debug\THI_TN_TEST.pdb
+D:\Projects\THI_TRACNGHIEM\THI_TN_TEST\obj\Debug\THI_TN_TEST.CauHoi.resources
