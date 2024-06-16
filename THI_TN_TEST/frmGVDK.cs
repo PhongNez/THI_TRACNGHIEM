@@ -340,5 +340,10 @@ namespace THI_TN_TEST
                 this.gIAOVIEN_DANGKYTableAdapter.Fill(this.DS.GIAOVIEN_DANGKY);
             }
         }
+
+        private void gIAOVIEN_DANGKYGridControl_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -60,16 +60,6 @@ namespace THI_TN_TEST
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.label6 = new System.Windows.Forms.Label();
             this.cmbCoso = new System.Windows.Forms.ComboBox();
-            this.gIAOVIEN_DANGKYGridControl = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colMAGV = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colMAMH = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colMALOP = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTRINHDO = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colNGAYTHI = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colLAN = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSOCAUTHI = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTHOIGIAN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmbLop = new System.Windows.Forms.ComboBox();
             this.cmbMONHOC = new System.Windows.Forms.ComboBox();
             this.cmbTRINHDO = new System.Windows.Forms.ComboBox();
@@ -84,6 +74,16 @@ namespace THI_TN_TEST
             this.txtTHOIGIAN = new DevExpress.XtraEditors.TextEdit();
             this.label5 = new System.Windows.Forms.Label();
             this.txtSOCAUTHI = new DevExpress.XtraEditors.TextEdit();
+            this.gIAOVIEN_DANGKYGridControl = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colMAGV = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMAMH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMALOP = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTRINHDO = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNGAYTHI = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colLAN = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSOCAUTHI = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTHOIGIAN = new DevExpress.XtraGrid.Columns.GridColumn();
             tENLOPLabel = new System.Windows.Forms.Label();
             tENMHLabel = new System.Windows.Forms.Label();
             mAGVLabel = new System.Windows.Forms.Label();
@@ -94,14 +94,14 @@ namespace THI_TN_TEST
             ((System.ComponentModel.ISupportInitialize)(this.lIST_MONBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gIAOVIEN_DANGKYGridControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditNgayThi.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditNgayThi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMAGV.Properties)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtTHOIGIAN.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSOCAUTHI.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gIAOVIEN_DANGKYGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tENLOPLabel
@@ -267,16 +267,16 @@ namespace THI_TN_TEST
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
             this.barDockControlTop.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControlTop.Size = new System.Drawing.Size(1924, 51);
+            this.barDockControlTop.Size = new System.Drawing.Size(1470, 51);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 760);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 682);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControlBottom.Size = new System.Drawing.Size(1924, 20);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1470, 20);
             // 
             // barDockControlLeft
             // 
@@ -285,16 +285,16 @@ namespace THI_TN_TEST
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 51);
             this.barDockControlLeft.Manager = this.barManager1;
             this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 709);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 631);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1924, 51);
+            this.barDockControlRight.Location = new System.Drawing.Point(1470, 51);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 709);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 631);
             // 
             // DS
             // 
@@ -348,17 +348,17 @@ namespace THI_TN_TEST
             this.panelControl1.Controls.Add(this.cmbCoso);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 51);
-            this.panelControl1.Margin = new System.Windows.Forms.Padding(6);
+            this.panelControl1.Margin = new System.Windows.Forms.Padding(12);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1924, 106);
+            this.panelControl1.Size = new System.Drawing.Size(1470, 94);
             this.panelControl1.TabIndex = 37;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(30, 38);
-            this.label6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label6.Location = new System.Drawing.Point(50, 39);
+            this.label6.Margin = new System.Windows.Forms.Padding(12, 0, 12, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(60, 21);
             this.label6.TabIndex = 1;
@@ -370,125 +370,12 @@ namespace THI_TN_TEST
             this.cmbCoso.Enabled = false;
             this.cmbCoso.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCoso.FormattingEnabled = true;
-            this.cmbCoso.Location = new System.Drawing.Point(148, 34);
-            this.cmbCoso.Margin = new System.Windows.Forms.Padding(6);
+            this.cmbCoso.Location = new System.Drawing.Point(173, 36);
+            this.cmbCoso.Margin = new System.Windows.Forms.Padding(12);
             this.cmbCoso.Name = "cmbCoso";
-            this.cmbCoso.Size = new System.Drawing.Size(1182, 28);
+            this.cmbCoso.Size = new System.Drawing.Size(1227, 28);
             this.cmbCoso.TabIndex = 0;
             this.cmbCoso.SelectedIndexChanged += new System.EventHandler(this.cmbCoso_SelectedIndexChanged);
-            // 
-            // gIAOVIEN_DANGKYGridControl
-            // 
-            this.gIAOVIEN_DANGKYGridControl.DataSource = this.bdsGVDK;
-            this.gIAOVIEN_DANGKYGridControl.Dock = System.Windows.Forms.DockStyle.Right;
-            this.gIAOVIEN_DANGKYGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
-            this.gIAOVIEN_DANGKYGridControl.Location = new System.Drawing.Point(894, 157);
-            this.gIAOVIEN_DANGKYGridControl.MainView = this.gridView1;
-            this.gIAOVIEN_DANGKYGridControl.Margin = new System.Windows.Forms.Padding(4);
-            this.gIAOVIEN_DANGKYGridControl.MenuManager = this.barManager1;
-            this.gIAOVIEN_DANGKYGridControl.Name = "gIAOVIEN_DANGKYGridControl";
-            this.gIAOVIEN_DANGKYGridControl.Size = new System.Drawing.Size(1030, 603);
-            this.gIAOVIEN_DANGKYGridControl.TabIndex = 38;
-            this.gIAOVIEN_DANGKYGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            // 
-            // gridView1
-            // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colMAGV,
-            this.colMAMH,
-            this.colMALOP,
-            this.colTRINHDO,
-            this.colNGAYTHI,
-            this.colLAN,
-            this.colSOCAUTHI,
-            this.colTHOIGIAN});
-            this.gridView1.DetailHeight = 481;
-            this.gridView1.FixedLineWidth = 3;
-            this.gridView1.GridControl = this.gIAOVIEN_DANGKYGridControl;
-            this.gridView1.Name = "gridView1";
-            // 
-            // colMAGV
-            // 
-            this.colMAGV.FieldName = "MAGV";
-            this.colMAGV.MinWidth = 25;
-            this.colMAGV.Name = "colMAGV";
-            this.colMAGV.OptionsColumn.ReadOnly = true;
-            this.colMAGV.Visible = true;
-            this.colMAGV.VisibleIndex = 0;
-            this.colMAGV.Width = 94;
-            // 
-            // colMAMH
-            // 
-            this.colMAMH.FieldName = "MAMH";
-            this.colMAMH.MinWidth = 25;
-            this.colMAMH.Name = "colMAMH";
-            this.colMAMH.OptionsColumn.ReadOnly = true;
-            this.colMAMH.Visible = true;
-            this.colMAMH.VisibleIndex = 1;
-            this.colMAMH.Width = 94;
-            // 
-            // colMALOP
-            // 
-            this.colMALOP.FieldName = "MALOP";
-            this.colMALOP.MinWidth = 25;
-            this.colMALOP.Name = "colMALOP";
-            this.colMALOP.OptionsColumn.ReadOnly = true;
-            this.colMALOP.Visible = true;
-            this.colMALOP.VisibleIndex = 2;
-            this.colMALOP.Width = 94;
-            // 
-            // colTRINHDO
-            // 
-            this.colTRINHDO.FieldName = "TRINHDO";
-            this.colTRINHDO.MinWidth = 25;
-            this.colTRINHDO.Name = "colTRINHDO";
-            this.colTRINHDO.OptionsColumn.ReadOnly = true;
-            this.colTRINHDO.Visible = true;
-            this.colTRINHDO.VisibleIndex = 3;
-            this.colTRINHDO.Width = 94;
-            // 
-            // colNGAYTHI
-            // 
-            this.colNGAYTHI.DisplayFormat.FormatString = "dd/MM/yyyy";
-            this.colNGAYTHI.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.colNGAYTHI.FieldName = "NGAYTHI";
-            this.colNGAYTHI.MinWidth = 25;
-            this.colNGAYTHI.Name = "colNGAYTHI";
-            this.colNGAYTHI.OptionsColumn.ReadOnly = true;
-            this.colNGAYTHI.Visible = true;
-            this.colNGAYTHI.VisibleIndex = 4;
-            this.colNGAYTHI.Width = 94;
-            // 
-            // colLAN
-            // 
-            this.colLAN.FieldName = "LAN";
-            this.colLAN.MinWidth = 25;
-            this.colLAN.Name = "colLAN";
-            this.colLAN.OptionsColumn.ReadOnly = true;
-            this.colLAN.Visible = true;
-            this.colLAN.VisibleIndex = 5;
-            this.colLAN.Width = 94;
-            // 
-            // colSOCAUTHI
-            // 
-            this.colSOCAUTHI.FieldName = "SOCAUTHI";
-            this.colSOCAUTHI.MinWidth = 25;
-            this.colSOCAUTHI.Name = "colSOCAUTHI";
-            this.colSOCAUTHI.OptionsColumn.ReadOnly = true;
-            this.colSOCAUTHI.Visible = true;
-            this.colSOCAUTHI.VisibleIndex = 6;
-            this.colSOCAUTHI.Width = 94;
-            // 
-            // colTHOIGIAN
-            // 
-            this.colTHOIGIAN.FieldName = "THOIGIAN";
-            this.colTHOIGIAN.MinWidth = 25;
-            this.colTHOIGIAN.Name = "colTHOIGIAN";
-            this.colTHOIGIAN.OptionsColumn.ReadOnly = true;
-            this.colTHOIGIAN.Visible = true;
-            this.colTHOIGIAN.VisibleIndex = 7;
-            this.colTHOIGIAN.Width = 94;
             // 
             // cmbLop
             // 
@@ -637,13 +524,13 @@ namespace THI_TN_TEST
             this.groupBox1.Controls.Add(this.cmbMONHOC);
             this.groupBox1.Controls.Add(tENLOPLabel);
             this.groupBox1.Controls.Add(this.cmbLop);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox1.Enabled = false;
-            this.groupBox1.Location = new System.Drawing.Point(0, 157);
+            this.groupBox1.Location = new System.Drawing.Point(0, 145);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(894, 603);
+            this.groupBox1.Size = new System.Drawing.Size(879, 537);
             this.groupBox1.TabIndex = 43;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
@@ -682,13 +569,126 @@ namespace THI_TN_TEST
             this.txtSOCAUTHI.Size = new System.Drawing.Size(236, 28);
             this.txtSOCAUTHI.TabIndex = 40;
             // 
+            // gIAOVIEN_DANGKYGridControl
+            // 
+            this.gIAOVIEN_DANGKYGridControl.DataSource = this.bdsGVDK;
+            this.gIAOVIEN_DANGKYGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gIAOVIEN_DANGKYGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(8);
+            this.gIAOVIEN_DANGKYGridControl.Location = new System.Drawing.Point(879, 145);
+            this.gIAOVIEN_DANGKYGridControl.MainView = this.gridView1;
+            this.gIAOVIEN_DANGKYGridControl.Margin = new System.Windows.Forms.Padding(8);
+            this.gIAOVIEN_DANGKYGridControl.MenuManager = this.barManager1;
+            this.gIAOVIEN_DANGKYGridControl.Name = "gIAOVIEN_DANGKYGridControl";
+            this.gIAOVIEN_DANGKYGridControl.Size = new System.Drawing.Size(591, 537);
+            this.gIAOVIEN_DANGKYGridControl.TabIndex = 49;
+            this.gIAOVIEN_DANGKYGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colMAGV,
+            this.colMAMH,
+            this.colMALOP,
+            this.colTRINHDO,
+            this.colNGAYTHI,
+            this.colLAN,
+            this.colSOCAUTHI,
+            this.colTHOIGIAN});
+            this.gridView1.DetailHeight = 481;
+            this.gridView1.FixedLineWidth = 3;
+            this.gridView1.GridControl = this.gIAOVIEN_DANGKYGridControl;
+            this.gridView1.Name = "gridView1";
+            // 
+            // colMAGV
+            // 
+            this.colMAGV.FieldName = "MAGV";
+            this.colMAGV.MinWidth = 25;
+            this.colMAGV.Name = "colMAGV";
+            this.colMAGV.OptionsColumn.ReadOnly = true;
+            this.colMAGV.Visible = true;
+            this.colMAGV.VisibleIndex = 0;
+            this.colMAGV.Width = 94;
+            // 
+            // colMAMH
+            // 
+            this.colMAMH.FieldName = "MAMH";
+            this.colMAMH.MinWidth = 25;
+            this.colMAMH.Name = "colMAMH";
+            this.colMAMH.OptionsColumn.ReadOnly = true;
+            this.colMAMH.Visible = true;
+            this.colMAMH.VisibleIndex = 1;
+            this.colMAMH.Width = 94;
+            // 
+            // colMALOP
+            // 
+            this.colMALOP.FieldName = "MALOP";
+            this.colMALOP.MinWidth = 25;
+            this.colMALOP.Name = "colMALOP";
+            this.colMALOP.OptionsColumn.ReadOnly = true;
+            this.colMALOP.Visible = true;
+            this.colMALOP.VisibleIndex = 2;
+            this.colMALOP.Width = 94;
+            // 
+            // colTRINHDO
+            // 
+            this.colTRINHDO.FieldName = "TRINHDO";
+            this.colTRINHDO.MinWidth = 25;
+            this.colTRINHDO.Name = "colTRINHDO";
+            this.colTRINHDO.OptionsColumn.ReadOnly = true;
+            this.colTRINHDO.Visible = true;
+            this.colTRINHDO.VisibleIndex = 3;
+            this.colTRINHDO.Width = 94;
+            // 
+            // colNGAYTHI
+            // 
+            this.colNGAYTHI.DisplayFormat.FormatString = "dd/MM/yyyy";
+            this.colNGAYTHI.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.colNGAYTHI.FieldName = "NGAYTHI";
+            this.colNGAYTHI.MinWidth = 25;
+            this.colNGAYTHI.Name = "colNGAYTHI";
+            this.colNGAYTHI.OptionsColumn.ReadOnly = true;
+            this.colNGAYTHI.Visible = true;
+            this.colNGAYTHI.VisibleIndex = 4;
+            this.colNGAYTHI.Width = 94;
+            // 
+            // colLAN
+            // 
+            this.colLAN.FieldName = "LAN";
+            this.colLAN.MinWidth = 25;
+            this.colLAN.Name = "colLAN";
+            this.colLAN.OptionsColumn.ReadOnly = true;
+            this.colLAN.Visible = true;
+            this.colLAN.VisibleIndex = 5;
+            this.colLAN.Width = 94;
+            // 
+            // colSOCAUTHI
+            // 
+            this.colSOCAUTHI.FieldName = "SOCAUTHI";
+            this.colSOCAUTHI.MinWidth = 25;
+            this.colSOCAUTHI.Name = "colSOCAUTHI";
+            this.colSOCAUTHI.OptionsColumn.ReadOnly = true;
+            this.colSOCAUTHI.Visible = true;
+            this.colSOCAUTHI.VisibleIndex = 6;
+            this.colSOCAUTHI.Width = 94;
+            // 
+            // colTHOIGIAN
+            // 
+            this.colTHOIGIAN.FieldName = "THOIGIAN";
+            this.colTHOIGIAN.MinWidth = 25;
+            this.colTHOIGIAN.Name = "colTHOIGIAN";
+            this.colTHOIGIAN.OptionsColumn.ReadOnly = true;
+            this.colTHOIGIAN.Visible = true;
+            this.colTHOIGIAN.VisibleIndex = 7;
+            this.colTHOIGIAN.Width = 94;
+            // 
             // frmGVDK
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1924, 780);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(1470, 702);
             this.Controls.Add(this.gIAOVIEN_DANGKYGridControl);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -707,8 +707,6 @@ namespace THI_TN_TEST
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gIAOVIEN_DANGKYGridControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditNgayThi.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditNgayThi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMAGV.Properties)).EndInit();
@@ -716,6 +714,8 @@ namespace THI_TN_TEST
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtTHOIGIAN.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSOCAUTHI.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gIAOVIEN_DANGKYGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -746,16 +746,6 @@ namespace THI_TN_TEST
         private DSTableAdapters.LIST_LOPTableAdapter lIST_LOPTableAdapter;
         private System.Windows.Forms.BindingSource lIST_MONBindingSource;
         private DSTableAdapters.LIST_MONTableAdapter lIST_MONTableAdapter;
-        private DevExpress.XtraGrid.GridControl gIAOVIEN_DANGKYGridControl;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn colMAGV;
-        private DevExpress.XtraGrid.Columns.GridColumn colMAMH;
-        private DevExpress.XtraGrid.Columns.GridColumn colMALOP;
-        private DevExpress.XtraGrid.Columns.GridColumn colTRINHDO;
-        private DevExpress.XtraGrid.Columns.GridColumn colNGAYTHI;
-        private DevExpress.XtraGrid.Columns.GridColumn colLAN;
-        private DevExpress.XtraGrid.Columns.GridColumn colSOCAUTHI;
-        private DevExpress.XtraGrid.Columns.GridColumn colTHOIGIAN;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cmbCoso;
@@ -773,5 +763,15 @@ namespace THI_TN_TEST
         private System.Windows.Forms.ComboBox cmbMONHOC;
         private System.Windows.Forms.ComboBox cmbLop;
         private DevExpress.XtraEditors.TextEdit txtSOCAUTHI;
+        private DevExpress.XtraGrid.GridControl gIAOVIEN_DANGKYGridControl;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Columns.GridColumn colMAGV;
+        private DevExpress.XtraGrid.Columns.GridColumn colMAMH;
+        private DevExpress.XtraGrid.Columns.GridColumn colMALOP;
+        private DevExpress.XtraGrid.Columns.GridColumn colTRINHDO;
+        private DevExpress.XtraGrid.Columns.GridColumn colNGAYTHI;
+        private DevExpress.XtraGrid.Columns.GridColumn colLAN;
+        private DevExpress.XtraGrid.Columns.GridColumn colSOCAUTHI;
+        private DevExpress.XtraGrid.Columns.GridColumn colTHOIGIAN;
     }
 }

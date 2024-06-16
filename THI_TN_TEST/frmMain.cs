@@ -153,5 +153,20 @@ namespace THI_TN_TEST
                 f.Show();
             }
         }
+
+        private void btnNhapDe_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(frmNhapDe));
+            if (frm != null)
+            {
+                frm.Activate();
+            }
+            else
+            {
+                frmNhapDe f = new frmNhapDe();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
     }
 }
