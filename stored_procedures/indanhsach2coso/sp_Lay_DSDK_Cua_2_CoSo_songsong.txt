@@ -1,0 +1,86 @@
+USE [TN_CSDLPT]
+GO
+/****** Object:  StoredProcedure [dbo].[sp_Lay_DSDK_Cua_2_CoSo_songsong]    Script Date: 6/2/2024 11:13:46 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER proc [dbo].[sp_Lay_DSDK_Cua_2_CoSo_songsong] @tungay date,@denngay date
+as
+begin
+	
+	SET XACT_ABORT ON
+	BEGIN DISTRIBUTED TRANSACTION
+	
+	DECLARE @STR1 NVARCHAR(4000)
+	DECLARE @check_run_status INT
+
+	IF OBJECT_ID('tempdb..##TempTable') IS NOT NULL
+		DROP TABLE ##TempTable
+	
+	IF OBJECT_ID('tempdb..##RemoteTempTable') IS NOT NULL
+		DROP TABLE ##RemoteTempTable
+
+	CREATE TABLE ##TempTable (
+		tencs nvarchar(100),
+		tenlop nvarchar(100),
+		tenmh nvarchar(100),
+		hoten nvarchar(100),
+		socauthi int,
+		ngaythi datetime,
+		dathi char(10),
+		ghichu nvarchar(20)
+    )
+
+	CREATE TABLE ##RemoteTempTable (
+		tencs nvarchar(100),
+		tenlop nvarchar(100),
+		tenmh nvarchar(100),
+		hoten nvarchar(100),
+		socauthi int,
+		ngaythi datetime,
+		dathi char(10),
+		ghichu nvarchar(20)
+    )
+	IF  EXISTS (SELECT job_id FROM msdb.dbo.sysjobs_view WHERE name = N'Job_1')
+		EXEC msdb.dbo.sp_delete_job @job_name=N'Job_1' 
+
+	SET @STR1= 'insert into ##TempTable EXEC sp_remote_Lay_DSDK_Cua_2_Coso ' + '''' + FORMAT(@tungay,'yyyy-MM-dd') +''''+ ','+ '''' + FORMAT(@denngay,'yyyy-MM-dd') + ''''
+	
+    
+    execute msdb.dbo.sp_add_job        @job_name = N'Job_1', @start_step_id = 1
+    EXECUTE msdb.dbo.sp_add_jobserver  @job_name = N'Job_1', @server_name =  @@SERVERNAME
+    execute msdb.dbo.sp_add_jobstep    @job_name =  N'Job_1' , @step_id = 1,
+	@step_name ='In DSDK 2 co so', @command =  @STR1 ,   @server = @@SERVERNAME, @database_name = 'TN_CSDLPT'
+
+	execute msdb.dbo.sp_start_job    @job_name =  N'Job_1'
+
+	insert into ##RemoteTempTable
+	exec LINK1.TN_CSDLPT.DBO.sp_remote_Lay_DSDK_Cua_2_Coso @tungay,@denngay
+
+	COMMIT TRANSACTION
+			
+	WHILE 1=1
+	BEGIN
+		select @check_run_status=run_status from msdb.dbo.sysjobhistory--Lưu trữ thông tin thực thi Job
+		where job_id=(SELECT job_id FROM msdb.dbo.sysjobs_view where name=N'Job_1') and step_name='In DSDK 2 co so'--Chứa thông tin các job
+
+		--0: Thất bại
+		--1: Thành công
+		--3: Bị hủy
+		IF  @check_run_status=1 OR @check_run_status =0 OR @check_run_status=3
+		BEGIN
+			BREAK
+		END
+	WAITFOR DELAY '00:00:02'--tránh vòng lặp chạy liên tục
+	END
+
+	select * from ##TempTable
+	UNION ALL
+	select * from ##RemoteTempTable
+	ORDER BY tencs,ngaythi
+
+	IF  EXISTS (SELECT job_id FROM msdb.dbo.sysjobs_view WHERE name = N'Job_1')
+		EXEC msdb.dbo.sp_delete_job @job_name=N'Job_1' 
+end
+

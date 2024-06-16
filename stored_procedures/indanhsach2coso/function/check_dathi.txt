@@ -1,0 +1,21 @@
+USE [TN_CSDLPT]
+GO
+/****** Object:  UserDefinedFunction [dbo].[check_dathi]    Script Date: 6/1/2024 9:55:10 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER function [dbo].[check_dathi] (@malop nchar(20),@mamh char(10),@lan int )
+returns char(10)
+as
+begin
+declare @dem int
+select @dem=COUNT(*) from (select MASV from BANGDIEM where MAMH=@mamh AND LAN=@lan) bd,
+(select MASV from SINHVIEN where MALOP=@malop) sv 
+where sv.MASV=bd.MASV
+if @dem > 0
+return 'X';
+else
+return '';
+return '';
+end;

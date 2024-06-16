@@ -1,0 +1,15 @@
+USE [TN_CSDLPT]
+GO
+/****** Object:  StoredProcedure [dbo].[sp_KiemTraMaMonHoc]    Script Date: 5/3/2024 7:10:42 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+create proc [dbo].[sp_KiemTraMaMonHoc] @mamh char(10)
+as
+begin
+if exists(select MAMH from MONHOC where MAMH=@mamh)
+return 1;-- tồn tại trả về 1
+else
+return 0;--k tồn tại trả về 0
+end

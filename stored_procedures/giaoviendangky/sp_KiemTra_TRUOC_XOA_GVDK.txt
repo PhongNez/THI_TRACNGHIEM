@@ -1,0 +1,19 @@
+USE [TN_CSDLPT]
+GO
+/****** Object:  StoredProcedure [dbo].[sp_KiemTra_TRUOC_XOA_GVDK]    Script Date: 6/13/2024 4:20:52 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER proc [dbo].[sp_KiemTra_TRUOC_XOA_GVDK] @malop nchar(20),@mamh char(10),@lan int
+as
+begin
+declare @dem int
+select @dem=COUNT(*) from (select MASV from BANGDIEM where MAMH=@mamh AND LAN=@lan) bd,
+(select MASV from SINHVIEN where MALOP=@malop) sv 
+where sv.MASV=bd.MASV
+if @dem>0
+return 1
+else 
+return 0
+end

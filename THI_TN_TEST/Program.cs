@@ -123,7 +123,27 @@ namespace THI_TN_TEST
             }
 
         }
+        public static int ExecSqlNonQuery(String strlenh)
+        {
 
+            if (conn.State == ConnectionState.Closed) conn.Open();
+            SqlCommand Sqlcmd = new SqlCommand(strlenh, conn);
+            Sqlcmd.CommandType = CommandType.Text;
+            Sqlcmd.CommandTimeout = 600;// 10 phut 
+            try
+            {
+                Sqlcmd.ExecuteNonQuery();
+
+                return 0;
+
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                conn.Close();
+                return ex.State; // trang thai lỗi gởi từ RAISERROR trong SQL Server qua
+            }
+        }
         [STAThread]
         static void Main()
         {

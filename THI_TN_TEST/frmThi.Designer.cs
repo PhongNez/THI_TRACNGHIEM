@@ -43,6 +43,7 @@ namespace THI_TN_TEST
             this.txtEditHoTen = new DevExpress.XtraEditors.TextEdit();
             this.lbHoTen = new System.Windows.Forms.Label();
             this.gbBaiThi = new System.Windows.Forms.GroupBox();
+            this.btnXacNhan = new System.Windows.Forms.Button();
             this.lbTime = new System.Windows.Forms.Label();
             this.btnBatDau = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
@@ -230,6 +231,7 @@ namespace THI_TN_TEST
             // gbBaiThi
             // 
             this.gbBaiThi.BackColor = System.Drawing.Color.White;
+            this.gbBaiThi.Controls.Add(this.btnXacNhan);
             this.gbBaiThi.Controls.Add(this.lbTime);
             this.gbBaiThi.Controls.Add(this.btnBatDau);
             this.gbBaiThi.Controls.Add(this.btnThoat);
@@ -249,12 +251,25 @@ namespace THI_TN_TEST
             this.gbBaiThi.Controls.Add(this.label5);
             this.gbBaiThi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbBaiThi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.gbBaiThi.Location = new System.Drawing.Point(341, 0);
+            this.gbBaiThi.Location = new System.Drawing.Point(308, 0);
             this.gbBaiThi.Name = "gbBaiThi";
-            this.gbBaiThi.Size = new System.Drawing.Size(991, 152);
+            this.gbBaiThi.Size = new System.Drawing.Size(1024, 152);
             this.gbBaiThi.TabIndex = 12;
             this.gbBaiThi.TabStop = false;
             this.gbBaiThi.Text = "Thông tin bài thi";
+            // 
+            // btnXacNhan
+            // 
+            this.btnXacNhan.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnXacNhan.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXacNhan.ForeColor = System.Drawing.Color.Black;
+            this.btnXacNhan.Location = new System.Drawing.Point(179, 113);
+            this.btnXacNhan.Name = "btnXacNhan";
+            this.btnXacNhan.Size = new System.Drawing.Size(98, 30);
+            this.btnXacNhan.TabIndex = 40;
+            this.btnXacNhan.Text = "Xác nhận";
+            this.btnXacNhan.UseVisualStyleBackColor = false;
+            this.btnXacNhan.Click += new System.EventHandler(this.btnXacNhan_Click);
             // 
             // lbTime
             // 
@@ -262,7 +277,7 @@ namespace THI_TN_TEST
             this.lbTime.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lbTime.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTime.ForeColor = System.Drawing.Color.ForestGreen;
-            this.lbTime.Location = new System.Drawing.Point(678, 68);
+            this.lbTime.Location = new System.Drawing.Point(700, 61);
             this.lbTime.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.lbTime.Name = "lbTime";
             this.lbTime.Size = new System.Drawing.Size(118, 39);
@@ -273,7 +288,7 @@ namespace THI_TN_TEST
             // 
             this.btnBatDau.BackColor = System.Drawing.Color.MediumSpringGreen;
             this.btnBatDau.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBatDau.Location = new System.Drawing.Point(530, 67);
+            this.btnBatDau.Location = new System.Drawing.Point(839, 15);
             this.btnBatDau.Name = "btnBatDau";
             this.btnBatDau.Size = new System.Drawing.Size(125, 40);
             this.btnBatDau.TabIndex = 38;
@@ -285,7 +300,7 @@ namespace THI_TN_TEST
             // 
             this.btnThoat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnThoat.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoat.Location = new System.Drawing.Point(814, 99);
+            this.btnThoat.Location = new System.Drawing.Point(839, 99);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(125, 43);
             this.btnThoat.TabIndex = 37;
@@ -296,12 +311,13 @@ namespace THI_TN_TEST
             // 
             this.btnNopBai.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnNopBai.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNopBai.Location = new System.Drawing.Point(814, 26);
+            this.btnNopBai.Location = new System.Drawing.Point(839, 54);
             this.btnNopBai.Name = "btnNopBai";
             this.btnNopBai.Size = new System.Drawing.Size(125, 46);
             this.btnNopBai.TabIndex = 36;
             this.btnNopBai.Text = "Nộp bài";
             this.btnNopBai.UseVisualStyleBackColor = false;
+            this.btnNopBai.Click += new System.EventHandler(this.btnNopBai_Click);
             // 
             // lbLan
             // 
@@ -364,7 +380,7 @@ namespace THI_TN_TEST
             0,
             0});
             this.edtSoCau.Enabled = false;
-            this.edtSoCau.Location = new System.Drawing.Point(361, 82);
+            this.edtSoCau.Location = new System.Drawing.Point(476, 76);
             this.edtSoCau.Margin = new System.Windows.Forms.Padding(1);
             this.edtSoCau.Name = "edtSoCau";
             this.edtSoCau.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -377,7 +393,7 @@ namespace THI_TN_TEST
             // edtTrinhDo
             // 
             this.edtTrinhDo.Enabled = false;
-            this.edtTrinhDo.Location = new System.Drawing.Point(361, 32);
+            this.edtTrinhDo.Location = new System.Drawing.Point(476, 32);
             this.edtTrinhDo.Margin = new System.Windows.Forms.Padding(1);
             this.edtTrinhDo.Name = "edtTrinhDo";
             this.edtTrinhDo.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -393,7 +409,7 @@ namespace THI_TN_TEST
             this.label10.BackColor = System.Drawing.Color.White;
             this.label10.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label10.Location = new System.Drawing.Point(415, 119);
+            this.label10.Location = new System.Drawing.Point(509, 120);
             this.label10.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(37, 17);
@@ -406,7 +422,7 @@ namespace THI_TN_TEST
             this.txtThoiGian.BackColor = System.Drawing.Color.White;
             this.txtThoiGian.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtThoiGian.ForeColor = System.Drawing.Color.Crimson;
-            this.txtThoiGian.Location = new System.Drawing.Point(379, 120);
+            this.txtThoiGian.Location = new System.Drawing.Point(473, 121);
             this.txtThoiGian.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.txtThoiGian.Name = "txtThoiGian";
             this.txtThoiGian.Size = new System.Drawing.Size(24, 17);
@@ -419,7 +435,7 @@ namespace THI_TN_TEST
             this.label9.BackColor = System.Drawing.Color.White;
             this.label9.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label9.Location = new System.Drawing.Point(287, 120);
+            this.label9.Location = new System.Drawing.Point(389, 121);
             this.label9.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(78, 17);
@@ -432,7 +448,7 @@ namespace THI_TN_TEST
             this.label8.BackColor = System.Drawing.Color.White;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label8.Location = new System.Drawing.Point(287, 86);
+            this.label8.Location = new System.Drawing.Point(389, 81);
             this.label8.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(59, 17);
@@ -445,7 +461,7 @@ namespace THI_TN_TEST
             this.label7.BackColor = System.Drawing.Color.White;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label7.Location = new System.Drawing.Point(287, 41);
+            this.label7.Location = new System.Drawing.Point(389, 40);
             this.label7.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(72, 17);
@@ -561,5 +577,6 @@ namespace THI_TN_TEST
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader CauHoi;
         private System.Windows.Forms.ColumnHeader DapAn;
+        private System.Windows.Forms.Button btnXacNhan;
     }
 }

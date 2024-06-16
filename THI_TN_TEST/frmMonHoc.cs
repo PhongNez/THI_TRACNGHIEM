@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;//Sử dụng Regex =>Bắt kí tự nhập
+
 
 namespace THI_TN_TEST
 {
@@ -41,26 +43,21 @@ namespace THI_TN_TEST
 
             this.gIAOVIEN_DANGKYTableAdapter.Connection.ConnectionString = Program.connstr;
             this.gIAOVIEN_DANGKYTableAdapter.Fill(this.DS_MH.GIAOVIEN_DANGKY);
-            
+
+            if (Program.mGroup == "TRUONG")
+            {
+                //Cập nhật form môn học
+                btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnUndo.Enabled = btnGhi.Enabled = false;
+            }
         }
 
-        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            checkThemSua = 0;
-            txtMAMH.Enabled = true;
-            vitri = bdsMH.Position;
-            groupBox1.Enabled = true;
-            bdsMH.AddNew();
-
-            btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnReload.Enabled = btnThoat.Enabled = false;
-            btnGhi.Enabled = btnUndo.Enabled = true;
-            gcMonHoc.Enabled = false;
-        }
-
+    
         private void btnUndo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            this.MONHOCTableAdapter.Fill(this.DS_MH.MONHOC);//Mục đích xóa các ô thừa
+            //this.MONHOCTableAdapter.Fill(this.DS_MH.MONHOC);//Mục đích xóa các ô thừa
+            
             bdsMH.CancelEdit();
+          
             if (btnThem.Enabled == false)
             {
                 bdsMH.Position = vitri;
@@ -108,7 +105,8 @@ namespace THI_TN_TEST
                 try
                 {
 
-                    mamh = Convert.ToString(((DataRowView)bdsMH[bdsMH.Position])["MAMH"]);
+                    //mamh = Convert.ToString(((DataRowView)bdsMH[bdsMH.Position])["MAMH"]);
+                    mamh = ((DataRowView)bdsMH[bdsMH.Position])["MAMH"].ToString();
                     MessageBox.Show("Bạn đã xóa thành công " + mamh, "", MessageBoxButtons.OK);
                     bdsMH.RemoveCurrent();
                     this.MONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
@@ -142,16 +140,26 @@ namespace THI_TN_TEST
                 return;
             }
 
+            if (Regex.IsMatch(txtMAMH.Text.Trim(), "^[a-zA-Z0-9]+$") == false)
+            {
+                MessageBox.Show("Mã môn học chỉ cho nhập chữ và số", "Thông báo");
+                txtMAMH.Focus();
+                return;
+            }
+
             txtMAMH.Text = txtMAMH.Text.Trim();
             txtTENMH.Text = txtTENMH.Text.Trim();
            
             try
             {
-                if (checkThemSua == 0) {
+                if (checkThemSua == 0)
+                {
                     //Kiểm tra mã môn có trùng trên các site
-                    string strLenh = "EXEC sp_KiemTraMaMonHoc '" + txtMAMH.Text + "'";
+                    string strLenh = "declare @result int "
+                        + "EXEC @result = sp_KiemTraMaMonHoc '" + txtMAMH.Text + "'"
+                        + " select @result";
                     Program.myReader = Program.ExecSqlDataReader(strLenh);
-                    Program.myReader.Read();
+                    Program.myReader.Read();//Đọc dòng đầu
                     int result = Program.myReader.GetInt32(0);
                     Program.myReader.Close();
                     if (result == 1)
@@ -160,9 +168,11 @@ namespace THI_TN_TEST
                         return;
                     }
               
- }
+                }
                 //Kiểm tra tên trùng
-                string strTenMonHoc = "EXEC sp_KiemTraTenMonHoc N'" + txtTENMH.Text + "'";
+                string strTenMonHoc = "declare @result int " 
+                    + "EXEC @result = sp_KiemTraTenMonHoc N'" + txtTENMH.Text + "'"
+                    + " select @result";
                 Program.myReader = Program.ExecSqlDataReader(strTenMonHoc);
                 Program.myReader.Read();
                 int resultTen = Program.myReader.GetInt32(0);
@@ -195,10 +205,24 @@ namespace THI_TN_TEST
         {
             checkThemSua = 1;
             txtMAMH.Enabled = false;// Không cho sửa mã môn học
+            vitri = bdsMH.Position;
             gcMonHoc.Enabled = false;
             groupBox1.Enabled = true;
             btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled =btnReload.Enabled=btnThoat.Enabled= false;
             btnGhi.Enabled = btnUndo.Enabled = true;
+        }
+
+        private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            checkThemSua = 0;
+            txtMAMH.Enabled = true;//Cho thêm mã
+            vitri = bdsMH.Position;
+            groupBox1.Enabled = true;
+            bdsMH.AddNew();
+
+            btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnReload.Enabled = btnThoat.Enabled = false;
+            btnGhi.Enabled = btnUndo.Enabled = true;
+            gcMonHoc.Enabled = false;
         }
     }
 }

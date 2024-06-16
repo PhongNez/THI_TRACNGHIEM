@@ -1,0 +1,15 @@
+USE [TN_CSDLPT]
+GO
+/****** Object:  StoredProcedure [dbo].[sp_KiemTraTenMonHoc]    Script Date: 5/3/2024 7:40:44 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+create proc [dbo].[sp_KiemTraTenMonHoc] @tenmh nvarchar(100)
+as
+begin
+if exists(select tenmh from MONHOC where TENMH=@tenmh)
+return 1;
+else
+return 0;
+end

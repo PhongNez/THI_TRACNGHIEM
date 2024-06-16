@@ -104,7 +104,7 @@ namespace THI_TN_TEST
 
                 if (Program.KetNoi() == 0)
                 { return; }
-                Program.mCoso = cmbChiNhanh.SelectedIndex;//Lấy index hiện đang được chọn để hỗ trợ rẽ cơ sở
+                Program.mCoso = cmbChiNhanh.SelectedIndex;//Lấy index của item  đang được chọn để hỗ trợ rẽ cơ sở
                 
                 Program.mloginDN = Program.mlogin;
                 Program.passwordDN = Program.password;
@@ -128,6 +128,7 @@ namespace THI_TN_TEST
             {
                 Program.myReader.Read();
                 Program.malop =  radiobtnSV.Checked ?  Program.myReader.GetString(3): "";
+                //Program.malop = Program.myReader.GetString(3);
                 Program.username = Program.myReader.GetString(0);//username
             }
            
@@ -161,6 +162,10 @@ namespace THI_TN_TEST
             else
             {
                 Program.frmChinh.HienThiMenu(true);
+            }
+            if(Program.mGroup == "TRUONG")
+            {
+                Program.frmChinh.HienThiMenuTruong(true);
             }
 
         }

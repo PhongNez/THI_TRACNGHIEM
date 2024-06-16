@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;//Sử dụng Regex =>Bắt kí tự nhập
 
 namespace THI_TN_TEST
 {
@@ -50,7 +51,9 @@ namespace THI_TN_TEST
             if (Program.mGroup == "TRUONG")
             {
                 cmbCoso.Enabled = true;
+                //Cập nhật from sinh viên
                 btnThemSV.Enabled = btnSuaSV.Enabled = btnXoaSV.Enabled = btnUndoSV.Enabled = btnGhiSV.Enabled = false;
+           
             }
 
         }
@@ -74,7 +77,7 @@ namespace THI_TN_TEST
 
             txtMASV.Enabled = true;
             checkThemSua = 0;
-            dateNGAYSINH.DateTime = new DateTime(2000, 01, 01);
+            dateNGAYSINH.DateTime = new DateTime(2000, 01, 01);// xét ngày mặc định
         }
 
         private void btnUndoSV_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -107,7 +110,7 @@ namespace THI_TN_TEST
 
         private void btnXoaSV_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            string masv = "";
+            string masv = "";//Xóa thất bại thì tìm và trả lại vị trí
             if (bdsBANGDIEM.Count > 0)
             {
                 MessageBox.Show("Không thể xóa sinh viên vì đã có bảng điểm","",MessageBoxButtons.OK);
@@ -118,7 +121,7 @@ namespace THI_TN_TEST
             {
                 try
                 {
-                    masv = Convert.ToString(((DataRowView)bdsSV[bdsSV.Position])["MASV"]);
+                    masv = ((DataRowView)bdsSV[bdsSV.Position])["MASV"].ToString();
                     //MessageBox.Show("Mã sinh viên thử: " + masv, "", MessageBoxButtons.OK);
                     MessageBox.Show("Bạn đã xóa thành công sinh viên", "", MessageBoxButtons.OK);
                     bdsSV.RemoveCurrent();
@@ -166,16 +169,33 @@ namespace THI_TN_TEST
                 txtPASSWORD.Focus();
                 return;
             }
+            if (Regex.IsMatch(txtMASV.Text.Trim(), "^[a-zA-Z0-9]+$") == false)//.Trim() để pattern nó khỏi kiểm tra khoảng cách
+            {
+                MessageBox.Show("Mã sinh viên chỉ cho nhập chữ và số", "Thông báo");
+                txtMASV.Focus();
+                return;
+            }
+            if (Regex.IsMatch(txtHO.Text, "^[a-zA-Z ]+$") == false)
+            {
+                MessageBox.Show("Vui lòng nhập họ không dấu và chỉ nhập chữ", "Thông báo");
+                txtHO.Focus();
+                return;
+            }
+            if (Regex.IsMatch(txtTEN.Text.Trim(), "^[a-zA-Z]+$") == false)//.Trim() để pattern nó khỏi kiểm tra khoảng cách
+            {
+                MessageBox.Show("Vui lòng nhập tên không dấu và chỉ nhập chữ", "Thông báo");
+                txtTEN.Focus();
+                return;
+            }
 
-
-            //if (dateNGAYSINH.EditValue ==null || dateNGAYSINH.EditValue.ToString()=="")
-            //{
-            //    MessageBox.Show("Ngày sinh của sinh viên chưa nhập", "Thông báo", MessageBoxButtons.OK);
-            //    dateNGAYSINH.Focus();
-            //    return;
-            //}
-
-            if (dateNGAYSINH.DateTime==DateTime.MinValue)
+            if (Regex.IsMatch(txtPASSWORD.Text, "^[a-zA-Z0-9 ]+$") == false)
+            {
+                MessageBox.Show("Password chỉ cho nhập chữ và số", "Thông báo");
+                txtPASSWORD.Focus();
+                return;
+            }
+          
+            if(dateNGAYSINH.DateTime.Equals(DateTime.MinValue))
             {
                 MessageBox.Show("Ngày sinh của sinh viên chưa nhập", "Thông báo", MessageBoxButtons.OK);
                 dateNGAYSINH.Focus();
@@ -190,12 +210,17 @@ namespace THI_TN_TEST
                 return;
             }
             txtMASV.Text = txtMASV.Text.Trim();
+            txtHO.Text = txtHO.Text.Trim();
+            txtTEN.Text = txtTEN.Text.Trim();
+            txtPASSWORD.Text = txtPASSWORD.Text.Trim();
             try
             {
                 if (checkThemSua == 0)//đang thêm mới kiểm tra
                 {
                     //Kiểm tra mã sinh viên có trùng trên các site
-                    string strLenh = "EXEC sp_KiemTraMaSinhVien '" + txtMASV.Text + "'";
+                    string strLenh = "declare @result int "
+                        + " EXEC @result = sp_KiemTraMaSinhVien '" + txtMASV.Text + "'"
+                        + " select @result";
                     Program.myReader = Program.ExecSqlDataReader(strLenh);
                     Program.myReader.Read();
                     int result = Program.myReader.GetInt32(0);
@@ -264,6 +289,7 @@ namespace THI_TN_TEST
 
         private void btnSuaSV_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            vitri = bdsSV.Position;
             groupBox1.Enabled = true;
             gcLOP.Enabled = false;
             SINHVIENDataGridView.Enabled = false;

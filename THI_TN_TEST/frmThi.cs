@@ -26,6 +26,12 @@ namespace THI_TN_TEST
             layThongTinLop();
             init_MonThi();
             //initQuestion();
+            setBtn();
+        }
+        private void setBtn()
+        {
+            btnBatDau.Visible = false;
+            btnNopBai.Visible = false;
         }
         private void init_MonThi()
         {
@@ -40,7 +46,6 @@ namespace THI_TN_TEST
             if (Program.myReader.HasRows)
             {
                 // Khởi tạo DataTable
-
                 // Thêm các cột vào DataTable dựa trên cấu trúc của SqlDataReader
                 for (int i = 0; i < Program.myReader.FieldCount; i++)
                 {
@@ -53,53 +58,50 @@ namespace THI_TN_TEST
                     {
                         row[i] = Program.myReader[i];
                     }
-                    dt.Rows.Add(row);
+                    dt.Rows.Add(row); 
                 }
                 dsmh.DataSource = dt;
                 cbBoxTenMH.DataSource = dsmh;
                 cbBoxTenMH.DisplayMember = "TENMH";
                 cbBoxTenMH.ValueMember = "MAMH";
-                Console.WriteLine("Số hàng trong DataTable: " + dt.Rows.Count);
+               // Console.WriteLine("Số hàng trong DataTable: " + dt.Rows.Count);
             }
             else
-            {
+            {   
+                
                 Console.WriteLine("Không có dữ liệu trả về từ truy vấn.");
             }
             Program.myReader.Close();
         } 
         private void initQuestion()
         { 
-                String strLenh = "EXECUTE";
+                String strLenh = "EXECUTE SP_LayDeThi '"+Program.malop +" ', '" + Program.mlogin +"' , '" + cbBoxTenMH.SelectedValue +" ', " +cbBoxLan.Text ;
                 DataTable cauhoidt = Program.ExecSqlDataTable(strLenh);
                 lbTime.Visible = true;
-                timer1.Start();
-                listCauHoi = new CauHoi[20];
                 BindingSource bdsBaiThi = new BindingSource();
                 bdsBaiThi.DataSource = cauhoidt;
-                    for (int i = 0; i < listCauHoi.Length; i++)
+                listCauHoi = new CauHoi[bdsBaiThi.Count];
+                for (int i = 0; i < listCauHoi.Length; i++)
                    {
                     listCauHoi[i] = new CauHoi();
                     listCauHoi[i].Width = panelCauHoi.Width;
                     listCauHoi[i].Height = panelCauHoi.Height - 10;
                     listCauHoi[i].CauSo = i + 1;
-                    listCauHoi[i].IDBaiThi = (int)((DataRowView)bdsBaiThi[i])["CauHoi"];
+                    listCauHoi[i].IDBaiThi = (int)((DataRowView)bdsBaiThi[i])["ID_BDIEM"];
                     Console.WriteLine("id cau hoi: " + listCauHoi[i].IDBaiThi);
-                    listCauHoi[i].IDDe = (int)((DataRowView)bdsBaiThi[i])["CAUHOI"];
+                    listCauHoi[i].IDCauHoi = (int)((DataRowView)bdsBaiThi[i])["ID_CAUHOI"];
                     listCauHoi[i].NDCauHoi = ((DataRowView)bdsBaiThi[i])["NoiDung"].ToString();
                     listCauHoi[i].CauA = ((DataRowView)bdsBaiThi[i])["A"].ToString();
                     listCauHoi[i].CauB = ((DataRowView)bdsBaiThi[i])["B"].ToString();
                     listCauHoi[i].CauC = ((DataRowView)bdsBaiThi[i])["C"].ToString();
                     listCauHoi[i].CauD = ((DataRowView)bdsBaiThi[i])["D"].ToString();
                     listCauHoi[i].CauDapAn = ((DataRowView)bdsBaiThi[i])["Dap_An"].ToString();
-                    //listCauHoi[i].MaBangDiem = (int)((DataRowView)bdsBaiThi[i])["MaBD"];
-                    listCauHoi[i].MaBangDiem = 0;
                     listCauHoi[i].CauDaChon = "";
                     String[] arr = new string[2];
                     arr[0] = (i + 1).ToString();
                     arr[1] = listCauHoi[i].CauDaChon;
 
                     baiThi = new ListViewItem(arr);
-                    //Console.WriteLine("cau: " + (i + 1) + ":" + listCauHoi[i].CauDapAn);
                     this.listView1.Items.Add(baiThi);
                     if (panelCauHoi.Controls.Count < 0)
                     {
@@ -136,13 +138,96 @@ namespace THI_TN_TEST
                     thoigianThi--;
                     s = 59;
                 }
+                else
+                {
+                    timer1.Stop();
+                    ketThuc();
+                }
             }
             lbTime.Text = thoigianThi.ToString() + " : " + s.ToString();
         }
+        private void ketThuc()
+        {
+            //Tính điểm
+            insertdiemsv(tinhdiem());
+            //insert
+            // tạo form 
+        }
+        private float tinhdiem()
+        {
+            int caudung = 0;
+            int soCauThi = listCauHoi.Length;
+            for (int i = 0; i < listCauHoi.Length; i++)
+            {
+                if (listCauHoi[i].CauDaChon.Trim().CompareTo(listCauHoi[i].CauDapAn.Trim()) == 0)
+                    caudung++;
+            }
+            float diem;
+            if (caudung == 0) diem = 0;
+            else diem = (float)Math.Round((double)(10 * caudung) / soCauThi, 2);
+            MessageBox.Show("Số câu đúng: " + caudung + "/" + soCauThi + "\nĐiểm: " + diem, "Kết Quả", MessageBoxButtons.OK);
+            btnNopBai.Visible = false;
+            return diem;
+        }
+        private void insertdiemsv(float diem)
+        {
+            String sql = "EXEC sp_UpdateBangDiem " + listCauHoi[0].IDBaiThi +" , " + diem.ToString();
+            try
+            {
+                int kq = Program.ExecSqlNonQuery(sql);
+                Program.conn.Close();
+                ghiDapAn();
+                //if (kq == 1)
+                //{
+                //    ghiDapAn();
+                //}
+                //else
+                //{
+                //    MessageBox.Show("Lỗi ghi điểm thi", "", MessageBoxButtons.OK);
+                //    return;
+                //}
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi ghi điểm thi " + ex.Message, "", MessageBoxButtons.OK);
+                return;
+            }
+        }
+        private void ghiDapAn()
+        {
+            string sqlUpdate = "";
+            for (int i = 0; i < listCauHoi.Length; i++)
+            {
+                sqlUpdate += "EXEC spUpdateChiTietThi " +listCauHoi[i].IDCauHoi+ ", "+ listCauHoi[i].IDBaiThi+ ", "+ (i+1) + ", '" +listCauHoi[i].CauDaChon +"'"
+                    +"; ";
+            }
+            Console.WriteLine(sqlUpdate);
+            try
+            {
+                Program.ExecSqlNonQuery(sqlUpdate);
+                Program.conn.Close(); 
+                //if (kq != 0)
+                //{
+                //    MessageBox.Show("Ghi kết quả thành công ", "Thông báo", MessageBoxButtons.OK);
+                //    return;
+                //}
+                //else
+                //{
+                //    MessageBox.Show("Lỗi ghi đáp án thi", "", MessageBoxButtons.OK);
+                //    return;
+                //}
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi ghi đáp án thi " + ex.Message, "", MessageBoxButtons.OK);
+                return;
+            }
+        }
         private void btnBatDau_Click_1(object sender, EventArgs e)
         {
-            layThongTinThi();
-            initQuestion(); 
+            initQuestion();
+            btnBatDau.Visible = false;
+            timer1.Start();
         }
         private void layThongTinThi()
         {
@@ -158,10 +243,32 @@ namespace THI_TN_TEST
             thoigianThi = Program.myReader.GetInt16(2)-1;
             edtTrinhDo.Text = trinhDo;
             lbTime.Text = thoigianThi.ToString() + " : " + s.ToString();
-            txtThoiGian.Text = thoigianThi.ToString()+1;
+            txtThoiGian.Text = (thoigianThi+1).ToString();
             edtSoCau.Value = soCau;
             dTNgayThi.Value = Program.myReader.GetDateTime(3);
             Program.myReader.Close();
+        }
+        private void kiemTraLanThi()
+        {
+            int dathi = 0;
+            String strLenh = "EXEC SP_KTLANTHI '" + Program.mlogin + "','" + cbBoxTenMH.SelectedValue + "'," + cbBoxLan.Text;
+            Program.myReader = Program.ExecSqlDataReader(strLenh);
+            if (Program.myReader == null)
+            {
+                return;
+            }
+            Program.myReader.Read();
+            dathi = Program.myReader.GetInt32(0);
+            Program.myReader.Close();
+            if (dathi == 1)
+            {
+                MessageBox.Show("Bạn đã thi môn này, vui lòng chọn lại!", "", MessageBoxButtons.OK);
+            }
+            else
+            {   layThongTinThi();
+                btnBatDau.Visible = true;
+                btnNopBai.Visible = true;
+            }
         }
         private void layThongTinLop()
         {
@@ -173,10 +280,20 @@ namespace THI_TN_TEST
             }
             Program.myReader.Read();
             maLop = Program.myReader.GetString(0);
-            Program.myReader.Close();
             txtEditMaSV.Text = maLop;
             txtTenLop.Text = Program.myReader.GetString(1);
+            Program.myReader.Close();
             txtEditHoTen.Text = Program.mHoten;
+        }
+
+        private void btnXacNhan_Click(object sender, EventArgs e)
+        {
+            kiemTraLanThi();
+        }
+
+        private void btnNopBai_Click(object sender, EventArgs e)
+        {
+            ketThuc();
         }
     }
     

@@ -29,6 +29,8 @@ namespace THI_TN_TEST
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CauHoi));
             this.lbCauSo = new DevExpress.XtraEditors.LabelControl();
             this.lbNoiDung = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -40,6 +42,8 @@ namespace THI_TN_TEST
             this.rbB = new System.Windows.Forms.RadioButton();
             this.rbC = new System.Windows.Forms.RadioButton();
             this.rbD = new System.Windows.Forms.RadioButton();
+            this.txtNoiDung = new System.Windows.Forms.TextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.radioGroup1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,7 +51,7 @@ namespace THI_TN_TEST
             // 
             this.lbCauSo.Appearance.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCauSo.Appearance.Options.UseFont = true;
-            this.lbCauSo.Location = new System.Drawing.Point(3, 3);
+            this.lbCauSo.Location = new System.Drawing.Point(3, 43);
             this.lbCauSo.Name = "lbCauSo";
             this.lbCauSo.Size = new System.Drawing.Size(74, 23);
             this.lbCauSo.TabIndex = 0;
@@ -58,18 +62,20 @@ namespace THI_TN_TEST
             // 
             this.lbNoiDung.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNoiDung.Appearance.Options.UseFont = true;
+            this.lbNoiDung.AutoEllipsis = true;
             this.lbNoiDung.Location = new System.Drawing.Point(3, 32);
+            this.lbNoiDung.MaximumSize = new System.Drawing.Size(100, 100);
+            this.lbNoiDung.MinimumSize = new System.Drawing.Size(0, 20);
             this.lbNoiDung.Name = "lbNoiDung";
-            this.lbNoiDung.Size = new System.Drawing.Size(99, 17);
+            this.lbNoiDung.Size = new System.Drawing.Size(0, 20);
             this.lbNoiDung.TabIndex = 1;
-            this.lbNoiDung.Text = "Nội dung câu hỏi";
             this.lbNoiDung.Click += new System.EventHandler(this.labelControl2_Click);
             // 
             // labelControl3
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(16, 70);
+            this.labelControl3.Location = new System.Drawing.Point(24, 113);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(14, 23);
             this.labelControl3.TabIndex = 2;
@@ -79,7 +85,7 @@ namespace THI_TN_TEST
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(16, 115);
+            this.labelControl4.Location = new System.Drawing.Point(24, 156);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(14, 23);
             this.labelControl4.TabIndex = 3;
@@ -89,7 +95,7 @@ namespace THI_TN_TEST
             // 
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(16, 164);
+            this.labelControl5.Location = new System.Drawing.Point(24, 206);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(14, 23);
             this.labelControl5.TabIndex = 4;
@@ -99,7 +105,7 @@ namespace THI_TN_TEST
             // 
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(16, 222);
+            this.labelControl6.Location = new System.Drawing.Point(24, 254);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(15, 23);
             this.labelControl6.TabIndex = 5;
@@ -107,16 +113,16 @@ namespace THI_TN_TEST
             // 
             // radioGroup1
             // 
-            this.radioGroup1.Location = new System.Drawing.Point(3, 57);
+            this.radioGroup1.Location = new System.Drawing.Point(3, 97);
             this.radioGroup1.Name = "radioGroup1";
-            this.radioGroup1.Size = new System.Drawing.Size(660, 210);
+            this.radioGroup1.Size = new System.Drawing.Size(715, 215);
             this.radioGroup1.TabIndex = 6;
             this.radioGroup1.SelectedIndexChanged += new System.EventHandler(this.radioGroup1_SelectedIndexChanged);
             // 
             // rbA
             // 
             this.rbA.AutoSize = true;
-            this.rbA.Location = new System.Drawing.Point(54, 75);
+            this.rbA.Location = new System.Drawing.Point(70, 118);
             this.rbA.Name = "rbA";
             this.rbA.Size = new System.Drawing.Size(69, 17);
             this.rbA.TabIndex = 7;
@@ -128,7 +134,7 @@ namespace THI_TN_TEST
             // rbB
             // 
             this.rbB.AutoSize = true;
-            this.rbB.Location = new System.Drawing.Point(53, 120);
+            this.rbB.Location = new System.Drawing.Point(70, 161);
             this.rbB.Name = "rbB";
             this.rbB.Size = new System.Drawing.Size(87, 17);
             this.rbB.TabIndex = 8;
@@ -140,7 +146,7 @@ namespace THI_TN_TEST
             // rbC
             // 
             this.rbC.AutoSize = true;
-            this.rbC.Location = new System.Drawing.Point(54, 170);
+            this.rbC.Location = new System.Drawing.Point(70, 206);
             this.rbC.Name = "rbC";
             this.rbC.Size = new System.Drawing.Size(87, 17);
             this.rbC.TabIndex = 9;
@@ -152,7 +158,7 @@ namespace THI_TN_TEST
             // rbD
             // 
             this.rbD.AutoSize = true;
-            this.rbD.Location = new System.Drawing.Point(53, 222);
+            this.rbD.Location = new System.Drawing.Point(70, 260);
             this.rbD.Name = "rbD";
             this.rbD.Size = new System.Drawing.Size(87, 17);
             this.rbD.TabIndex = 10;
@@ -161,10 +167,29 @@ namespace THI_TN_TEST
             this.rbD.UseVisualStyleBackColor = true;
             this.rbD.CheckedChanged += new System.EventHandler(this.rbD_CheckedChanged);
             // 
+            // txtNoiDung
+            // 
+            this.txtNoiDung.Enabled = false;
+            this.txtNoiDung.Font = new System.Drawing.Font("Times New Roman", 10F);
+            this.txtNoiDung.Location = new System.Drawing.Point(83, 0);
+            this.txtNoiDung.Multiline = true;
+            this.txtNoiDung.Name = "txtNoiDung";
+            this.txtNoiDung.ReadOnly = true;
+            this.txtNoiDung.Size = new System.Drawing.Size(635, 98);
+            this.txtNoiDung.TabIndex = 11;
+            this.txtNoiDung.Text = resources.GetString("txtNoiDung.Text");
+            this.txtNoiDung.TextChanged += new System.EventHandler(this.txtNoiDung_TextChanged);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
             // CauHoi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.txtNoiDung);
             this.Controls.Add(this.rbD);
             this.Controls.Add(this.rbC);
             this.Controls.Add(this.rbB);
@@ -177,7 +202,7 @@ namespace THI_TN_TEST
             this.Controls.Add(this.lbCauSo);
             this.Controls.Add(this.radioGroup1);
             this.Name = "CauHoi";
-            this.Size = new System.Drawing.Size(663, 269);
+            this.Size = new System.Drawing.Size(721, 312);
             ((System.ComponentModel.ISupportInitialize)(this.radioGroup1.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -197,5 +222,7 @@ namespace THI_TN_TEST
         private System.Windows.Forms.RadioButton rbB;
         private System.Windows.Forms.RadioButton rbC;
         private System.Windows.Forms.RadioButton rbD;
+        private System.Windows.Forms.TextBox txtNoiDung;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }

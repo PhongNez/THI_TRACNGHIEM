@@ -39,6 +39,12 @@ namespace THI_TN_TEST
 
             ribbonPage2.Visible = check;
             ribbonPage3.Visible = !check;
+            
+        }
+
+        public void HienThiMenuTruong(bool check)
+        {
+            ribbonBaocao.Visible = check;
         }
 
         private void frmMain_Load(object sender, EventArgs e)
@@ -113,6 +119,36 @@ namespace THI_TN_TEST
             else
             {
                 frmThi f = new frmThi();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void btnInDSDK2COSO_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(Frpt_In_DSDK_2_Coso));
+            if (frm != null)
+            {
+                frm.Activate();
+            }
+            else
+            {
+                Frpt_In_DSDK_2_Coso f = new Frpt_In_DSDK_2_Coso();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void btnGVDK_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(frmGVDK));
+            if (frm != null)
+            {
+                frm.Activate();
+            }
+            else
+            {
+                frmGVDK f = new frmGVDK();
                 f.MdiParent = this;
                 f.Show();
             }

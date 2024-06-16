@@ -14,7 +14,7 @@ namespace THI_TN_TEST
     public partial class CauHoi : DevExpress.XtraEditors.XtraUserControl
     {
         private int idBaiThi;
-        private int idde;
+        private int idCauHoi;
         private int cauSo;
         private string ndCauHoi;
         private string cauA;
@@ -23,7 +23,6 @@ namespace THI_TN_TEST
         private string cauD;
         private string daChon = "";
         private string dapAn = "";
-        private int maBD;
         public CauHoi()
         {
             InitializeComponent();
@@ -39,14 +38,6 @@ namespace THI_TN_TEST
 
         }
 
-       
-        [Category("Custom Props")]
-        public int MaBangDiem
-        {
-            get { return maBD; }
-            set { maBD = value; }
-        }
-
         [Category("Custom Props")]
         public int IDBaiThi
         {
@@ -55,10 +46,10 @@ namespace THI_TN_TEST
         }
 
         [Category("Custom Props")]
-        public int IDDe
+        public int IDCauHoi
         {
-            get { return idde; }
-            set { idde = value; }
+            get { return idCauHoi; }
+            set { idCauHoi = value; }
         }
 
         [Category("Custom Props")]
@@ -79,7 +70,8 @@ namespace THI_TN_TEST
             set
             {
                 ndCauHoi = value;
-                lbNoiDung.Text = ndCauHoi + "Nếu tài khoản của bạn không có quyền truy cập database 'TN_CSDLPT', hãy yêu cầu quản trị viên database cấp quyền truy cập bằng cách sử dụng câu lệnh SQL sau:";
+                txtNoiDung.Text = ndCauHoi;
+                //"Nếu tài khoản của bạn không có quyền truy cập database 'TN_CSDLPT', hãy yêu cầu quản trị viên database cấp quyền truy cập bằng cách sử dụng câu lệnh SQL sau:";
             }
         }
 
@@ -178,6 +170,11 @@ namespace THI_TN_TEST
             daChon = "D";
             var principalForm = Application.OpenForms.OfType<frmThi>().Single();
             principalForm.capNhapDaChon(cauSo, "D");
+        }
+
+        private void txtNoiDung_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
