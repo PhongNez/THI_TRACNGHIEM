@@ -1,0 +1,12 @@
+USE [TN_CSDLPT]
+GO
+/****** Object:  StoredProcedure [dbo].[sp_INSERT_BODE]    Script Date: 6/16/2024 9:28:16 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER proc [dbo].[sp_INSERT_BODE] @MAMH char(5),@TRINHDO char(1),@NOIDUNG NTEXT,@A NTEXT,@B NTEXT,@C NTEXT,@D NTEXT,@DAP_AN char(1),@MAGV char(8)
+as
+begin-- thêm 9 filed ,cauhoi tự tăng
+insert into BODE (MAMH,TRINHDO,NOIDUNG,A,B,C,D,DAP_AN,MAGV) VALUES(@MAMH,@TRINHDO,@NOIDUNG,@A,@B,@C,@D,@DAP_AN,@MAGV)
+end
