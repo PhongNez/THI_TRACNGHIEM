@@ -348,17 +348,17 @@ namespace THI_TN_TEST
             this.panelControl1.Controls.Add(this.cmbCoso);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 51);
-            this.panelControl1.Margin = new System.Windows.Forms.Padding(12);
+            this.panelControl1.Margin = new System.Windows.Forms.Padding(15, 15, 15, 15);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1470, 94);
+            this.panelControl1.Size = new System.Drawing.Size(1470, 118);
             this.panelControl1.TabIndex = 37;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(50, 39);
-            this.label6.Margin = new System.Windows.Forms.Padding(12, 0, 12, 0);
+            this.label6.Location = new System.Drawing.Point(62, 49);
+            this.label6.Margin = new System.Windows.Forms.Padding(15, 0, 15, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(60, 21);
             this.label6.TabIndex = 1;
@@ -370,10 +370,10 @@ namespace THI_TN_TEST
             this.cmbCoso.Enabled = false;
             this.cmbCoso.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCoso.FormattingEnabled = true;
-            this.cmbCoso.Location = new System.Drawing.Point(173, 36);
-            this.cmbCoso.Margin = new System.Windows.Forms.Padding(12);
+            this.cmbCoso.Location = new System.Drawing.Point(216, 45);
+            this.cmbCoso.Margin = new System.Windows.Forms.Padding(15, 15, 15, 15);
             this.cmbCoso.Name = "cmbCoso";
-            this.cmbCoso.Size = new System.Drawing.Size(1227, 28);
+            this.cmbCoso.Size = new System.Drawing.Size(1533, 28);
             this.cmbCoso.TabIndex = 0;
             this.cmbCoso.SelectedIndexChanged += new System.EventHandler(this.cmbCoso_SelectedIndexChanged);
             // 
@@ -526,11 +526,11 @@ namespace THI_TN_TEST
             this.groupBox1.Controls.Add(this.cmbLop);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox1.Enabled = false;
-            this.groupBox1.Location = new System.Drawing.Point(0, 145);
+            this.groupBox1.Location = new System.Drawing.Point(0, 169);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(879, 537);
+            this.groupBox1.Size = new System.Drawing.Size(879, 513);
             this.groupBox1.TabIndex = 43;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
@@ -573,13 +573,13 @@ namespace THI_TN_TEST
             // 
             this.gIAOVIEN_DANGKYGridControl.DataSource = this.bdsGVDK;
             this.gIAOVIEN_DANGKYGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gIAOVIEN_DANGKYGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(8);
-            this.gIAOVIEN_DANGKYGridControl.Location = new System.Drawing.Point(879, 145);
+            this.gIAOVIEN_DANGKYGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.gIAOVIEN_DANGKYGridControl.Location = new System.Drawing.Point(879, 169);
             this.gIAOVIEN_DANGKYGridControl.MainView = this.gridView1;
-            this.gIAOVIEN_DANGKYGridControl.Margin = new System.Windows.Forms.Padding(8);
+            this.gIAOVIEN_DANGKYGridControl.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
             this.gIAOVIEN_DANGKYGridControl.MenuManager = this.barManager1;
             this.gIAOVIEN_DANGKYGridControl.Name = "gIAOVIEN_DANGKYGridControl";
-            this.gIAOVIEN_DANGKYGridControl.Size = new System.Drawing.Size(591, 537);
+            this.gIAOVIEN_DANGKYGridControl.Size = new System.Drawing.Size(591, 513);
             this.gIAOVIEN_DANGKYGridControl.TabIndex = 49;
             this.gIAOVIEN_DANGKYGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});

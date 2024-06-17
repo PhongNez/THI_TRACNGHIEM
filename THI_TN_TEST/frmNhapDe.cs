@@ -34,6 +34,7 @@ namespace THI_TN_TEST
 
             string magv = Program.username.Trim();
             // TODO: This line of code loads data into the 'dS_MH.MONHOC' table. You can move, or remove it, as needed.
+            this.mONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
             this.mONHOCTableAdapter.Fill(this.dS_MH.MONHOC);
             try
             {

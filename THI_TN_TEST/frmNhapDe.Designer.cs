@@ -39,8 +39,8 @@ namespace THI_TN_TEST
             System.Windows.Forms.Label aLabel;
             System.Windows.Forms.Label bLabel;
             System.Windows.Forms.Label cLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNhapDe));
             System.Windows.Forms.Label dLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNhapDe));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.btnThem = new DevExpress.XtraBars.BarButtonItem();
@@ -59,7 +59,6 @@ namespace THI_TN_TEST
             this.dS_MH = new THI_TN_TEST.DS_MH();
             this.bds_sp_lay_BODE = new System.Windows.Forms.BindingSource(this.components);
             this.sp_Lay_BODE_THEO_MAGVTableAdapter = new THI_TN_TEST.DS_MHTableAdapters.sp_Lay_BODE_THEO_MAGVTableAdapter();
-            this.tableAdapterManager = new THI_TN_TEST.DS_MHTableAdapters.TableAdapterManager();
             this.mONHOCTableAdapter = new THI_TN_TEST.DS_MHTableAdapters.MONHOCTableAdapter();
             this.sp_Lay_BODE_THEO_MAGVGridControl = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -74,6 +73,7 @@ namespace THI_TN_TEST
             this.colDAP_AN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMAGV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtD = new System.Windows.Forms.RichTextBox();
             this.txtC = new System.Windows.Forms.RichTextBox();
             this.txtB = new System.Windows.Forms.RichTextBox();
             this.txtA = new System.Windows.Forms.RichTextBox();
@@ -84,7 +84,7 @@ namespace THI_TN_TEST
             this.bdsMONHOC = new System.Windows.Forms.BindingSource(this.components);
             this.txtCAUHOI = new DevExpress.XtraEditors.TextEdit();
             this.txtMAGV = new DevExpress.XtraEditors.TextEdit();
-            this.txtD = new System.Windows.Forms.RichTextBox();
+            this.tableAdapterManager = new THI_TN_TEST.DS_MHTableAdapters.TableAdapterManager();
             mAGVLabel = new System.Windows.Forms.Label();
             cAUHOILabel = new System.Windows.Forms.Label();
             tENMHLabel = new System.Windows.Forms.Label();
@@ -186,6 +186,15 @@ namespace THI_TN_TEST
             cLabel.Size = new System.Drawing.Size(29, 22);
             cLabel.TabIndex = 25;
             cLabel.Text = "C:";
+            // 
+            // dLabel
+            // 
+            dLabel.AutoSize = true;
+            dLabel.Location = new System.Drawing.Point(1108, 268);
+            dLabel.Name = "dLabel";
+            dLabel.Size = new System.Drawing.Size(30, 22);
+            dLabel.TabIndex = 26;
+            dLabel.Text = "D:";
             // 
             // barManager1
             // 
@@ -363,16 +372,6 @@ namespace THI_TN_TEST
             // 
             this.sp_Lay_BODE_THEO_MAGVTableAdapter.ClearBeforeFill = true;
             // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.BANGDIEMTableAdapter = null;
-            this.tableAdapterManager.BODETableAdapter = null;
-            this.tableAdapterManager.GIAOVIEN_DANGKYTableAdapter = null;
-            this.tableAdapterManager.MONHOCTableAdapter = this.mONHOCTableAdapter;
-            this.tableAdapterManager.sp_Lay_BODE_THEO_MAGVTableAdapter = this.sp_Lay_BODE_THEO_MAGVTableAdapter;
-            this.tableAdapterManager.UpdateOrder = THI_TN_TEST.DS_MHTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
             // mONHOCTableAdapter
             // 
             this.mONHOCTableAdapter.ClearBeforeFill = true;
@@ -381,13 +380,13 @@ namespace THI_TN_TEST
             // 
             this.sp_Lay_BODE_THEO_MAGVGridControl.DataSource = this.bds_sp_lay_BODE;
             this.sp_Lay_BODE_THEO_MAGVGridControl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.sp_Lay_BODE_THEO_MAGVGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(30);
+            this.sp_Lay_BODE_THEO_MAGVGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(38, 38, 38, 38);
             this.sp_Lay_BODE_THEO_MAGVGridControl.Location = new System.Drawing.Point(0, 51);
             this.sp_Lay_BODE_THEO_MAGVGridControl.MainView = this.gridView1;
-            this.sp_Lay_BODE_THEO_MAGVGridControl.Margin = new System.Windows.Forms.Padding(30);
+            this.sp_Lay_BODE_THEO_MAGVGridControl.Margin = new System.Windows.Forms.Padding(38, 38, 38, 38);
             this.sp_Lay_BODE_THEO_MAGVGridControl.MenuManager = this.barManager1;
             this.sp_Lay_BODE_THEO_MAGVGridControl.Name = "sp_Lay_BODE_THEO_MAGVGridControl";
-            this.sp_Lay_BODE_THEO_MAGVGridControl.Size = new System.Drawing.Size(1647, 209);
+            this.sp_Lay_BODE_THEO_MAGVGridControl.Size = new System.Drawing.Size(1647, 261);
             this.sp_Lay_BODE_THEO_MAGVGridControl.TabIndex = 6;
             this.sp_Lay_BODE_THEO_MAGVGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -527,12 +526,21 @@ namespace THI_TN_TEST
             this.groupBox1.Controls.Add(this.txtMAGV);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Enabled = false;
-            this.groupBox1.Location = new System.Drawing.Point(0, 260);
+            this.groupBox1.Location = new System.Drawing.Point(0, 312);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1647, 576);
+            this.groupBox1.Size = new System.Drawing.Size(1647, 524);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
+            // 
+            // txtD
+            // 
+            this.txtD.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bds_sp_lay_BODE, "D", true));
+            this.txtD.Location = new System.Drawing.Point(1172, 259);
+            this.txtD.Name = "txtD";
+            this.txtD.Size = new System.Drawing.Size(391, 67);
+            this.txtD.TabIndex = 27;
+            this.txtD.Text = "";
             // 
             // txtC
             // 
@@ -644,23 +652,15 @@ namespace THI_TN_TEST
             this.txtMAGV.Size = new System.Drawing.Size(231, 28);
             this.txtMAGV.TabIndex = 17;
             // 
-            // dLabel
+            // tableAdapterManager
             // 
-            dLabel.AutoSize = true;
-            dLabel.Location = new System.Drawing.Point(1108, 268);
-            dLabel.Name = "dLabel";
-            dLabel.Size = new System.Drawing.Size(30, 22);
-            dLabel.TabIndex = 26;
-            dLabel.Text = "D:";
-            // 
-            // txtD
-            // 
-            this.txtD.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bds_sp_lay_BODE, "D", true));
-            this.txtD.Location = new System.Drawing.Point(1172, 259);
-            this.txtD.Name = "txtD";
-            this.txtD.Size = new System.Drawing.Size(391, 67);
-            this.txtD.TabIndex = 27;
-            this.txtD.Text = "";
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.BANGDIEMTableAdapter = null;
+            this.tableAdapterManager.BODETableAdapter = null;
+            this.tableAdapterManager.Connection = null;
+            this.tableAdapterManager.GIAOVIEN_DANGKYTableAdapter = null;
+            this.tableAdapterManager.MONHOCTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = THI_TN_TEST.DS_MHTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // frmNhapDe
             // 
@@ -713,7 +713,6 @@ namespace THI_TN_TEST
         private System.Windows.Forms.BindingSource bds_sp_lay_BODE;
         private DS_MH dS_MH;
         private DS_MHTableAdapters.sp_Lay_BODE_THEO_MAGVTableAdapter sp_Lay_BODE_THEO_MAGVTableAdapter;
-        private DS_MHTableAdapters.TableAdapterManager tableAdapterManager;
         private DevExpress.XtraGrid.GridControl sp_Lay_BODE_THEO_MAGVGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -739,5 +738,6 @@ namespace THI_TN_TEST
         private System.Windows.Forms.RichTextBox txtA;
         private System.Windows.Forms.RichTextBox txtNOIDUNG;
         private System.Windows.Forms.RichTextBox txtD;
+        private DS_MHTableAdapters.TableAdapterManager tableAdapterManager;
     }
 }
