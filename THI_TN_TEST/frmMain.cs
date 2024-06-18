@@ -23,23 +23,23 @@ namespace THI_TN_TEST
             {
                 if (f.GetType() == ftype)
                 {
-                    Console.WriteLine("f: "+ f.GetType());
-                    Console.WriteLine("ftype: "+ ftype);
+                    Console.WriteLine("f: " + f.GetType());
+                    Console.WriteLine("ftype: " + ftype);
                     return f;
                 }
             }
 
-                return null;
+            return null;
         }
 
-       
+
 
         public void HienThiMenu(bool check)
         {
 
             ribbonPage2.Visible = check;
             ribbonPage3.Visible = !check;
-            
+
         }
 
         public void HienThiMenuTruong(bool check)
@@ -71,7 +71,7 @@ namespace THI_TN_TEST
             }
         }
 
-       
+
         private void btnDangNhap_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Form frm = this.CheckExists(typeof(frmDangNhap));
@@ -153,8 +153,6 @@ namespace THI_TN_TEST
                 f.Show();
             }
         }
-<<<<<<< HEAD
-=======
 
         private void btnNhapDe_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -185,6 +183,5 @@ namespace THI_TN_TEST
                 f.Show();
             }
         }
->>>>>>> 88584d8e00c438438ce1dec135dd5435297d3cb8
     }
 }

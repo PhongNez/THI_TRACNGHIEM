@@ -152,6 +152,7 @@ namespace THI_TN_TEST
             this.BottomMargin.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.pageInfo1,
             this.pageInfo2});
+            this.BottomMargin.HeightF = 29F;
             this.BottomMargin.Name = "BottomMargin";
             // 
             // pageInfo1
@@ -362,6 +363,7 @@ namespace THI_TN_TEST
             this.DataMember = "ReportBaiThi";
             this.DataSource = this.sqlDataSource1;
             this.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.Margins = new System.Drawing.Printing.Margins(100, 100, 100, 29);
             this.StyleSheet.AddRange(new DevExpress.XtraReports.UI.XRControlStyle[] {
             this.Title,
             this.DetailCaption1,

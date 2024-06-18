@@ -1062,46 +1062,6 @@ ORDER BY TEN, HO</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="LIST_MON" msprop:Generator_TableClassName="LIST_MONDataTable" msprop:Generator_TableVarName="tableLIST_MON" msprop:Generator_TablePropName="LIST_MON" msprop:Generator_RowDeletingName="LIST_MONRowDeleting" msprop:Generator_RowChangingName="LIST_MONRowChanging" msprop:Generator_RowEvHandlerName="LIST_MONRowChangeEventHandler" msprop:Generator_RowDeletedName="LIST_MONRowDeleted" msprop:Generator_UserTableName="LIST_MON" msprop:Generator_RowChangedName="LIST_MONRowChanged" msprop:Generator_RowEvArgName="LIST_MONRowChangeEvent" msprop:Generator_RowClassName="LIST_MONRow">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="MAMH" msprop:Generator_ColumnVarNameInTable="columnMAMH" msprop:Generator_ColumnPropNameInRow="MAMH" msprop:Generator_ColumnPropNameInTable="MAMHColumn" msprop:Generator_UserColumnName="MAMH">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="5" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="TENMH" msprop:Generator_ColumnVarNameInTable="columnTENMH" msprop:Generator_ColumnPropNameInRow="TENMH" msprop:Generator_ColumnPropNameInTable="TENMHColumn" msprop:Generator_UserColumnName="TENMH" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="LIST_LOP" msprop:Generator_TableClassName="LIST_LOPDataTable" msprop:Generator_TableVarName="tableLIST_LOP" msprop:Generator_TablePropName="LIST_LOP" msprop:Generator_RowDeletingName="LIST_LOPRowDeleting" msprop:Generator_RowChangingName="LIST_LOPRowChanging" msprop:Generator_RowEvHandlerName="LIST_LOPRowChangeEventHandler" msprop:Generator_RowDeletedName="LIST_LOPRowDeleted" msprop:Generator_UserTableName="LIST_LOP" msprop:Generator_RowChangedName="LIST_LOPRowChanged" msprop:Generator_RowEvArgName="LIST_LOPRowChangeEvent" msprop:Generator_RowClassName="LIST_LOPRow">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="MALOP" msprop:Generator_ColumnVarNameInTable="columnMALOP" msprop:Generator_ColumnPropNameInRow="MALOP" msprop:Generator_ColumnPropNameInTable="MALOPColumn" msprop:Generator_UserColumnName="MALOP">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="15" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="TENLOP" msprop:Generator_ColumnVarNameInTable="columnTENLOP" msprop:Generator_ColumnPropNameInRow="TENLOP" msprop:Generator_ColumnPropNameInTable="TENLOPColumn" msprop:Generator_UserColumnName="TENLOP">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">

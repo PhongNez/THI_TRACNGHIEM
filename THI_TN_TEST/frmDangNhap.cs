@@ -131,8 +131,8 @@ namespace THI_TN_TEST
                     return;
                 }
                 // Program.myReader.Read();
-                //  Program.malop =  radiobtnSV.Checked ?  Program.myReader.GetString(3): "";
-                Program.malop = Program.myReader.GetString(3);
+                 Program.malop =  radiobtnSV.Checked ?  Program.myReader.GetString(3): "";
+               // Program.malop = Program.myReader.GetString(3);
                 // Program.username = Program.myReader.GetString(0);//username
             }
            

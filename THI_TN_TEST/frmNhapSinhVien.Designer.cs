@@ -93,13 +93,6 @@ namespace THI_TN_TEST
             this.txtMASV = new DevExpress.XtraEditors.TextEdit();
             this.bdsBANGDIEM = new System.Windows.Forms.BindingSource(this.components);
             this.BANGDIEMTableAdapter = new THI_TN_TEST.DSTableAdapters.BANGDIEMTableAdapter();
-            this.mASVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tENDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nGAYSINHDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dIACHIDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mALOPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pASSWORDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             mASVLabel = new System.Windows.Forms.Label();
             hOLabel = new System.Windows.Forms.Label();
             dIACHILabel = new System.Windows.Forms.Label();
@@ -511,7 +504,6 @@ namespace THI_TN_TEST
             this.colTENLOP.MinWidth = 25;
             this.colTENLOP.Name = "colTENLOP";
             this.colTENLOP.OptionsColumn.ReadOnly = true;
-            this.colTENLOP.OptionsColumn.ReadOnly = true;
             this.colTENLOP.Visible = true;
             this.colTENLOP.VisibleIndex = 1;
             this.colTENLOP.Width = 94;
@@ -522,7 +514,6 @@ namespace THI_TN_TEST
             this.colMAKH.FieldName = "MAKH";
             this.colMAKH.MinWidth = 25;
             this.colMAKH.Name = "colMAKH";
-            this.colMAKH.OptionsColumn.ReadOnly = true;
             this.colMAKH.OptionsColumn.ReadOnly = true;
             this.colMAKH.Visible = true;
             this.colMAKH.VisibleIndex = 2;
@@ -689,8 +680,6 @@ namespace THI_TN_TEST
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateNGAYSINH.Properties.Mask.EditMask = "dd/MM/yyyy";
             this.dateNGAYSINH.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.dateNGAYSINH.Properties.Mask.EditMask = "dd/MM/yyyy";
-            this.dateNGAYSINH.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.dateNGAYSINH.Size = new System.Drawing.Size(189, 22);
             this.dateNGAYSINH.TabIndex = 16;
             // 
@@ -719,7 +708,6 @@ namespace THI_TN_TEST
             this.txtMASV.MenuManager = this.barManager1;
             this.txtMASV.Name = "txtMASV";
             this.txtMASV.Properties.MaxLength = 8;
-            this.txtMASV.Properties.MaxLength = 8;
             this.txtMASV.Size = new System.Drawing.Size(189, 22);
             this.txtMASV.TabIndex = 13;
             // 
@@ -731,71 +719,6 @@ namespace THI_TN_TEST
             // BANGDIEMTableAdapter
             // 
             this.BANGDIEMTableAdapter.ClearBeforeFill = true;
-            // 
-            // mASVDataGridViewTextBoxColumn
-            // 
-            this.mASVDataGridViewTextBoxColumn.DataPropertyName = "MASV";
-            this.mASVDataGridViewTextBoxColumn.HeaderText = "MASV";
-            this.mASVDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.mASVDataGridViewTextBoxColumn.Name = "mASVDataGridViewTextBoxColumn";
-            this.mASVDataGridViewTextBoxColumn.ReadOnly = true;
-            this.mASVDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // hODataGridViewTextBoxColumn
-            // 
-            this.hODataGridViewTextBoxColumn.DataPropertyName = "HO";
-            this.hODataGridViewTextBoxColumn.HeaderText = "HO";
-            this.hODataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.hODataGridViewTextBoxColumn.Name = "hODataGridViewTextBoxColumn";
-            this.hODataGridViewTextBoxColumn.ReadOnly = true;
-            this.hODataGridViewTextBoxColumn.Width = 125;
-            // 
-            // tENDataGridViewTextBoxColumn
-            // 
-            this.tENDataGridViewTextBoxColumn.DataPropertyName = "TEN";
-            this.tENDataGridViewTextBoxColumn.HeaderText = "TEN";
-            this.tENDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.tENDataGridViewTextBoxColumn.Name = "tENDataGridViewTextBoxColumn";
-            this.tENDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tENDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // nGAYSINHDataGridViewTextBoxColumn
-            // 
-            this.nGAYSINHDataGridViewTextBoxColumn.DataPropertyName = "NGAYSINH";
-            dataGridViewCellStyle2.Format = "dd/MM/yyyy";
-            this.nGAYSINHDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
-            this.nGAYSINHDataGridViewTextBoxColumn.HeaderText = "NGAYSINH";
-            this.nGAYSINHDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nGAYSINHDataGridViewTextBoxColumn.Name = "nGAYSINHDataGridViewTextBoxColumn";
-            this.nGAYSINHDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nGAYSINHDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // dIACHIDataGridViewTextBoxColumn
-            // 
-            this.dIACHIDataGridViewTextBoxColumn.DataPropertyName = "DIACHI";
-            this.dIACHIDataGridViewTextBoxColumn.HeaderText = "DIACHI";
-            this.dIACHIDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.dIACHIDataGridViewTextBoxColumn.Name = "dIACHIDataGridViewTextBoxColumn";
-            this.dIACHIDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dIACHIDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // mALOPDataGridViewTextBoxColumn
-            // 
-            this.mALOPDataGridViewTextBoxColumn.DataPropertyName = "MALOP";
-            this.mALOPDataGridViewTextBoxColumn.HeaderText = "MALOP";
-            this.mALOPDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.mALOPDataGridViewTextBoxColumn.Name = "mALOPDataGridViewTextBoxColumn";
-            this.mALOPDataGridViewTextBoxColumn.ReadOnly = true;
-            this.mALOPDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // pASSWORDDataGridViewTextBoxColumn
-            // 
-            this.pASSWORDDataGridViewTextBoxColumn.DataPropertyName = "PASSWORD";
-            this.pASSWORDDataGridViewTextBoxColumn.HeaderText = "PASSWORD";
-            this.pASSWORDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.pASSWORDDataGridViewTextBoxColumn.Name = "pASSWORDDataGridViewTextBoxColumn";
-            this.pASSWORDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.pASSWORDDataGridViewTextBoxColumn.Width = 125;
             // 
             // frmNhapSinhVien
             // 
@@ -891,13 +814,6 @@ namespace THI_TN_TEST
         private System.Windows.Forms.BindingSource bdsBANGDIEM;
         private DSTableAdapters.BANGDIEMTableAdapter BANGDIEMTableAdapter;
         private DevExpress.XtraEditors.TextEdit txtPASSWORD;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mASVDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hODataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tENDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nGAYSINHDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dIACHIDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mALOPDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pASSWORDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn mASVDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn hODataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tENDataGridViewTextBoxColumn;
