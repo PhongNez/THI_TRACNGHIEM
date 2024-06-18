@@ -23,7 +23,7 @@ namespace THI_TN_TEST
             da.Fill(dt);
             conn_publisher.Close();
             Program.bds_dspm.DataSource = dt;
-            Program.bds_dspm.Sort="TENCN";
+            Program.bds_dspm.Sort="TENCN";//Sắp xếp tên cơ sở
             //Program.bds_dspm.RemoveAt(2);
             cmbChiNhanh.DataSource = Program.bds_dspm;
             cmbChiNhanh.DisplayMember = "TENCN";
@@ -125,27 +125,28 @@ namespace THI_TN_TEST
             }
             else
             {
-                Program.myReader.Read();
-                Program.malop =  radiobtnSV.Checked ?  Program.myReader.GetString(3): "";
-                //Program.malop = Program.myReader.GetString(3);
-                Program.username = Program.myReader.GetString(0);//username
+                 if (Program.myReader.Read()==false)//không có bản ghi
+                {
+                    MessageBox.Show("Tài khoản user không có quyền trên cơ sở dữ liệu","", MessageBoxButtons.OK);
+                    return;
+                }
+                // Program.myReader.Read();
+                //  Program.malop =  radiobtnSV.Checked ?  Program.myReader.GetString(3): "";
+                Program.malop = Program.myReader.GetString(3);
+                // Program.username = Program.myReader.GetString(0);//username
             }
            
            
             //MessageBox.Show(Program.malop);
 
-            if (Convert.IsDBNull(Program.username))
-            {
-                MessageBox.Show("Login bạn nhập không có quyền truy cập database./nBạn xem lại username,password", "", MessageBoxButtons.OK);
-                return;
-            }
-
-
             if (Program.myReader.IsDBNull(1))
             {
                 MessageBox.Show("Tài khoản của bạn không hợp lệ.\nBạn xem lại lựa chọn", "", MessageBoxButtons.OK);
                 return;
+               
             }
+            //Program.malop = Program.myReader.GetString(3);
+            Program.username = Program.myReader.GetString(0);//username
             Program.mHoten = Program.myReader.GetString(1);
             Program.mGroup = Program.myReader.GetString(2);
             Program.myReader.Close();

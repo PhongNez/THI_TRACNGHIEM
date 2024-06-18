@@ -32,6 +32,8 @@ namespace THI_TN_TEST {
         
         private MONHOCDataTable tableMONHOC;
         
+        private sp_Lay_BODE_THEO_MAGVDataTable tablesp_Lay_BODE_THEO_MAGV;
+        
         private global::System.Data.DataRelation relationFK_BANGDIEM_MONHOC;
         
         private global::System.Data.DataRelation relationFK_BODE_MONHOC;
@@ -77,6 +79,9 @@ namespace THI_TN_TEST {
                 }
                 if ((ds.Tables["MONHOC"] != null)) {
                     base.Tables.Add(new MONHOCDataTable(ds.Tables["MONHOC"]));
+                }
+                if ((ds.Tables["sp_Lay_BODE_THEO_MAGV"] != null)) {
+                    base.Tables.Add(new sp_Lay_BODE_THEO_MAGVDataTable(ds.Tables["sp_Lay_BODE_THEO_MAGV"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -133,6 +138,16 @@ namespace THI_TN_TEST {
         public MONHOCDataTable MONHOC {
             get {
                 return this.tableMONHOC;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public sp_Lay_BODE_THEO_MAGVDataTable sp_Lay_BODE_THEO_MAGV {
+            get {
+                return this.tablesp_Lay_BODE_THEO_MAGV;
             }
         }
         
@@ -215,6 +230,9 @@ namespace THI_TN_TEST {
                 if ((ds.Tables["MONHOC"] != null)) {
                     base.Tables.Add(new MONHOCDataTable(ds.Tables["MONHOC"]));
                 }
+                if ((ds.Tables["sp_Lay_BODE_THEO_MAGV"] != null)) {
+                    base.Tables.Add(new sp_Lay_BODE_THEO_MAGVDataTable(ds.Tables["sp_Lay_BODE_THEO_MAGV"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -272,6 +290,12 @@ namespace THI_TN_TEST {
                     this.tableMONHOC.InitVars();
                 }
             }
+            this.tablesp_Lay_BODE_THEO_MAGV = ((sp_Lay_BODE_THEO_MAGVDataTable)(base.Tables["sp_Lay_BODE_THEO_MAGV"]));
+            if ((initTable == true)) {
+                if ((this.tablesp_Lay_BODE_THEO_MAGV != null)) {
+                    this.tablesp_Lay_BODE_THEO_MAGV.InitVars();
+                }
+            }
             this.relationFK_BANGDIEM_MONHOC = this.Relations["FK_BANGDIEM_MONHOC"];
             this.relationFK_BODE_MONHOC = this.Relations["FK_BODE_MONHOC"];
             this.relationFK_GIAOVIEN_DANGKY_MONHOC1 = this.Relations["FK_GIAOVIEN_DANGKY_MONHOC1"];
@@ -293,6 +317,8 @@ namespace THI_TN_TEST {
             base.Tables.Add(this.tableGIAOVIEN_DANGKY);
             this.tableMONHOC = new MONHOCDataTable();
             base.Tables.Add(this.tableMONHOC);
+            this.tablesp_Lay_BODE_THEO_MAGV = new sp_Lay_BODE_THEO_MAGVDataTable();
+            base.Tables.Add(this.tablesp_Lay_BODE_THEO_MAGV);
             global::System.Data.ForeignKeyConstraint fkc;
             fkc = new global::System.Data.ForeignKeyConstraint("FK_BANGDIEM_MONHOC", new global::System.Data.DataColumn[] {
                         this.tableMONHOC.MAMHColumn}, new global::System.Data.DataColumn[] {
@@ -350,6 +376,12 @@ namespace THI_TN_TEST {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private bool ShouldSerializeMONHOC() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializesp_Lay_BODE_THEO_MAGV() {
             return false;
         }
         
@@ -419,6 +451,9 @@ namespace THI_TN_TEST {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void MONHOCRowChangeEventHandler(object sender, MONHOCRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void sp_Lay_BODE_THEO_MAGVRowChangeEventHandler(object sender, sp_Lay_BODE_THEO_MAGVRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -1783,6 +1818,403 @@ namespace THI_TN_TEST {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class sp_Lay_BODE_THEO_MAGVDataTable : global::System.Data.TypedTableBase<sp_Lay_BODE_THEO_MAGVRow> {
+            
+            private global::System.Data.DataColumn columnCAUHOI;
+            
+            private global::System.Data.DataColumn columnMAMH;
+            
+            private global::System.Data.DataColumn columnTRINHDO;
+            
+            private global::System.Data.DataColumn columnNOIDUNG;
+            
+            private global::System.Data.DataColumn columnA;
+            
+            private global::System.Data.DataColumn columnB;
+            
+            private global::System.Data.DataColumn columnC;
+            
+            private global::System.Data.DataColumn columnD;
+            
+            private global::System.Data.DataColumn columnDAP_AN;
+            
+            private global::System.Data.DataColumn columnMAGV;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public sp_Lay_BODE_THEO_MAGVDataTable() {
+                this.TableName = "sp_Lay_BODE_THEO_MAGV";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal sp_Lay_BODE_THEO_MAGVDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected sp_Lay_BODE_THEO_MAGVDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn CAUHOIColumn {
+                get {
+                    return this.columnCAUHOI;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn MAMHColumn {
+                get {
+                    return this.columnMAMH;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn TRINHDOColumn {
+                get {
+                    return this.columnTRINHDO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NOIDUNGColumn {
+                get {
+                    return this.columnNOIDUNG;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn AColumn {
+                get {
+                    return this.columnA;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn BColumn {
+                get {
+                    return this.columnB;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn CColumn {
+                get {
+                    return this.columnC;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DColumn {
+                get {
+                    return this.columnD;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DAP_ANColumn {
+                get {
+                    return this.columnDAP_AN;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn MAGVColumn {
+                get {
+                    return this.columnMAGV;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public sp_Lay_BODE_THEO_MAGVRow this[int index] {
+                get {
+                    return ((sp_Lay_BODE_THEO_MAGVRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event sp_Lay_BODE_THEO_MAGVRowChangeEventHandler sp_Lay_BODE_THEO_MAGVRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event sp_Lay_BODE_THEO_MAGVRowChangeEventHandler sp_Lay_BODE_THEO_MAGVRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event sp_Lay_BODE_THEO_MAGVRowChangeEventHandler sp_Lay_BODE_THEO_MAGVRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event sp_Lay_BODE_THEO_MAGVRowChangeEventHandler sp_Lay_BODE_THEO_MAGVRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Addsp_Lay_BODE_THEO_MAGVRow(sp_Lay_BODE_THEO_MAGVRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public sp_Lay_BODE_THEO_MAGVRow Addsp_Lay_BODE_THEO_MAGVRow(string MAMH, string TRINHDO, string NOIDUNG, string A, string B, string C, string D, string DAP_AN, string MAGV) {
+                sp_Lay_BODE_THEO_MAGVRow rowsp_Lay_BODE_THEO_MAGVRow = ((sp_Lay_BODE_THEO_MAGVRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        MAMH,
+                        TRINHDO,
+                        NOIDUNG,
+                        A,
+                        B,
+                        C,
+                        D,
+                        DAP_AN,
+                        MAGV};
+                rowsp_Lay_BODE_THEO_MAGVRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowsp_Lay_BODE_THEO_MAGVRow);
+                return rowsp_Lay_BODE_THEO_MAGVRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public sp_Lay_BODE_THEO_MAGVRow FindByCAUHOI(int CAUHOI) {
+                return ((sp_Lay_BODE_THEO_MAGVRow)(this.Rows.Find(new object[] {
+                            CAUHOI})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                sp_Lay_BODE_THEO_MAGVDataTable cln = ((sp_Lay_BODE_THEO_MAGVDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new sp_Lay_BODE_THEO_MAGVDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnCAUHOI = base.Columns["CAUHOI"];
+                this.columnMAMH = base.Columns["MAMH"];
+                this.columnTRINHDO = base.Columns["TRINHDO"];
+                this.columnNOIDUNG = base.Columns["NOIDUNG"];
+                this.columnA = base.Columns["A"];
+                this.columnB = base.Columns["B"];
+                this.columnC = base.Columns["C"];
+                this.columnD = base.Columns["D"];
+                this.columnDAP_AN = base.Columns["DAP_AN"];
+                this.columnMAGV = base.Columns["MAGV"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnCAUHOI = new global::System.Data.DataColumn("CAUHOI", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCAUHOI);
+                this.columnMAMH = new global::System.Data.DataColumn("MAMH", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMAMH);
+                this.columnTRINHDO = new global::System.Data.DataColumn("TRINHDO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTRINHDO);
+                this.columnNOIDUNG = new global::System.Data.DataColumn("NOIDUNG", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNOIDUNG);
+                this.columnA = new global::System.Data.DataColumn("A", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnA);
+                this.columnB = new global::System.Data.DataColumn("B", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnB);
+                this.columnC = new global::System.Data.DataColumn("C", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnC);
+                this.columnD = new global::System.Data.DataColumn("D", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnD);
+                this.columnDAP_AN = new global::System.Data.DataColumn("DAP_AN", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDAP_AN);
+                this.columnMAGV = new global::System.Data.DataColumn("MAGV", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMAGV);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnCAUHOI}, true));
+                this.columnCAUHOI.AutoIncrement = true;
+                this.columnCAUHOI.AutoIncrementSeed = -1;
+                this.columnCAUHOI.AutoIncrementStep = -1;
+                this.columnCAUHOI.AllowDBNull = false;
+                this.columnCAUHOI.ReadOnly = true;
+                this.columnCAUHOI.Unique = true;
+                this.columnMAMH.MaxLength = 5;
+                this.columnTRINHDO.MaxLength = 1;
+                this.columnNOIDUNG.MaxLength = 1073741823;
+                this.columnA.MaxLength = 1073741823;
+                this.columnB.MaxLength = 1073741823;
+                this.columnC.MaxLength = 1073741823;
+                this.columnD.MaxLength = 1073741823;
+                this.columnDAP_AN.MaxLength = 1;
+                this.columnMAGV.MaxLength = 8;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public sp_Lay_BODE_THEO_MAGVRow Newsp_Lay_BODE_THEO_MAGVRow() {
+                return ((sp_Lay_BODE_THEO_MAGVRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new sp_Lay_BODE_THEO_MAGVRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(sp_Lay_BODE_THEO_MAGVRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.sp_Lay_BODE_THEO_MAGVRowChanged != null)) {
+                    this.sp_Lay_BODE_THEO_MAGVRowChanged(this, new sp_Lay_BODE_THEO_MAGVRowChangeEvent(((sp_Lay_BODE_THEO_MAGVRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.sp_Lay_BODE_THEO_MAGVRowChanging != null)) {
+                    this.sp_Lay_BODE_THEO_MAGVRowChanging(this, new sp_Lay_BODE_THEO_MAGVRowChangeEvent(((sp_Lay_BODE_THEO_MAGVRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.sp_Lay_BODE_THEO_MAGVRowDeleted != null)) {
+                    this.sp_Lay_BODE_THEO_MAGVRowDeleted(this, new sp_Lay_BODE_THEO_MAGVRowChangeEvent(((sp_Lay_BODE_THEO_MAGVRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.sp_Lay_BODE_THEO_MAGVRowDeleting != null)) {
+                    this.sp_Lay_BODE_THEO_MAGVRowDeleting(this, new sp_Lay_BODE_THEO_MAGVRowChangeEvent(((sp_Lay_BODE_THEO_MAGVRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Removesp_Lay_BODE_THEO_MAGVRow(sp_Lay_BODE_THEO_MAGVRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DS_MH ds = new DS_MH();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "sp_Lay_BODE_THEO_MAGVDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class BANGDIEMRow : global::System.Data.DataRow {
@@ -2473,6 +2905,284 @@ namespace THI_TN_TEST {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class sp_Lay_BODE_THEO_MAGVRow : global::System.Data.DataRow {
+            
+            private sp_Lay_BODE_THEO_MAGVDataTable tablesp_Lay_BODE_THEO_MAGV;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal sp_Lay_BODE_THEO_MAGVRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tablesp_Lay_BODE_THEO_MAGV = ((sp_Lay_BODE_THEO_MAGVDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int CAUHOI {
+                get {
+                    return ((int)(this[this.tablesp_Lay_BODE_THEO_MAGV.CAUHOIColumn]));
+                }
+                set {
+                    this[this.tablesp_Lay_BODE_THEO_MAGV.CAUHOIColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string MAMH {
+                get {
+                    try {
+                        return ((string)(this[this.tablesp_Lay_BODE_THEO_MAGV.MAMHColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'MAMH\' in table \'sp_Lay_BODE_THEO_MAGV\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_Lay_BODE_THEO_MAGV.MAMHColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string TRINHDO {
+                get {
+                    try {
+                        return ((string)(this[this.tablesp_Lay_BODE_THEO_MAGV.TRINHDOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TRINHDO\' in table \'sp_Lay_BODE_THEO_MAGV\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_Lay_BODE_THEO_MAGV.TRINHDOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string NOIDUNG {
+                get {
+                    try {
+                        return ((string)(this[this.tablesp_Lay_BODE_THEO_MAGV.NOIDUNGColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NOIDUNG\' in table \'sp_Lay_BODE_THEO_MAGV\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_Lay_BODE_THEO_MAGV.NOIDUNGColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string A {
+                get {
+                    try {
+                        return ((string)(this[this.tablesp_Lay_BODE_THEO_MAGV.AColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'A\' in table \'sp_Lay_BODE_THEO_MAGV\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_Lay_BODE_THEO_MAGV.AColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string B {
+                get {
+                    try {
+                        return ((string)(this[this.tablesp_Lay_BODE_THEO_MAGV.BColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'B\' in table \'sp_Lay_BODE_THEO_MAGV\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_Lay_BODE_THEO_MAGV.BColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string C {
+                get {
+                    try {
+                        return ((string)(this[this.tablesp_Lay_BODE_THEO_MAGV.CColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'C\' in table \'sp_Lay_BODE_THEO_MAGV\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_Lay_BODE_THEO_MAGV.CColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string D {
+                get {
+                    try {
+                        return ((string)(this[this.tablesp_Lay_BODE_THEO_MAGV.DColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'D\' in table \'sp_Lay_BODE_THEO_MAGV\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_Lay_BODE_THEO_MAGV.DColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string DAP_AN {
+                get {
+                    try {
+                        return ((string)(this[this.tablesp_Lay_BODE_THEO_MAGV.DAP_ANColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DAP_AN\' in table \'sp_Lay_BODE_THEO_MAGV\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_Lay_BODE_THEO_MAGV.DAP_ANColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string MAGV {
+                get {
+                    try {
+                        return ((string)(this[this.tablesp_Lay_BODE_THEO_MAGV.MAGVColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'MAGV\' in table \'sp_Lay_BODE_THEO_MAGV\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablesp_Lay_BODE_THEO_MAGV.MAGVColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsMAMHNull() {
+                return this.IsNull(this.tablesp_Lay_BODE_THEO_MAGV.MAMHColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetMAMHNull() {
+                this[this.tablesp_Lay_BODE_THEO_MAGV.MAMHColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsTRINHDONull() {
+                return this.IsNull(this.tablesp_Lay_BODE_THEO_MAGV.TRINHDOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetTRINHDONull() {
+                this[this.tablesp_Lay_BODE_THEO_MAGV.TRINHDOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsNOIDUNGNull() {
+                return this.IsNull(this.tablesp_Lay_BODE_THEO_MAGV.NOIDUNGColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetNOIDUNGNull() {
+                this[this.tablesp_Lay_BODE_THEO_MAGV.NOIDUNGColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsANull() {
+                return this.IsNull(this.tablesp_Lay_BODE_THEO_MAGV.AColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetANull() {
+                this[this.tablesp_Lay_BODE_THEO_MAGV.AColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsBNull() {
+                return this.IsNull(this.tablesp_Lay_BODE_THEO_MAGV.BColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetBNull() {
+                this[this.tablesp_Lay_BODE_THEO_MAGV.BColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsCNull() {
+                return this.IsNull(this.tablesp_Lay_BODE_THEO_MAGV.CColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetCNull() {
+                this[this.tablesp_Lay_BODE_THEO_MAGV.CColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDNull() {
+                return this.IsNull(this.tablesp_Lay_BODE_THEO_MAGV.DColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDNull() {
+                this[this.tablesp_Lay_BODE_THEO_MAGV.DColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDAP_ANNull() {
+                return this.IsNull(this.tablesp_Lay_BODE_THEO_MAGV.DAP_ANColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDAP_ANNull() {
+                this[this.tablesp_Lay_BODE_THEO_MAGV.DAP_ANColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsMAGVNull() {
+                return this.IsNull(this.tablesp_Lay_BODE_THEO_MAGV.MAGVColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetMAGVNull() {
+                this[this.tablesp_Lay_BODE_THEO_MAGV.MAGVColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -2594,6 +3304,40 @@ namespace THI_TN_TEST {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public MONHOCRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class sp_Lay_BODE_THEO_MAGVRowChangeEvent : global::System.EventArgs {
+            
+            private sp_Lay_BODE_THEO_MAGVRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public sp_Lay_BODE_THEO_MAGVRowChangeEvent(sp_Lay_BODE_THEO_MAGVRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public sp_Lay_BODE_THEO_MAGVRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -4416,6 +5160,196 @@ SELECT MAGV, MAMH, MALOP, TRINHDO, NGAYTHI, LAN, SOCAUTHI, THOIGIAN FROM GIAOVIE
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(string TENMH, string Original_MAMH, string Original_TENMH) {
             return this.Update(Original_MAMH, TENMH, Original_MAMH, Original_TENMH);
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class sp_Lay_BODE_THEO_MAGVTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public sp_Lay_BODE_THEO_MAGVTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "sp_Lay_BODE_THEO_MAGV";
+            tableMapping.ColumnMappings.Add("CAUHOI", "CAUHOI");
+            tableMapping.ColumnMappings.Add("MAMH", "MAMH");
+            tableMapping.ColumnMappings.Add("TRINHDO", "TRINHDO");
+            tableMapping.ColumnMappings.Add("NOIDUNG", "NOIDUNG");
+            tableMapping.ColumnMappings.Add("A", "A");
+            tableMapping.ColumnMappings.Add("B", "B");
+            tableMapping.ColumnMappings.Add("C", "C");
+            tableMapping.ColumnMappings.Add("D", "D");
+            tableMapping.ColumnMappings.Add("DAP_AN", "DAP_AN");
+            tableMapping.ColumnMappings.Add("MAGV", "MAGV");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::THI_TN_TEST.Properties.Settings.Default.TN_CSDLPTConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "dbo.sp_Lay_BODE_THEO_MAGV";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MAGV", global::System.Data.SqlDbType.Char, 8, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(DS_MH.sp_Lay_BODE_THEO_MAGVDataTable dataTable, string MAGV) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((MAGV == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(MAGV));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual DS_MH.sp_Lay_BODE_THEO_MAGVDataTable GetData(string MAGV) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((MAGV == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(MAGV));
+            }
+            DS_MH.sp_Lay_BODE_THEO_MAGVDataTable dataTable = new DS_MH.sp_Lay_BODE_THEO_MAGVDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
         }
     }
     

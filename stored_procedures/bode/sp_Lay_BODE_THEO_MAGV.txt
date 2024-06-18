@@ -1,0 +1,12 @@
+USE [TN_CSDLPT]
+GO
+/****** Object:  StoredProcedure [dbo].[sp_Lay_BODE_THEO_MAGV]    Script Date: 6/16/2024 9:27:03 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER proc [dbo].[sp_Lay_BODE_THEO_MAGV] @MAGV char(8)
+as
+begin
+select CAUHOI,MAMH,TRINHDO,NOIDUNG,A,B,C,D,DAP_AN,MAGV from BODE where MAGV=@MAGV
+end

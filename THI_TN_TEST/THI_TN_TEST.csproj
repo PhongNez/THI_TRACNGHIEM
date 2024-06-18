@@ -89,6 +89,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_MH.xsd</DependentUpon>
     </Compile>
+    <Compile Include="formTaoTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formTaoTaiKhoan.Designer.cs">
+      <DependentUpon>formTaoTaiKhoan.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +124,12 @@
     </Compile>
     <Compile Include="frmMonHoc.Designer.cs">
       <DependentUpon>frmMonHoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNhapDe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNhapDe.Designer.cs">
+      <DependentUpon>frmNhapDe.cs</DependentUpon>
     </Compile>
     <Compile Include="frmNhapSinhVien.cs">
       <SubType>Form</SubType>
@@ -173,6 +185,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMonHoc.resx">
       <DependentUpon>frmMonHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNhapDe.resx">
+      <DependentUpon>frmNhapDe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmNhapSinhVien.resx">
       <DependentUpon>frmNhapSinhVien.cs</DependentUpon>

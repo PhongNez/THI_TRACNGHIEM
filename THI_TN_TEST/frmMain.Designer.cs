@@ -38,12 +38,16 @@ namespace THI_TN_TEST
             this.btnSinhVien = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.btnInDSDK2COSO = new DevExpress.XtraBars.BarButtonItem();
+            this.btnGVDK = new DevExpress.XtraBars.BarButtonItem();
+            this.btnNhapDe = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonBaocao = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -55,6 +59,8 @@ namespace THI_TN_TEST
             this.NHOM = new System.Windows.Forms.ToolStripStatusLabel();
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.btnGVDK = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.btnTAOTAIKHOAN = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -72,10 +78,16 @@ namespace THI_TN_TEST
             this.btnSinhVien,
             this.barButtonItem2,
             this.btnInDSDK2COSO,
-            this.btnGVDK});
+            this.btnGVDK;
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
             this.ribbonControl1.MaxItemId = 9;
+            this.btnGVDK,
+            this.btnNhapDe,
+            this.btnTAOTAIKHOAN});
+            this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
+            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(18, 15, 18, 15);
+            this.ribbonControl1.MaxItemId = 11;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -132,10 +144,25 @@ namespace THI_TN_TEST
             this.btnInDSDK2COSO.Name = "btnInDSDK2COSO";
             this.btnInDSDK2COSO.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnInDSDK2COSO_ItemClick);
             // 
+            // btnGVDK
+            // 
+            this.btnGVDK.Caption = "Đăng ký thi";
+            this.btnGVDK.Id = 8;
+            this.btnGVDK.Name = "btnGVDK";
+            this.btnGVDK.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGVDK_ItemClick);
+            // 
+            // btnNhapDe
+            // 
+            this.btnNhapDe.Caption = "Nhập đề";
+            this.btnNhapDe.Id = 9;
+            this.btnNhapDe.Name = "btnNhapDe";
+            this.btnNhapDe.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNhapDe_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup1});
+            this.ribbonPageGroup1,
+            this.ribbonPageGroup9});
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "Hệ thống";
             // 
@@ -151,7 +178,8 @@ namespace THI_TN_TEST
             this.ribbonPageGroup2,
             this.ribbonPageGroup3,
             this.ribbonPageGroup4,
-            this.ribbonPageGroup7});
+            this.ribbonPageGroup7,
+            this.ribbonPageGroup8});
             this.ribbonPage2.Name = "ribbonPage2";
             this.ribbonPage2.Text = "Danh Mục";
             this.ribbonPage2.Visible = false;
@@ -173,6 +201,18 @@ namespace THI_TN_TEST
             this.ribbonPageGroup4.ItemLinks.Add(this.btnSinhVien);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Text = "ribbonPageGroup4";
+            // 
+            // ribbonPageGroup7
+            // 
+            this.ribbonPageGroup7.ItemLinks.Add(this.btnGVDK);
+            this.ribbonPageGroup7.Name = "ribbonPageGroup7";
+            this.ribbonPageGroup7.Text = "ribbonPageGroup7";
+            // 
+            // ribbonPageGroup8
+            // 
+            this.ribbonPageGroup8.ItemLinks.Add(this.btnNhapDe);
+            this.ribbonPageGroup8.Name = "ribbonPageGroup8";
+            this.ribbonPageGroup8.Text = "ribbonPageGroup8";
             // 
             // ribbonPage3
             // 
@@ -249,6 +289,18 @@ namespace THI_TN_TEST
             this.btnGVDK.Id = 8;
             this.btnGVDK.Name = "btnGVDK";
             this.btnGVDK.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGVDK_ItemClick);
+            // ribbonPageGroup9
+            // 
+            this.ribbonPageGroup9.ItemLinks.Add(this.btnTAOTAIKHOAN);
+            this.ribbonPageGroup9.Name = "ribbonPageGroup9";
+            this.ribbonPageGroup9.Text = "ribbonPageGroup9";
+            // 
+            // btnTAOTAIKHOAN
+            // 
+            this.btnTAOTAIKHOAN.Caption = "Tạo Tài khoản";
+            this.btnTAOTAIKHOAN.Id = 10;
+            this.btnTAOTAIKHOAN.Name = "btnTAOTAIKHOAN";
+            this.btnTAOTAIKHOAN.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTAOTAIKHOAN_ItemClick);
             // 
             // frmMain
             // 
@@ -301,6 +353,10 @@ namespace THI_TN_TEST
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
         private DevExpress.XtraBars.BarButtonItem btnGVDK;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;
+        private DevExpress.XtraBars.BarButtonItem btnNhapDe;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
+        private DevExpress.XtraBars.BarButtonItem btnTAOTAIKHOAN;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
     }
 }
 
