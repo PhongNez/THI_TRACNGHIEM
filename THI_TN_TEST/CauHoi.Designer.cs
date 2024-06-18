@@ -49,11 +49,11 @@ namespace THI_TN_TEST
             // 
             // lbCauSo
             // 
-            this.lbCauSo.Appearance.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCauSo.Appearance.Font = new System.Drawing.Font("Times New Roman", 12.75F);
             this.lbCauSo.Appearance.Options.UseFont = true;
-            this.lbCauSo.Location = new System.Drawing.Point(3, 43);
+            this.lbCauSo.Location = new System.Drawing.Point(3, 32);
             this.lbCauSo.Name = "lbCauSo";
-            this.lbCauSo.Size = new System.Drawing.Size(74, 23);
+            this.lbCauSo.Size = new System.Drawing.Size(59, 19);
             this.lbCauSo.TabIndex = 0;
             this.lbCauSo.Text = "Câu số 1";
             this.lbCauSo.Click += new System.EventHandler(this.labelControl1_Click);
@@ -169,13 +169,15 @@ namespace THI_TN_TEST
             // 
             // txtNoiDung
             // 
+            this.txtNoiDung.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txtNoiDung.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNoiDung.Enabled = false;
             this.txtNoiDung.Font = new System.Drawing.Font("Times New Roman", 10F);
-            this.txtNoiDung.Location = new System.Drawing.Point(83, 0);
+            this.txtNoiDung.Location = new System.Drawing.Point(68, 0);
             this.txtNoiDung.Multiline = true;
             this.txtNoiDung.Name = "txtNoiDung";
             this.txtNoiDung.ReadOnly = true;
-            this.txtNoiDung.Size = new System.Drawing.Size(635, 98);
+            this.txtNoiDung.Size = new System.Drawing.Size(650, 98);
             this.txtNoiDung.TabIndex = 11;
             this.txtNoiDung.Text = resources.GetString("txtNoiDung.Text");
             this.txtNoiDung.TextChanged += new System.EventHandler(this.txtNoiDung_TextChanged);
@@ -187,6 +189,8 @@ namespace THI_TN_TEST
             // 
             // CauHoi
             // 
+            this.Appearance.BackColor = System.Drawing.Color.White;
+            this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.txtNoiDung);

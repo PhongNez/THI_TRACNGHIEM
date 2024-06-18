@@ -589,3 +589,4 @@ D:\Projects\THI_TRACNGHIEM\THI_TN_TEST\bin\Debug\de\DevExpress.Diagram.v19.2.Cor
 D:\Projects\THI_TRACNGHIEM\THI_TN_TEST\bin\Debug\es\DevExpress.Diagram.v19.2.Core.resources.dll
 D:\Projects\THI_TRACNGHIEM\THI_TN_TEST\bin\Debug\ja\DevExpress.Diagram.v19.2.Core.resources.dll
 D:\Projects\THI_TRACNGHIEM\THI_TN_TEST\bin\Debug\ru\DevExpress.Diagram.v19.2.Core.resources.dll
+D:\Projects\THI_TRACNGHIEM\THI_TN_TEST\obj\Debug\THI_TN_TEST.XtraReport2.resources

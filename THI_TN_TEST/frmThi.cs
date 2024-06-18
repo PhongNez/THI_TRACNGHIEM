@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraReports.UI;
+using System;
 
 using System.Data;
 
@@ -17,6 +18,7 @@ namespace THI_TN_TEST
         private string maLop="";
         private DateTime ngayThi;
         private bool hoanThanh = false;
+        private bool isStudent= true;
         public frmThi()
         {
             InitializeComponent();
@@ -30,8 +32,8 @@ namespace THI_TN_TEST
         }
         private void setBtn()
         {
-            btnBatDau.Visible = false;
-            btnNopBai.Visible = false;
+            btnBatDau.Enabled = false;
+            btnNopBai.Enabled = false;
         }
         private void init_MonThi()
         {
@@ -140,7 +142,6 @@ namespace THI_TN_TEST
                 }
                 else
                 {
-                    timer1.Stop();
                     ketThuc();
                 }
             }
@@ -149,6 +150,8 @@ namespace THI_TN_TEST
         private void ketThuc()
         {
             //Tính điểm
+            timer1.Stop();
+            lbTime.Text = "00:00";
             insertdiemsv(tinhdiem());
             //insert
             // tạo form 
@@ -166,7 +169,7 @@ namespace THI_TN_TEST
             if (caudung == 0) diem = 0;
             else diem = (float)Math.Round((double)(10 * caudung) / soCauThi, 2);
             MessageBox.Show("Số câu đúng: " + caudung + "/" + soCauThi + "\nĐiểm: " + diem, "Kết Quả", MessageBoxButtons.OK);
-            btnNopBai.Visible = false;
+            btnNopBai.Enabled = false;
             return diem;
         }
         private void insertdiemsv(float diem)
@@ -177,6 +180,7 @@ namespace THI_TN_TEST
                 int kq = Program.ExecSqlNonQuery(sql);
                 Program.conn.Close();
                 ghiDapAn();
+                showReport();
                 //if (kq == 1)
                 //{
                 //    ghiDapAn();
@@ -192,6 +196,12 @@ namespace THI_TN_TEST
                 MessageBox.Show("Lỗi ghi điểm thi " + ex.Message, "", MessageBoxButtons.OK);
                 return;
             }
+        }
+        private void showReport()
+        {
+            XtraReport2 rpt = new XtraReport2(Program.mlogin,Int32.Parse(cbBoxLan.Text), cbBoxTenMH.SelectedValue.ToString());
+            ReportPrintTool print = new ReportPrintTool(rpt);
+            print.ShowPreviewDialog();
         }
         private void ghiDapAn()
         {
@@ -226,7 +236,11 @@ namespace THI_TN_TEST
         private void btnBatDau_Click_1(object sender, EventArgs e)
         {
             initQuestion();
-            btnBatDau.Visible = false;
+            btnBatDau.Enabled = false;
+            btnXacNhan.Enabled = false;
+            cbBoxLan.Enabled = false;
+            cbBoxTenMH.Enabled = false;
+            dTNgayThi.Enabled = false;
             timer1.Start();
         }
         private void layThongTinThi()
@@ -266,8 +280,8 @@ namespace THI_TN_TEST
             }
             else
             {   layThongTinThi();
-                btnBatDau.Visible = true;
-                btnNopBai.Visible = true;
+                btnBatDau.Enabled = true;
+                btnNopBai.Enabled= true;
             }
         }
         private void layThongTinLop()

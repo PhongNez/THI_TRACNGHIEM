@@ -22,7 +22,7 @@ namespace THI_TN_TEST
         public static String mlogin = "";
         public static String password = "";
         public static SqlDataReader myReader;
-        public static String malop = "D18CQCN01";
+        public static String malop = "";
         public static String username;
         public static String mHoten;
         public static String mGroup;

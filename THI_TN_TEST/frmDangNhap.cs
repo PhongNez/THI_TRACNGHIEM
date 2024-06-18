@@ -116,8 +116,7 @@ namespace THI_TN_TEST
                 {
                     return;
                 }
-                strLenh = "EXEC SP_LOGIN_SV '" + Program.mlogin + "'," + "'" + Program.password + "'";
-                
+                strLenh = "EXEC SP_LOGIN_SV '" + Program.mlogin + "'," + "'" + Program.password + "'"; 
             }
             Program.myReader = Program.ExecSqlDataReader(strLenh);
             if (Program.myReader == null)

@@ -75,7 +75,7 @@
     </Compile>
     <Compile Include="CauHoi.Designer.cs">
       <DependentUpon>CauHoi.cs</DependentUpon>
-     </Compile>
+    </Compile>
     <Compile Include="DS.cs">
       <DependentUpon>DS.xsd</DependentUpon>
     </Compile>
@@ -144,6 +144,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TN_CSDLPTDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="XtraReport2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReport2.Designer.cs">
+      <DependentUpon>XtraReport2.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CauHoi.resx">
       <DependentUpon>CauHoi.cs</DependentUpon>
     </EmbeddedResource>
@@ -189,6 +195,9 @@
     </Compile>
     <EmbeddedResource Include="Xrpt_In_DanhSachDK_2_Coso.resx">
       <DependentUpon>Xrpt_In_DanhSachDK_2_Coso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReport2.resx">
+      <DependentUpon>XtraReport2.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="DS.xsc">
