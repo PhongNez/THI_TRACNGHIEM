@@ -1,0 +1,16 @@
+USE [TN_CSDLPT]
+GO
+/****** Object:  StoredProcedure [dbo].[SP_XOATAIKHOAN]    Script Date: 6/18/2024 9:47:13 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROC [dbo].[SP_XOATAIKHOAN]
+  @LGNAME VARCHAR(50),  @USERNAME VARCHAR(50),  @ROLE VARCHAR(50)   
+AS
+begin
+EXEC sp_droplogin @LGNAME-- Xóa login
+EXEC sp_dropuser @USERNAME --Xóa user
+IF @ROLE='TRUONG'
+EXEC msdb.sys.sp_dropuser @USERNAME--Xóa user trong database msdb
+end

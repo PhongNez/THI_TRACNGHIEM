@@ -1,0 +1,45 @@
+USE [TN_CSDLPT]
+GO
+/****** Object:  StoredProcedure [dbo].[SP_TAOTAIKHOAN]    Script Date: 6/18/2024 9:45:52 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROC [dbo].[SP_TAOTAIKHOAN]
+  @LGNAME VARCHAR(50),  @PASS VARCHAR(50),    @USERNAME VARCHAR(50),  @ROLE VARCHAR(50)   
+AS
+begin
+  DECLARE @RET INT
+
+  EXEC @RET= SP_ADDLOGIN @LGNAME, @PASS, 'TN_CSDLPT' --Tạo login
+  IF (@RET =1)  -- LOGIN NAME BI TRUNG
+  BEGIN
+     RAISERROR ('Login name bị trùng', 16,1)
+	 RETURN
+  END 
+
+  EXEC @RET= SP_GRANTDBACCESS @LGNAME, @USERNAME --Liên kết user với login
+  IF (@RET =1)  -- USER  NAME BI TRUNG
+  BEGIN
+       EXEC SP_DROPLOGIN @LGNAME
+       RAISERROR ('Giáo viên đã có login name', 16,2)
+       RETURN
+  END
+
+  EXEC sp_addrolemember @ROLE, @USERNAME --Thêm user vào nhóm
+	
+	IF @ROLE = 'COSO' --cơ sở được tạo login
+	BEGIN
+		EXEC sp_addsrvrolemember @LGNAME, 'SecurityAdmin'
+		RETURN
+	END
+
+	IF @ROLE = 'TRUONG'
+	BEGIN
+	EXEC sp_addsrvrolemember @LGNAME, 'SecurityAdmin'
+	EXEC msdb.sys.sp_grantdbaccess @LGNAME, @USERNAME --Liên kết user với login
+	EXEC msdb.sys.sp_addrolemember 'nhomtruong',@USERNAME
+	END
+  END
+	
+
