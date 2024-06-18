@@ -263,6 +263,5 @@ namespace THI_TN_TEST
             this.Close();
         }
 
-     
     }
 }

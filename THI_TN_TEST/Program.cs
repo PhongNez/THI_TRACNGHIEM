@@ -48,13 +48,14 @@ namespace THI_TN_TEST
                 Program.connstr = "Data Source=" + Program.servername + ";Initial Catalog=" +
                     Program.database + ";User ID=" +
                     Program.mlogin + ";password=" + Program.password;
+                Console.WriteLine("Check: "+Program.connstr);
                 Program.conn.ConnectionString=Program.connstr;
                 Program.conn.Open();
                 return 1;
             }
             catch(Exception ex)
             {
-                Console.WriteLine("heloo: " + Program.connstr);
+                Console.WriteLine("heloo: " + ex.Message);
                 MessageBox.Show("Lỗi kết nối cơ sở dữ liệu. \nBạn xem lại user name và password. \n" , "", MessageBoxButtons.OK);
                 return 0;
             }

@@ -380,10 +380,10 @@ namespace THI_TN_TEST
             // 
             this.sp_Lay_BODE_THEO_MAGVGridControl.DataSource = this.bds_sp_lay_BODE;
             this.sp_Lay_BODE_THEO_MAGVGridControl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.sp_Lay_BODE_THEO_MAGVGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(48, 48, 48, 48);
+            this.sp_Lay_BODE_THEO_MAGVGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(48);
             this.sp_Lay_BODE_THEO_MAGVGridControl.Location = new System.Drawing.Point(0, 51);
             this.sp_Lay_BODE_THEO_MAGVGridControl.MainView = this.gridView1;
-            this.sp_Lay_BODE_THEO_MAGVGridControl.Margin = new System.Windows.Forms.Padding(48, 48, 48, 48);
+            this.sp_Lay_BODE_THEO_MAGVGridControl.Margin = new System.Windows.Forms.Padding(48);
             this.sp_Lay_BODE_THEO_MAGVGridControl.MenuManager = this.barManager1;
             this.sp_Lay_BODE_THEO_MAGVGridControl.Name = "sp_Lay_BODE_THEO_MAGVGridControl";
             this.sp_Lay_BODE_THEO_MAGVGridControl.Size = new System.Drawing.Size(1647, 326);
