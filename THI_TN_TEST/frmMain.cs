@@ -168,5 +168,20 @@ namespace THI_TN_TEST
                 f.Show();
             }
         }
+
+        private void btnTAOTAIKHOAN_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(formTaoTaiKhoan));
+            if (frm != null)
+            {
+                frm.Activate();
+            }
+            else
+            {
+                formTaoTaiKhoan f = new formTaoTaiKhoan();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
     }
 }

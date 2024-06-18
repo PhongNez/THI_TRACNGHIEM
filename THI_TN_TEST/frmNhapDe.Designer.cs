@@ -380,13 +380,13 @@ namespace THI_TN_TEST
             // 
             this.sp_Lay_BODE_THEO_MAGVGridControl.DataSource = this.bds_sp_lay_BODE;
             this.sp_Lay_BODE_THEO_MAGVGridControl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.sp_Lay_BODE_THEO_MAGVGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(38, 38, 38, 38);
+            this.sp_Lay_BODE_THEO_MAGVGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(48, 48, 48, 48);
             this.sp_Lay_BODE_THEO_MAGVGridControl.Location = new System.Drawing.Point(0, 51);
             this.sp_Lay_BODE_THEO_MAGVGridControl.MainView = this.gridView1;
-            this.sp_Lay_BODE_THEO_MAGVGridControl.Margin = new System.Windows.Forms.Padding(38, 38, 38, 38);
+            this.sp_Lay_BODE_THEO_MAGVGridControl.Margin = new System.Windows.Forms.Padding(48, 48, 48, 48);
             this.sp_Lay_BODE_THEO_MAGVGridControl.MenuManager = this.barManager1;
             this.sp_Lay_BODE_THEO_MAGVGridControl.Name = "sp_Lay_BODE_THEO_MAGVGridControl";
-            this.sp_Lay_BODE_THEO_MAGVGridControl.Size = new System.Drawing.Size(1647, 261);
+            this.sp_Lay_BODE_THEO_MAGVGridControl.Size = new System.Drawing.Size(1647, 326);
             this.sp_Lay_BODE_THEO_MAGVGridControl.TabIndex = 6;
             this.sp_Lay_BODE_THEO_MAGVGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -526,9 +526,9 @@ namespace THI_TN_TEST
             this.groupBox1.Controls.Add(this.txtMAGV);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Enabled = false;
-            this.groupBox1.Location = new System.Drawing.Point(0, 312);
+            this.groupBox1.Location = new System.Drawing.Point(0, 377);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1647, 524);
+            this.groupBox1.Size = new System.Drawing.Size(1647, 459);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
