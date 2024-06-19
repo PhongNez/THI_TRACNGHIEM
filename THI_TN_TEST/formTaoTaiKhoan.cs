@@ -51,36 +51,54 @@ namespace THI_TN_TEST
             txtMAGV.Text = cmbHOTEN.SelectedValue.ToString();
             string strLenh = "EXEC sp_lay_loginname_tu_user '" + txtMAGV.Text.Trim() + "'";
             Program.myReader = Program.ExecSqlDataReader(strLenh);
-            Program.myReader.Read();
 
-            if (Program.myReader.IsDBNull(0))//Kiểm tra cột đầu tiên có null
+            if (Program.myReader.Read() == false)//Không có nhóm quyền
             {
+                //Không cho tạo
                 txtTAIKHOAN.Text = "";
-                btnTao.Enabled = true;btnXOA.Enabled = false;
+                btnTao.Enabled = false; btnXOA.Enabled = true;
+                txtTAIKHOAN.Enabled = txtMATKHAU.Enabled = cmbNHOMQUYEN.Enabled = false;
+                
+                Program.myReader.Close();
+                return;
+            }
+            if(Program.myReader.IsDBNull(0))//null: có loginname
+            {
+                //Cho tạo, không cho xóa
+                txtTAIKHOAN.Text = "";
+                btnTao.Enabled = true; btnXOA.Enabled = false;
                 txtTAIKHOAN.Enabled = txtMATKHAU.Enabled = cmbNHOMQUYEN.Enabled = true;
                 Program.myReader.Close();
                 return;
             }
-            //Do không null nên lấy
+            
             string result = Program.myReader.GetString(0);//Lấy cột đầu dòng hiện tại
-
-            if (Program.myReader.IsDBNull(1))//Kiểm tra cột thứ 2 có null
-            {
-                btnTao.Enabled = true;btnXOA.Enabled = false;
-                Program.myReader.Close();
-                return;
-            }
-            //Do không null nên lấy
             string result2 = Program.myReader.GetString(1);//Lấy cột thứ 2
-
             Program.myReader.Close();
-
             txtTAIKHOAN.Text = result;
-            cmbNHOMQUYEN.Text = result2;
+            if(Program.mGroup== result2)
+            {
+                //TRUONG được xóa TRUONG
+                //Cho xóa
+                btnXOA.Enabled = true;
+                cmbNHOMQUYEN.Text = result2;
+            }
+            else if(Program.mGroup=="COSO" && result2 != "TRUONG")
+            {
+                //COSO dược xóa COSO,GIAOVIEN
+                btnXOA.Enabled = true;
+                cmbNHOMQUYEN.Text = result2;
+            }
+            else
+            {
+                btnXOA.Enabled = false;
+                cmbNHOMQUYEN.SelectedIndex = -1;
+            }
+            
             txtTAIKHOAN.Enabled = txtMATKHAU.Enabled = cmbNHOMQUYEN.Enabled = false;
             MessageBox.Show("Mã GV đã có tài khoản đăng nhập. Vui lòng chọn giáo viên khác", "", MessageBoxButtons.OK);
             btnTao.Enabled = false;
-            btnXOA.Enabled = true;
+            
 
         }
 

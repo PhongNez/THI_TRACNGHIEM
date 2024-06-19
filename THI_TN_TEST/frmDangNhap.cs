@@ -129,6 +129,7 @@ namespace THI_TN_TEST
                 if (Program.myReader.Read()==false)//không có bản ghi
                 {
                     MessageBox.Show("Tài khoản user không có quyền trên cơ sở dữ liệu","", MessageBoxButtons.OK);
+                    Program.myReader.Close();
                     return;
                 }
             }

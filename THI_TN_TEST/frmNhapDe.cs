@@ -139,8 +139,8 @@ namespace THI_TN_TEST
                 }
                 else if (checkThemSua == 1)//Sửa
                 {
-                    //int cauhoi = int.Parse(txtCAUHOI.Text);
-                    cmd = $"exec sp_UPDATE_BODE {txtCAUHOI.Text},'{mamh}', '{trinhdo}', N'{txtNOIDUNG.Text}', N'{txtA.Text}', N'{txtB.Text}', N'{txtC.Text}', N'{txtD.Text}', '{dapan}'";
+                    int cauhoi = int.Parse(txtCAUHOI.Text);
+                    cmd = $"exec sp_UPDATE_BODE {cauhoi},'{mamh}', '{trinhdo}', N'{txtNOIDUNG.Text}', N'{txtA.Text}', N'{txtB.Text}', N'{txtC.Text}', N'{txtD.Text}', '{dapan}'";
                 }
                 Program.ExecSqlNonQuery(cmd);
                   bds_sp_lay_BODE.ResetCurrentItem();//Cập nhật giao diện
@@ -230,19 +230,33 @@ namespace THI_TN_TEST
 
         private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+
             if (txtCAUHOI.Text == "")
             {
                 MessageBox.Show("Không có câu hỏi nào để xóa", "Thông báo", MessageBoxButtons.OK);
                 txtCAUHOI.Focus();
                 return;
             }
+            
             if (MessageBox.Show("Bạn có muốn xóa câu hỏi này không?", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 try
                 {
-                    MessageBox.Show("Xóa câu hỏi thành công", "", MessageBoxButtons.OK);
                     int cauhoi = int.Parse(txtCAUHOI.Text);
+                    string strLenh = "declare @result int "
+                         + " EXEC @result = sp_KiemTra_CAUHOI '" + cauhoi + "'"
+                         + " select @result";
+                    Program.myReader = Program.ExecSqlDataReader(strLenh);
+                    Program.myReader.Read();
+                    int result = Program.myReader.GetInt32(0);
+                    Program.myReader.Close();
+                    if (result==1)
+                    {
+                        MessageBox.Show("Không thể xóa vì câu hỏi đã có sinh viên thi", "", MessageBoxButtons.OK);
+                        return;
+                    }
 
+                    MessageBox.Show("Xóa câu hỏi thành công", "", MessageBoxButtons.OK);
                     bds_sp_lay_BODE.RemoveCurrent();
                     string cmd = "EXEC sp_DELETE_BODE "+ cauhoi;
                     Program.ExecSqlNonQuery(cmd);
