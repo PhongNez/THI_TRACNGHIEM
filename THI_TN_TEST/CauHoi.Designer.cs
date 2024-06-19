@@ -51,7 +51,7 @@ namespace THI_TN_TEST
             // 
             this.lbCauSo.Appearance.Font = new System.Drawing.Font("Times New Roman", 12.75F);
             this.lbCauSo.Appearance.Options.UseFont = true;
-            this.lbCauSo.Location = new System.Drawing.Point(3, 32);
+            this.lbCauSo.Location = new System.Drawing.Point(3, 0);
             this.lbCauSo.Name = "lbCauSo";
             this.lbCauSo.Size = new System.Drawing.Size(59, 19);
             this.lbCauSo.TabIndex = 0;
@@ -115,7 +115,8 @@ namespace THI_TN_TEST
             // 
             this.radioGroup1.Location = new System.Drawing.Point(3, 97);
             this.radioGroup1.Name = "radioGroup1";
-            this.radioGroup1.Size = new System.Drawing.Size(715, 215);
+            this.radioGroup1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.radioGroup1.Size = new System.Drawing.Size(711, 208);
             this.radioGroup1.TabIndex = 6;
             this.radioGroup1.SelectedIndexChanged += new System.EventHandler(this.radioGroup1_SelectedIndexChanged);
             // 
@@ -177,7 +178,7 @@ namespace THI_TN_TEST
             this.txtNoiDung.Multiline = true;
             this.txtNoiDung.Name = "txtNoiDung";
             this.txtNoiDung.ReadOnly = true;
-            this.txtNoiDung.Size = new System.Drawing.Size(650, 98);
+            this.txtNoiDung.Size = new System.Drawing.Size(646, 98);
             this.txtNoiDung.TabIndex = 11;
             this.txtNoiDung.Text = resources.GetString("txtNoiDung.Text");
             this.txtNoiDung.TextChanged += new System.EventHandler(this.txtNoiDung_TextChanged);
@@ -193,6 +194,7 @@ namespace THI_TN_TEST
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.txtNoiDung);
             this.Controls.Add(this.rbD);
             this.Controls.Add(this.rbC);
@@ -205,8 +207,9 @@ namespace THI_TN_TEST
             this.Controls.Add(this.lbNoiDung);
             this.Controls.Add(this.lbCauSo);
             this.Controls.Add(this.radioGroup1);
+            this.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             this.Name = "CauHoi";
-            this.Size = new System.Drawing.Size(721, 312);
+            this.Size = new System.Drawing.Size(719, 310);
             ((System.ComponentModel.ISupportInitialize)(this.radioGroup1.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

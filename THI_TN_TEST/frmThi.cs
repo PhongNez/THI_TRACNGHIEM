@@ -27,13 +27,32 @@ namespace THI_TN_TEST
             timer1.Tick += timer1_Tick;
             layThongTinLop();
             init_MonThi();
+            isStudent = true;
+            cbxTenLop.Visible = false;
+            txtTenLop.Visible = true;
             //initQuestion();
             setBtn();
+        }
+        public frmThi(bool isGV)
+        {
+            InitializeComponent();
+            timer1 = new Timer();
+            isStudent = false;
+            timer1.Interval = 1000;
+            timer1.Tick += timer1_Tick;
+            cbxTenLop.Visible = true;
+            //layThongTinLop();
+            //init_MonThi();
+            //initQuestion();
+            setBtn();
+            //gbSinhVien.Visible = false;
+            txtTenLop.Visible = false;
         }
         private void setBtn()
         {
             btnBatDau.Enabled = false;
             btnNopBai.Enabled = false;
+            btnXacNhan.Enabled = false;
         }
         private void init_MonThi()
         {
@@ -69,15 +88,22 @@ namespace THI_TN_TEST
                // Console.WriteLine("Số hàng trong DataTable: " + dt.Rows.Count);
             }
             else
-            {   
-                
+            {
+                DataTable dtEmpty = new DataTable();
+                cbBoxTenMH.SelectedIndex = -1;
+                BindingSource bindingEmpty = new BindingSource();
+                bindingEmpty.DataSource = dtEmpty;
+                cbBoxTenMH.DataSource = null;
                 Console.WriteLine("Không có dữ liệu trả về từ truy vấn.");
             }
             Program.myReader.Close();
         } 
         private void initQuestion()
         { 
-                String strLenh = "EXECUTE SP_LayDeThi '"+Program.malop +" ', '" + Program.mlogin +"' , '" + cbBoxTenMH.SelectedValue +" ', " +cbBoxLan.Text ;
+               
+                String strLenh = isStudent ?  "EXECUTE SP_LayDeThi '"+Program.malop +" ', '" + Program.mlogin +"' , '" + cbBoxTenMH.SelectedValue +" ', " +cbBoxLan.Text:
+                "EXEC SP_ThiThu '"+cbxTenLop.SelectedValue +" ', '"+cbBoxTenMH.SelectedValue +"', "+ cbBoxLan.Text;
+                //Console.WriteLine(strLenh);
                 DataTable cauhoidt = Program.ExecSqlDataTable(strLenh);
                 lbTime.Visible = true;
                 BindingSource bdsBaiThi = new BindingSource();
@@ -86,12 +112,11 @@ namespace THI_TN_TEST
                 for (int i = 0; i < listCauHoi.Length; i++)
                    {
                     listCauHoi[i] = new CauHoi();
-                    listCauHoi[i].Width = panelCauHoi.Width;
-                    listCauHoi[i].Height = panelCauHoi.Height - 10;
+                    listCauHoi[i].Height = panelCauHoi.Height - 10; 
                     listCauHoi[i].CauSo = i + 1;
-                    listCauHoi[i].IDBaiThi = (int)((DataRowView)bdsBaiThi[i])["ID_BDIEM"];
+                    listCauHoi[i].IDBaiThi = isStudent ? (int)((DataRowView)bdsBaiThi[i])["ID_BDIEM"]: 0;
                     Console.WriteLine("id cau hoi: " + listCauHoi[i].IDBaiThi);
-                    listCauHoi[i].IDCauHoi = (int)((DataRowView)bdsBaiThi[i])["ID_CAUHOI"];
+                    listCauHoi[i].IDCauHoi = isStudent ? (int)((DataRowView)bdsBaiThi[i])["ID_CAUHOI"] : (int)((DataRowView)bdsBaiThi[i])["CAUHOI"];
                     listCauHoi[i].NDCauHoi = ((DataRowView)bdsBaiThi[i])["NoiDung"].ToString();
                     listCauHoi[i].CauA = ((DataRowView)bdsBaiThi[i])["A"].ToString();
                     listCauHoi[i].CauB = ((DataRowView)bdsBaiThi[i])["B"].ToString();
@@ -130,6 +155,7 @@ namespace THI_TN_TEST
         {
 
         }
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             s--;
@@ -152,7 +178,12 @@ namespace THI_TN_TEST
             //Tính điểm
             timer1.Stop();
             lbTime.Text = "00:00";
-            insertdiemsv(tinhdiem());
+            if(isStudent)
+                insertdiemsv(tinhdiem());
+            else
+            {
+                tinhdiem();
+            }
             //insert
             // tạo form 
         }
@@ -245,7 +276,7 @@ namespace THI_TN_TEST
         }
         private void layThongTinThi()
         {
-            String strLenh = "EXEC SP_THONGTINLANTHI '" +Program.malop+ "','"+cbBoxTenMH.SelectedValue+ "',"+ cbBoxLan.Text;
+            String strLenh = "EXEC SP_THONGTINLANTHI '" +  (isStudent ? Program.malop: maLop) + "','"+cbBoxTenMH.SelectedValue+ "',"+ cbBoxLan.Text;
             Program.myReader = Program.ExecSqlDataReader(strLenh);
             if (Program.myReader == null)
             {
@@ -264,25 +295,36 @@ namespace THI_TN_TEST
         }
         private void kiemTraLanThi()
         {
-            int dathi = 0;
-            String strLenh = "EXEC SP_KTLANTHI '" + Program.mlogin + "','" + cbBoxTenMH.SelectedValue + "'," + cbBoxLan.Text;
-            Program.myReader = Program.ExecSqlDataReader(strLenh);
-            if (Program.myReader == null)
+            if (isStudent)
             {
-                return;
-            }
-            Program.myReader.Read();
-            dathi = Program.myReader.GetInt32(0);
-            Program.myReader.Close();
-            if (dathi == 1)
-            {
-                MessageBox.Show("Bạn đã thi môn này, vui lòng chọn lại!", "", MessageBoxButtons.OK);
+                int dathi = 0;
+                String strLenh = "EXEC SP_KTLANTHI '" + Program.mlogin + "','" + cbBoxTenMH.SelectedValue + "'," + cbBoxLan.Text;
+                Program.myReader = Program.ExecSqlDataReader(strLenh);
+                if (Program.myReader == null)
+                {
+                    return;
+                }
+                Program.myReader.Read();
+                dathi = Program.myReader.GetInt32(0);
+                Program.myReader.Close();
+                if (dathi == 1)
+                {
+                    MessageBox.Show("Bạn đã thi môn này, vui lòng chọn lại!", "", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    layThongTinThi();
+                    btnBatDau.Enabled = true;
+                    btnNopBai.Enabled = true;
+                }
             }
             else
-            {   layThongTinThi();
+            {
+                layThongTinThi();
                 btnBatDau.Enabled = true;
-                btnNopBai.Enabled= true;
+                btnNopBai.Enabled = true;
             }
+           
         }
         private void layThongTinLop()
         {
@@ -294,7 +336,7 @@ namespace THI_TN_TEST
             }
             Program.myReader.Read();
             maLop = Program.myReader.GetString(0);
-            txtEditMaSV.Text = maLop;
+            txtMaLop.Text = maLop;
             txtTenLop.Text = Program.myReader.GetString(1);
             Program.myReader.Close();
             txtEditHoTen.Text = Program.mHoten;
@@ -309,6 +351,27 @@ namespace THI_TN_TEST
         {
             ketThuc();
         }
+
+        private void cbBoxLan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btnXacNhan.Enabled = true;
+        }
+
+        private void frmThi_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'dS.LIST_LOP' table. You can move, or remove it, as needed.
+            this.lIST_LOPTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.lIST_LOPTableAdapter.Fill(this.dS.LIST_LOP);
+        }
+        private void cbxTenLop_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbxTenLop.SelectedValue == null)
+            {
+                return;//SelectedValue chưa có giá trị => nếu tiếp tục chạy đoạn code bên dưới sẽ lỗi
+            }
+            maLop = cbxTenLop.SelectedValue.ToString();
+            txtMaLop.Text = maLop;
+            init_MonThi();
+        }
     }
-    
 }
