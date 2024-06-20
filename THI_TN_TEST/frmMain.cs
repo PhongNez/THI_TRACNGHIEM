@@ -49,11 +49,11 @@ namespace THI_TN_TEST
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            frmDangNhap f = new frmDangNhap();
-            f.MdiParent = this;
+            //frmDangNhap f = new frmDangNhap();
+            //f.MdiParent = this;
             //frmThi f = new frmThi();
             //f.MdiParent = this;
-            f.Show();
+            // f.Show();
         }
 
         private void btnMonHoc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -194,6 +194,21 @@ namespace THI_TN_TEST
             else
             {
                 frmThi f = new frmThi(true);
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(frmBaiThi));
+            if (frm != null)
+            {
+                frm.Activate();
+            }
+            else
+            {
+                frmBaiThi f = new frmBaiThi();
                 f.MdiParent = this;
                 f.Show();
             }

@@ -27,7 +27,7 @@ namespace THI_TN_TEST
         public static String mHoten;
         public static String mGroup;
         public static frmMain frmChinh;
-
+        public static frmDangNhap frmDangNhap;
         public static String connstr_publisher = @"Data Source=DESKTOP-82REPVE\MAIN;Initial Catalog=TN_CSDLPT;Integrated Security=True";
 
         public static BindingSource bds_dspm = new BindingSource();
@@ -150,8 +150,15 @@ namespace THI_TN_TEST
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            frmDangNhap = new frmDangNhap();
             frmChinh = new frmMain();
-            Application.Run(frmChinh);
+            Application.Run(frmDangNhap);
+        }
+        public static void DangNhap()
+        {
+            frmChinh.ShowDialog();
+            frmDangNhap.Hide();
+          //  Application.Run(frmChinh);
         }
     }
 }

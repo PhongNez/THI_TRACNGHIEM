@@ -30,7 +30,6 @@ namespace THI_TN_TEST
             cmbChiNhanh.ValueMember = "TENSERVER";
 
         }
-
         public frmDangNhap()
         {
             InitializeComponent();
@@ -167,7 +166,10 @@ namespace THI_TN_TEST
             {
                 Program.frmChinh.HienThiMenuTruong(true);
             }
-
+            Program.DangNhap();
+            //Program.frmDangNhap.Close();
+            //Program.frmChinh.ShowDialog();
+           
         }
     }
 }

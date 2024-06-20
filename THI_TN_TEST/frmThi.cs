@@ -1,24 +1,32 @@
 ﻿using DevExpress.XtraReports.UI;
 using System;
-
+using System.ComponentModel;
 using System.Data;
-
 using System.Windows.Forms;
+using DevExpress.XtraSplashScreen;
 namespace THI_TN_TEST
 {
     public partial class frmThi : DevExpress.XtraEditors.XtraForm
     {
+        IOverlaySplashScreenHandle ShowProgressPanel()
+        {
+            return SplashScreenManager.ShowOverlayForm(this);
+        }
+        void CloseProgressPanel(IOverlaySplashScreenHandle handle)
+        {
+            if (handle != null)
+                SplashScreenManager.CloseOverlayForm(handle);
+        }
+        IOverlaySplashScreenHandle handle = null;
         public static CauHoi[] listCauHoi;
-        public static ListViewItem baiThi;
         private int thoigianThi = 0;
         private int s = 59;
         public Timer timer1;
         private string trinhDo;
         private int soCau;
         private string maLop="";
-        private DateTime ngayThi;
-        private bool hoanThanh = false;
-        private bool isStudent= true;
+        private bool isStudent = true;
+        BackgroundWorker worker = new BackgroundWorker();
         public frmThi()
         {
             InitializeComponent();
@@ -30,7 +38,6 @@ namespace THI_TN_TEST
             isStudent = true;
             cbxTenLop.Visible = false;
             txtTenLop.Visible = true;
-            //initQuestion();
             setBtn();
         }
         public frmThi(bool isGV)
@@ -97,47 +104,142 @@ namespace THI_TN_TEST
                 Console.WriteLine("Không có dữ liệu trả về từ truy vấn.");
             }
             Program.myReader.Close();
-        } 
-        private void initQuestion()
-        { 
-               
-                String strLenh = isStudent ?  "EXECUTE SP_LayDeThi '"+Program.malop +" ', '" + Program.mlogin +"' , '" + cbBoxTenMH.SelectedValue +" ', " +cbBoxLan.Text:
-                "EXEC SP_ThiThu '"+cbxTenLop.SelectedValue +" ', '"+cbBoxTenMH.SelectedValue +"', "+ cbBoxLan.Text;
-                //Console.WriteLine(strLenh);
-                DataTable cauhoidt = Program.ExecSqlDataTable(strLenh);
-                lbTime.Visible = true;
-                BindingSource bdsBaiThi = new BindingSource();
-                bdsBaiThi.DataSource = cauhoidt;
-                listCauHoi = new CauHoi[bdsBaiThi.Count];
-                for (int i = 0; i < listCauHoi.Length; i++)
-                   {
-                    listCauHoi[i] = new CauHoi();
-                    listCauHoi[i].Height = panelCauHoi.Height - 10; 
-                    listCauHoi[i].CauSo = i + 1;
-                    listCauHoi[i].IDBaiThi = isStudent ? (int)((DataRowView)bdsBaiThi[i])["ID_BDIEM"]: 0;
-                    Console.WriteLine("id cau hoi: " + listCauHoi[i].IDBaiThi);
-                    listCauHoi[i].IDCauHoi = isStudent ? (int)((DataRowView)bdsBaiThi[i])["ID_CAUHOI"] : (int)((DataRowView)bdsBaiThi[i])["CAUHOI"];
-                    listCauHoi[i].NDCauHoi = ((DataRowView)bdsBaiThi[i])["NoiDung"].ToString();
-                    listCauHoi[i].CauA = ((DataRowView)bdsBaiThi[i])["A"].ToString();
-                    listCauHoi[i].CauB = ((DataRowView)bdsBaiThi[i])["B"].ToString();
-                    listCauHoi[i].CauC = ((DataRowView)bdsBaiThi[i])["C"].ToString();
-                    listCauHoi[i].CauD = ((DataRowView)bdsBaiThi[i])["D"].ToString();
-                    listCauHoi[i].CauDapAn = ((DataRowView)bdsBaiThi[i])["Dap_An"].ToString();
-                    listCauHoi[i].CauDaChon = "";
-                    String[] arr = new string[2];
-                    arr[0] = (i + 1).ToString();
-                    arr[1] = listCauHoi[i].CauDaChon;
-
-                    baiThi = new ListViewItem(arr);
-                    this.listView1.Items.Add(baiThi);
-                    if (panelCauHoi.Controls.Count < 0)
-                    {
-                        panelCauHoi.Controls.Clear();
-                    }
-                    else
-                        panelCauHoi.Controls.Add(listCauHoi[i]);
-                }
         }
+        //private void initQuestion()
+        //{       
+        //        string strLenh = isStudent ?  "EXECUTE SP_LayDeThi '"+Program.malop +" ', '" + Program.mlogin +"' , '" + cbBoxTenMH.SelectedValue +" ', " +cbBoxLan.Text:
+        //        "EXEC SP_ThiThu '"+cbxTenLop.SelectedValue +" ', '"+cbBoxTenMH.SelectedValue +"', "+ cbBoxLan.Text;
+        //        //Console.WriteLine(strLenh);
+        //        DataTable cauhoidt = Program.ExecSqlDataTable(strLenh);
+        //        lbTime.Visible = true;
+        //        BindingSource bdsBaiThi = new BindingSource();
+        //        bdsBaiThi.DataSource = cauhoidt;
+        //        listCauHoi = new CauHoi[bdsBaiThi.Count];
+        //    worker.DoWork += (sender, e) =>
+        //    {
+        //        for (int i = 0; i < listCauHoi.Length; i++)
+        //        {
+        //            listCauHoi[i] = new CauHoi();
+        //            listCauHoi[i].Height = panelCauHoi.Height - 10;
+        //            listCauHoi[i].CauSo = i + 1;
+        //            listCauHoi[i].IDBaiThi = isStudent ? (int)((DataRowView)bdsBaiThi[i])["ID_BDIEM"] : 0;
+        //            Console.WriteLine("id cau hoi: " + listCauHoi[i].IDBaiThi);
+        //            listCauHoi[i].IDCauHoi = isStudent ? (int)((DataRowView)bdsBaiThi[i])["ID_CAUHOI"] : (int)((DataRowView)bdsBaiThi[i])["CAUHOI"];
+        //            listCauHoi[i].NDCauHoi = ((DataRowView)bdsBaiThi[i])["NoiDung"].ToString();
+        //            listCauHoi[i].CauA = ((DataRowView)bdsBaiThi[i])["A"].ToString();
+        //            listCauHoi[i].CauB = ((DataRowView)bdsBaiThi[i])["B"].ToString();
+        //            listCauHoi[i].CauC = ((DataRowView)bdsBaiThi[i])["C"].ToString();
+        //            listCauHoi[i].CauD = ((DataRowView)bdsBaiThi[i])["D"].ToString();
+        //            listCauHoi[i].CauDapAn = ((DataRowView)bdsBaiThi[i])["Dap_An"].ToString();
+        //            listCauHoi[i].CauDaChon = "";
+        //            String[] arr = new string[2];
+        //            arr[0] = (i + 1).ToString();
+        //            arr[1] = listCauHoi[i].CauDaChon;
+
+        //            baiThi = new ListViewItem(arr);
+        //            // this.listView1.Items.Add(baiThi);
+        //            listView1.Invoke(new Action(() =>
+        //            {
+        //                this.listView1.Items.Add(baiThi);
+        //            }));
+        //            if (panelCauHoi.Controls.Count < 0)
+        //            {
+        //                panelCauHoi.Controls.Clear();
+        //            }
+        //            else
+        //                //panelCauHoi.Controls.Add(listCauHoi[i]);   
+        //                listCauHoi[i].Invoke(new Action(() =>
+        //                {
+        //                    panelCauHoi.Controls.Add(listCauHoi[i]);
+        //                }));
+        //        }
+
+        //    };
+        //    worker.RunWorkerAsync();
+        //}
+        private void initQuestion()
+        {
+            string strLenh;
+            handle = ShowProgressPanel();
+            if (isStudent)
+            {
+                strLenh = "EXECUTE SP_LayDeThi '" + Program.malop + "', '" + Program.mlogin + "', '" + cbBoxTenMH.SelectedValue + "', " + cbBoxLan.Text;
+            }
+            else
+            {
+                strLenh = "EXEC SP_ThiThu '" + cbxTenLop.SelectedValue + "', '" + cbBoxTenMH.SelectedValue + "', " + cbBoxLan.Text;
+            }
+
+            // Console.WriteLine(strLenh); // Optional for debugging
+
+            DataTable cauhoidt = Program.ExecSqlDataTable(strLenh);
+
+            lbTime.Visible = true;
+
+            BindingSource bdsBaiThi = new BindingSource();
+            bdsBaiThi.DataSource = cauhoidt;
+
+            // More efficient list creation (consider using a custom List<CauHoi>)
+            listCauHoi = new CauHoi[bdsBaiThi.Count];
+
+            worker.DoWork += (sender, e) =>
+            {
+                for (int i = 0; i < bdsBaiThi.Count; i++)
+                {
+                    DataRowView dataRow = (DataRowView)bdsBaiThi[i];
+
+                    CauHoi cauHoi = new CauHoi();
+                    cauHoi.Height = panelCauHoi.Height - 10;
+                    cauHoi.CauSo = i + 1;
+
+                    // Set properties based on data row
+                    cauHoi.IDBaiThi = isStudent ? (int)dataRow["ID_BDIEM"] : 0;
+                    cauHoi.IDCauHoi = isStudent ? (int)dataRow["ID_CAUHOI"] : (int)dataRow["CAUHOI"];
+                    cauHoi.NDCauHoi = dataRow["NoiDung"].ToString();
+                    cauHoi.CauA = dataRow["A"].ToString();
+                    cauHoi.CauB = dataRow["B"].ToString();
+                    cauHoi.CauC = dataRow["C"].ToString();
+                    cauHoi.CauD = dataRow["D"].ToString();
+                    cauHoi.CauDapAn = dataRow["Dap_An"].ToString();
+                    cauHoi.CauDaChon = "";
+
+                    // Add CauHoi object to the list
+                    listCauHoi[i] = cauHoi;
+
+                    // Update ListView item (consider using a custom ListViewItem class)
+                    string[] arr = new string[2];
+                    arr[0] = (i + 1).ToString();
+                    arr[1] = cauHoi.CauDaChon;
+                    ListViewItem baiThi = new ListViewItem(arr);
+                    // Thread-safe update using Invoke or BeginInvoke
+                    listView1.Invoke(new Action(() =>
+                    {
+                        listView1.Items.Add(baiThi);
+                    }));
+                }
+            };
+
+            worker.RunWorkerCompleted += (sender, e) =>
+            {
+                // Optional: Handle worker completion (e.Error for exceptions)
+                if (e.Error != null)
+                {
+                    // Handle background worker error
+                }
+                else
+                {
+                    // Add all CauHoi objects to panel in a single thread-safe call
+                    panelCauHoi.Invoke(new Action(() =>
+                    {
+                        panelCauHoi.Controls.AddRange(listCauHoi);
+                    }));
+                    CloseProgressPanel(handle);
+                    timer1.Start();
+                }
+            };
+            worker.RunWorkerAsync();
+        }
+
         public void capNhapDaChon(int cauSo, String daChon)
         {
                 String[] arr = new string[2];
@@ -266,13 +368,12 @@ namespace THI_TN_TEST
         }
         private void btnBatDau_Click_1(object sender, EventArgs e)
         {
-            initQuestion();
             btnBatDau.Enabled = false;
             btnXacNhan.Enabled = false;
             cbBoxLan.Enabled = false;
             cbBoxTenMH.Enabled = false;
             dTNgayThi.Enabled = false;
-            timer1.Start();
+            initQuestion(); 
         }
         private void layThongTinThi()
         {
@@ -359,9 +460,11 @@ namespace THI_TN_TEST
 
         private void frmThi_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dS.LIST_LOP' table. You can move, or remove it, as needed.
-            this.lIST_LOPTableAdapter.Connection.ConnectionString = Program.connstr;
-            this.lIST_LOPTableAdapter.Fill(this.dS.LIST_LOP);
+            if (!isStudent)
+            {
+                this.lIST_LOPTableAdapter.Connection.ConnectionString = Program.connstr;
+                this.lIST_LOPTableAdapter.Fill(this.dS.LIST_LOP);
+            }
         }
         private void cbxTenLop_SelectedIndexChanged(object sender, EventArgs e)
         {

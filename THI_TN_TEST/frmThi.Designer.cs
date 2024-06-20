@@ -30,6 +30,7 @@ namespace THI_TN_TEST
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThi));
             this.dTNgayThi = new System.Windows.Forms.DateTimePicker();
             this.gbSinhVien = new System.Windows.Forms.GroupBox();
             this.cbxTenLop = new System.Windows.Forms.ComboBox();
@@ -87,25 +88,25 @@ namespace THI_TN_TEST
             this.dTNgayThi.Location = new System.Drawing.Point(86, 77);
             this.dTNgayThi.MinDate = new System.DateTime(2000, 12, 31, 0, 0, 0, 0);
             this.dTNgayThi.Name = "dTNgayThi";
-            this.dTNgayThi.Size = new System.Drawing.Size(176, 23);
+            this.dTNgayThi.Size = new System.Drawing.Size(188, 23);
             this.dTNgayThi.TabIndex = 9;
             // 
             // gbSinhVien
             // 
             this.gbSinhVien.BackColor = System.Drawing.Color.White;
-            this.gbSinhVien.Controls.Add(this.cbxTenLop);
             this.gbSinhVien.Controls.Add(this.label1);
             this.gbSinhVien.Controls.Add(this.txtMaLop);
             this.gbSinhVien.Controls.Add(this.lbMaSV);
             this.gbSinhVien.Controls.Add(this.txtEditHoTen);
             this.gbSinhVien.Controls.Add(this.lbHoTen);
+            this.gbSinhVien.Controls.Add(this.cbxTenLop);
             this.gbSinhVien.Controls.Add(this.txtTenLop);
-            this.gbSinhVien.Dock = System.Windows.Forms.DockStyle.Left;
+            this.gbSinhVien.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbSinhVien.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbSinhVien.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.gbSinhVien.Location = new System.Drawing.Point(0, 0);
             this.gbSinhVien.Name = "gbSinhVien";
-            this.gbSinhVien.Size = new System.Drawing.Size(389, 152);
+            this.gbSinhVien.Size = new System.Drawing.Size(414, 152);
             this.gbSinhVien.TabIndex = 11;
             this.gbSinhVien.TabStop = false;
             this.gbSinhVien.Text = "Thông tin sinh viên";
@@ -118,7 +119,7 @@ namespace THI_TN_TEST
             this.cbxTenLop.FormattingEnabled = true;
             this.cbxTenLop.Location = new System.Drawing.Point(133, 78);
             this.cbxTenLop.Name = "cbxTenLop";
-            this.cbxTenLop.Size = new System.Drawing.Size(169, 27);
+            this.cbxTenLop.Size = new System.Drawing.Size(224, 27);
             this.cbxTenLop.TabIndex = 11;
             this.cbxTenLop.ValueMember = "MALOP";
             this.cbxTenLop.SelectedIndexChanged += new System.EventHandler(this.cbxTenLop_SelectedIndexChanged);
@@ -174,7 +175,7 @@ namespace THI_TN_TEST
             this.txtEditHoTen.Name = "txtEditHoTen";
             this.txtEditHoTen.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEditHoTen.Properties.Appearance.Options.UseFont = true;
-            this.txtEditHoTen.Size = new System.Drawing.Size(169, 24);
+            this.txtEditHoTen.Size = new System.Drawing.Size(224, 24);
             this.txtEditHoTen.TabIndex = 2;
             // 
             // lbHoTen
@@ -195,11 +196,12 @@ namespace THI_TN_TEST
             this.txtTenLop.Name = "txtTenLop";
             this.txtTenLop.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenLop.Properties.Appearance.Options.UseFont = true;
-            this.txtTenLop.Size = new System.Drawing.Size(169, 24);
+            this.txtTenLop.Size = new System.Drawing.Size(224, 24);
             this.txtTenLop.TabIndex = 11;
             // 
             // gbBaiThi
             // 
+            this.gbBaiThi.AutoSize = true;
             this.gbBaiThi.BackColor = System.Drawing.Color.White;
             this.gbBaiThi.Controls.Add(this.btnXacNhan);
             this.gbBaiThi.Controls.Add(this.lbTime);
@@ -222,9 +224,9 @@ namespace THI_TN_TEST
             this.gbBaiThi.Dock = System.Windows.Forms.DockStyle.Right;
             this.gbBaiThi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbBaiThi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.gbBaiThi.Location = new System.Drawing.Point(405, 0);
+            this.gbBaiThi.Location = new System.Drawing.Point(414, 0);
             this.gbBaiThi.Name = "gbBaiThi";
-            this.gbBaiThi.Size = new System.Drawing.Size(979, 152);
+            this.gbBaiThi.Size = new System.Drawing.Size(970, 152);
             this.gbBaiThi.TabIndex = 12;
             this.gbBaiThi.TabStop = false;
             this.gbBaiThi.Text = "Thông tin bài thi";
@@ -340,7 +342,7 @@ namespace THI_TN_TEST
             this.cbBoxTenMH.FormattingEnabled = true;
             this.cbBoxTenMH.Location = new System.Drawing.Point(86, 33);
             this.cbBoxTenMH.Name = "cbBoxTenMH";
-            this.cbBoxTenMH.Size = new System.Drawing.Size(174, 25);
+            this.cbBoxTenMH.Size = new System.Drawing.Size(231, 25);
             this.cbBoxTenMH.TabIndex = 31;
             this.cbBoxTenMH.ValueMember = "MAMH";
             // 
@@ -487,9 +489,9 @@ namespace THI_TN_TEST
             this.CauHoi,
             this.DapAn});
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(1267, 180);
+            this.listView1.Location = new System.Drawing.Point(1267, 158);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(117, 332);
+            this.listView1.Size = new System.Drawing.Size(117, 354);
             this.listView1.TabIndex = 2;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -524,12 +526,15 @@ namespace THI_TN_TEST
             // 
             // frmThi
             // 
+            this.Appearance.BackColor = System.Drawing.Color.White;
+            this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1384, 512);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.panelCauHoi);
+            this.IconOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("frmThi.IconOptions.LargeImage")));
             this.Name = "frmThi";
             this.Text = "frmThi";
             this.Load += new System.EventHandler(this.frmThi_Load);
@@ -546,6 +551,7 @@ namespace THI_TN_TEST
             ((System.ComponentModel.ISupportInitialize)(this.edtTrinhDo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
+            this.groupControl1.PerformLayout();
             this.ResumeLayout(false);
 
         }

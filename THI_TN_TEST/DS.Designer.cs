@@ -48,7 +48,7 @@ namespace THI_TN_TEST {
         
         private HOTEN_GVDataTable tableHOTEN_GV;
         
-        private SP_LAYMONTHIDataTable tableSP_LAYMONTHI;
+        private sp_LayMonDaThiDataTable tablesp_LayMonDaThi;
         
         private global::System.Data.DataRelation relationFK_BANGDIEM_MONHOC;
         
@@ -136,8 +136,8 @@ namespace THI_TN_TEST {
                 if ((ds.Tables["HOTEN_GV"] != null)) {
                     base.Tables.Add(new HOTEN_GVDataTable(ds.Tables["HOTEN_GV"]));
                 }
-                if ((ds.Tables["SP_LAYMONTHI"] != null)) {
-                    base.Tables.Add(new SP_LAYMONTHIDataTable(ds.Tables["SP_LAYMONTHI"]));
+                if ((ds.Tables["sp_LayMonDaThi"] != null)) {
+                    base.Tables.Add(new sp_LayMonDaThiDataTable(ds.Tables["sp_LayMonDaThi"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -281,9 +281,9 @@ namespace THI_TN_TEST {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public SP_LAYMONTHIDataTable SP_LAYMONTHI {
+        public sp_LayMonDaThiDataTable sp_LayMonDaThi {
             get {
-                return this.tableSP_LAYMONTHI;
+                return this.tablesp_LayMonDaThi;
             }
         }
         
@@ -390,8 +390,8 @@ namespace THI_TN_TEST {
                 if ((ds.Tables["HOTEN_GV"] != null)) {
                     base.Tables.Add(new HOTEN_GVDataTable(ds.Tables["HOTEN_GV"]));
                 }
-                if ((ds.Tables["SP_LAYMONTHI"] != null)) {
-                    base.Tables.Add(new SP_LAYMONTHIDataTable(ds.Tables["SP_LAYMONTHI"]));
+                if ((ds.Tables["sp_LayMonDaThi"] != null)) {
+                    base.Tables.Add(new sp_LayMonDaThiDataTable(ds.Tables["sp_LayMonDaThi"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -498,10 +498,10 @@ namespace THI_TN_TEST {
                     this.tableHOTEN_GV.InitVars();
                 }
             }
-            this.tableSP_LAYMONTHI = ((SP_LAYMONTHIDataTable)(base.Tables["SP_LAYMONTHI"]));
+            this.tablesp_LayMonDaThi = ((sp_LayMonDaThiDataTable)(base.Tables["sp_LayMonDaThi"]));
             if ((initTable == true)) {
-                if ((this.tableSP_LAYMONTHI != null)) {
-                    this.tableSP_LAYMONTHI.InitVars();
+                if ((this.tablesp_LayMonDaThi != null)) {
+                    this.tablesp_LayMonDaThi.InitVars();
                 }
             }
             this.relationFK_BANGDIEM_MONHOC = this.Relations["FK_BANGDIEM_MONHOC"];
@@ -549,8 +549,8 @@ namespace THI_TN_TEST {
             base.Tables.Add(this.tableLIST_LOP);
             this.tableHOTEN_GV = new HOTEN_GVDataTable();
             base.Tables.Add(this.tableHOTEN_GV);
-            this.tableSP_LAYMONTHI = new SP_LAYMONTHIDataTable();
-            base.Tables.Add(this.tableSP_LAYMONTHI);
+            this.tablesp_LayMonDaThi = new sp_LayMonDaThiDataTable();
+            base.Tables.Add(this.tablesp_LayMonDaThi);
             global::System.Data.ForeignKeyConstraint fkc;
             fkc = new global::System.Data.ForeignKeyConstraint("FK_BANGDIEM_MONHOC", new global::System.Data.DataColumn[] {
                         this.tableMONHOC.MAMHColumn}, new global::System.Data.DataColumn[] {
@@ -749,7 +749,7 @@ namespace THI_TN_TEST {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeSP_LAYMONTHI() {
+        private bool ShouldSerializesp_LayMonDaThi() {
             return false;
         }
         
@@ -845,7 +845,7 @@ namespace THI_TN_TEST {
         public delegate void HOTEN_GVRowChangeEventHandler(object sender, HOTEN_GVRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void SP_LAYMONTHIRowChangeEventHandler(object sender, SP_LAYMONTHIRowChangeEvent e);
+        public delegate void sp_LayMonDaThiRowChangeEventHandler(object sender, sp_LayMonDaThiRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -4600,32 +4600,16 @@ namespace THI_TN_TEST {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class SP_LAYMONTHIDataTable : global::System.Data.TypedTableBase<SP_LAYMONTHIRow> {
-            
-            private global::System.Data.DataColumn columnMAGV;
-            
-            private global::System.Data.DataColumn columnMAMH;
-            
-            private global::System.Data.DataColumn columnMALOP;
-            
-            private global::System.Data.DataColumn columnTRINHDO;
-            
-            private global::System.Data.DataColumn columnNGAYTHI;
-            
-            private global::System.Data.DataColumn columnLAN;
-            
-            private global::System.Data.DataColumn columnSOCAUTHI;
-            
-            private global::System.Data.DataColumn columnTHOIGIAN;
-            
-            private global::System.Data.DataColumn columnrowguid;
+        public partial class sp_LayMonDaThiDataTable : global::System.Data.TypedTableBase<sp_LayMonDaThiRow> {
             
             private global::System.Data.DataColumn columnTENMH;
             
+            private global::System.Data.DataColumn columnMAMH;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_LAYMONTHIDataTable() {
-                this.TableName = "SP_LAYMONTHI";
+            public sp_LayMonDaThiDataTable() {
+                this.TableName = "sp_LayMonDaThi";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -4633,7 +4617,7 @@ namespace THI_TN_TEST {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal SP_LAYMONTHIDataTable(global::System.Data.DataTable table) {
+            internal sp_LayMonDaThiDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -4650,16 +4634,16 @@ namespace THI_TN_TEST {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected SP_LAYMONTHIDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected sp_LayMonDaThiDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn MAGVColumn {
+            public global::System.Data.DataColumn TENMHColumn {
                 get {
-                    return this.columnMAGV;
+                    return this.columnTENMH;
                 }
             }
             
@@ -4668,70 +4652,6 @@ namespace THI_TN_TEST {
             public global::System.Data.DataColumn MAMHColumn {
                 get {
                     return this.columnMAMH;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn MALOPColumn {
-                get {
-                    return this.columnMALOP;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn TRINHDOColumn {
-                get {
-                    return this.columnTRINHDO;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn NGAYTHIColumn {
-                get {
-                    return this.columnNGAYTHI;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn LANColumn {
-                get {
-                    return this.columnLAN;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn SOCAUTHIColumn {
-                get {
-                    return this.columnSOCAUTHI;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn THOIGIANColumn {
-                get {
-                    return this.columnTHOIGIAN;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn rowguidColumn {
-                get {
-                    return this.columnrowguid;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn TENMHColumn {
-                get {
-                    return this.columnTENMH;
                 }
             }
             
@@ -4746,63 +4666,53 @@ namespace THI_TN_TEST {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_LAYMONTHIRow this[int index] {
+            public sp_LayMonDaThiRow this[int index] {
                 get {
-                    return ((SP_LAYMONTHIRow)(this.Rows[index]));
+                    return ((sp_LayMonDaThiRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event SP_LAYMONTHIRowChangeEventHandler SP_LAYMONTHIRowChanging;
+            public event sp_LayMonDaThiRowChangeEventHandler sp_LayMonDaThiRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event SP_LAYMONTHIRowChangeEventHandler SP_LAYMONTHIRowChanged;
+            public event sp_LayMonDaThiRowChangeEventHandler sp_LayMonDaThiRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event SP_LAYMONTHIRowChangeEventHandler SP_LAYMONTHIRowDeleting;
+            public event sp_LayMonDaThiRowChangeEventHandler sp_LayMonDaThiRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event SP_LAYMONTHIRowChangeEventHandler SP_LAYMONTHIRowDeleted;
+            public event sp_LayMonDaThiRowChangeEventHandler sp_LayMonDaThiRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddSP_LAYMONTHIRow(SP_LAYMONTHIRow row) {
+            public void Addsp_LayMonDaThiRow(sp_LayMonDaThiRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_LAYMONTHIRow AddSP_LAYMONTHIRow(string MAGV, string MAMH, string MALOP, string TRINHDO, System.DateTime NGAYTHI, short LAN, short SOCAUTHI, short THOIGIAN, System.Guid rowguid, string TENMH) {
-                SP_LAYMONTHIRow rowSP_LAYMONTHIRow = ((SP_LAYMONTHIRow)(this.NewRow()));
+            public sp_LayMonDaThiRow Addsp_LayMonDaThiRow(string TENMH, string MAMH) {
+                sp_LayMonDaThiRow rowsp_LayMonDaThiRow = ((sp_LayMonDaThiRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        MAGV,
-                        MAMH,
-                        MALOP,
-                        TRINHDO,
-                        NGAYTHI,
-                        LAN,
-                        SOCAUTHI,
-                        THOIGIAN,
-                        rowguid,
-                        TENMH};
-                rowSP_LAYMONTHIRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowSP_LAYMONTHIRow);
-                return rowSP_LAYMONTHIRow;
+                        TENMH,
+                        MAMH};
+                rowsp_LayMonDaThiRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowsp_LayMonDaThiRow);
+                return rowsp_LayMonDaThiRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_LAYMONTHIRow FindByMAMHMALOPLAN(string MAMH, string MALOP, short LAN) {
-                return ((SP_LAYMONTHIRow)(this.Rows.Find(new object[] {
-                            MAMH,
-                            MALOP,
-                            LAN})));
+            public sp_LayMonDaThiRow FindByMAMH(string MAMH) {
+                return ((sp_LayMonDaThiRow)(this.Rows.Find(new object[] {
+                            MAMH})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                SP_LAYMONTHIDataTable cln = ((SP_LAYMONTHIDataTable)(base.Clone()));
+                sp_LayMonDaThiDataTable cln = ((sp_LayMonDaThiDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -4810,87 +4720,55 @@ namespace THI_TN_TEST {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new SP_LAYMONTHIDataTable();
+                return new sp_LayMonDaThiDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnMAGV = base.Columns["MAGV"];
-                this.columnMAMH = base.Columns["MAMH"];
-                this.columnMALOP = base.Columns["MALOP"];
-                this.columnTRINHDO = base.Columns["TRINHDO"];
-                this.columnNGAYTHI = base.Columns["NGAYTHI"];
-                this.columnLAN = base.Columns["LAN"];
-                this.columnSOCAUTHI = base.Columns["SOCAUTHI"];
-                this.columnTHOIGIAN = base.Columns["THOIGIAN"];
-                this.columnrowguid = base.Columns["rowguid"];
                 this.columnTENMH = base.Columns["TENMH"];
+                this.columnMAMH = base.Columns["MAMH"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnMAGV = new global::System.Data.DataColumn("MAGV", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnMAGV);
-                this.columnMAMH = new global::System.Data.DataColumn("MAMH", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnMAMH);
-                this.columnMALOP = new global::System.Data.DataColumn("MALOP", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnMALOP);
-                this.columnTRINHDO = new global::System.Data.DataColumn("TRINHDO", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTRINHDO);
-                this.columnNGAYTHI = new global::System.Data.DataColumn("NGAYTHI", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNGAYTHI);
-                this.columnLAN = new global::System.Data.DataColumn("LAN", typeof(short), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnLAN);
-                this.columnSOCAUTHI = new global::System.Data.DataColumn("SOCAUTHI", typeof(short), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSOCAUTHI);
-                this.columnTHOIGIAN = new global::System.Data.DataColumn("THOIGIAN", typeof(short), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTHOIGIAN);
-                this.columnrowguid = new global::System.Data.DataColumn("rowguid", typeof(global::System.Guid), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnrowguid);
                 this.columnTENMH = new global::System.Data.DataColumn("TENMH", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTENMH);
+                this.columnMAMH = new global::System.Data.DataColumn("MAMH", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMAMH);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnMAMH,
-                                this.columnMALOP,
-                                this.columnLAN}, true));
-                this.columnMAGV.MaxLength = 8;
-                this.columnMAMH.AllowDBNull = false;
-                this.columnMAMH.MaxLength = 5;
-                this.columnMALOP.AllowDBNull = false;
-                this.columnMALOP.MaxLength = 15;
-                this.columnTRINHDO.MaxLength = 1;
-                this.columnLAN.AllowDBNull = false;
-                this.columnrowguid.AllowDBNull = false;
-                this.columnTENMH.ReadOnly = true;
+                                this.columnMAMH}, true));
                 this.columnTENMH.MaxLength = 50;
+                this.columnMAMH.AllowDBNull = false;
+                this.columnMAMH.Unique = true;
+                this.columnMAMH.MaxLength = 5;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_LAYMONTHIRow NewSP_LAYMONTHIRow() {
-                return ((SP_LAYMONTHIRow)(this.NewRow()));
+            public sp_LayMonDaThiRow Newsp_LayMonDaThiRow() {
+                return ((sp_LayMonDaThiRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new SP_LAYMONTHIRow(builder);
+                return new sp_LayMonDaThiRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(SP_LAYMONTHIRow);
+                return typeof(sp_LayMonDaThiRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.SP_LAYMONTHIRowChanged != null)) {
-                    this.SP_LAYMONTHIRowChanged(this, new SP_LAYMONTHIRowChangeEvent(((SP_LAYMONTHIRow)(e.Row)), e.Action));
+                if ((this.sp_LayMonDaThiRowChanged != null)) {
+                    this.sp_LayMonDaThiRowChanged(this, new sp_LayMonDaThiRowChangeEvent(((sp_LayMonDaThiRow)(e.Row)), e.Action));
                 }
             }
             
@@ -4898,8 +4776,8 @@ namespace THI_TN_TEST {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.SP_LAYMONTHIRowChanging != null)) {
-                    this.SP_LAYMONTHIRowChanging(this, new SP_LAYMONTHIRowChangeEvent(((SP_LAYMONTHIRow)(e.Row)), e.Action));
+                if ((this.sp_LayMonDaThiRowChanging != null)) {
+                    this.sp_LayMonDaThiRowChanging(this, new sp_LayMonDaThiRowChangeEvent(((sp_LayMonDaThiRow)(e.Row)), e.Action));
                 }
             }
             
@@ -4907,8 +4785,8 @@ namespace THI_TN_TEST {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.SP_LAYMONTHIRowDeleted != null)) {
-                    this.SP_LAYMONTHIRowDeleted(this, new SP_LAYMONTHIRowChangeEvent(((SP_LAYMONTHIRow)(e.Row)), e.Action));
+                if ((this.sp_LayMonDaThiRowDeleted != null)) {
+                    this.sp_LayMonDaThiRowDeleted(this, new sp_LayMonDaThiRowChangeEvent(((sp_LayMonDaThiRow)(e.Row)), e.Action));
                 }
             }
             
@@ -4916,14 +4794,14 @@ namespace THI_TN_TEST {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.SP_LAYMONTHIRowDeleting != null)) {
-                    this.SP_LAYMONTHIRowDeleting(this, new SP_LAYMONTHIRowChangeEvent(((SP_LAYMONTHIRow)(e.Row)), e.Action));
+                if ((this.sp_LayMonDaThiRowDeleting != null)) {
+                    this.sp_LayMonDaThiRowDeleting(this, new sp_LayMonDaThiRowChangeEvent(((sp_LayMonDaThiRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveSP_LAYMONTHIRow(SP_LAYMONTHIRow row) {
+            public void Removesp_LayMonDaThiRow(sp_LayMonDaThiRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -4950,7 +4828,7 @@ namespace THI_TN_TEST {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "SP_LAYMONTHIDataTable";
+                attribute2.FixedValue = "sp_LayMonDaThiDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -6515,139 +6393,15 @@ namespace THI_TN_TEST {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class SP_LAYMONTHIRow : global::System.Data.DataRow {
+        public partial class sp_LayMonDaThiRow : global::System.Data.DataRow {
             
-            private SP_LAYMONTHIDataTable tableSP_LAYMONTHI;
+            private sp_LayMonDaThiDataTable tablesp_LayMonDaThi;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal SP_LAYMONTHIRow(global::System.Data.DataRowBuilder rb) : 
+            internal sp_LayMonDaThiRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableSP_LAYMONTHI = ((SP_LAYMONTHIDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string MAGV {
-                get {
-                    try {
-                        return ((string)(this[this.tableSP_LAYMONTHI.MAGVColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'MAGV\' in table \'SP_LAYMONTHI\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_LAYMONTHI.MAGVColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string MAMH {
-                get {
-                    return ((string)(this[this.tableSP_LAYMONTHI.MAMHColumn]));
-                }
-                set {
-                    this[this.tableSP_LAYMONTHI.MAMHColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string MALOP {
-                get {
-                    return ((string)(this[this.tableSP_LAYMONTHI.MALOPColumn]));
-                }
-                set {
-                    this[this.tableSP_LAYMONTHI.MALOPColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string TRINHDO {
-                get {
-                    try {
-                        return ((string)(this[this.tableSP_LAYMONTHI.TRINHDOColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'TRINHDO\' in table \'SP_LAYMONTHI\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_LAYMONTHI.TRINHDOColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime NGAYTHI {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableSP_LAYMONTHI.NGAYTHIColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'NGAYTHI\' in table \'SP_LAYMONTHI\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_LAYMONTHI.NGAYTHIColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public short LAN {
-                get {
-                    return ((short)(this[this.tableSP_LAYMONTHI.LANColumn]));
-                }
-                set {
-                    this[this.tableSP_LAYMONTHI.LANColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public short SOCAUTHI {
-                get {
-                    try {
-                        return ((short)(this[this.tableSP_LAYMONTHI.SOCAUTHIColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'SOCAUTHI\' in table \'SP_LAYMONTHI\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_LAYMONTHI.SOCAUTHIColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public short THOIGIAN {
-                get {
-                    try {
-                        return ((short)(this[this.tableSP_LAYMONTHI.THOIGIANColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'THOIGIAN\' in table \'SP_LAYMONTHI\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_LAYMONTHI.THOIGIANColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.Guid rowguid {
-                get {
-                    return ((global::System.Guid)(this[this.tableSP_LAYMONTHI.rowguidColumn]));
-                }
-                set {
-                    this[this.tableSP_LAYMONTHI.rowguidColumn] = value;
-                }
+                this.tablesp_LayMonDaThi = ((sp_LayMonDaThiDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6655,87 +6409,38 @@ namespace THI_TN_TEST {
             public string TENMH {
                 get {
                     try {
-                        return ((string)(this[this.tableSP_LAYMONTHI.TENMHColumn]));
+                        return ((string)(this[this.tablesp_LayMonDaThi.TENMHColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'TENMH\' in table \'SP_LAYMONTHI\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'TENMH\' in table \'sp_LayMonDaThi\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableSP_LAYMONTHI.TENMHColumn] = value;
+                    this[this.tablesp_LayMonDaThi.TENMHColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsMAGVNull() {
-                return this.IsNull(this.tableSP_LAYMONTHI.MAGVColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetMAGVNull() {
-                this[this.tableSP_LAYMONTHI.MAGVColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsTRINHDONull() {
-                return this.IsNull(this.tableSP_LAYMONTHI.TRINHDOColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetTRINHDONull() {
-                this[this.tableSP_LAYMONTHI.TRINHDOColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsNGAYTHINull() {
-                return this.IsNull(this.tableSP_LAYMONTHI.NGAYTHIColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetNGAYTHINull() {
-                this[this.tableSP_LAYMONTHI.NGAYTHIColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsSOCAUTHINull() {
-                return this.IsNull(this.tableSP_LAYMONTHI.SOCAUTHIColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetSOCAUTHINull() {
-                this[this.tableSP_LAYMONTHI.SOCAUTHIColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsTHOIGIANNull() {
-                return this.IsNull(this.tableSP_LAYMONTHI.THOIGIANColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetTHOIGIANNull() {
-                this[this.tableSP_LAYMONTHI.THOIGIANColumn] = global::System.Convert.DBNull;
+            public string MAMH {
+                get {
+                    return ((string)(this[this.tablesp_LayMonDaThi.MAMHColumn]));
+                }
+                set {
+                    this[this.tablesp_LayMonDaThi.MAMHColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsTENMHNull() {
-                return this.IsNull(this.tableSP_LAYMONTHI.TENMHColumn);
+                return this.IsNull(this.tablesp_LayMonDaThi.TENMHColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetTENMHNull() {
-                this[this.tableSP_LAYMONTHI.TENMHColumn] = global::System.Convert.DBNull;
+                this[this.tablesp_LayMonDaThi.TENMHColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -7151,22 +6856,22 @@ namespace THI_TN_TEST {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class SP_LAYMONTHIRowChangeEvent : global::System.EventArgs {
+        public class sp_LayMonDaThiRowChangeEvent : global::System.EventArgs {
             
-            private SP_LAYMONTHIRow eventRow;
+            private sp_LayMonDaThiRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_LAYMONTHIRowChangeEvent(SP_LAYMONTHIRow row, global::System.Data.DataRowAction action) {
+            public sp_LayMonDaThiRowChangeEvent(sp_LayMonDaThiRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_LAYMONTHIRow Row {
+            public sp_LayMonDaThiRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -11595,7 +11300,7 @@ SELECT MASV, HO, TEN, NGAYSINH, DIACHI, MALOP, PASSWORD FROM SINHVIEN WHERE (MAS
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class SP_LAYMONTHITableAdapter : global::System.ComponentModel.Component {
+    public partial class sp_LayMonDaThiTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -11609,7 +11314,7 @@ SELECT MASV, HO, TEN, NGAYSINH, DIACHI, MALOP, PASSWORD FROM SINHVIEN WHERE (MAS
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public SP_LAYMONTHITableAdapter() {
+        public sp_LayMonDaThiTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -11706,17 +11411,9 @@ SELECT MASV, HO, TEN, NGAYSINH, DIACHI, MALOP, PASSWORD FROM SINHVIEN WHERE (MAS
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "SP_LAYMONTHI";
-            tableMapping.ColumnMappings.Add("MAGV", "MAGV");
-            tableMapping.ColumnMappings.Add("MAMH", "MAMH");
-            tableMapping.ColumnMappings.Add("MALOP", "MALOP");
-            tableMapping.ColumnMappings.Add("TRINHDO", "TRINHDO");
-            tableMapping.ColumnMappings.Add("NGAYTHI", "NGAYTHI");
-            tableMapping.ColumnMappings.Add("LAN", "LAN");
-            tableMapping.ColumnMappings.Add("SOCAUTHI", "SOCAUTHI");
-            tableMapping.ColumnMappings.Add("THOIGIAN", "THOIGIAN");
-            tableMapping.ColumnMappings.Add("rowguid", "rowguid");
+            tableMapping.DataSetTable = "sp_LayMonDaThi";
             tableMapping.ColumnMappings.Add("TENMH", "TENMH");
+            tableMapping.ColumnMappings.Add("MAMH", "MAMH");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -11724,7 +11421,7 @@ SELECT MASV, HO, TEN, NGAYSINH, DIACHI, MALOP, PASSWORD FROM SINHVIEN WHERE (MAS
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::THI_TN_TEST.Properties.Settings.Default.TN_CSDLPTConnectionString1;
+            this._connection.ConnectionString = global::THI_TN_TEST.Properties.Settings.Default.TN_CSDLPTConnectionString2;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11733,23 +11430,23 @@ SELECT MASV, HO, TEN, NGAYSINH, DIACHI, MALOP, PASSWORD FROM SINHVIEN WHERE (MAS
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "dbo.SP_LAYMONTHI";
+            this._commandCollection[0].CommandText = "dbo.sp_LayMonDaThi";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MALOP", global::System.Data.SqlDbType.NChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MASV", global::System.Data.SqlDbType.Char, 8, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DS.SP_LAYMONTHIDataTable dataTable, string MALOP) {
+        public virtual int Fill(DS.sp_LayMonDaThiDataTable dataTable, string MASV) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((MALOP == null)) {
+            if ((MASV == null)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(MALOP));
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(MASV));
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -11762,15 +11459,15 @@ SELECT MASV, HO, TEN, NGAYSINH, DIACHI, MALOP, PASSWORD FROM SINHVIEN WHERE (MAS
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DS.SP_LAYMONTHIDataTable GetData(string MALOP) {
+        public virtual DS.sp_LayMonDaThiDataTable GetData(string MASV) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((MALOP == null)) {
+            if ((MASV == null)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(MALOP));
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(MASV));
             }
-            DS.SP_LAYMONTHIDataTable dataTable = new DS.SP_LAYMONTHIDataTable();
+            DS.sp_LayMonDaThiDataTable dataTable = new DS.sp_LayMonDaThiDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
