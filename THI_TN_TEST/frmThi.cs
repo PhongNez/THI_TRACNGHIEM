@@ -19,6 +19,7 @@ namespace THI_TN_TEST
         }
         IOverlaySplashScreenHandle handle = null;
         public static CauHoi[] listCauHoi;
+        private DateTime ngayThi;
         private int thoigianThi = 0;
         private int s = 59;
         public Timer timer1;
@@ -248,15 +249,7 @@ namespace THI_TN_TEST
                 ListViewItem baiThi = new ListViewItem(arr);
                 listView1.Items[cauSo - 1] = baiThi;
         }
-        private void lbMaSV_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -373,6 +366,13 @@ namespace THI_TN_TEST
             cbBoxLan.Enabled = false;
             cbBoxTenMH.Enabled = false;
             dTNgayThi.Enabled = false;
+            DateTime today = DateTime.Today;
+            if (today.CompareTo(ngayThi.Date) != 0 && isStudent)
+            {
+                Console.WriteLine("Ngày thi : " + ngayThi + ", ngày hiện tại: " + today);
+                MessageBox.Show("Chưa đến ngày thi", "Thông báo", MessageBoxButtons.OK);
+                return;
+            }
             initQuestion(); 
         }
         private void layThongTinThi()
@@ -392,6 +392,7 @@ namespace THI_TN_TEST
             txtThoiGian.Text = (thoigianThi+1).ToString();
             edtSoCau.Value = soCau;
             dTNgayThi.Value = Program.myReader.GetDateTime(3);
+            ngayThi = Program.myReader.GetDateTime(3);
             Program.myReader.Close();
         }
         private void kiemTraLanThi()

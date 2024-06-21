@@ -19,8 +19,14 @@ namespace THI_TN_TEST
             this.sqlDataSource1.Queries[0].Parameters[0].Value = masv;
             this.sqlDataSource1.Queries[0].Parameters[1].Value = lan;
             this.sqlDataSource1.Queries[0].Parameters[2].Value = mamh;
+            this.sqlDataSource1.Queries[1].Parameters[0].Value = mamh;
+            this.sqlDataSource1.Queries[2].Parameters[0].Value = Program.malop;
+            this.sqlDataSource1.Queries[2].Parameters[1].Value = mamh;
+            this.sqlDataSource1.Queries[2].Parameters[2].Value = lan;
             this.sqlDataSource1.Fill();
+            lbLop.Text = Program.malop;
+            lbTen.Text = Program.mHoten;
+            lbLan.Text = lan.ToString();
         }
-
     }
 }

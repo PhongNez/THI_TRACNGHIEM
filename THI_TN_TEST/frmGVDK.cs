@@ -189,8 +189,21 @@ namespace THI_TN_TEST
                         MessageBox.Show("Đã có giảng viên đăng ký lớp, môn, lần hoặc chưa đăng ký lần 1", "", MessageBoxButtons.OK);
                         return;
                     }
+                    string strLenh2 = "declare @result int "
+                       + "EXEC @result = SP_KiemTraSoLuongCau '" + cmbMONHOC.SelectedValue.ToString() + "','"
+                       + cmbTRINHDO.Text+ "'," + lan
+                       + " select @result";
+                    Program.myReader = Program.ExecSqlDataReader(strLenh2);//Thực thi lệnh và trả về 1 obj sqldatareader
+                    Program.myReader.Read();
+                    int result2 = Program.myReader.GetInt32(0);//Lấy cột đầu dòng hiện tại
+                    Console.WriteLine(result2);
+                    Program.myReader.Close();
+                    if (result2 == 0)
+                    {
+                        MessageBox.Show("Không đủ số lượng câu hỏi!", "", MessageBoxButtons.OK);
+                        return;
+                    }
                 }
-               
                 bdsGVDK.EndEdit();//Kết thúc hiệu chỉnh và lưu thay đổi vào dataset
                 this.gIAOVIEN_DANGKYTableAdapter.Connection.ConnectionString = Program.connstr;
                 this.gIAOVIEN_DANGKYTableAdapter.Update(this.DS.GIAOVIEN_DANGKY);
@@ -208,7 +221,6 @@ namespace THI_TN_TEST
             btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnReload.Enabled = btnThoat.Enabled = true;
             btnGhi.Enabled = btnUndo.Enabled = false;
         }
-
         private void btnUndo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             bdsGVDK.CancelEdit();//Hủy bỏ quá trình hiệu chỉnh
@@ -228,7 +240,6 @@ namespace THI_TN_TEST
 
             gIAOVIEN_DANGKYGridControl.Enabled = true;
             groupBox1.Enabled = false;
-            //Không cho ghi và phục hồi
             btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnReload.Enabled = btnThoat.Enabled = true;
             btnGhi.Enabled = btnUndo.Enabled = false;
 

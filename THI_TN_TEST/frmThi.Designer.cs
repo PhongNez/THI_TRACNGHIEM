@@ -144,7 +144,7 @@ namespace THI_TN_TEST
             this.label1.Size = new System.Drawing.Size(63, 17);
             this.label1.TabIndex = 10;
             this.label1.Text = "Tên lớp:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+          
             // 
             // txtMaLop
             // 
@@ -166,7 +166,7 @@ namespace THI_TN_TEST
             this.lbMaSV.Size = new System.Drawing.Size(63, 17);
             this.lbMaSV.TabIndex = 6;
             this.lbMaSV.Text = "Mã lớp :";
-            this.lbMaSV.Click += new System.EventHandler(this.lbMaSV_Click);
+          
             // 
             // txtEditHoTen
             // 
