@@ -30,7 +30,7 @@ namespace THI_TN_TEST
 
         private void frmNhapSinhVien_Load(object sender, EventArgs e)
         {
-            
+
             DS.EnforceConstraints = false;
             // TODO: This line of code loads data into the 'dS.LOP' table. You can move, or remove it, as needed.
             this.LOPTableAdapter.Connection.ConnectionString = Program.connstr;
@@ -39,7 +39,7 @@ namespace THI_TN_TEST
             this.SINHVIENTableAdapter.Connection.ConnectionString = Program.connstr;
             this.SINHVIENTableAdapter.Fill(this.DS.SINHVIEN);
             // TODO: This line of code loads data into the 'DS.BANGDIEM' table. You can move, or remove it, as needed
-              this.BANGDIEMTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.BANGDIEMTableAdapter.Connection.ConnectionString = Program.connstr;
             this.BANGDIEMTableAdapter.Fill(this.DS.BANGDIEM);
 
             cmbCoso.DataSource = Program.bds_dspm;//Sao chép bds_dspm đã load ở form đăng nhập
@@ -53,7 +53,7 @@ namespace THI_TN_TEST
                 cmbCoso.Enabled = true;
                 //Cập nhật from sinh viên
                 btnThemSV.Enabled = btnSuaSV.Enabled = btnXoaSV.Enabled = btnUndoSV.Enabled = btnGhiSV.Enabled = false;
-           
+
             }
 
         }
@@ -65,12 +65,12 @@ namespace THI_TN_TEST
 
         private void btnThemSV_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            
+
             vitri = bdsSV.Position;
             groupBox1.Enabled = true;
             bdsSV.AddNew();
             gcLOP.Enabled = false;
-            SINHVIENDataGridView.Enabled=false;
+            SINHVIENDataGridView.Enabled = false;
 
             btnThemSV.Enabled = btnSuaSV.Enabled = btnXoaSV.Enabled = btnReloadSV.Enabled = btnThoatSV.Enabled = false;
             btnUndoSV.Enabled = btnGhiSV.Enabled = true;
@@ -100,7 +100,7 @@ namespace THI_TN_TEST
             {
                 this.SINHVIENTableAdapter.Fill(this.DS.SINHVIEN);
             }
-           catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Lỗi khi reload: " + ex.Message, "", MessageBoxButtons.OK);
                 return;
@@ -113,7 +113,7 @@ namespace THI_TN_TEST
             string masv = "";//Xóa thất bại thì tìm và trả lại vị trí
             if (bdsBANGDIEM.Count > 0)
             {
-                MessageBox.Show("Không thể xóa sinh viên vì đã có bảng điểm","",MessageBoxButtons.OK);
+                MessageBox.Show("Không thể xóa sinh viên vì đã có bảng điểm", "", MessageBoxButtons.OK);
                 return;
             }
 
@@ -128,7 +128,7 @@ namespace THI_TN_TEST
                     this.SINHVIENTableAdapter.Connection.ConnectionString = Program.connstr;
                     this.SINHVIENTableAdapter.Update(this.DS.SINHVIEN);
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     this.SINHVIENTableAdapter.Fill(this.DS.SINHVIEN);
                     bdsSV.Position = bdsSV.Find("MASV", masv);
@@ -194,17 +194,17 @@ namespace THI_TN_TEST
                 txtPASSWORD.Focus();
                 return;
             }
-          
-            if(dateNGAYSINH.DateTime.Equals(DateTime.MinValue))
+
+            if (dateNGAYSINH.DateTime.Equals(DateTime.MinValue))
             {
                 MessageBox.Show("Ngày sinh của sinh viên chưa nhập", "Thông báo", MessageBoxButtons.OK);
                 dateNGAYSINH.Focus();
                 return;
             }
             int currentYear = DateTime.Now.Year;
-            int birthYear= dateNGAYSINH.DateTime.Year;
+            int birthYear = dateNGAYSINH.DateTime.Year;
             int age = currentYear - birthYear;
-            if (age <18)
+            if (age < 18)
             {
                 MessageBox.Show("Tuổi của bạn nhỏ hơn 18", "Thông báo", MessageBoxButtons.OK);
                 return;
@@ -238,7 +238,7 @@ namespace THI_TN_TEST
                 this.SINHVIENTableAdapter.Update(this.DS.SINHVIEN);
                 bdsSV.ResetCurrentItem();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Lỗi ghi sinh viên: " + ex.Message, "", MessageBoxButtons.OK);
                 return;
@@ -257,7 +257,7 @@ namespace THI_TN_TEST
 
         private void cmbCoso_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(cmbCoso.SelectedValue.ToString()== "System.Data.DataRowView")
+            if (cmbCoso.SelectedValue.ToString() == "System.Data.DataRowView")
             {
                 return;//SelectedValue chưa có giá trị => nếu tiếp tục chạy đoạn code bên dưới sẽ lỗi
             }

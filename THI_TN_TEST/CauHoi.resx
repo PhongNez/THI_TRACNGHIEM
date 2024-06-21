@@ -117,29 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="lIST_LOPBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>82, 17</value>
-  </metadata>
-  <metadata name="dS.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <data name="txtNoiDung.Text" xml:space="preserve">
+    <value>Nội dung câu hỏi rất dài thì nó sẽ hiển thị thế nào đây nhỉ nhỉ Nội dung câu hỏi rất dài thì nó sẽ hiển thị thế nào đây nhỉ nhỉ Nội dung câu hỏi rất dài thì nó sẽ hiển thị thế nào đây nhỉ nhỉ Nội dung câu hỏi rất dài thì nó sẽ hiển thị thế nào đây nhỉ nhỉ Nội dung câu hỏi rất dài thì nó sẽ hiển thị thế nào đây nhỉ nhỉ Nội dung câu hỏi rất dài thì nó sẽ hiển thị thế nào đây nhỉ nhỉ Nội dung câu hỏi rất dài thì nó sẽ hiển thị thế nào đây nhỉ nhỉ Nội dung câu hỏi rất dài thì nó sẽ hiển thị thế nào đây nhỉ nhỉ Nội dung câu hỏi rất dài thì nó sẽ hiển thị thế nào đây nhỉ nhỉ Nội dung câu hỏi rất dài thì nó sẽ hiển thị thế nào đây nhỉ nhỉ Nội dung câu hỏi rất dài thì nó sẽ h</value>
+  </data>
+  <metadata name="contextMenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <metadata name="lIST_LOPTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>259, 17</value>
-  </metadata>
-  <metadata name="tableAdapterManager.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>430, 17</value>
-  </metadata>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>33</value>
-  </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="frmThi.IconOptions.LargeImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EwAACxMBAJqcGAAAAA90RVh0VGl0bGUAQm9vaztSZWFky8MmvQAAAKlJREFUWEfN1kEKgDAMRFHv1At4
-        Gu9/g4ggxcXXsaOJLh6WGOhfdoqIT+GwEg4r4bASDivhsFI/tNbCMO/o36WzgO171/Hi7Uw7Z14JeEIG
-        LDe5+zIgmwygeuLuy4BsMoDqibsvA7LJAKon7r4MyCYDqJ64+zIgmwygeuLuy4BsMoDqibsvA7LJAKon
-        7r4MyPbfgFGvvglHPXkT9nv74Ss4rITDSjisE9MKPszTHce+GTgAAAAASUVORK5CYII=
-</value>
-  </data>
 </root>

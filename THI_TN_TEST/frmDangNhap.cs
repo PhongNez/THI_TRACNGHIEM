@@ -30,7 +30,6 @@ namespace THI_TN_TEST
             cmbChiNhanh.ValueMember = "TENSERVER";
 
         }
-
         public frmDangNhap()
         {
             InitializeComponent();
@@ -116,8 +115,7 @@ namespace THI_TN_TEST
                 {
                     return;
                 }
-                strLenh = "EXEC SP_LOGIN_SV '" + Program.mlogin + "'," + "'" + Program.password + "'";
-                
+                strLenh = "EXEC SP_LOGIN_SV '" + Program.mlogin + "'," + "'" + Program.password + "'"; 
             }
             Program.myReader = Program.ExecSqlDataReader(strLenh);
             if (Program.myReader == null)
@@ -126,12 +124,26 @@ namespace THI_TN_TEST
             }
             else
             {
-                if (Program.myReader.Read()==false)//không có bản ghi
+                 if (Program.myReader.Read()==false)//không có bản ghi
                 {
                     MessageBox.Show("Tài khoản user không có quyền trên cơ sở dữ liệu","", MessageBoxButtons.OK);
                     Program.myReader.Close();
                     return;
                 }
+                // Program.myReader.Read();
+                 Program.malop =  radiobtnSV.Checked ?  Program.myReader.GetString(3): "";
+               // Program.malop = Program.myReader.GetString(3);
+                // Program.username = Program.myReader.GetString(0);//username
+            }
+           
+           
+            //MessageBox.Show(Program.malop);
+
+            if (Program.myReader.IsDBNull(1))
+            {
+                MessageBox.Show("Tài khoản của bạn không hợp lệ.\nBạn xem lại lựa chọn", "", MessageBoxButtons.OK);
+                return;
+               
             }
             //Program.malop = Program.myReader.GetString(3);
             Program.username = Program.myReader.GetString(0);//username
@@ -155,7 +167,10 @@ namespace THI_TN_TEST
             {
                 Program.frmChinh.HienThiMenuTruong(true);
             }
-
+            Program.DangNhap();
+            //Program.frmDangNhap.Close();
+            //Program.frmChinh.ShowDialog();
+           
         }
     }
 }

@@ -70,6 +70,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CauHoi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CauHoi.Designer.cs">
+      <DependentUpon>CauHoi.cs</DependentUpon>
+    </Compile>
     <Compile Include="DS.cs">
       <DependentUpon>DS.xsd</DependentUpon>
     </Compile>
@@ -88,6 +94,12 @@
     </Compile>
     <Compile Include="formTaoTaiKhoan.Designer.cs">
       <DependentUpon>formTaoTaiKhoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBaiThi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBaiThi.Designer.cs">
+      <DependentUpon>frmBaiThi.cs</DependentUpon>
     </Compile>
     <Compile Include="frmDangNhap.cs">
       <SubType>Form</SubType>
@@ -150,14 +162,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TN_CSDLPTDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="XtraReport2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReport2.Designer.cs">
+      <DependentUpon>XtraReport2.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CauHoi.resx">
+      <DependentUpon>CauHoi.cs</DependentUpon>
+    </EmbeddedResource>
     <Compile Include="Xrpt_In_DanhSachDK_2_Coso.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Xrpt_In_DanhSachDK_2_Coso.Designer.cs">
       <DependentUpon>Xrpt_In_DanhSachDK_2_Coso.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="formTaoTaiKhoan.resx">
-      <DependentUpon>formTaoTaiKhoan.cs</DependentUpon>
+    <EmbeddedResource Include="frmBaiThi.resx">
+      <DependentUpon>frmBaiThi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
@@ -198,6 +219,9 @@
     </Compile>
     <EmbeddedResource Include="Xrpt_In_DanhSachDK_2_Coso.resx">
       <DependentUpon>Xrpt_In_DanhSachDK_2_Coso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReport2.resx">
+      <DependentUpon>XtraReport2.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="DS.xsc">
