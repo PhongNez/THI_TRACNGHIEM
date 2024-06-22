@@ -180,8 +180,10 @@ E:\CloneTest\TestBranch\THI_TRACNGHIEM\THI_TN_TEST\bin\Debug\ru\DevExpress.Diagr
 E:\CloneTest\TestBranch\THI_TRACNGHIEM\THI_TN_TEST\obj\Debug\THI_TN_TEST.csprojAssemblyReference.cache
 E:\CloneTest\TestBranch\THI_TRACNGHIEM\THI_TN_TEST\obj\Debug\THI_TN_TEST.CauHoi.resources
 E:\CloneTest\TestBranch\THI_TRACNGHIEM\THI_TN_TEST\obj\Debug\THI_TN_TEST.frmBaiThi.resources
+E:\CloneTest\TestBranch\THI_TRACNGHIEM\THI_TN_TEST\obj\Debug\THI_TN_TEST.frmBoDe.resources
 E:\CloneTest\TestBranch\THI_TRACNGHIEM\THI_TN_TEST\obj\Debug\THI_TN_TEST.frmDangNhap.resources
 E:\CloneTest\TestBranch\THI_TRACNGHIEM\THI_TN_TEST\obj\Debug\THI_TN_TEST.frmGVDK.resources
+E:\CloneTest\TestBranch\THI_TRACNGHIEM\THI_TN_TEST\obj\Debug\THI_TN_TEST.frmGiangVien.resources
 E:\CloneTest\TestBranch\THI_TRACNGHIEM\THI_TN_TEST\obj\Debug\THI_TN_TEST.frmKhoa.resources
 E:\CloneTest\TestBranch\THI_TRACNGHIEM\THI_TN_TEST\obj\Debug\THI_TN_TEST.frmMain.resources
 E:\CloneTest\TestBranch\THI_TRACNGHIEM\THI_TN_TEST\obj\Debug\THI_TN_TEST.frmMONHOC.resources
@@ -189,9 +191,11 @@ E:\CloneTest\TestBranch\THI_TRACNGHIEM\THI_TN_TEST\obj\Debug\THI_TN_TEST.frmNhap
 E:\CloneTest\TestBranch\THI_TRACNGHIEM\THI_TN_TEST\obj\Debug\THI_TN_TEST.frmNhapSinhVien.resources
 E:\CloneTest\TestBranch\THI_TRACNGHIEM\THI_TN_TEST\obj\Debug\THI_TN_TEST.frmThi.resources
 E:\CloneTest\TestBranch\THI_TRACNGHIEM\THI_TN_TEST\obj\Debug\THI_TN_TEST.Frpt_In_DSDK_2_Coso.resources
+E:\CloneTest\TestBranch\THI_TRACNGHIEM\THI_TN_TEST\obj\Debug\THI_TN_TEST.FrptBangDiemMonHoc.resources
 E:\CloneTest\TestBranch\THI_TRACNGHIEM\THI_TN_TEST\obj\Debug\THI_TN_TEST.Properties.Resources.resources
 E:\CloneTest\TestBranch\THI_TRACNGHIEM\THI_TN_TEST\obj\Debug\THI_TN_TEST.Xrpt_In_DanhSachDK_2_Coso.resources
 E:\CloneTest\TestBranch\THI_TRACNGHIEM\THI_TN_TEST\obj\Debug\THI_TN_TEST.XtraReport2.resources
+E:\CloneTest\TestBranch\THI_TRACNGHIEM\THI_TN_TEST\obj\Debug\THI_TN_TEST.Xrpt_BangDiemMonHoc.resources
 E:\CloneTest\TestBranch\THI_TRACNGHIEM\THI_TN_TEST\obj\Debug\THI_TN_TEST.csproj.GenerateResource.cache
 E:\CloneTest\TestBranch\THI_TRACNGHIEM\THI_TN_TEST\obj\Debug\THI_TN_TEST.exe.licenses
 E:\CloneTest\TestBranch\THI_TRACNGHIEM\THI_TN_TEST\obj\Debug\THI_TN_TEST.csproj.CoreCompileInputs.cache

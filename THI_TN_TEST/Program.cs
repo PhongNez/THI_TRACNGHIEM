@@ -1,11 +1,7 @@
-﻿using DevExpress.Skins;
-using DevExpress.UserSkins;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Windows.Forms;
-using System.Data.SqlClient;
+﻿using System;
 using System.Data;
+using System.Data.SqlClient;
+using System.Windows.Forms;
 namespace THI_TN_TEST
 {
     static class Program
@@ -17,7 +13,7 @@ namespace THI_TN_TEST
         public static SqlConnection conn = new SqlConnection();
 
         public static String connstr = "";
-        public static String database="TN_CSDLPT";
+        public static String database = "TN_CSDLPT";
         public static String servername = "";
         public static String mlogin = "";
         public static String password = "";
@@ -37,9 +33,9 @@ namespace THI_TN_TEST
         public static String remotepassword = "123456";
         public static String mloginDN = "";
         public static String passwordDN = "";
-       public static int KetNoi()
+        public static int KetNoi()
         {
-            if(Program.conn != null && Program.conn.State == ConnectionState.Open)
+            if (Program.conn != null && Program.conn.State == ConnectionState.Open)
             {
                 Program.conn.Close();
             }
@@ -48,19 +44,19 @@ namespace THI_TN_TEST
                 Program.connstr = "Data Source=" + Program.servername + ";Initial Catalog=" +
                     Program.database + ";User ID=" +
                     Program.mlogin + ";password=" + Program.password;
-                Console.WriteLine("Check: "+Program.connstr);
-                Program.conn.ConnectionString=Program.connstr;
+                Console.WriteLine("Check: " + Program.connstr);
+                Program.conn.ConnectionString = Program.connstr;
                 Program.conn.Open();
                 return 1;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine("heloo: " + ex.Message);
-                MessageBox.Show("Lỗi kết nối cơ sở dữ liệu. \nBạn xem lại user name và password. \n" , "", MessageBoxButtons.OK);
+                MessageBox.Show("Lỗi kết nối cơ sở dữ liệu. \nBạn xem lại user name và password. \n", "", MessageBoxButtons.OK);
                 return 0;
             }
         }
-       
+
         public static int KetNoiSinhVien()
         {
             if (Program.conn != null && Program.conn.State == ConnectionState.Open)
@@ -99,7 +95,7 @@ namespace THI_TN_TEST
                 myreader = sqlcmd.ExecuteReader();
                 return myreader;
             }
-            catch(SqlException ex)
+            catch (SqlException ex)
             {
                 Program.conn.Close();
                 MessageBox.Show(ex.Message);
@@ -158,7 +154,7 @@ namespace THI_TN_TEST
         {
             frmChinh.ShowDialog();
             frmDangNhap.Hide();
-          //  Application.Run(frmChinh);
+            //  Application.Run(frmChinh);
         }
     }
 }

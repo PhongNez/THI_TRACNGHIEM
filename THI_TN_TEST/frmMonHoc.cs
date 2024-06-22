@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Text.RegularExpressions;//Sử dụng Regex =>Bắt kí tự nhập
+using System.Windows.Forms;
 
 
 namespace THI_TN_TEST
@@ -51,13 +45,13 @@ namespace THI_TN_TEST
             }
         }
 
-    
+
         private void btnUndo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             //this.MONHOCTableAdapter.Fill(this.DS_MH.MONHOC);//Mục đích xóa các ô thừa
-            
+
             bdsMH.CancelEdit();
-          
+
             if (btnThem.Enabled == false)
             {
                 bdsMH.Position = vitri;
@@ -76,7 +70,7 @@ namespace THI_TN_TEST
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi reload: " + ex.Message,"",MessageBoxButtons.OK);
+                MessageBox.Show("Lỗi reload: " + ex.Message, "", MessageBoxButtons.OK);
                 return;
             }
         }
@@ -84,7 +78,7 @@ namespace THI_TN_TEST
         private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             string mamh = "";
-            if (bdsBANGDIEM.Count>0)
+            if (bdsBANGDIEM.Count > 0)
             {
                 MessageBox.Show("Bạn không thể xóa vì mã đã có trong bảng Bảng Điểm", "", MessageBoxButtons.OK);
                 return;
@@ -100,7 +94,7 @@ namespace THI_TN_TEST
                 return;
             }
 
-            if(MessageBox.Show("Bạn có muốn xóa mã môn học?","Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            if (MessageBox.Show("Bạn có muốn xóa mã môn học?", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 try
                 {
@@ -149,7 +143,7 @@ namespace THI_TN_TEST
 
             txtMAMH.Text = txtMAMH.Text.Trim();
             txtTENMH.Text = txtTENMH.Text.Trim();
-           
+
             try
             {
                 if (checkThemSua == 0)
@@ -167,10 +161,10 @@ namespace THI_TN_TEST
                         MessageBox.Show("Mã MÔN HỌC đã tồn tại trong hệ thống", "Thông báo", MessageBoxButtons.OK);
                         return;
                     }
-              
+
                 }
                 //Kiểm tra tên trùng
-                string strTenMonHoc = "declare @result int " 
+                string strTenMonHoc = "declare @result int "
                     + "EXEC @result = sp_KiemTraTenMonHoc N'" + txtTENMH.Text + "'"
                     + " select @result";
                 Program.myReader = Program.ExecSqlDataReader(strTenMonHoc);
@@ -208,7 +202,7 @@ namespace THI_TN_TEST
             vitri = bdsMH.Position;
             gcMonHoc.Enabled = false;
             groupBox1.Enabled = true;
-            btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled =btnReload.Enabled=btnThoat.Enabled= false;
+            btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnReload.Enabled = btnThoat.Enabled = false;
             btnGhi.Enabled = btnUndo.Enabled = true;
         }
 

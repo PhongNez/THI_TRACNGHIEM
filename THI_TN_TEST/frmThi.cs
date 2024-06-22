@@ -1,9 +1,9 @@
 ﻿using DevExpress.XtraReports.UI;
+using DevExpress.XtraSplashScreen;
 using System;
 using System.ComponentModel;
 using System.Data;
 using System.Windows.Forms;
-using DevExpress.XtraSplashScreen;
 namespace THI_TN_TEST
 {
     public partial class frmThi : DevExpress.XtraEditors.XtraForm
@@ -24,7 +24,7 @@ namespace THI_TN_TEST
         public Timer timer1;
         private string trinhDo;
         private int soCau;
-        private string maLop="";
+        private string maLop = "";
         private bool isStudent = true;
         BackgroundWorker worker = new BackgroundWorker();
         public frmThi()
@@ -63,7 +63,7 @@ namespace THI_TN_TEST
         }
         private void init_MonThi()
         {
-            String strLenh = "EXEC SP_LAYMONTHI '" + maLop +"'";
+            String strLenh = "EXEC SP_LAYMONTHI '" + maLop + "'";
             Program.myReader = Program.ExecSqlDataReader(strLenh);
             if (Program.myReader == null)
             {
@@ -86,13 +86,13 @@ namespace THI_TN_TEST
                     {
                         row[i] = Program.myReader[i];
                     }
-                    dt.Rows.Add(row); 
+                    dt.Rows.Add(row);
                 }
                 dsmh.DataSource = dt;
                 cbBoxTenMH.DataSource = dsmh;
                 cbBoxTenMH.DisplayMember = "TENMH";
                 cbBoxTenMH.ValueMember = "MAMH";
-               // Console.WriteLine("Số hàng trong DataTable: " + dt.Rows.Count);
+                // Console.WriteLine("Số hàng trong DataTable: " + dt.Rows.Count);
             }
             else
             {
@@ -242,11 +242,11 @@ namespace THI_TN_TEST
 
         public void capNhapDaChon(int cauSo, String daChon)
         {
-                String[] arr = new string[2];
-                arr[0] = (cauSo).ToString();
-                arr[1] = daChon;
-                ListViewItem baiThi = new ListViewItem(arr);
-                listView1.Items[cauSo - 1] = baiThi;
+            String[] arr = new string[2];
+            arr[0] = (cauSo).ToString();
+            arr[1] = daChon;
+            ListViewItem baiThi = new ListViewItem(arr);
+            listView1.Items[cauSo - 1] = baiThi;
         }
         private void lbMaSV_Click(object sender, EventArgs e)
         {
@@ -280,7 +280,7 @@ namespace THI_TN_TEST
             //Tính điểm
             timer1.Stop();
             lbTime.Text = "00:00";
-            if(isStudent)
+            if (isStudent)
                 insertdiemsv(tinhdiem());
             else
             {
@@ -307,7 +307,7 @@ namespace THI_TN_TEST
         }
         private void insertdiemsv(float diem)
         {
-            String sql = "EXEC sp_UpdateBangDiem " + listCauHoi[0].IDBaiThi +" , " + diem.ToString();
+            String sql = "EXEC sp_UpdateBangDiem " + listCauHoi[0].IDBaiThi + " , " + diem.ToString();
             try
             {
                 int kq = Program.ExecSqlNonQuery(sql);
@@ -332,7 +332,7 @@ namespace THI_TN_TEST
         }
         private void showReport()
         {
-            XtraReport2 rpt = new XtraReport2(Program.mlogin,Int32.Parse(cbBoxLan.Text), cbBoxTenMH.SelectedValue.ToString());
+            XtraReport2 rpt = new XtraReport2(Program.mlogin, Int32.Parse(cbBoxLan.Text), cbBoxTenMH.SelectedValue.ToString());
             ReportPrintTool print = new ReportPrintTool(rpt);
             print.ShowPreviewDialog();
         }
@@ -341,14 +341,14 @@ namespace THI_TN_TEST
             string sqlUpdate = "";
             for (int i = 0; i < listCauHoi.Length; i++)
             {
-                sqlUpdate += "EXEC spUpdateChiTietThi " +listCauHoi[i].IDCauHoi+ ", "+ listCauHoi[i].IDBaiThi+ ", "+ (i+1) + ", '" +listCauHoi[i].CauDaChon +"'"
-                    +"; ";
+                sqlUpdate += "EXEC spUpdateChiTietThi " + listCauHoi[i].IDCauHoi + ", " + listCauHoi[i].IDBaiThi + ", " + (i + 1) + ", '" + listCauHoi[i].CauDaChon + "'"
+                    + "; ";
             }
             Console.WriteLine(sqlUpdate);
             try
             {
                 Program.ExecSqlNonQuery(sqlUpdate);
-                Program.conn.Close(); 
+                Program.conn.Close();
                 //if (kq != 0)
                 //{
                 //    MessageBox.Show("Ghi kết quả thành công ", "Thông báo", MessageBoxButtons.OK);
@@ -373,11 +373,11 @@ namespace THI_TN_TEST
             cbBoxLan.Enabled = false;
             cbBoxTenMH.Enabled = false;
             dTNgayThi.Enabled = false;
-            initQuestion(); 
+            initQuestion();
         }
         private void layThongTinThi()
         {
-            String strLenh = "EXEC SP_THONGTINLANTHI '" +  (isStudent ? Program.malop: maLop) + "','"+cbBoxTenMH.SelectedValue+ "',"+ cbBoxLan.Text;
+            String strLenh = "EXEC SP_THONGTINLANTHI '" + (isStudent ? Program.malop : maLop) + "','" + cbBoxTenMH.SelectedValue + "'," + cbBoxLan.Text;
             Program.myReader = Program.ExecSqlDataReader(strLenh);
             if (Program.myReader == null)
             {
@@ -386,10 +386,10 @@ namespace THI_TN_TEST
             Program.myReader.Read();
             trinhDo = Program.myReader.GetString(0);
             soCau = Program.myReader.GetInt16(1);
-            thoigianThi = Program.myReader.GetInt16(2)-1;
+            thoigianThi = Program.myReader.GetInt16(2) - 1;
             edtTrinhDo.Text = trinhDo;
             lbTime.Text = thoigianThi.ToString() + " : " + s.ToString();
-            txtThoiGian.Text = (thoigianThi+1).ToString();
+            txtThoiGian.Text = (thoigianThi + 1).ToString();
             edtSoCau.Value = soCau;
             dTNgayThi.Value = Program.myReader.GetDateTime(3);
             Program.myReader.Close();
@@ -425,11 +425,11 @@ namespace THI_TN_TEST
                 btnBatDau.Enabled = true;
                 btnNopBai.Enabled = true;
             }
-           
+
         }
         private void layThongTinLop()
         {
-            String strLenh = "EXEC SP_GetInfoClassByStudent '" + Program.mlogin +"'";
+            String strLenh = "EXEC SP_GetInfoClassByStudent '" + Program.mlogin + "'";
             Program.myReader = Program.ExecSqlDataReader(strLenh);
             if (Program.myReader == null)
             {
