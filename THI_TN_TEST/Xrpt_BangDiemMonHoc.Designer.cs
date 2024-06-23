@@ -64,13 +64,13 @@ namespace THI_TN_TEST
             this.tableCell4 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell1 = new DevExpress.XtraReports.UI.XRTableCell();
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
+            this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
             this.table2 = new DevExpress.XtraReports.UI.XRTable();
             this.tableRow2 = new DevExpress.XtraReports.UI.XRTableRow();
             this.tableCell5 = new DevExpress.XtraReports.UI.XRTableCell();
             this.tableCell6 = new DevExpress.XtraReports.UI.XRTableCell();
             this.tableCell7 = new DevExpress.XtraReports.UI.XRTableCell();
             this.tableCell8 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.table1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.table2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -200,7 +200,7 @@ namespace THI_TN_TEST
             this.lblNgayThi.Multiline = true;
             this.lblNgayThi.Name = "lblNgayThi";
             this.lblNgayThi.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lblNgayThi.SizeF = new System.Drawing.SizeF(157.5F, 23F);
+            this.lblNgayThi.SizeF = new System.Drawing.SizeF(219.9008F, 23F);
             this.lblNgayThi.Text = "lblNgayThi";
             this.lblNgayThi.TextFormatString = "{0:d}";
             // 
@@ -210,7 +210,7 @@ namespace THI_TN_TEST
             this.lblLanThi.Multiline = true;
             this.lblLanThi.Name = "lblLanThi";
             this.lblLanThi.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lblLanThi.SizeF = new System.Drawing.SizeF(157.5F, 23F);
+            this.lblLanThi.SizeF = new System.Drawing.SizeF(219.9008F, 23F);
             this.lblLanThi.Text = "lblLanThi";
             // 
             // xrLabel7
@@ -237,7 +237,7 @@ namespace THI_TN_TEST
             this.lblMonThi.Multiline = true;
             this.lblMonThi.Name = "lblMonThi";
             this.lblMonThi.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lblMonThi.SizeF = new System.Drawing.SizeF(157.5F, 22.99999F);
+            this.lblMonThi.SizeF = new System.Drawing.SizeF(219.9008F, 22.99999F);
             this.lblMonThi.Text = "lblMonThi";
             // 
             // xrLabel3
@@ -255,7 +255,7 @@ namespace THI_TN_TEST
             this.lblLop.Multiline = true;
             this.lblLop.Name = "lblLop";
             this.lblLop.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lblLop.SizeF = new System.Drawing.SizeF(157.5F, 23F);
+            this.lblLop.SizeF = new System.Drawing.SizeF(219.9008F, 23F);
             this.lblLop.Text = "lblLop";
             // 
             // xrLabel1
@@ -382,6 +382,19 @@ namespace THI_TN_TEST
             this.Detail.HeightF = 25.00002F;
             this.Detail.Name = "Detail";
             // 
+            // xrLabel2
+            // 
+            this.xrLabel2.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[DIEMCHU]")});
+            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(581.9504F, 2.00002F);
+            this.xrLabel2.Multiline = true;
+            this.xrLabel2.Name = "xrLabel2";
+            this.xrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel2.SizeF = new System.Drawing.SizeF(137.0496F, 23F);
+            this.xrLabel2.StylePriority.UseTextAlignment = false;
+            this.xrLabel2.Text = "xrLabel2";
+            this.xrLabel2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
+            // 
             // table2
             // 
             this.table2.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
@@ -456,19 +469,6 @@ namespace THI_TN_TEST
             this.tableCell8.StylePriority.UseTextAlignment = false;
             this.tableCell8.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.tableCell8.Weight = 0.23550048665605355D;
-            // 
-            // xrLabel2
-            // 
-            this.xrLabel2.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[DIEMCHU]")});
-            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(581.9504F, 2.00002F);
-            this.xrLabel2.Multiline = true;
-            this.xrLabel2.Name = "xrLabel2";
-            this.xrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
-            this.xrLabel2.SizeF = new System.Drawing.SizeF(137.0496F, 23F);
-            this.xrLabel2.StylePriority.UseTextAlignment = false;
-            this.xrLabel2.Text = "xrLabel2";
-            this.xrLabel2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
             // 
             // Xrpt_BangDiemMonHoc
             // 

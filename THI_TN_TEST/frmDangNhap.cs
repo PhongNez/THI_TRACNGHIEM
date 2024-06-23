@@ -155,17 +155,17 @@ namespace THI_TN_TEST
             //Program.frmChinh.ribbonPage2
             if (Program.mGroup == "SINHVIEN")
             {
-                Program.frmChinh.HienThiMenu(false);
+                Program.frmChinh.HienThiMenuSV(true);
+            }
+            else if (Program.mGroup == "TRUONG")
+            {
+                Program.frmChinh.HienThiMenuTruong(true);
             }
             else
             {
                 Program.frmChinh.HienThiMenu(true);
             }
-            if (Program.mGroup == "TRUONG")
-            {
-                Program.frmChinh.HienThiMenuTruong(true);
-            }
-            Program.DangNhap();
+            //Program.DangNhap();
             //Program.frmDangNhap.Close();
             //Program.frmChinh.ShowDialog();
 

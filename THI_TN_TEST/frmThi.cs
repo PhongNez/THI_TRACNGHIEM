@@ -173,7 +173,7 @@ namespace THI_TN_TEST
             // Console.WriteLine(strLenh); // Optional for debugging
 
             DataTable cauhoidt = Program.ExecSqlDataTable(strLenh);
-
+          
             lbTime.Visible = true;
 
             BindingSource bdsBaiThi = new BindingSource();
