@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace THI_TN_TEST
@@ -27,7 +20,7 @@ namespace THI_TN_TEST
 
         }
 
-     
+
 
         private void frmNhapDe_Load(object sender, EventArgs e)
         {
@@ -50,7 +43,7 @@ namespace THI_TN_TEST
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             vitri = bds_sp_lay_BODE.Position;
-            
+
             groupBox1.Enabled = true;
             bds_sp_lay_BODE.AddNew();
             sp_Lay_BODE_THEO_MAGVGridControl.Enabled = false;//không cho chọn lung tung
@@ -134,7 +127,7 @@ namespace THI_TN_TEST
 
                 if (checkThemSua == 0)//Thêm
                 {
-                   
+
                     cmd = $"exec sp_INSERT_BODE '{mamh}', '{trinhdo}', N'{txtNOIDUNG.Text}', N'{txtA.Text}', N'{txtB.Text}', N'{txtC.Text}', N'{txtD.Text}', '{dapan}','{txtMAGV.Text}'";
                 }
                 else if (checkThemSua == 1)//Sửa
@@ -143,8 +136,8 @@ namespace THI_TN_TEST
                     cmd = $"exec sp_UPDATE_BODE {cauhoi},'{mamh}', '{trinhdo}', N'{txtNOIDUNG.Text}', N'{txtA.Text}', N'{txtB.Text}', N'{txtC.Text}', N'{txtD.Text}', '{dapan}'";
                 }
                 Program.ExecSqlNonQuery(cmd);
-                  bds_sp_lay_BODE.ResetCurrentItem();//Cập nhật giao diện
-               
+                bds_sp_lay_BODE.ResetCurrentItem();//Cập nhật giao diện
+
                 string magv = Program.username.Trim();
                 this.sp_Lay_BODE_THEO_MAGVTableAdapter.Fill(this.dS_MH.sp_Lay_BODE_THEO_MAGV, magv);
                 if (checkThemSua == 1)//nếu sửa trả về câu đã sửa
@@ -168,7 +161,7 @@ namespace THI_TN_TEST
             try
             {
                 string magv = Program.username.Trim();
-                this.sp_Lay_BODE_THEO_MAGVTableAdapter.Fill(this.dS_MH.sp_Lay_BODE_THEO_MAGV,magv);
+                this.sp_Lay_BODE_THEO_MAGVTableAdapter.Fill(this.dS_MH.sp_Lay_BODE_THEO_MAGV, magv);
             }
             catch (Exception ex)
             {
@@ -207,7 +200,7 @@ namespace THI_TN_TEST
             vitri = bds_sp_lay_BODE.Position;
             groupBox1.Enabled = true;
             sp_Lay_BODE_THEO_MAGVGridControl.Enabled = false;
-            
+
 
             //Cho ghi và phục hồi
             btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnReload.Enabled = btnThoat.Enabled = false;
@@ -217,12 +210,12 @@ namespace THI_TN_TEST
 
         private void txtCAUHOI_EditValueChanged(object sender, EventArgs e)
         {
-            if (txtCAUHOI.Text=="")
+            if (txtCAUHOI.Text == "")
             {
                 return;
             }
             int cauhoi = int.Parse(txtCAUHOI.Text);
-            if(cauhoi < 0)
+            if (cauhoi < 0)
             {
                 txtCAUHOI.Text = null;
             }
@@ -237,7 +230,7 @@ namespace THI_TN_TEST
                 txtCAUHOI.Focus();
                 return;
             }
-            
+
             if (MessageBox.Show("Bạn có muốn xóa câu hỏi này không?", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 try
@@ -250,7 +243,7 @@ namespace THI_TN_TEST
                     Program.myReader.Read();
                     int result = Program.myReader.GetInt32(0);
                     Program.myReader.Close();
-                    if (result==1)
+                    if (result == 1)
                     {
                         MessageBox.Show("Không thể xóa vì câu hỏi đã có sinh viên thi", "", MessageBoxButtons.OK);
                         return;
@@ -258,7 +251,7 @@ namespace THI_TN_TEST
 
                     MessageBox.Show("Xóa câu hỏi thành công", "", MessageBoxButtons.OK);
                     bds_sp_lay_BODE.RemoveCurrent();
-                    string cmd = "EXEC sp_DELETE_BODE "+ cauhoi;
+                    string cmd = "EXEC sp_DELETE_BODE " + cauhoi;
                     Program.ExecSqlNonQuery(cmd);
                 }
                 catch (Exception ex)

@@ -22,13 +22,13 @@ namespace THI_TN_TEST
         public static String mlogin = "";
         public static String password = "";
         public static SqlDataReader myReader;
-        public static String malop = "D18CQCN01";
+        public static String malop = "";
         public static String username;
         public static String mHoten;
         public static String mGroup;
         public static frmMain frmChinh;
-       
-        public static String connstr_publisher = @"Data Source=PHONGCENA\TRACNGHIEM;Initial Catalog=TN_CSDLPT;Integrated Security=True";
+
+        public static String connstr_publisher = @"Data Source=XIAOMING;Initial Catalog=TN_CSDLPT;Integrated Security=True";
 
         public static BindingSource bds_dspm = new BindingSource();
 
@@ -128,7 +128,24 @@ namespace THI_TN_TEST
                 return ex.State; // trang thai lỗi gởi từ RAISERROR trong SQL Server qua
             }
         }
+        public static DataTable ExecSqlDataTable(String cmd)
+        {
+            DataTable dt = new DataTable();
+            if (Program.conn.State == ConnectionState.Closed) Program.conn.Open();
+            SqlDataAdapter da = new SqlDataAdapter(cmd, Program.conn);
+            try
+            {
+                da.Fill(dt); Program.conn.Close();
+                return dt;
+            }
+            catch (SqlException ex)
+            {
+                Program.conn.Close();
+                MessageBox.Show(ex.Message);
+                return null;
+            }
 
+        }
         [STAThread]
         static void Main()
         {

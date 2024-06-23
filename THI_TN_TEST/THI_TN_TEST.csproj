@@ -70,6 +70,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CauHoi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CauHoi.Designer.cs">
+      <DependentUpon>CauHoi.cs</DependentUpon>
+    </Compile>
     <Compile Include="DS.cs">
       <DependentUpon>DS.xsd</DependentUpon>
     </Compile>
@@ -89,6 +95,18 @@
     <Compile Include="formTaoTaiKhoan.Designer.cs">
       <DependentUpon>formTaoTaiKhoan.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmBaiThi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBaiThi.Designer.cs">
+      <DependentUpon>frmBaiThi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +118,12 @@
     </Compile>
     <Compile Include="frmGVDK.Designer.cs">
       <DependentUpon>frmGVDK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGiangVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGiangVien.Designer.cs">
+      <DependentUpon>frmGiangVien.cs</DependentUpon>
     </Compile>
     <Compile Include="frmKhoa.cs">
       <SubType>Form</SubType>
@@ -143,6 +167,12 @@
     <Compile Include="Frpt_In_DSDK_2_Coso.Designer.cs">
       <DependentUpon>Frpt_In_DSDK_2_Coso.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrptBangDiemMonHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrptBangDiemMonHoc.Designer.cs">
+      <DependentUpon>FrptBangDiemMonHoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TN_CSDLPTDataSet.Designer.cs">
@@ -150,20 +180,38 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TN_CSDLPTDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="XtraReport2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReport2.Designer.cs">
+      <DependentUpon>XtraReport2.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CauHoi.resx">
+      <DependentUpon>CauHoi.cs</DependentUpon>
+    </EmbeddedResource>
     <Compile Include="Xrpt_In_DanhSachDK_2_Coso.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Xrpt_In_DanhSachDK_2_Coso.Designer.cs">
       <DependentUpon>Xrpt_In_DanhSachDK_2_Coso.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="formTaoTaiKhoan.resx">
-      <DependentUpon>formTaoTaiKhoan.cs</DependentUpon>
+    <EmbeddedResource Include="frmBaiThi.resx">
+      <DependentUpon>frmBaiThi.cs</DependentUpon>
     </EmbeddedResource>
+    <Compile Include="Xrpt_BangDiemMonHoc.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Xrpt_BangDiemMonHoc.Designer.cs">
+      <DependentUpon>Xrpt_BangDiemMonHoc.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmGVDK.resx">
       <DependentUpon>frmGVDK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGiangVien.resx">
+      <DependentUpon>frmGiangVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmKhoa.resx">
       <DependentUpon>frmKhoa.cs</DependentUpon>
@@ -186,6 +234,9 @@
     <EmbeddedResource Include="Frpt_In_DSDK_2_Coso.resx">
       <DependentUpon>Frpt_In_DSDK_2_Coso.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrptBangDiemMonHoc.resx">
+      <DependentUpon>FrptBangDiemMonHoc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -198,6 +249,12 @@
     </Compile>
     <EmbeddedResource Include="Xrpt_In_DanhSachDK_2_Coso.resx">
       <DependentUpon>Xrpt_In_DanhSachDK_2_Coso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReport2.resx">
+      <DependentUpon>XtraReport2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Xrpt_BangDiemMonHoc.resx">
+      <DependentUpon>Xrpt_BangDiemMonHoc.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="DS.xsc">
