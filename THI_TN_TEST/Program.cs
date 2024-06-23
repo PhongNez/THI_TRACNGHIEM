@@ -22,16 +22,14 @@ namespace THI_TN_TEST
         public static String mlogin = "";
         public static String password = "";
         public static SqlDataReader myReader;
-        public static String malop = "D18CQCN01";
+        public static String malop = "";
         public static String username;
         public static String mHoten;
         public static String mGroup;
         public static frmMain frmChinh;
-       
-        public static String connstr_publisher = @"Data Source=PHONGCENA\TRACNGHIEM;Initial Catalog=TN_CSDLPT;Integrated Security=True";
-
+        public static frmDangNhap frmDangNhap;
+        public static String connstr_publisher = @"Data Source=DESKTOP-82REPVE\MAIN;Initial Catalog=TN_CSDLPT;Integrated Security=True";
         public static BindingSource bds_dspm = new BindingSource();
-
         public static int mCoso = 0;
         public static String remotelogin = "HTKN";
         public static String remotepassword = "123456";
@@ -60,7 +58,7 @@ namespace THI_TN_TEST
                 return 0;
             }
         }
-
+       
         public static int KetNoiSinhVien()
         {
             if (Program.conn != null && Program.conn.State == ConnectionState.Open)
@@ -70,7 +68,7 @@ namespace THI_TN_TEST
             try
             {
                 Program.connstr = "Data Source=" + Program.servername + ";Initial Catalog=" +
-                    Program.database + ";User ID=" +
+                    Program.database + ";User ID= " +
                    "sinhvienketnoi" + ";password=" + "123456";
                 Program.conn.ConnectionString = Program.connstr;
                 Program.conn.Open();
@@ -78,7 +76,6 @@ namespace THI_TN_TEST
             }
             catch (Exception ex)
             {
-                Console.WriteLine("heloo: " + Program.connstr);
                 MessageBox.Show("Lỗi kết nối cơ sở dữ liệu. \nBạn xem lại user name và password. \n", "", MessageBoxButtons.OK);
                 return 0;
             }
@@ -107,35 +104,57 @@ namespace THI_TN_TEST
                 return null;
             }
         }
+        public static DataTable ExecSqlDataTable(String cmd)
+        {
+            DataTable dt = new DataTable();
+            if (Program.conn.State == ConnectionState.Closed) Program.conn.Open();
+            SqlDataAdapter da = new SqlDataAdapter(cmd, Program.conn);
+            try
+            {
+                da.Fill(dt); Program.conn.Close();
+                return dt;
+            }
+            catch (SqlException ex)
+            {
+                Program.conn.Close();
+                MessageBox.Show(ex.Message);
+                return null;
+            }
 
+        }
         public static int ExecSqlNonQuery(String strlenh)
         {
+
+            if (conn.State == ConnectionState.Closed) conn.Open();
             SqlCommand Sqlcmd = new SqlCommand(strlenh, conn);
             Sqlcmd.CommandType = CommandType.Text;
             Sqlcmd.CommandTimeout = 600;// 10 phut 
-            if (conn.State == ConnectionState.Closed) conn.Open();
             try
             {
-                Sqlcmd.ExecuteNonQuery(); conn.Close();
+                Sqlcmd.ExecuteNonQuery();
                 return 0;
             }
             catch (SqlException ex)
             {
-                if (ex.Message.Contains("Error converting data type varchar to int"))
-                    MessageBox.Show("Bạn format Cell lại cột \"Ngày Thi\" qua kiểu Number hoặc mở File Excel.");
-                else MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message);
                 conn.Close();
                 return ex.State; // trang thai lỗi gởi từ RAISERROR trong SQL Server qua
             }
         }
-
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            frmDangNhap = new frmDangNhap();
             frmChinh = new frmMain();
-            Application.Run(frmChinh);
+            Application.Run(frmDangNhap);
+        }
+        public static void DangNhap()
+        {
+            frmChinh.ShowDialog();
+            frmDangNhap.Hide();
+          //  Application.Run(frmChinh);
         }
     }
 }

@@ -26,21 +26,21 @@ namespace THI_TN_TEST.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=PHONGCENA\\SERVER1;Initial Catalog=TN_CSDLPT;User ID=sa")]
-        public string TN_CSDLPTConnectionString {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-82REPVE\\MAIN;Initial Catalog=TN_CSDLPT;Persist Security Info=" +
+            "True;User ID=sa;Password=1234")]
+        public string TN_CSDLPTConnectionString1 {
             get {
-                return ((string)(this["TN_CSDLPTConnectionString"]));
+                return ((string)(this["TN_CSDLPTConnectionString1"]));
             }
         }
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-82REPVE\\MAIN;Initial Catalog=TN_CSDLPT;Persist Security Info=" +
-            "True;User ID=sa;Password=1234")]
-        public string TN_CSDLPTConnectionString1 {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=PHONGCENA\\SERVER1;Initial Catalog=TN_CSDLPT;User ID=sa;Password=123")]
+        public string TN_CSDLPTConnectionString {
             get {
-                return ((string)(this["TN_CSDLPTConnectionString1"]));
+                return ((string)(this["TN_CSDLPTConnectionString"]));
             }
         }
         
