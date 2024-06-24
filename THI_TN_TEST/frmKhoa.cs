@@ -79,7 +79,7 @@ namespace THI_TN_TEST
         {
             if (txtMaKhoa.Text.Trim() == "")
             {
-                MessageBox.Show("Chưa nhập mã khoa.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Chưa nhập Mã Khoa.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtMaKhoa.Focus();
                 return;
             }
