@@ -165,7 +165,7 @@ namespace THI_TN_TEST
             {
                 Program.frmChinh.HienThiMenu(true);
             }
-            //Program.DangNhap();
+            Program.DangNhap();
             //Program.frmDangNhap.Close();
             //Program.frmChinh.ShowDialog();
 
