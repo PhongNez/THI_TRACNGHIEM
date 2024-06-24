@@ -85,7 +85,7 @@ namespace THI_TN_TEST
             }
             if (txtTenKhoa.Text.Trim() == "")
             {
-                MessageBox.Show("Chưa nhập tên khoa.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Chưa nhập Tên Khoa.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtTenKhoa.Focus();
                 return;
             }
