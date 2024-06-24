@@ -50,7 +50,7 @@ namespace THI_TN_TEST
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.Khoabds = new System.Windows.Forms.BindingSource(this.components);
+            this.bdsKhoa = new System.Windows.Forms.BindingSource(this.components);
             this.DS = new THI_TN_TEST.TN_CSDLPTDataSet();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMAKH = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -69,18 +69,18 @@ namespace THI_TN_TEST
             this.thêmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.UpdateLop = new System.Windows.Forms.ToolStripMenuItem();
             this.DeleteLop = new System.Windows.Forms.ToolStripMenuItem();
-            this.bdsLopKhoa = new System.Windows.Forms.BindingSource(this.components);
+            this.bdsLop = new System.Windows.Forms.BindingSource(this.components);
             this.LOPTableAdapter = new THI_TN_TEST.TN_CSDLPTDataSetTableAdapters.LOPTableAdapter();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.cmbCoso = new System.Windows.Forms.ComboBox();
             this.lbCoSo = new System.Windows.Forms.Label();
             this.bdsSinhVien = new System.Windows.Forms.BindingSource(this.components);
-            this.sINHVIENTableAdapter = new THI_TN_TEST.TN_CSDLPTDataSetTableAdapters.SINHVIENTableAdapter();
+            this.SINHVIENTableAdapter = new THI_TN_TEST.TN_CSDLPTDataSetTableAdapters.SINHVIENTableAdapter();
             mAKHLabel = new System.Windows.Forms.Label();
             tENKHLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Khoabds)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsKhoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -88,7 +88,7 @@ namespace THI_TN_TEST
             ((System.ComponentModel.ISupportInitialize)(this.txtMaKhoa.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsLopKhoa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsLop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bdsSinhVien)).BeginInit();
@@ -279,7 +279,7 @@ namespace THI_TN_TEST
             // 
             // gridControl1
             // 
-            this.gridControl1.DataSource = this.Khoabds;
+            this.gridControl1.DataSource = this.bdsKhoa;
             this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gridControl1.Location = new System.Drawing.Point(0, 105);
             this.gridControl1.MainView = this.gridView1;
@@ -291,10 +291,10 @@ namespace THI_TN_TEST
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
-            // Khoabds
+            // bdsKhoa
             // 
-            this.Khoabds.DataMember = "KHOA";
-            this.Khoabds.DataSource = this.DS;
+            this.bdsKhoa.DataMember = "KHOA";
+            this.bdsKhoa.DataSource = this.DS;
             // 
             // DS
             // 
@@ -370,7 +370,7 @@ namespace THI_TN_TEST
             // 
             // txtTenKhoa
             // 
-            this.txtTenKhoa.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.Khoabds, "TENKH", true));
+            this.txtTenKhoa.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsKhoa, "TENKH", true));
             this.txtTenKhoa.Location = new System.Drawing.Point(85, 73);
             this.txtTenKhoa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTenKhoa.MenuManager = this.barManager1;
@@ -380,7 +380,7 @@ namespace THI_TN_TEST
             // 
             // txtMaKhoa
             // 
-            this.txtMaKhoa.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.Khoabds, "MAKH", true));
+            this.txtMaKhoa.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsKhoa, "MAKH", true));
             this.txtMaKhoa.Location = new System.Drawing.Point(85, 28);
             this.txtMaKhoa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMaKhoa.MenuManager = this.barManager1;
@@ -401,7 +401,7 @@ namespace THI_TN_TEST
             this.tENLOPDataGridViewTextBoxColumn,
             this.mAKHDataGridViewTextBoxColumn});
             this.dataGridView1.ContextMenuStrip = this.contextMenuStrip1;
-            this.dataGridView1.DataSource = this.bdsLopKhoa;
+            this.dataGridView1.DataSource = this.bdsLop;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(231, 28);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -466,10 +466,10 @@ namespace THI_TN_TEST
             this.DeleteLop.Text = "Xóa";
             this.DeleteLop.Click += new System.EventHandler(this.DeleteLop_Click);
             // 
-            // bdsLopKhoa
+            // bdsLop
             // 
-            this.bdsLopKhoa.DataMember = "FK_LOP_KHOA";
-            this.bdsLopKhoa.DataSource = this.Khoabds;
+            this.bdsLop.DataMember = "FK_LOP_KHOA";
+            this.bdsLop.DataSource = this.bdsKhoa;
             // 
             // LOPTableAdapter
             // 
@@ -516,11 +516,11 @@ namespace THI_TN_TEST
             // bdsSinhVien
             // 
             this.bdsSinhVien.DataMember = "FK_SINHVIEN_LOP";
-            this.bdsSinhVien.DataSource = this.bdsLopKhoa;
+            this.bdsSinhVien.DataSource = this.bdsLop;
             // 
-            // sINHVIENTableAdapter
+            // SINHVIENTableAdapter
             // 
-            this.sINHVIENTableAdapter.ClearBeforeFill = true;
+            this.SINHVIENTableAdapter.ClearBeforeFill = true;
             // 
             // frmKhoa
             // 
@@ -542,7 +542,7 @@ namespace THI_TN_TEST
             this.Load += new System.EventHandler(this.frmKhoa_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Khoabds)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsKhoa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -551,7 +551,7 @@ namespace THI_TN_TEST
             ((System.ComponentModel.ISupportInitialize)(this.txtMaKhoa.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bdsLopKhoa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsLop)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
@@ -582,7 +582,7 @@ namespace THI_TN_TEST
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private TN_CSDLPTDataSet DS;
-        private System.Windows.Forms.BindingSource Khoabds;
+        private System.Windows.Forms.BindingSource bdsKhoa;
         private TN_CSDLPTDataSetTableAdapters.KHOATableAdapter KHOATableAdapter;
         private TN_CSDLPTDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private DevExpress.XtraGrid.Columns.GridColumn colMAKH;
@@ -592,7 +592,7 @@ namespace THI_TN_TEST
         private DevExpress.XtraEditors.TextEdit txtTenKhoa;
         private DevExpress.XtraEditors.TextEdit txtMaKhoa;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.BindingSource bdsLopKhoa;
+        private System.Windows.Forms.BindingSource bdsLop;
         private TN_CSDLPTDataSetTableAdapters.LOPTableAdapter LOPTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn mALOPDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tENLOPDataGridViewTextBoxColumn;
@@ -605,6 +605,6 @@ namespace THI_TN_TEST
         private System.Windows.Forms.ComboBox cmbCoso;
         private System.Windows.Forms.Label lbCoSo;
         private System.Windows.Forms.BindingSource bdsSinhVien;
-        private TN_CSDLPTDataSetTableAdapters.SINHVIENTableAdapter sINHVIENTableAdapter;
+        private TN_CSDLPTDataSetTableAdapters.SINHVIENTableAdapter SINHVIENTableAdapter;
     }
 }

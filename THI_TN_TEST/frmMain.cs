@@ -10,7 +10,7 @@ namespace THI_TN_TEST
             InitializeComponent();
             ribbonPage2.Visible = false;
             ribbonPage4.Visible = false;
-            ribbonPage5.Visible = false;
+            ribbonPage5.Visible = false;         
         }
 
         private Form CheckExists(Type ftype)
@@ -32,16 +32,33 @@ namespace THI_TN_TEST
 
         public void HienThiMenu(bool check)
         {
-
             ribbonPage2.Visible = check;
             ribbonPage4.Visible = check;
+            ribbonPageGroup14.Visible = false;
+            ribbonPageGroup15.Visible = true;
+            //ribbonPageGroup6.Visible = false;  ------------------- FORM NHẬP ĐỀ ---------------------
         }
 
         public void HienThiMenuTruong(bool check)
         {
             ribbonPage2.Visible = check;
             ribbonPage4.Visible = check;
+            ribbonPageGroup6.Visible = false;
+            ribbonPageGroup12.Visible = false;
+            ribbonPageGroup15.Visible = true;
+            //ribbonPageGroup13.Visible = false; ------------------- FORM ĐĂNG KÝ THI -----------------
         }
+
+        public void HienThiMenuGiaoVien(bool check)
+        {
+            ribbonPage2.Visible = check;
+            ribbonPageGroup2.Visible = false;
+            ribbonPageGroup3.Visible = false;
+            ribbonPageGroup4.Visible = false;
+            ribbonPageGroup5.Visible = false;
+            ribbonPageGroup13.Visible = false;
+        }
+
         public void HienThiMenuSV(bool check)
         {
             ribbonPage5.Visible = check;
