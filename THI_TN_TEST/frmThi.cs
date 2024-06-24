@@ -20,12 +20,13 @@ namespace THI_TN_TEST
         IOverlaySplashScreenHandle handle = null;
         public static CauHoi[] listCauHoi;
         private int thoigianThi = 0;
-        private int s = 59;
+        private int s = 0;
         public Timer timer1;
         private string trinhDo;
         private int soCau;
         private string maLop = "";
         private bool isStudent = true;
+        private DateTime ngayThi;
         BackgroundWorker worker = new BackgroundWorker();
         public frmThi()
         {
@@ -260,7 +261,7 @@ namespace THI_TN_TEST
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            s--;
+            lbTime.Text = thoigianThi.ToString() + " : " + s.ToString();
             if (s == 0)
             {
                 if (thoigianThi != 0)
@@ -273,7 +274,7 @@ namespace THI_TN_TEST
                     ketThuc();
                 }
             }
-            lbTime.Text = thoigianThi.ToString() + " : " + s.ToString();
+            s--;
         }
         private void ketThuc()
         {
@@ -286,8 +287,8 @@ namespace THI_TN_TEST
             {
                 tinhdiem();
             }
-            //insert
-            // tạo form 
+            panelCauHoi.Controls.Clear();
+            btnThoat.Enabled = true;
         }
         private float tinhdiem()
         {
@@ -313,16 +314,13 @@ namespace THI_TN_TEST
                 int kq = Program.ExecSqlNonQuery(sql);
                 Program.conn.Close();
                 ghiDapAn();
-                showReport();
-                //if (kq == 1)
-                //{
-                //    ghiDapAn();
-                //}
-                //else
-                //{
-                //    MessageBox.Show("Lỗi ghi điểm thi", "", MessageBoxButtons.OK);
-                //    return;
-                //}
+                if (MessageBox.Show(
+                    "Bạn có muốn xem lại bài thi?",
+                    "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+                {
+                    showReport();
+                }
+                else return;
             }
             catch (Exception ex)
             {
@@ -373,26 +371,37 @@ namespace THI_TN_TEST
             cbBoxLan.Enabled = false;
             cbBoxTenMH.Enabled = false;
             dTNgayThi.Enabled = false;
+            btnNopBai.Enabled = true;
+            btnThoat.Enabled = false;
             initQuestion();
         }
-        private void layThongTinThi()
+        private int layThongTinThi()
         {
             String strLenh = "EXEC SP_THONGTINLANTHI '" + (isStudent ? Program.malop : maLop) + "','" + cbBoxTenMH.SelectedValue + "'," + cbBoxLan.Text;
             Program.myReader = Program.ExecSqlDataReader(strLenh);
             if (Program.myReader == null)
             {
-                return;
+                return 0;
             }
-            Program.myReader.Read();
+            Program.myReader.Read(); 
+            dTNgayThi.Value = Program.myReader.GetDateTime(3);
+            ngayThi = Program.myReader.GetDateTime(3);
+            DateTime today = DateTime.Today;
+            if (today.CompareTo(ngayThi.Date) != 0 && isStudent)
+            {
+                Console.WriteLine("Ngày thi : " + ngayThi + ", ngày hiện tại: " + today);
+                Program.myReader.Close();
+                return 0;
+            }
             trinhDo = Program.myReader.GetString(0);
             soCau = Program.myReader.GetInt16(1);
-            thoigianThi = Program.myReader.GetInt16(2) - 1;
+            thoigianThi = Program.myReader.GetInt16(2);
             edtTrinhDo.Text = trinhDo;
             lbTime.Text = thoigianThi.ToString() + " : " + s.ToString();
-            txtThoiGian.Text = (thoigianThi + 1).ToString();
+            txtThoiGian.Text = (thoigianThi).ToString();
             edtSoCau.Value = soCau;
-            dTNgayThi.Value = Program.myReader.GetDateTime(3);
             Program.myReader.Close();
+            return 1;
         }
         private void kiemTraLanThi()
         {
@@ -408,15 +417,20 @@ namespace THI_TN_TEST
                 Program.myReader.Read();
                 dathi = Program.myReader.GetInt32(0);
                 Program.myReader.Close();
+               
                 if (dathi == 1)
                 {
                     MessageBox.Show("Bạn đã thi môn này, vui lòng chọn lại!", "", MessageBoxButtons.OK);
                 }
                 else
                 {
-                    layThongTinThi();
+                    if (layThongTinThi() == 0)
+                    {
+                        
+                        MessageBox.Show("Chưa đến ngày thi", "Thông báo", MessageBoxButtons.OK);
+                        return;
+                    }
                     btnBatDau.Enabled = true;
-                    btnNopBai.Enabled = true;
                 }
             }
             else
@@ -446,8 +460,8 @@ namespace THI_TN_TEST
         private void btnXacNhan_Click(object sender, EventArgs e)
         {
             kiemTraLanThi();
+            cbxTenLop.Enabled = false;
         }
-
         private void btnNopBai_Click(object sender, EventArgs e)
         {
             ketThuc();
@@ -475,6 +489,16 @@ namespace THI_TN_TEST
             maLop = cbxTenLop.SelectedValue.ToString();
             txtMaLop.Text = maLop;
             init_MonThi();
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show(
+                     "Bạn có thực sự muốn thoát ?",
+                     "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+            {
+                this.Close();
+            }
         }
     }
 }
