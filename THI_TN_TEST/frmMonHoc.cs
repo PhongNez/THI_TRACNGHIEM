@@ -99,6 +99,22 @@ namespace THI_TN_TEST
                 try
                 {
 
+                    //Kiểm tra giaovien_dangky có môn học ở site còn lại
+                    string strLenh = "declare @result int "
+                        + "EXEC @result = sp_KiemTra_Xoa_Mon '" + txtMAMH.Text + "'"
+                        + " select @result";
+                    Program.myReader = Program.ExecSqlDataReader(strLenh);
+                    Program.myReader.Read();//Đọc dòng đầu
+                    int result = Program.myReader.GetInt32(0);
+                    Program.myReader.Close();
+                    if (result == 1)
+                    {
+                        MessageBox.Show("MÔN HỌC đã được sử dụng. Không thể xóa", "Thông báo", MessageBoxButtons.OK);
+                        return;
+                    }
+
+
+
                     //mamh = Convert.ToString(((DataRowView)bdsMH[bdsMH.Position])["MAMH"]);
                     mamh = ((DataRowView)bdsMH[bdsMH.Position])["MAMH"].ToString();
                     MessageBox.Show("Bạn đã xóa thành công " + mamh, "", MessageBoxButtons.OK);
@@ -108,6 +124,8 @@ namespace THI_TN_TEST
                 }
                 catch (Exception ex)
                 {
+                    this.MONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
+                    this.MONHOCTableAdapter.Fill(this.DS_MH.MONHOC);
                     bdsMH.Position = bdsMH.Find("mamh", mamh);
                     return;
                 }

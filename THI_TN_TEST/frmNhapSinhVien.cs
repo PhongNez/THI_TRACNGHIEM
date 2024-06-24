@@ -124,6 +124,7 @@ namespace THI_TN_TEST
                 }
                 catch (Exception ex)
                 {
+                    this.SINHVIENTableAdapter.Connection.ConnectionString = Program.connstr;
                     this.SINHVIENTableAdapter.Fill(this.DS.SINHVIEN);
                     bdsSV.Position = bdsSV.Find("MASV", masv);
                     return;

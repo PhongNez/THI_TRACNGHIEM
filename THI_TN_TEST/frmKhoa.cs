@@ -15,9 +15,9 @@ namespace THI_TN_TEST
         private void frmKhoa_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'DS.SINHVIEN' table. You can move, or remove it, as needed.
-            this.sINHVIENTableAdapter.Fill(this.DS.SINHVIEN);
+            //this.sINHVIENTableAdapter.Fill(this.DS.SINHVIEN);
             // TODO: This line of code loads data into the 'DS.SINHVIEN' table. You can move, or remove it, as needed.
-            this.sINHVIENTableAdapter.Fill(this.DS.SINHVIEN);
+           // this.sINHVIENTableAdapter.Fill(this.DS.SINHVIEN);
 
             // TODO: This line of code loads data into the 'tN_CSDLPTDataSet.KHOA' table. You can move, or remove it, as needed.
             DS.EnforceConstraints = false;

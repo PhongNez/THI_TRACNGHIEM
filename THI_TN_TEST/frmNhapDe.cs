@@ -62,6 +62,13 @@ namespace THI_TN_TEST
 
         private void btnGhi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (txtMAGV.Text == "")
+            {
+                MessageBox.Show("Mã giáo viên không hợp lệ", "Thông báo", MessageBoxButtons.OK);
+                txtMAGV.Focus();
+                return;
+            }
+
             if (cmbMONHOC.SelectedIndex == -1)
             {
                 MessageBox.Show("Vui lòng chọn môn học", "Thông báo", MessageBoxButtons.OK);
@@ -145,7 +152,7 @@ namespace THI_TN_TEST
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi ghi sinh viên: " + ex.Message, "", MessageBoxButtons.OK);
+                MessageBox.Show("Lỗi ghi đề: " + ex.Message, "", MessageBoxButtons.OK);
                 return;
             }
 
