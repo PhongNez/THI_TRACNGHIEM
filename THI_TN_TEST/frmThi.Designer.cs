@@ -89,7 +89,7 @@ namespace THI_TN_TEST
             this.dTNgayThi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dTNgayThi.MinDate = new System.DateTime(2000, 12, 31, 0, 0, 0, 0);
             this.dTNgayThi.Name = "dTNgayThi";
-            this.dTNgayThi.Size = new System.Drawing.Size(242, 27);
+            this.dTNgayThi.Size = new System.Drawing.Size(269, 27);
             this.dTNgayThi.TabIndex = 9;
             // 
             // gbSinhVien
@@ -134,7 +134,7 @@ namespace THI_TN_TEST
             this.txtMaLop.Name = "txtMaLop";
             this.txtMaLop.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaLop.Properties.Appearance.Options.UseFont = true;
-            this.txtMaLop.Size = new System.Drawing.Size(197, 28);
+            this.txtMaLop.Size = new System.Drawing.Size(261, 28);
             this.txtMaLop.TabIndex = 7;
             // 
             // lbMaSV

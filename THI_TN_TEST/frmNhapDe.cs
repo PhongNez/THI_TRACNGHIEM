@@ -38,6 +38,20 @@ namespace THI_TN_TEST
             {
                 System.Windows.Forms.MessageBox.Show(ex.Message);
             }
+            phanQuyen();
+        }
+
+        private void phanQuyen()
+        {
+
+            if (Program.mGroup.Trim() == "TRUONG")
+            {
+                btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnUndo.Enabled = btnGhi.Enabled = false;
+            }
+            else
+            {
+                btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnUndo.Enabled = btnGhi.Enabled = true;
+            }
         }
 
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

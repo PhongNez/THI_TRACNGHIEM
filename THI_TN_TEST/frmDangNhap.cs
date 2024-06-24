@@ -157,6 +157,10 @@ namespace THI_TN_TEST
             {
                 Program.frmChinh.HienThiMenuSV(true);
             }
+            else if (Program.mGroup == "GIAOVIEN")
+            {
+                Program.frmChinh.HienThiMenuGiaoVien(true);
+            }
             else if (Program.mGroup == "TRUONG")
             {
                 Program.frmChinh.HienThiMenuTruong(true);

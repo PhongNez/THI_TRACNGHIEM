@@ -15,9 +15,9 @@ namespace THI_TN_TEST
         private void frmKhoa_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'DS.SINHVIEN' table. You can move, or remove it, as needed.
-            this.sINHVIENTableAdapter.Fill(this.DS.SINHVIEN);
+            this.SINHVIENTableAdapter.Fill(this.DS.SINHVIEN);
             // TODO: This line of code loads data into the 'DS.SINHVIEN' table. You can move, or remove it, as needed.
-            this.sINHVIENTableAdapter.Fill(this.DS.SINHVIEN);
+            this.SINHVIENTableAdapter.Fill(this.DS.SINHVIEN);
 
             // TODO: This line of code loads data into the 'tN_CSDLPTDataSet.KHOA' table. You can move, or remove it, as needed.
             DS.EnforceConstraints = false;
@@ -59,11 +59,7 @@ namespace THI_TN_TEST
 
         }
 
-        private void thêmToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            bdsLopKhoa.AddNew();
-            ((DataRowView)bdsLopKhoa[bdsLopKhoa.Position])["MaKH"] = txtMaKhoa.Text;
-        }
+
 
         private void mAKHTextEdit_EditValueChanged(object sender, EventArgs e)
         {
@@ -74,8 +70,8 @@ namespace THI_TN_TEST
         {
             txtMaKhoa.Focus();
             groupBox1.Enabled = true;
-            vitri = Khoabds.Position;
-            Khoabds.AddNew();
+            vitri = bdsKhoa.Position;
+            bdsKhoa.AddNew();
             btnThem.Enabled = btnHieuChinh.Enabled = btnXoa.Enabled = btnReload.Enabled = btnThoat.Enabled = false;
             btnGhi.Enabled = btnPhucHoi.Enabled = true;
         }
@@ -96,11 +92,27 @@ namespace THI_TN_TEST
             }
             try
             {
-                ((DataRowView)Khoabds[Khoabds.Position])["MaCS"] = ((DataRowView)Khoabds[Khoabds.Position - 1])["MaCS"].ToString();
-                Khoabds.EndEdit();
-                this.KHOATableAdapter.Connection.ConnectionString = Program.connstr;
-                this.KHOATableAdapter.Update(this.DS.KHOA);
-                Khoabds.ResetCurrentItem();
+                //Kiểm tra mã Khoa có trùng trên các site
+                string strLenh = "declare @result int " +
+                    "EXEC @result = SP_KiemTraMaKhoa '" + txtMaKhoa.Text + "'"
+                    + " select @result";
+                Program.myReader = Program.ExecSqlDataReader(strLenh);
+                Program.myReader.Read();
+                int result = Program.myReader.GetInt32(0);
+                Program.myReader.Close();
+                if (result == 1)
+                {
+                    MessageBox.Show("Mã KHOA đã tồn tại trong hệ thống", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                else
+                {
+                    ((DataRowView)bdsKhoa[bdsKhoa.Position])["MaCS"] = ((DataRowView)bdsKhoa[bdsKhoa.Position - 1])["MaCS"].ToString();
+                    bdsKhoa.EndEdit();
+                    this.KHOATableAdapter.Connection.ConnectionString = Program.connstr;
+                    this.KHOATableAdapter.Update(this.DS.KHOA);
+                    bdsKhoa.ResetCurrentItem();
+                }
             }
             catch (Exception ex)
             {
@@ -113,14 +125,45 @@ namespace THI_TN_TEST
             btnPhucHoi.Enabled = btnGhi.Enabled = false;
         }
 
+        private void thêmToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            bdsLop.AddNew();
+            ((DataRowView)bdsLop[bdsLop.Position])["MaKH"] = txtMaKhoa.Text;
+        }
+
         private void UpdateLop_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(((DataRowView)bdsLop.Current)["MaLop"].ToString()) ||
+                string.IsNullOrWhiteSpace(((DataRowView)bdsLop.Current)["TenLop"].ToString()))
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin vào các trường bắt buộc.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             try
             {
-                bdsLopKhoa.EndEdit();
-                this.LOPTableAdapter.Connection.ConnectionString = Program.connstr;
-                this.LOPTableAdapter.Update(this.DS.LOP);
-                Khoabds.ResetCurrentItem();
+                //Kiểm tra mã giảng viên có trùng trên các site
+                string strLenh = "declare @result int " +
+                    "EXEC @result = SP_KiemTraMaLop'" + ((DataRowView)bdsLop.Current)["MaLop"].ToString() + "'"
+                    + " select @result";
+                Program.myReader = Program.ExecSqlDataReader(strLenh);
+                Program.myReader.Read();
+                int result = Program.myReader.GetInt32(0);
+                Program.myReader.Close();
+                if (result == 1)
+                {
+                    MessageBox.Show("Mã LỚP đã tồn tại trong hệ thống", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                else
+                {
+                    bdsLop.EndEdit();
+                    this.LOPTableAdapter.Connection.ConnectionString = Program.connstr;
+                    this.LOPTableAdapter.Update(this.DS.LOP);
+                    bdsKhoa.ResetCurrentItem();
+                    MessageBox.Show("Thêm LỚP thành công ! ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                }
             }
             catch (Exception ex)
             {
@@ -137,7 +180,7 @@ namespace THI_TN_TEST
                 MessageBox.Show("Bạn không thể xóa vì LỚP này đã có SINH VIÊN", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            bdsLopKhoa.RemoveCurrent();
+            bdsLop.RemoveCurrent();
             this.LOPTableAdapter.Update(this.DS.LOP);
         }
 
@@ -157,10 +200,10 @@ namespace THI_TN_TEST
         private void btnPhucHoi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             this.LOPTableAdapter.Fill(this.DS.LOP); ;//Mục đích xóa các ô thừa
-            Khoabds.CancelEdit();
+            bdsKhoa.CancelEdit();
             if (btnThem.Enabled == false)
             {
-                Khoabds.Position = vitri;
+                bdsKhoa.Position = vitri;
             }
             gridControl1.Enabled = true;
             groupBox1.Enabled = false;
@@ -190,7 +233,7 @@ namespace THI_TN_TEST
         private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             string maKhoa = "";
-            if (bdsLopKhoa.Count > 0)
+            if (bdsLop.Count > 0)
             {
                 MessageBox.Show("Bạn không thể xóa vì KHOA này đã có LỚP", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -201,15 +244,15 @@ namespace THI_TN_TEST
                 try
                 {
 
-                    maKhoa = Convert.ToString(((DataRowView)Khoabds[Khoabds.Position])["MAKH"]);
+                    maKhoa = Convert.ToString(((DataRowView)bdsKhoa[bdsKhoa.Position])["MAKH"]);
                     MessageBox.Show("Bạn đã xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Khoabds.RemoveCurrent();
+                    bdsKhoa.RemoveCurrent();
                     this.KHOATableAdapter.Connection.ConnectionString = Program.connstr;
                     this.KHOATableAdapter.Update(this.DS.KHOA);
                 }
                 catch (Exception ex)
                 {
-                    Khoabds.Position = Khoabds.Find("MAKH", maKhoa);
+                    bdsKhoa.Position = bdsKhoa.Find("MAKH", maKhoa);
                     return;
                 }
             }

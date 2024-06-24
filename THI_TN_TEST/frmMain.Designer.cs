@@ -287,6 +287,7 @@ namespace THI_TN_TEST
             this.ribbonPageGroup15.ItemLinks.Add(this.btnCreAcc);
             this.ribbonPageGroup15.Name = "ribbonPageGroup15";
             this.ribbonPageGroup15.Text = "ribbonPageGroup15";
+            this.ribbonPageGroup15.Visible = false;
             // 
             // ribbonPage2
             // 
