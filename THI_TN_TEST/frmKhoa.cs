@@ -14,8 +14,7 @@ namespace THI_TN_TEST
 
         private void frmKhoa_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'DS.SINHVIEN' table. You can move, or remove it, as needed.
-            this.SINHVIENTableAdapter.Fill(this.DS.SINHVIEN);
+            this.SINHVIENTableAdapter.Connection.ConnectionString = Program.connstr;
             // TODO: This line of code loads data into the 'DS.SINHVIEN' table. You can move, or remove it, as needed.
             this.SINHVIENTableAdapter.Fill(this.DS.SINHVIEN);
 
