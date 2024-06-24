@@ -14,8 +14,7 @@ namespace THI_TN_TEST
 
         private void frmKhoa_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'DS.SINHVIEN' table. You can move, or remove it, as needed.
-            this.SINHVIENTableAdapter.Fill(this.DS.SINHVIEN);
+            this.SINHVIENTableAdapter.Connection.ConnectionString = Program.connstr;
             // TODO: This line of code loads data into the 'DS.SINHVIEN' table. You can move, or remove it, as needed.
             this.SINHVIENTableAdapter.Fill(this.DS.SINHVIEN);
 
@@ -80,13 +79,13 @@ namespace THI_TN_TEST
         {
             if (txtMaKhoa.Text.Trim() == "")
             {
-                MessageBox.Show("Chưa nhập mã khoa.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Chưa nhập Mã Khoa.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtMaKhoa.Focus();
                 return;
             }
             if (txtTenKhoa.Text.Trim() == "")
             {
-                MessageBox.Show("Chưa nhập tên khoa.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Chưa nhập Tên Khoa.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtTenKhoa.Focus();
                 return;
             }
