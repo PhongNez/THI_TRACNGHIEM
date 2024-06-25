@@ -122,7 +122,7 @@ namespace THI_TN_TEST
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Frpt_In_DSDK_2_Coso";
-            this.Text = "Frpt_In_DSDK_2_Coso";
+            this.Text = "Danh Sách Đăng Ký Thi";
             this.Load += new System.EventHandler(this.Frpt_In_DSDK_2_Coso_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dateEditTuNgay.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditTuNgay.Properties)).EndInit();

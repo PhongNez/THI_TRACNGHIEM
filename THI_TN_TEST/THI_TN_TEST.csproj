@@ -195,6 +195,9 @@
     <Compile Include="Xrpt_In_DanhSachDK_2_Coso.Designer.cs">
       <DependentUpon>Xrpt_In_DanhSachDK_2_Coso.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="formTaoTaiKhoan.resx">
+      <DependentUpon>formTaoTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmBaiThi.resx">
       <DependentUpon>frmBaiThi.cs</DependentUpon>
     </EmbeddedResource>

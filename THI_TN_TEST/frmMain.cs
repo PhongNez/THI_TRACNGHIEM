@@ -28,15 +28,15 @@ namespace THI_TN_TEST
             return null;
         }
 
-
-
         public void HienThiMenu(bool check)
         {
             ribbonPage2.Visible = check;
             ribbonPage4.Visible = check;
             ribbonPageGroup14.Visible = false;
             ribbonPageGroup15.Visible = true;
+            ribbonPageGroup1.Enabled = false;
             //ribbonPageGroup6.Visible = false;  ------------------- FORM NHẬP ĐỀ ---------------------
+
         }
 
         public void HienThiMenuTruong(bool check)
@@ -46,7 +46,7 @@ namespace THI_TN_TEST
             ribbonPageGroup6.Visible = false;
             ribbonPageGroup12.Visible = false;
             ribbonPageGroup15.Visible = true;
-            //ribbonPageGroup13.Visible = false; ------------------- FORM ĐĂNG KÝ THI -----------------
+            ribbonPageGroup1.Enabled = false;
         }
 
         public void HienThiMenuGiaoVien(bool check)
@@ -56,12 +56,15 @@ namespace THI_TN_TEST
             ribbonPageGroup3.Visible = false;
             ribbonPageGroup4.Visible = false;
             ribbonPageGroup5.Visible = false;
-            ribbonPageGroup13.Visible = false;
+            //ribbonPageGroup13.Visible = false; ------------------- FORM ĐĂNG KÝ THI ------------------
+            ribbonPageGroup1.Enabled = false;
         }
 
         public void HienThiMenuSV(bool check)
         {
             ribbonPage5.Visible = check;
+            ribbonPageGroup1.Enabled = false;
+
         }
 
         private void frmMain_Load(object sender, EventArgs e)
@@ -265,10 +268,12 @@ namespace THI_TN_TEST
         {
             foreach (Form f in this.MdiChildren)
             {
-                f.Close();
+                if (f.GetType() != typeof(frmDangNhap))
+                {
+                    f.Close();
+                }
             }
             this.Close();
-
         }
 
         private void btnExit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

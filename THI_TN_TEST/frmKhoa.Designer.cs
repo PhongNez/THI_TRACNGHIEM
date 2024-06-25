@@ -537,7 +537,7 @@ namespace THI_TN_TEST
             this.Controls.Add(this.barDockControlTop);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmKhoa";
-            this.Text = "frmKhoa";
+            this.Text = "Khoa Lớp";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmKhoa_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();

@@ -220,7 +220,7 @@ namespace THI_TN_TEST
             this.Controls.Add(this.cmbCoso);
             this.Controls.Add(this.lbCoSo);
             this.Name = "FrptBangDiemMonHoc";
-            this.Text = "FrptBangDiemMonHoc";
+            this.Text = "Bảng Điểm Môn Học";
             this.Load += new System.EventHandler(this.FrptBangDiemMonHoc_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsLop)).EndInit();

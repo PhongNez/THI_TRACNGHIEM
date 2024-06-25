@@ -112,7 +112,8 @@ namespace THI_TN_TEST
             this.gbSinhVien.Size = new System.Drawing.Size(484, 187);
             this.gbSinhVien.TabIndex = 11;
             this.gbSinhVien.TabStop = false;
-            this.gbSinhVien.Text = "Thông tin sinh viên";
+            this.gbSinhVien.Text = "Thông Tin Sinh Viên";
+            this.gbSinhVien.Enter += new System.EventHandler(this.gbSinhVien_Enter);
             // 
             // label1
             // 
@@ -121,15 +122,15 @@ namespace THI_TN_TEST
             this.label1.ForeColor = System.Drawing.Color.DarkBlue;
             this.label1.Location = new System.Drawing.Point(14, 101);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 22);
+            this.label1.Size = new System.Drawing.Size(83, 22);
             this.label1.TabIndex = 10;
-            this.label1.Text = "Tên lớp:";
+            this.label1.Text = "Tên lớp :";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtMaLop
             // 
             this.txtMaLop.Enabled = false;
-            this.txtMaLop.Location = new System.Drawing.Point(155, 41);
+            this.txtMaLop.Location = new System.Drawing.Point(166, 41);
             this.txtMaLop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMaLop.Name = "txtMaLop";
             this.txtMaLop.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -152,7 +153,7 @@ namespace THI_TN_TEST
             // txtEditHoTen
             // 
             this.txtEditHoTen.Enabled = false;
-            this.txtEditHoTen.Location = new System.Drawing.Point(155, 145);
+            this.txtEditHoTen.Location = new System.Drawing.Point(166, 151);
             this.txtEditHoTen.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEditHoTen.Name = "txtEditHoTen";
             this.txtEditHoTen.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -167,9 +168,9 @@ namespace THI_TN_TEST
             this.lbHoTen.ForeColor = System.Drawing.Color.DarkBlue;
             this.lbHoTen.Location = new System.Drawing.Point(14, 154);
             this.lbHoTen.Name = "lbHoTen";
-            this.lbHoTen.Size = new System.Drawing.Size(145, 22);
+            this.lbHoTen.Size = new System.Drawing.Size(150, 22);
             this.lbHoTen.TabIndex = 0;
-            this.lbHoTen.Text = "Họ tên sinh viên:";
+            this.lbHoTen.Text = "Họ tên sinh viên :";
             // 
             // cbxTenLop
             // 
@@ -177,7 +178,7 @@ namespace THI_TN_TEST
             this.cbxTenLop.DisplayMember = "TENLOP";
             this.cbxTenLop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxTenLop.FormattingEnabled = true;
-            this.cbxTenLop.Location = new System.Drawing.Point(155, 96);
+            this.cbxTenLop.Location = new System.Drawing.Point(166, 96);
             this.cbxTenLop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbxTenLop.Name = "cbxTenLop";
             this.cbxTenLop.Size = new System.Drawing.Size(261, 31);
@@ -198,7 +199,7 @@ namespace THI_TN_TEST
             // txtTenLop
             // 
             this.txtTenLop.Enabled = false;
-            this.txtTenLop.Location = new System.Drawing.Point(155, 97);
+            this.txtTenLop.Location = new System.Drawing.Point(166, 97);
             this.txtTenLop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTenLop.Name = "txtTenLop";
             this.txtTenLop.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -238,17 +239,17 @@ namespace THI_TN_TEST
             this.gbBaiThi.Size = new System.Drawing.Size(1131, 187);
             this.gbBaiThi.TabIndex = 12;
             this.gbBaiThi.TabStop = false;
-            this.gbBaiThi.Text = "Thông tin bài thi";
+            this.gbBaiThi.Text = "Thông Tin Bài Thi";
             // 
             // btnXacNhan
             // 
             this.btnXacNhan.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btnXacNhan.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXacNhan.ForeColor = System.Drawing.Color.Black;
-            this.btnXacNhan.Location = new System.Drawing.Point(205, 142);
+            this.btnXacNhan.Location = new System.Drawing.Point(207, 135);
             this.btnXacNhan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnXacNhan.Name = "btnXacNhan";
-            this.btnXacNhan.Size = new System.Drawing.Size(114, 33);
+            this.btnXacNhan.Size = new System.Drawing.Size(162, 41);
             this.btnXacNhan.TabIndex = 40;
             this.btnXacNhan.Text = "Xác nhận";
             this.btnXacNhan.UseVisualStyleBackColor = false;
@@ -263,13 +264,13 @@ namespace THI_TN_TEST
             this.lbTime.Location = new System.Drawing.Point(734, 78);
             this.lbTime.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.lbTime.Name = "lbTime";
-            this.lbTime.Size = new System.Drawing.Size(147, 48);
+            this.lbTime.Size = new System.Drawing.Size(159, 48);
             this.lbTime.TabIndex = 39;
-            this.lbTime.Text = "00: 00";
+            this.lbTime.Text = "00 : 00";
             // 
             // btnBatDau
             // 
-            this.btnBatDau.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.btnBatDau.BackColor = System.Drawing.Color.Lime;
             this.btnBatDau.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBatDau.Location = new System.Drawing.Point(979, 18);
             this.btnBatDau.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -291,6 +292,7 @@ namespace THI_TN_TEST
             this.btnThoat.TabIndex = 37;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = false;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click_1);
             // 
             // btnNopBai
             // 
@@ -330,7 +332,7 @@ namespace THI_TN_TEST
             this.cbBoxLan.Location = new System.Drawing.Point(100, 144);
             this.cbBoxLan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbBoxLan.Name = "cbBoxLan";
-            this.cbBoxLan.Size = new System.Drawing.Size(81, 29);
+            this.cbBoxLan.Size = new System.Drawing.Size(78, 29);
             this.cbBoxLan.TabIndex = 33;
             this.cbBoxLan.ValueMember = "LAN";
             this.cbBoxLan.SelectedIndexChanged += new System.EventHandler(this.cbBoxLan_SelectedIndexChanged);
@@ -369,28 +371,29 @@ namespace THI_TN_TEST
             0,
             0});
             this.edtSoCau.Enabled = false;
-            this.edtSoCau.Location = new System.Drawing.Point(555, 94);
+            this.edtSoCau.Location = new System.Drawing.Point(546, 95);
             this.edtSoCau.Margin = new System.Windows.Forms.Padding(1);
             this.edtSoCau.Name = "edtSoCau";
             this.edtSoCau.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.edtSoCau.Properties.Appearance.Options.UseFont = true;
             this.edtSoCau.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.edtSoCau.Size = new System.Drawing.Size(82, 28);
+            this.edtSoCau.Size = new System.Drawing.Size(67, 28);
             this.edtSoCau.TabIndex = 30;
             // 
             // edtTrinhDo
             // 
             this.edtTrinhDo.Enabled = false;
-            this.edtTrinhDo.Location = new System.Drawing.Point(555, 39);
+            this.edtTrinhDo.Location = new System.Drawing.Point(546, 41);
             this.edtTrinhDo.Margin = new System.Windows.Forms.Padding(1);
             this.edtTrinhDo.Name = "edtTrinhDo";
             this.edtTrinhDo.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.edtTrinhDo.Properties.Appearance.ForeColor = System.Drawing.Color.DarkBlue;
             this.edtTrinhDo.Properties.Appearance.Options.UseFont = true;
             this.edtTrinhDo.Properties.Appearance.Options.UseForeColor = true;
-            this.edtTrinhDo.Size = new System.Drawing.Size(82, 28);
+            this.edtTrinhDo.Size = new System.Drawing.Size(67, 28);
             this.edtTrinhDo.TabIndex = 29;
+            this.edtTrinhDo.EditValueChanged += new System.EventHandler(this.edtTrinhDo_EditValueChanged);
             // 
             // label10
             // 
@@ -500,16 +503,16 @@ namespace THI_TN_TEST
             // 
             // listView1
             // 
-            this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.CauHoi,
             this.DapAn});
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(1478, 194);
+            this.listView1.Location = new System.Drawing.Point(1463, 194);
             this.listView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(136, 435);
+            this.listView1.Size = new System.Drawing.Size(151, 435);
             this.listView1.TabIndex = 2;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -555,7 +558,7 @@ namespace THI_TN_TEST
             this.IconOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("frmThi.IconOptions.LargeImage")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmThi";
-            this.Text = "frmThi";
+            this.Text = "Vào Thi";
             this.Load += new System.EventHandler(this.frmThi_Load);
             this.gbSinhVien.ResumeLayout(false);
             this.gbSinhVien.PerformLayout();

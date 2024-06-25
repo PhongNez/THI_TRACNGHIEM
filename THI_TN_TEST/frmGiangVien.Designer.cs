@@ -616,7 +616,7 @@ namespace THI_TN_TEST
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "frmGiangVien";
-            this.Text = "FrmGiangVien";
+            this.Text = "Giảng Viên";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmGiangVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();

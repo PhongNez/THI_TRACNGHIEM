@@ -50,7 +50,8 @@ namespace THI_TN_TEST
             }
             else
             {
-                btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnUndo.Enabled = btnGhi.Enabled = true;
+                btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled =  true;
+                btnUndo.Enabled = btnGhi.Enabled = false;
             }
         }
 
