@@ -405,7 +405,7 @@ namespace THI_TN_TEST
             this.panelControl1.Controls.Add(this.cmbCoso);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 51);
-            this.panelControl1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.panelControl1.Margin = new System.Windows.Forms.Padding(5);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(1605, 96);
             this.panelControl1.TabIndex = 8;
@@ -428,7 +428,7 @@ namespace THI_TN_TEST
             this.cmbCoso.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCoso.FormattingEnabled = true;
             this.cmbCoso.Location = new System.Drawing.Point(135, 31);
-            this.cmbCoso.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.cmbCoso.Margin = new System.Windows.Forms.Padding(5);
             this.cmbCoso.Name = "cmbCoso";
             this.cmbCoso.Size = new System.Drawing.Size(1075, 28);
             this.cmbCoso.TabIndex = 0;
@@ -466,10 +466,10 @@ namespace THI_TN_TEST
             // 
             this.gcLOP.DataSource = this.bdsLOP;
             this.gcLOP.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gcLOP.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gcLOP.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
             this.gcLOP.Location = new System.Drawing.Point(0, 147);
             this.gcLOP.MainView = this.gridView1;
-            this.gcLOP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gcLOP.Margin = new System.Windows.Forms.Padding(4);
             this.gcLOP.MenuManager = this.barManager1;
             this.gcLOP.Name = "gcLOP";
             this.gcLOP.Size = new System.Drawing.Size(1605, 275);
@@ -737,7 +737,7 @@ namespace THI_TN_TEST
             this.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmNhapSinhVien";
-            this.Text = "frmNhapSinhVien";
+            this.Text = "Sinh Viên";
             this.Load += new System.EventHandler(this.frmNhapSinhVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();

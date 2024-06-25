@@ -189,6 +189,19 @@ namespace THI_TN_TEST
                         MessageBox.Show("Đã có giảng viên đăng ký lớp, môn, lần hoặc chưa đăng ký lần 1", "", MessageBoxButtons.OK);
                         return;
                     }
+                    string strLenh2 = "declare @result int "
+                      + "EXEC @result = SP_KiemTraSoLuongCau '" + cmbMONHOC.SelectedValue.ToString() + "','"
+                      + cmbTRINHDO.Text + "'," + txtSOCAUTHI.Text
+                      + " select @result";
+                    Program.myReader = Program.ExecSqlDataReader(strLenh2);//Thực thi lệnh và trả về 1 obj sqldatareader
+                    Program.myReader.Read();
+                    int result2 = Program.myReader.GetInt32(0);//Lấy cột đầu dòng hiện tại
+                    Program.myReader.Close();
+                    if (result2 == 0)
+                    {
+                        MessageBox.Show("Môn Học chưa có câu hỏi nên không thể đăng ký thi", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
                 }
                
                 bdsGVDK.EndEdit();//Kết thúc hiệu chỉnh và lưu thay đổi vào dataset

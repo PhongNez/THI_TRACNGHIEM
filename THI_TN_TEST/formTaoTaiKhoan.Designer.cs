@@ -30,8 +30,8 @@ namespace THI_TN_TEST
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label hOTENLabel;
-            System.Windows.Forms.Label label4;
+            this.hOTENLabel = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.dS = new THI_TN_TEST.DS();
             this.bds_HOTEN_GV = new System.Windows.Forms.BindingSource(this.components);
             this.hOTEN_GVTableAdapter = new THI_TN_TEST.DSTableAdapters.HOTEN_GVTableAdapter();
@@ -48,8 +48,6 @@ namespace THI_TN_TEST
             this.btnThoat = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.btnXOA = new System.Windows.Forms.Button();
-            hOTENLabel = new System.Windows.Forms.Label();
-            label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bds_HOTEN_GV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMAGV.Properties)).BeginInit();
@@ -59,21 +57,21 @@ namespace THI_TN_TEST
             // 
             // hOTENLabel
             // 
-            hOTENLabel.AutoSize = true;
-            hOTENLabel.Location = new System.Drawing.Point(150, 225);
-            hOTENLabel.Name = "hOTENLabel";
-            hOTENLabel.Size = new System.Drawing.Size(87, 22);
-            hOTENLabel.TabIndex = 1;
-            hOTENLabel.Text = "HỌ TÊN:";
+            this.hOTENLabel.AutoSize = true;
+            this.hOTENLabel.Location = new System.Drawing.Point(150, 225);
+            this.hOTENLabel.Name = "hOTENLabel";
+            this.hOTENLabel.Size = new System.Drawing.Size(87, 22);
+            this.hOTENLabel.TabIndex = 1;
+            this.hOTENLabel.Text = "HỌ TÊN:";
             // 
             // label4
             // 
-            label4.AutoSize = true;
-            label4.Location = new System.Drawing.Point(146, 419);
-            label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(147, 22);
-            label4.TabIndex = 9;
-            label4.Text = "NHÓM QUYỀN:";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(146, 419);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(147, 22);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "NHÓM QUYỀN:";
             // 
             // dS
             // 
@@ -237,7 +235,7 @@ namespace THI_TN_TEST
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnTao);
-            this.Controls.Add(label4);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.cmbNHOMQUYEN);
             this.Controls.Add(this.txtMATKHAU);
             this.Controls.Add(this.label3);
@@ -245,12 +243,12 @@ namespace THI_TN_TEST
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtMAGV);
             this.Controls.Add(this.label1);
-            this.Controls.Add(hOTENLabel);
+            this.Controls.Add(this.hOTENLabel);
             this.Controls.Add(this.cmbHOTEN);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "formTaoTaiKhoan";
-            this.Text = "formTaoTaiKhoan";
+            this.Text = "Tạo Tài Khoản";
             this.Load += new System.EventHandler(this.formTaoTaiKhoan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bds_HOTEN_GV)).EndInit();
@@ -280,5 +278,7 @@ namespace THI_TN_TEST
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnXOA;
+        private System.Windows.Forms.Label hOTENLabel;
+        private System.Windows.Forms.Label label4;
     }
 }

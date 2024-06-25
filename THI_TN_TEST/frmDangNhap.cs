@@ -18,7 +18,7 @@ namespace THI_TN_TEST
             conn_publisher.Close();
             Program.bds_dspm.DataSource = dt;
             Program.bds_dspm.Sort = "TENCN";//Sắp xếp tên cơ sở
-            //Program.bds_dspm.RemoveAt(2);
+            Program.bds_dspm.RemoveAt(2);  // Xoá hiển thị cơ sở 3
             cmbChiNhanh.DataSource = Program.bds_dspm;
             cmbChiNhanh.DisplayMember = "TENCN";
             cmbChiNhanh.ValueMember = "TENSERVER";
@@ -169,9 +169,19 @@ namespace THI_TN_TEST
             {
                 Program.frmChinh.HienThiMenu(true);
             }
-            Program.DangNhap();
+            //Program.DangNhap();
             //Program.frmDangNhap.Close();
             //Program.frmChinh.ShowDialog();
+
+        }
+
+        private void btnHienAn_Click(object sender, EventArgs e)
+        {
+            txtMatKhau.UseSystemPasswordChar = !txtMatKhau.UseSystemPasswordChar;
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
 
         }
     }

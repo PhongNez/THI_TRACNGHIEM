@@ -676,7 +676,7 @@ namespace THI_TN_TEST
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmNhapDe";
-            this.Text = "frmNhapDe";
+            this.Text = "Nhập Đề";
             this.Load += new System.EventHandler(this.frmNhapDe_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS_MH)).EndInit();

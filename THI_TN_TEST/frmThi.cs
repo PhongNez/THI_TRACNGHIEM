@@ -500,5 +500,20 @@ namespace THI_TN_TEST
                 this.Close();
             }
         }
+
+        private void gbSinhVien_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void edtTrinhDo_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnThoat_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

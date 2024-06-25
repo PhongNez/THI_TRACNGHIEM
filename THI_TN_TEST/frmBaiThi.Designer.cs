@@ -48,6 +48,24 @@ namespace THI_TN_TEST
             ((System.ComponentModel.ISupportInitialize)(this.ds1)).BeginInit();
             this.SuspendLayout();
             // 
+            // tENMHLabel
+            // 
+            tENMHLabel.AutoSize = true;
+            tENMHLabel.Location = new System.Drawing.Point(190, 95);
+            tENMHLabel.Name = "tENMHLabel";
+            tENMHLabel.Size = new System.Drawing.Size(95, 17);
+            tENMHLabel.TabIndex = 5;
+            tENMHLabel.Text = "Tên môn học:";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(190, 164);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(35, 17);
+            label1.TabIndex = 8;
+            label1.Text = "Lần:";
+            // 
             // dS
             // 
             this.dS.DataSetName = "DS";
@@ -58,7 +76,9 @@ namespace THI_TN_TEST
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.BANGDIEMTableAdapter = null;
             this.tableAdapterManager.BODETableAdapter = null;
+            this.tableAdapterManager.Connection = null;
             this.tableAdapterManager.COSOTableAdapter = null;
+            this.tableAdapterManager.GIAOVIEN_DANGKYTableAdapter = null;
             this.tableAdapterManager.GIAOVIENTableAdapter = null;
             this.tableAdapterManager.KHOATableAdapter = null;
             this.tableAdapterManager.LOPTableAdapter = null;
@@ -68,9 +88,10 @@ namespace THI_TN_TEST
             // 
             // simpleButton1
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(260, 181);
+            this.simpleButton1.Location = new System.Drawing.Point(303, 223);
+            this.simpleButton1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(121, 32);
+            this.simpleButton1.Size = new System.Drawing.Size(141, 39);
             this.simpleButton1.TabIndex = 5;
             this.simpleButton1.Text = "Xác nhận";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
@@ -84,24 +105,16 @@ namespace THI_TN_TEST
             // 
             this.sp_LayMonDaThiTableAdapter.ClearBeforeFill = true;
             // 
-            // tENMHLabel
-            // 
-            tENMHLabel.AutoSize = true;
-            tENMHLabel.Location = new System.Drawing.Point(163, 77);
-            tENMHLabel.Name = "tENMHLabel";
-            tENMHLabel.Size = new System.Drawing.Size(72, 13);
-            tENMHLabel.TabIndex = 5;
-            tENMHLabel.Text = "Tên môn học:";
-            // 
             // cbxTenMh
             // 
             this.cbxTenMh.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sp_LayMonDaThiBindingSource, "TENMH", true));
             this.cbxTenMh.DataSource = this.sp_LayMonDaThiBindingSource;
             this.cbxTenMh.DisplayMember = "TENMH";
             this.cbxTenMh.FormattingEnabled = true;
-            this.cbxTenMh.Location = new System.Drawing.Point(260, 69);
+            this.cbxTenMh.Location = new System.Drawing.Point(303, 85);
+            this.cbxTenMh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbxTenMh.Name = "cbxTenMh";
-            this.cbxTenMh.Size = new System.Drawing.Size(158, 21);
+            this.cbxTenMh.Size = new System.Drawing.Size(184, 24);
             this.cbxTenMh.TabIndex = 6;
             this.cbxTenMh.ValueMember = "MAMH";
             // 
@@ -116,42 +129,35 @@ namespace THI_TN_TEST
             this.comboBox1.Items.AddRange(new object[] {
             "1",
             "2"});
-            this.comboBox1.Location = new System.Drawing.Point(260, 125);
+            this.comboBox1.Location = new System.Drawing.Point(303, 154);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.Size = new System.Drawing.Size(140, 24);
             this.comboBox1.TabIndex = 7;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(163, 133);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(28, 13);
-            label1.TabIndex = 8;
-            label1.Text = "Lần:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(257, 28);
+            this.label2.Location = new System.Drawing.Point(300, 34);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 13);
+            this.label2.Size = new System.Drawing.Size(101, 17);
             this.label2.TabIndex = 9;
             this.label2.Text = "Chọn thông tin";
             // 
             // frmBaiThi
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(658, 287);
+            this.ClientSize = new System.Drawing.Size(768, 353);
             this.Controls.Add(this.label2);
             this.Controls.Add(label1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(tENMHLabel);
             this.Controls.Add(this.cbxTenMh);
             this.Controls.Add(this.simpleButton1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmBaiThi";
-            this.Text = "frmBaiThi";
+            this.Text = "Kết Quả Thi";
             this.Load += new System.EventHandler(this.frmBaiThi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sp_LayMonDaThiBindingSource)).EndInit();

@@ -28,8 +28,6 @@ namespace THI_TN_TEST
             return null;
         }
 
-
-
         public void HienThiMenu(bool check)
         {
             ribbonPage2.Visible = check;
@@ -49,7 +47,6 @@ namespace THI_TN_TEST
             ribbonPageGroup12.Visible = false;
             ribbonPageGroup15.Visible = true;
             ribbonPageGroup1.Enabled = false;
-            //ribbonPageGroup13.Visible = false; ------------------- FORM ĐĂNG KÝ THI -----------------
         }
 
         public void HienThiMenuGiaoVien(bool check)
@@ -59,7 +56,7 @@ namespace THI_TN_TEST
             ribbonPageGroup3.Visible = false;
             ribbonPageGroup4.Visible = false;
             ribbonPageGroup5.Visible = false;
-            ribbonPageGroup13.Visible = false;
+            //ribbonPageGroup13.Visible = false; ------------------- FORM ĐĂNG KÝ THI ------------------
             ribbonPageGroup1.Enabled = false;
         }
 

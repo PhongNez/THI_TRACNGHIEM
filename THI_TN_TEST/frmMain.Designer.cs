@@ -114,19 +114,21 @@ namespace THI_TN_TEST
             // 
             // btnDangNhap
             // 
-            this.btnDangNhap.Caption = "Đăng nhập";
+            this.btnDangNhap.Caption = "Đăng Nhập";
             this.btnDangNhap.Id = 1;
             this.btnDangNhap.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDangNhap.ImageOptions.Image")));
             this.btnDangNhap.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDangNhap.ImageOptions.LargeImage")));
+            this.btnDangNhap.LargeWidth = 70;
             this.btnDangNhap.Name = "btnDangNhap";
             this.btnDangNhap.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDangNhap_ItemClick);
             // 
             // btnMonHoc
             // 
-            this.btnMonHoc.Caption = "Môn học";
+            this.btnMonHoc.Caption = "Môn Học";
             this.btnMonHoc.Id = 2;
             this.btnMonHoc.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnMonHoc.ImageOptions.Image")));
             this.btnMonHoc.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnMonHoc.ImageOptions.LargeImage")));
+            this.btnMonHoc.LargeWidth = 70;
             this.btnMonHoc.Name = "btnMonHoc";
             this.btnMonHoc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnMonHoc_ItemClick);
             // 
@@ -136,15 +138,17 @@ namespace THI_TN_TEST
             this.barButtonItem1.Id = 4;
             this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
             this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.barButtonItem1.LargeWidth = 70;
             this.barButtonItem1.Name = "barButtonItem1";
             this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick_2);
             // 
             // btnSinhVien
             // 
-            this.btnSinhVien.Caption = "Sinh viên";
+            this.btnSinhVien.Caption = "Sinh Viên";
             this.btnSinhVien.Id = 5;
             this.btnSinhVien.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSinhVien.ImageOptions.Image")));
             this.btnSinhVien.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSinhVien.ImageOptions.LargeImage")));
+            this.btnSinhVien.LargeWidth = 60;
             this.btnSinhVien.Name = "btnSinhVien";
             this.btnSinhVien.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSinhVien_ItemClick);
             // 
@@ -154,6 +158,7 @@ namespace THI_TN_TEST
             this.btnGiangVien.Id = 7;
             this.btnGiangVien.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGiangVien.ImageOptions.Image")));
             this.btnGiangVien.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGiangVien.ImageOptions.LargeImage")));
+            this.btnGiangVien.LargeWidth = 70;
             this.btnGiangVien.Name = "btnGiangVien";
             this.btnGiangVien.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGiangVien_ItemClick);
             // 
@@ -170,15 +175,17 @@ namespace THI_TN_TEST
             this.btnNhapDe.Id = 8;
             this.btnNhapDe.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNhapDe.ImageOptions.Image")));
             this.btnNhapDe.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnNhapDe.ImageOptions.LargeImage")));
+            this.btnNhapDe.LargeWidth = 70;
             this.btnNhapDe.Name = "btnNhapDe";
             this.btnNhapDe.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNhapDe_ItemClick);
             // 
             // btnXemDiem
             // 
-            this.btnXemDiem.Caption = "Xem Bảng Điểm";
+            this.btnXemDiem.Caption = "Xem Bảng Điểm Môn Học";
             this.btnXemDiem.Id = 9;
             this.btnXemDiem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXemDiem.ImageOptions.Image")));
             this.btnXemDiem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnXemDiem.ImageOptions.LargeImage")));
+            this.btnXemDiem.LargeWidth = 150;
             this.btnXemDiem.Name = "btnXemDiem";
             this.btnXemDiem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXemDiem_ItemClick);
             // 
@@ -188,6 +195,7 @@ namespace THI_TN_TEST
             this.btnDangXuat.Id = 10;
             this.btnDangXuat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDangXuat.ImageOptions.Image")));
             this.btnDangXuat.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDangXuat.ImageOptions.LargeImage")));
+            this.btnDangXuat.LargeWidth = 70;
             this.btnDangXuat.Name = "btnDangXuat";
             this.btnDangXuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDangXuat_ItemClick);
             // 
@@ -197,6 +205,7 @@ namespace THI_TN_TEST
             this.btnExit.Id = 11;
             this.btnExit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.ImageOptions.Image")));
             this.btnExit.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnExit.ImageOptions.LargeImage")));
+            this.btnExit.LargeWidth = 70;
             this.btnExit.Name = "btnExit";
             this.btnExit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnExit_ItemClick);
             // 
@@ -206,6 +215,7 @@ namespace THI_TN_TEST
             this.btnThi.Id = 12;
             this.btnThi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThi.ImageOptions.Image")));
             this.btnThi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThi.ImageOptions.LargeImage")));
+            this.btnThi.LargeWidth = 70;
             this.btnThi.Name = "btnThi";
             this.btnThi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThi_ItemClick);
             // 
@@ -215,6 +225,7 @@ namespace THI_TN_TEST
             this.btnXemLai.Id = 13;
             this.btnXemLai.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXemLai.ImageOptions.Image")));
             this.btnXemLai.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnXemLai.ImageOptions.LargeImage")));
+            this.btnXemLai.LargeWidth = 70;
             this.btnXemLai.Name = "btnXemLai";
             this.btnXemLai.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXemLai_ItemClick);
             // 
@@ -224,6 +235,7 @@ namespace THI_TN_TEST
             this.btnThiThu.Id = 14;
             this.btnThiThu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThiThu.ImageOptions.Image")));
             this.btnThiThu.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThiThu.ImageOptions.LargeImage")));
+            this.btnThiThu.LargeWidth = 70;
             this.btnThiThu.Name = "btnThiThu";
             this.btnThiThu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThiThu_ItemClick);
             // 
@@ -233,6 +245,7 @@ namespace THI_TN_TEST
             this.btnDKThi.Id = 15;
             this.btnDKThi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDKThi.ImageOptions.Image")));
             this.btnDKThi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDKThi.ImageOptions.LargeImage")));
+            this.btnDKThi.LargeWidth = 70;
             this.btnDKThi.Name = "btnDKThi";
             this.btnDKThi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDKThi_ItemClick);
             // 
@@ -242,6 +255,7 @@ namespace THI_TN_TEST
             this.barButtonItem3.Id = 16;
             this.barButtonItem3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
             this.barButtonItem3.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
+            this.barButtonItem3.LargeWidth = 150;
             this.barButtonItem3.Name = "barButtonItem3";
             this.barButtonItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick_1);
             // 
@@ -251,6 +265,7 @@ namespace THI_TN_TEST
             this.btnCreAcc.Id = 17;
             this.btnCreAcc.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCreAcc.ImageOptions.Image")));
             this.btnCreAcc.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnCreAcc.ImageOptions.LargeImage")));
+            this.btnCreAcc.LargeWidth = 78;
             this.btnCreAcc.Name = "btnCreAcc";
             this.btnCreAcc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCreAcc_ItemClick);
             // 
@@ -267,6 +282,7 @@ namespace THI_TN_TEST
             // 
             // ribbonPageGroup1
             // 
+            this.ribbonPageGroup1.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
             this.ribbonPageGroup1.ItemLinks.Add(this.btnDangNhap, true);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             // 
@@ -274,19 +290,16 @@ namespace THI_TN_TEST
             // 
             this.ribbonPageGroup8.ItemLinks.Add(this.btnDangXuat);
             this.ribbonPageGroup8.Name = "ribbonPageGroup8";
-            this.ribbonPageGroup8.Text = "ribbonPageGroup8";
             // 
             // ribbonPageGroup9
             // 
             this.ribbonPageGroup9.ItemLinks.Add(this.btnExit);
             this.ribbonPageGroup9.Name = "ribbonPageGroup9";
-            this.ribbonPageGroup9.Text = "ribbonPageGroup9";
             // 
             // ribbonPageGroup15
             // 
             this.ribbonPageGroup15.ItemLinks.Add(this.btnCreAcc);
             this.ribbonPageGroup15.Name = "ribbonPageGroup15";
-            this.ribbonPageGroup15.Text = "ribbonPageGroup15";
             this.ribbonPageGroup15.Visible = false;
             // 
             // ribbonPage2
@@ -308,43 +321,36 @@ namespace THI_TN_TEST
             // 
             this.ribbonPageGroup2.ItemLinks.Add(this.btnMonHoc);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
-            this.ribbonPageGroup2.Text = "ribbonPageGroup2";
             // 
             // ribbonPageGroup3
             // 
             this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem1, true);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
-            this.ribbonPageGroup3.Text = "ribbonPageGroup3";
             // 
             // ribbonPageGroup4
             // 
             this.ribbonPageGroup4.ItemLinks.Add(this.btnSinhVien);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
-            this.ribbonPageGroup4.Text = "ribbonPageGroup4";
             // 
             // ribbonPageGroup5
             // 
-            this.ribbonPageGroup5.ItemLinks.Add(this.btnGiangVien);
+            this.ribbonPageGroup5.ItemLinks.Add(this.btnGiangVien, true);
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";
-            this.ribbonPageGroup5.Text = "ribbonPageGroup5";
             // 
             // ribbonPageGroup6
             // 
             this.ribbonPageGroup6.ItemLinks.Add(this.btnNhapDe);
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
-            this.ribbonPageGroup6.Text = "ribbonPageGroup6";
             // 
             // ribbonPageGroup12
             // 
             this.ribbonPageGroup12.ItemLinks.Add(this.btnThiThu);
             this.ribbonPageGroup12.Name = "ribbonPageGroup12";
-            this.ribbonPageGroup12.Text = "ribbonPageGroup12";
             // 
             // ribbonPageGroup13
             // 
             this.ribbonPageGroup13.ItemLinks.Add(this.btnDKThi);
             this.ribbonPageGroup13.Name = "ribbonPageGroup13";
-            this.ribbonPageGroup13.Text = "ribbonPageGroup13";
             // 
             // ribbonPage4
             // 
@@ -359,13 +365,11 @@ namespace THI_TN_TEST
             // 
             this.ribbonPageGroup7.ItemLinks.Add(this.btnXemDiem);
             this.ribbonPageGroup7.Name = "ribbonPageGroup7";
-            this.ribbonPageGroup7.Text = "ribbonPageGroup7";
             // 
             // ribbonPageGroup14
             // 
             this.ribbonPageGroup14.ItemLinks.Add(this.barButtonItem3);
             this.ribbonPageGroup14.Name = "ribbonPageGroup14";
-            this.ribbonPageGroup14.Text = "ribbonPageGroup14";
             // 
             // ribbonPage5
             // 
@@ -380,13 +384,11 @@ namespace THI_TN_TEST
             // 
             this.ribbonPageGroup10.ItemLinks.Add(this.btnThi);
             this.ribbonPageGroup10.Name = "ribbonPageGroup10";
-            this.ribbonPageGroup10.Text = "ribbonPageGroup10";
             // 
             // ribbonPageGroup11
             // 
             this.ribbonPageGroup11.ItemLinks.Add(this.btnXemLai);
             this.ribbonPageGroup11.Name = "ribbonPageGroup11";
-            this.ribbonPageGroup11.Text = "ribbonPageGroup11";
             // 
             // ribbonPage3
             // 
@@ -442,7 +444,7 @@ namespace THI_TN_TEST
             this.Name = "frmMain";
             this.Ribbon = this.ribbonControl1;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Display Screen";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
